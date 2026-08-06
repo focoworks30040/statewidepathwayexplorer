@@ -28,14 +28,20 @@ We make that a single, searchable, county-branded resource — and we give each 
 3. **Employers** — see the talent pipeline for their roles; find the college to partner with.
 4. **Job seekers / students / parents** — "here are the programs near me that lead to real jobs here."
 
-### 1.2 Why this is fundable
+### 1.2 Funding posture
 
-A $1–2M ask needs a defensible theory of change, not just a website. The structure below is built to satisfy that:
+There is **no specific grant identified yet** — the goal is to be ready when something surfaces. That changes the strategy in an important way.
+
+Without a named funder and deadline, the strongest possible position is not a polished mockup. It is **a live product with real registered counties using it.** Traction is fundable in a way that a prototype is not: "23 counties have registered and 8 have published pages" survives any reviewer's scrutiny, works for *any* funder, and can be assembled into an application in days rather than months.
+
+So we optimize for a working, adoptable product — and build a generic grant-readiness layer alongside it:
 
 - **Statewide from day one** — all 159 counties present, not a pilot.
 - **Standards-based data** — CIP → SOC → NAICS crosswalks (see §4.3), so alignment claims are auditable rather than editorial.
-- **Measurable** — built-in reporting on registrations, engagement, and resource distribution, mapped to performance measures a funder can put in a grant agreement.
-- **Sustainable** — county self-service means the content maintains itself after the grant period.
+- **Measurable by default** — instrument registrations, engagement, and distribution from launch, so that whenever a funder appears we already have a real time series rather than a promise. Metrics stay generic until a funder's required performance measures are known.
+- **Sustainable** — county self-service means the content maintains itself after any grant period.
+
+Practical consequence: we do **not** build a reporting module against a hypothetical funder's framework. We capture clean event data now and shape it into whatever format is required later.
 
 ---
 
@@ -46,7 +52,28 @@ A $1–2M ask needs a defensible theory of change, not just a website. The struc
 | D1 | Program catalog data | **Curated seed + admin CRUD** | We hand-curate ~300–600 industry-aligned programs. No scrapers to maintain. Refresh is an annual editorial task. |
 | D2 | County target industries | **Seed from public data, counties refine** | All 159 counties are useful on day one. Registration improves a page rather than creating it. |
 | D3 | Tenancy | **Branded county pages on one shared site** | `/counties/gwinnett`. County admins edit only their county. Data model stays tenant-aware so subdomains remain a later config change, not a rewrite. |
-| D4 | Scope posture | **Demo-ready ASAP for the grant application** | All 159 counties visible; 3–5 showcase counties built deep; polished public UX; working admin panel. Depth follows funding. |
+| D4 | Scope posture | **Demo-ready ASAP** | All 159 counties visible; 4 showcase counties built deep; polished public UX; working admin panel. Depth follows funding. |
+| D5 | Funding target | **No specific grant yet — build for readiness** | Optimize for a live product with real county traction, not a mockup. Capture generic metrics; shape to a funder's framework later. |
+| D6 | GaDOE CTAE pathways | **Deferred, but leave the seam** | Not built now. Schema reserves the join so pathways can be added later without a migration or rework. |
+| D7 | Showcase counties | **Forsyth, Ware, Houston, Jackson** | See §2.1. Four regions, four distinct economy types. |
+| D8 | Employer job postings | **Permanently out of scope** | This is a pathways tool, not a job board. EmployGeorgia already does postings; matching it is a maintenance treadmill. |
+
+### 2.1 Showcase counties
+
+These four are built deep: real photography, employer logos, local programs, success stories, fully verified program alignment. They are the proof that the model works in *any* Georgia county, not just prosperous ones.
+
+| County | Seat / Region | Economy | Primary TCSG | Primary USG (nearby) |
+|---|---|---|---|---|
+| **Forsyth** | Cumming · Metro Atlanta | Affluent, fast-growing exurb; professional services, HQ relocation, tech | Lanier Technical College — **Forsyth Campus**, 3410 Ronald Reagan Blvd, Cumming | University of North Georgia |
+| **Ware** | Waycross · Southeast GA | Rural; rail/logistics (CSX), forest products, regional healthcare hub | Coastal Pines Technical College — **main campus**, 1701 Carswell Ave, Waycross | South Georgia State College (Waycross) |
+| **Houston** | Warner Robins · Middle GA | Defense/aerospace anchored by Robins AFB; cyber; contractor ecosystem | Central Georgia Technical College — **Warner Robins main campus**, 80 Cohen Walker Dr | Middle Georgia State University (Warner Robins, ½ mi from Robins AFB) |
+| **Jackson** | Jefferson · Northeast GA | Booming I-85 advanced manufacturing; EV battery production, logistics | Lanier Technical College — **Jackson Campus**, Commerce (opened 2003) | University of North Georgia; Athens Technical College nearby |
+
+**Why this set works:** metro-affluent (Forsyth), deep rural (Ware), mid-size defense economy (Houston), and exurban manufacturing boom (Jackson) — across four different service delivery regions. A skeptical reviewer cannot dismiss it as an Atlanta-metro tool.
+
+**The standout case study is Jackson County.** SK Battery America partnered with **Georgia Quick Start and Lanier Technical College** to train roughly 2,600 workers for its EV battery plant in Commerce — Quick Start refurbished a Lanier Tech satellite campus with production-scale equipment for the training. That is precisely the county-target-industry → technical-college-program → jobs chain this platform exists to make visible, and it already happened. It should be the flagship success story on the site.
+
+**Known gap:** Bio & Life Sciences is thin across all four. Options: (a) accept it and let the proximity radius surface Athens-area programs for Jackson and North Fulton/Alpharetta programs for Forsyth — which honestly demonstrates the radius feature working; or (b) add a fifth showcase county in Georgia's bio corridor (Newton County/Covington is the obvious candidate). Recommend (a) for now; it costs nothing and the cluster still gets represented statewide via `/industries/bio-life-sciences`.
 
 ---
 
@@ -288,10 +315,10 @@ CIP→SOC→cluster crosswalks loaded, alignment queries + ranking, pathway visu
 Supabase Auth, registration → approval flow, county admin CRUD, ImageKit upload + media library + video trim UI, completeness score, teammate invitations.
 
 ### Phase 4 — Showcase counties + polish
-3–5 counties built deep with real photography, employer logos, local programs, and success stories. Accessibility audit (WCAG 2.1 AA), SEO/OG images, performance pass, analytics + reporting dashboard.
+Forsyth, Ware, Houston, and Jackson built deep with real photography, employer logos, local programs, and success stories — including the SK Battery / Quick Start / Lanier Tech story in Jackson. Accessibility audit (WCAG 2.1 AA), SEO/OG images, performance pass, analytics dashboard.
 
-### Phase 5 — Grant package
-Methodology writeup, impact metrics dashboard, demo script, printable one-pagers.
+### Phase 5 — Launch & recruit counties
+Because there is no grant deadline (D5), this phase replaces "assemble grant package." Publish, then actively recruit county registrations: outreach kit, demo script, printable one-pagers, methodology writeup. **Real registrations are the asset** — the grant application gets written later, against live traction, whenever a solicitation appears.
 
 Sequencing note: Phases 1 and 2 are where grant-demo value concentrates. If time compresses, Phase 3's admin panel can ship with fewer content types — but it cannot be cut, because "counties maintain this themselves" is the sustainability argument.
 
@@ -299,14 +326,18 @@ Sequencing note: Phases 1 and 2 are where grant-demo value concentrates. If time
 
 ## 9. Grant-readiness features
 
-Build these deliberately; they are what distinguishes a funded proposal from a nice website.
+Since no funder is identified yet (D5), the goal here is **a clean event stream starting at launch**, not a reporting module shaped to someone's framework. Metrics you began collecting a year before you applied are worth far more than metrics you designed for the application — you cannot retroactively instrument adoption.
+
+Capture from day one:
 
 - **Registration funnel metrics** — counties registered, % of 159, by region
 - **Engagement metrics** — page views by county, program clicks, resource downloads, referrals to college application pages
 - **Distribution metrics** — how many K-12/employer partners each county has shared with
-- **Equity lens** — rural vs. metro coverage; registration rate in persistent-poverty counties. Nearly every federal and philanthropic funder asks this. Having it built in is a differentiator.
-- **Exportable reports** — CSV/PDF for grant reporting periods
+- **Equity lens** — rural vs. metro coverage; registration rate in persistent-poverty counties. Nearly every federal and philanthropic funder asks this, so it is worth capturing regardless of who the funder turns out to be.
+- **Exportable reports** — CSV/PDF over an arbitrary date range, so any future reporting period can be produced on demand
 - **Public methodology page** — how alignment is computed, sources, refresh cadence
+
+Deliberately **not** building yet: a funder-specific dashboard, logic model, or performance-measure mapping. Those take days once a real solicitation exists, and building them now means guessing.
 
 ---
 
@@ -321,35 +352,41 @@ Build these deliberately; they are what distinguishes a funded proposal from a n
 | Institution partners object to representation | Link out to official catalogs; show "last verified" dates; give colleges a correction path. |
 | Media rights on county photos | `consent_on_file` metadata field + release tracking from day one. |
 | ImageKit bandwidth costs at scale | Bounded named transformations, `q-auto`, ISR caching; confirm tier before launch. |
+| **No grant deadline → the project drifts** | The most likely failure mode now that D5 removed external urgency. Mitigate with a self-imposed launch date and a fixed Phase 1–3 scope. Ship narrow and live rather than broad and unlaunched; a funder appearing in 6 months should find a running product, not a branch. |
 
 ---
 
 ## 11. Open questions — next round
 
-**Grant & organizational**
-1. Which specific funder / grant program is the $1–2M ask aimed at? (EDA, ARC, DOL, Georgia state, philanthropic?) Deadlines and required performance measures shape Phase 5 directly.
-2. What entity applies — an EDA, a nonprofit, a regional commission, your company?
-3. Do you have letters of support or partnership commitments from TCSG, GDEcD, or specific colleges? These matter more to a reviewer than the site itself.
+**Resolved this round:** funder (D5 — none yet, build for readiness) · showcase counties (D7 — Forsyth, Ware, Houston, Jackson) · CTAE pathways (D6 — deferred, seam preserved) · job postings (D8 — permanently out).
+
+**Highest priority**
+
+1. **Who does the data curation?** The ~300–600 program curation and the 159-county target-industry research are the schedule-critical path, and neither is engineering work. You, a hire, an intern, or contract help? Answer determines whether the templates I build next are for one person or a team.
+2. **Do the four showcase counties know about this?** A conversation with one EDA director before we build changes the product meaningfully — they will tell you what they'd actually use it for. If you have a relationship in Forsyth, Ware, Houston, or Jackson, that call is worth more than a week of design.
+3. **Self-imposed launch date?** With no grant deadline, this is the only thing keeping the project on rails (see §10).
 
 **Product**
-4. Which 3–5 counties are the showcase set? (Ideally: one metro, one mid-size, two rural, spread across regions.)
-5. Do job seekers ever create accounts (save programs, get alerts), or is the public side fully anonymous? Accounts add PII scope and a privacy policy obligation.
-6. Should we map **GaDOE CTAE career pathways** into the model? Georgia's K-12 career clusters connecting *high school pathway → college program → occupation* would be a standout feature for the K-12 audience — and a meaningful scope addition.
-7. Employer job postings — in scope, or explicitly out? (Recommend out for v1; it's a maintenance treadmill.)
-8. Spanish translation needed for the job seeker views?
+
+4. Do job seekers ever create accounts (save programs, get alerts), or is the public side fully anonymous? Accounts add PII scope and a privacy policy obligation. Recommend anonymous for v1.
+5. Spanish translation for job seeker views — v1 or later?
+6. Should registration be **open** (any county self-registers, you approve) or **invite-only** at launch? Open scales; invite-only keeps quality high while the product is young.
 
 **Brand & operations**
-9. Domain name — registered yet? ("Statewide Pathway Explorer" is the working name; is it the final one?)
-10. Existing brand identity (logo, colors, fonts), or do we create one?
-11. Besides you, who is a super admin at launch?
-12. Who owns program-data curation and county research — you, a hire, or should we scope it as grant-funded work?
+
+7. Domain name — registered yet? Is "Statewide Pathway Explorer" the final name?
+8. Existing brand identity (logo, colors, fonts), or do we create one?
+9. Besides you, who is a super admin at launch?
+10. Do you have any relationship yet with TCSG, GDEcD, or the Regional Commissions? Not required to build, but a single TCSG contact would dramatically shorten program curation — and their buy-in is the difference between a useful tool and an official one.
 
 ---
 
 ## 12. Immediate next steps
 
-1. Answer §11 — especially Q1, Q4, and Q6, which change scope.
-2. I produce the county target-industry research template and the program curation template so data work can start immediately, in parallel.
-3. I finalize the database schema as reviewable SQL migrations.
+1. Answer §11 Q1–Q3 (curation ownership, EDA conversations, launch date) — these three govern the schedule.
+2. I produce the **county target-industry research template** and the **program curation template**, scoped to the four showcase counties first, so data work starts immediately and in parallel with the build.
+3. I finalize the database schema as reviewable SQL migrations (including the reserved CTAE seam from D6).
 4. Provision accounts: Supabase project, ImageKit account, Vercel project, domain.
 5. Begin Phase 0.
+
+**Recommended sequencing:** do step 2 for the four showcase counties *only* before attempting all 159. Curating Forsyth, Ware, Houston, and Jackson end-to-end will expose every flaw in the data model while the cost of changing it is still near zero.
