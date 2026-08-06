@@ -57,6 +57,8 @@ Practical consequence: we do **not** build a reporting module against a hypothet
 | D6 | GaDOE CTAE pathways | **Deferred, but leave the seam** | Not built now. Schema reserves the join so pathways can be added later without a migration or rework. |
 | D7 | Showcase counties | **Forsyth, Ware, Houston, Jackson** | See §2.1. Four regions, four distinct economy types. |
 | D8 | Employer job postings | **Permanently out of scope** | This is a pathways tool, not a job board. EmployGeorgia already does postings; matching it is a maintenance treadmill. |
+| D9 | Data curation team | **You + an intern, working spreadsheet already exists** | Schema should conform to their existing sheet where reasonable, not force a rewrite. Import path matters more than a blank template. |
+| D10 | Showcase county access | **Direct relationships with all four EDAs** | Major unlock. Run discovery calls *before* Phase 0 and treat the four as design partners, not just content. See `EDA-DISCOVERY-GUIDE.md`. |
 
 ### 2.1 Showcase counties
 
@@ -296,7 +298,16 @@ Bandwidth is the ImageKit cost driver. Named transformations (a bounded set of v
 | County target industries | Regional target-industry studies, GDEcD, existing employer base | **High — research-heavy** |
 | County employers | Seeded for showcase counties; counties add their own | Medium |
 
-**Reality check:** the two "High" rows are the schedule risk, and neither is an engineering task. Program curation and county target-industry research are research work that can proceed *in parallel* with the build — ideally by someone other than the engineer. Getting a structured spreadsheet template into a researcher's hands in week 1 is the highest-value scheduling move available.
+**Reality check:** the two "High" rows are the schedule risk, and neither is an engineering task. Both proceed *in parallel* with the build.
+
+**Curation is staffed** (D9): you and an intern, with a working spreadsheet already in progress. That changes the approach — we do **not** hand you a blank template and ask you to start over. Instead:
+
+1. Review the existing sheet's columns and conventions.
+2. Shape the database schema to accept it, adding only the fields the alignment engine genuinely requires (CIP code being the important one — see below).
+3. Build an importer against *your* sheet, so it stays the working surface. Spreadsheets are a better curation UI than any admin panel we would build, and the intern already knows this one.
+4. The admin panel becomes the maintenance tool *after* bulk import, not the data-entry tool during it.
+
+**The one field worth insisting on: CIP code per program.** It is what makes the whole alignment chain (§4.3) computable rather than hand-drawn. If the current sheet lacks it, adding it now — while the row count is still small — is far cheaper than backfilling 600 rows later. Everything else in the schema can bend to fit what you already have.
 
 ---
 
@@ -362,9 +373,9 @@ Deliberately **not** building yet: a funder-specific dashboard, logic model, or 
 
 **Highest priority**
 
-1. **Who does the data curation?** The ~300–600 program curation and the 159-county target-industry research are the schedule-critical path, and neither is engineering work. You, a hire, an intern, or contract help? Answer determines whether the templates I build next are for one person or a team.
-2. **Do the four showcase counties know about this?** A conversation with one EDA director before we build changes the product meaningfully — they will tell you what they'd actually use it for. If you have a relationship in Forsyth, Ware, Houston, or Jackson, that call is worth more than a week of design.
-3. **Self-imposed launch date?** With no grant deadline, this is the only thing keeping the project on rails (see §10).
+1. **Share the working curation spreadsheet** (D9). I need its actual columns before finalizing the schema — the goal is to shape the database around what you and the intern are already doing, not to make you redo it. Column headers alone are enough to start.
+2. **Self-imposed launch date?** With no grant deadline, this is the only thing keeping the project on rails (see §10). Still open.
+3. **Schedule the four EDA calls** (D10). Guide is written; see `EDA-DISCOVERY-GUIDE.md`. These should happen before Phase 0, and letters of support should be collected while the conversations are warm.
 
 **Product**
 
@@ -383,10 +394,16 @@ Deliberately **not** building yet: a funder-specific dashboard, logic model, or 
 
 ## 12. Immediate next steps
 
-1. Answer §11 Q1–Q3 (curation ownership, EDA conversations, launch date) — these three govern the schedule.
-2. I produce the **county target-industry research template** and the **program curation template**, scoped to the four showcase counties first, so data work starts immediately and in parallel with the build.
-3. I finalize the database schema as reviewable SQL migrations (including the reserved CTAE seam from D6).
-4. Provision accounts: Supabase project, ImageKit account, Vercel project, domain.
-5. Begin Phase 0.
+**Two tracks, running in parallel.**
 
-**Recommended sequencing:** do step 2 for the four showcase counties *only* before attempting all 159. Curating Forsyth, Ware, Houston, and Jackson end-to-end will expose every flaw in the data model while the cost of changing it is still near zero.
+### Track A — Discovery (you, starting now)
+1. Schedule the four EDA calls using `EDA-DISCOVERY-GUIDE.md`. Ask for letters of support and technical college introductions while you're there.
+2. Write each call up the same day; compare all four before Phase 0.
+
+### Track B — Build (blocked on one thing)
+3. **Send me the curation spreadsheet's columns.** This is the only thing blocking schema work.
+4. I then produce: schema as reviewable SQL migrations (with the D6 CTAE seam), an importer built against your actual sheet, and a short gap list of fields the alignment engine needs added — CIP code chief among them (§7).
+5. Provision accounts: Supabase, ImageKit, Vercel, domain.
+6. Begin Phase 0.
+
+**Recommended sequencing:** curate the four showcase counties end-to-end *before* attempting all 159. Doing four completely will expose every flaw in the data model while the cost of changing it is still near zero — and it gives the intern a well-defined, finishable first assignment.
