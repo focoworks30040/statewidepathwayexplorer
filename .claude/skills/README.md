@@ -3,6 +3,20 @@
 Project-level Claude Code skills. Any session opened on this repo picks them up
 automatically from `.claude/skills/`.
 
+## frontend-design
+
+Vendored from [anthropics/claude-code](https://github.com/anthropics/claude-code/tree/main/plugins/frontend-design),
+plugin version **1.1.0**. Anthropic's own guidance skill for distinctive visual
+design — aesthetic direction, typography pairing, avoiding templated "AI-looking"
+output, and writing interface copy. Prose only: no scripts, no data files, no
+dependencies. Copied verbatim, with the upstream `LICENSE.md` alongside it
+(© Anthropic PBC — use subject to Anthropic's Commercial Terms of Service, a
+different licence from the MIT skills below).
+
+Pairs naturally with `ui-ux-pro-max`: this one sets aesthetic direction and
+taste, that one supplies the searchable database of concrete styles, palettes,
+and stack rules.
+
 ## ui-ux-pro-max (and companions)
 
 Vendored from [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)
@@ -41,10 +55,11 @@ Nothing else was changed.
 
 ### Known upstream gap
 
-`banner-design/SKILL.md` calls out to sibling skills that are **not** part of
-this repo (`ai-artist`, `ai-multimodal`, `chrome-devtools`). Its image-generation
-steps will not run without those; its size/style reference material is still
-usable.
+`banner-design` names four sibling skills as dependencies: `ui-ux-pro-max` and
+`frontend-design` (both installed), plus `ai-artist`, `ai-multimodal`, and
+`chrome-devtools` — which are **not** part of this repo. Its AI image-generation
+and screenshot steps will not run without those; its size/style reference
+material is still usable.
 
 ### Updating
 
