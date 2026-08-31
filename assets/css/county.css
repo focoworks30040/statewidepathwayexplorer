@@ -1,0 +1,146 @@
+/* ---------------------------------------------------------------
+   County page: a locator, a name, and then the community's own
+   content. Everything here is shell — the content slot is yours.
+   --------------------------------------------------------------- */
+
+.county-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem var(--gutter);
+  border-bottom: var(--rule);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.county-nav a { text-decoration: none; color: var(--pine); }
+.county-nav a:hover { color: var(--amber-deep); }
+.county-nav .back::before { content: "\2190"; margin-right: 0.5rem; }
+.county-nav .sep { color: var(--sage); }
+.county-nav .here { color: var(--sage); }
+
+.county-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 9rem;
+  align-items: center;
+  gap: clamp(1.5rem, 5vw, 4rem);
+  padding: clamp(2.5rem, 7vh, 4.5rem) var(--gutter);
+  border-bottom: var(--rule);
+}
+
+.county-head h1 {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  margin: 0.5rem 0 0;
+  color: var(--pine);
+}
+
+.county-facts {
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 2.5rem;
+  list-style: none;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+}
+.county-facts dt {
+  color: var(--sage);
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.county-facts dd { margin: 0.2rem 0 0; color: var(--pine); }
+.county-facts > div { margin-bottom: 0.9rem; }
+
+.locator {
+  width: 100%;
+  height: auto;
+  display: block;
+  justify-self: end;
+}
+
+/* ---- content slot ------------------------------------------------ */
+
+.county-body {
+  padding: clamp(2.5rem, 7vh, 4.5rem) var(--gutter);
+}
+
+.county-body > * + * { margin-top: 1.1rem; }
+
+.county-body h2 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: var(--pine);
+  margin-top: 2.75rem;
+}
+
+.county-body p,
+.county-body li { max-width: var(--measure); }
+
+.county-body ul { padding-left: 1.1rem; }
+.county-body li + li { margin-top: 0.4rem; }
+
+.placeholder {
+  border: 1px dashed var(--sage);
+  border-radius: 4px;
+  padding: 1.5rem;
+  background: color-mix(in srgb, var(--sage-soft) 22%, var(--kaolin));
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  max-width: 46rem;
+}
+.placeholder strong { font-family: var(--body); }
+
+/* ---- move between communities ------------------------------------ */
+
+.county-more {
+  border-top: var(--rule);
+  padding: clamp(2rem, 6vh, 3.5rem) var(--gutter);
+}
+
+.county-more .eyebrow { margin-bottom: 1.25rem; }
+
+.county-more ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1px;
+  background: var(--sage-soft);
+  border: var(--rule);
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+}
+
+.county-more a {
+  display: block;
+  padding: 1.25rem 1.25rem 1.4rem;
+  background: var(--kaolin);
+  text-decoration: none;
+  transition: background 180ms ease;
+}
+.county-more a:hover { background: var(--kaolin-deep); }
+
+.county-more .n {
+  display: block;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--pine);
+}
+.county-more .r {
+  display: block;
+  margin-top: 0.2rem;
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+@media (max-width: 46rem) {
+  .county-head { grid-template-columns: 1fr; }
+  .locator { width: 7.5rem; justify-self: start; order: -1; }
+}

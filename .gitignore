@@ -1,0 +1,3 @@
+# Boundary source data, re-downloaded by `python3 tools/build_maps.py --fetch`
+tools/cache/
+.DS_Store

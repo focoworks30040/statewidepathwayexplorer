@@ -1,0 +1,78 @@
+<!--
+  Template for a new community page.
+
+  1. Copy this file to counties/<slug>.html
+  2. Find and replace COUNTYNAME, COUNTYSLUG, REGION, SUBREGION, COUNTY SEAT, INDUSTRY
+  3. Add the county to COUNTIES in tools/build_maps.py and run:
+       python3 tools/build_maps.py --fetch
+     That adds its star to the statewide map and writes its locator image.
+  4. Add a card for it in index.html, and a list item in the "Other communities"
+     section of every other county page.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>COUNTYNAME County &mdash; Georgia Statewide Pathway Explorer</title>
+<meta name="description" content="Education and career pathways in COUNTYNAME County, Georgia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/county.css">
+</head>
+<body class="county">
+
+<nav class="county-nav" aria-label="Breadcrumb">
+  <a class="back" href="../index.html">Statewide map</a>
+  <span class="sep" aria-hidden="true">/</span>
+  <span class="here" aria-current="page">COUNTYNAME County</span>
+</nav>
+
+<header class="county-head">
+  <div>
+    <p class="eyebrow">REGION &middot; SUBREGION</p>
+    <h1>COUNTYNAME County</h1>
+    <dl class="county-facts">
+      <div><dt>County seat</dt><dd>COUNTY SEAT</dd></div>
+      <div><dt>Region</dt><dd>REGION</dd></div>
+      <div><dt>Anchor industries</dt><dd>INDUSTRY, INDUSTRY, INDUSTRY</dd></div>
+    </dl>
+  </div>
+  <img class="locator" src="../assets/img/locator-COUNTYSLUG.svg" width="180" height="200"
+       alt="Outline of Georgia with COUNTYNAME County marked">
+</header>
+
+<main class="county-body">
+  <p>One or two sentences on where this community sits and what shapes its labor market.</p>
+
+  <!-- CONTENT:START — everything between these two markers is this community's
+       own page content. Replace the block below with your existing markup.
+       Headings (h2), paragraphs and lists are already styled by county.css. -->
+  <div class="placeholder">
+    <strong>Content slot for COUNTYNAME County.</strong><br>
+    Paste the body of the existing COUNTYNAME County page here &mdash; everything that
+    sat inside its <code>&lt;body&gt;</code>, minus its own header and footer.<br><br>
+    Keep any page-specific CSS in <code>assets/css/COUNTYSLUG.css</code> and link it in
+    the <code>&lt;head&gt;</code> above, so it cannot collide with the shared styles.
+  </div>
+  <!-- CONTENT:END -->
+</main>
+
+<section class="county-more" aria-labelledby="more-title">
+  <p class="eyebrow" id="more-title">Other communities</p>
+  <ul>
+    <li><a href="houston.html"><span class="n">Houston County</span><span class="r">Fall Line &middot; Central Georgia</span></a></li>
+    <li><a href="thomas.html"><span class="n">Thomas County</span><span class="r">Coastal Plain &middot; Southwest Georgia</span></a></li>
+    <li><a href="glynn.html"><span class="n">Glynn County</span><span class="r">Coast &middot; Golden Isles</span></a></li>
+  </ul>
+</section>
+
+<footer class="site-foot">
+  <p>Georgia Statewide Pathway Explorer</p>
+  <p class="foot-note">County boundaries from the U.S. Census Bureau.</p>
+</footer>
+
+</body>
+</html>
