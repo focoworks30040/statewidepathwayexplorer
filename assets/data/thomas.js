@@ -37,7 +37,7 @@ window.PATHWAY_DATA = {
         "Forest Resource Services, Inc.",
         "ACRE MAKER Tree & Land Services"
       ],
-      "image": null,
+      "image": "../assets/img/industries/thomas-forestry-and-logging.jpg",
       "ctae": [
         {
           "name": "Forestry Animal Science Pathway",
@@ -126,7 +126,8 @@ window.PATHWAY_DATA = {
           "name": "Marketing",
           "org": "Thomas University"
         }
-      ]
+      ],
+      "imageAlt": "A stack of cut logs at a landing beside a forest track"
     },
     {
       "id": "wood-product-manufacturing",

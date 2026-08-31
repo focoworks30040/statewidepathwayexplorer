@@ -71,17 +71,30 @@
       "</a>";
   }
 
-  function figure(ind) {
-    if (ind.image) {
-      return '<figure class="ind-figure">' +
-        '<img src="' + esc(ind.image) + '" alt="' + esc(ind.name) +
-        " in " + esc(data.county) + ' County">' +
-        (ind.imageCaption ? "<figcaption>" + esc(ind.imageCaption) + "</figcaption>" : "") +
-        "</figure>";
-    }
-    // No photo yet: hold the space so the layout does not shift when one arrives.
+  function emptyFigure(ind) {
+    // Holds the space so the layout does not shift when a photo arrives.
     return '<figure class="ind-figure is-empty" aria-hidden="true">' +
       '<span class="ind-figure-label">' + esc(ind.name) + "</span></figure>";
+  }
+
+  function figure(ind) {
+    if (!ind.image) return emptyFigure(ind);
+    var alt = ind.imageAlt || (ind.name + " in " + data.county + " County");
+    return '<figure class="ind-figure">' +
+      '<img src="' + esc(ind.image) + '" alt="' + esc(alt) + '">' +
+      (ind.imageCaption ? "<figcaption>" + esc(ind.imageCaption) + "</figcaption>" : "") +
+      "</figure>";
+  }
+
+  // A path set in the data file before the photo has been added should not
+  // leave a broken image on the page — fall back to the empty frame.
+  function guardImage(ind) {
+    var img = root.querySelector(".ind-figure img");
+    if (!img) return;
+    img.addEventListener("error", function () {
+      var fig = img.closest(".ind-figure");
+      if (fig) fig.outerHTML = emptyFigure(ind);
+    });
   }
 
   function courseList(p) {
@@ -172,6 +185,7 @@
     var initial = first;
     first = false;
     root.innerHTML = ind ? detail(ind) : grid();
+    if (ind) guardImage(ind);
 
     // A plain page load stays where the browser put it. Anything else — a card
     // click, the back button, or a link straight to one industry — moves the

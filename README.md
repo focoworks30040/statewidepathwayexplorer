@@ -90,10 +90,20 @@ that number to say something else, and give `companies` a plain number if you
 have a count but not the names. Any program can take a `url` and its name
 becomes a link, and a CTAE pathway can take `courses: [...]`.
 
-**Pictures.** Put them in `assets/img/industries/` and point `image` at them.
-Until one is set, a labelled empty frame holds the same space, so adding a
-photo later does not move anything. They are shown at 3:2 and cropped to fill,
-so roughly 1200×800 works well. `imageCaption` adds a line underneath.
+**Pictures.** Put them in `assets/img/industries/` and point `image` at them:
+
+```js
+image: "../assets/img/industries/thomas-forestry-and-logging.jpg",
+imageAlt: "A stack of cut logs at a landing beside a forest track",
+imageCaption: "optional line printed under the picture"
+```
+
+They are shown at 3:2 and cropped to fill, so roughly 1200×800 works well.
+`imageAlt` is what a screen reader reads and what shows if the picture fails
+to load — describe what is in the photo. Until a file is there, a labelled
+empty frame holds the same space, so adding one later moves nothing; a path
+pointing at a file that is not there yet falls back to that same frame rather
+than a broken image, so the path can be set in advance.
 
 **The sample-data notice.** Every county file currently ships with placeholder
 counts and program lists so the page has something to show. Replace them with
