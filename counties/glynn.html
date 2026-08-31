@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Glynn County &mdash; Georgia Statewide Pathway Explorer</title>
-<meta name="description" content="Education and career pathways in Glynn County, Georgia.">
+<meta name="description" content="Target industries and aligned education pathways in Glynn County, Georgia.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -21,21 +21,34 @@
 
 <header class="county-head">
   <div>
-    <p class="eyebrow">Coast &middot; Golden Isles</p>
     <h1>Glynn County</h1>
     <dl class="county-facts">
       <div><dt>County seat</dt><dd>Brunswick</dd></div>
-      <div><dt>Region</dt><dd>Coast</dd></div>
-      <div><dt>Anchor industries</dt><dd>Port logistics, hospitality, marine trades</dd></div>
     </dl>
+    <p class="county-intro">Glynn County pairs a working deepwater port with the visitor economy of the Golden Isles, and its target industries run across both.</p>
   </div>
   <img class="locator" src="../assets/img/locator-glynn.svg" width="180" height="200"
        alt="Outline of Georgia with Glynn County marked">
 </header>
 
-<main class="county-body">
-  <p>Glynn County anchors Georgia's southeastern coast. The Port of Brunswick, the hospitality economy of the Golden Isles and the marine trades all draw on the same workforce.</p>
+<section class="industries" id="industries" aria-labelledby="ind-title">
+  <div class="section-head">
+    <p class="eyebrow">Target industries</p>
+    <h2 id="ind-title">Where the work is in Glynn County</h2>
+    <p class="section-note">Each industry shows how many local companies work in it and how
+      many aligned education programs are available here. Open one to see the high school,
+      technical college and university programs that lead into it.</p>
+  </div>
 
+  <div class="industry-root" id="industry-root">
+    <noscript>
+      <p class="placeholder">The target industries browser needs JavaScript. The rest of
+        this page, and the statewide map, work without it.</p>
+    </noscript>
+  </div>
+</section>
+
+<main class="county-body">
   <!-- CONTENT:START — everything between these two markers is this community's
        own page content. Replace the block below with your existing markup.
        Headings (h2), paragraphs and lists are already styled by county.css. -->
@@ -63,5 +76,7 @@
   <p class="foot-note">County boundaries from the U.S. Census Bureau.</p>
 </footer>
 
+<script src="../assets/data/glynn.js"></script>
+<script src="../assets/js/industries.js"></script>
 </body>
 </html>

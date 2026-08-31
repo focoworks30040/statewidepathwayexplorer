@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Forsyth County &mdash; Georgia Statewide Pathway Explorer</title>
-<meta name="description" content="Education and career pathways in Forsyth County, Georgia.">
+<meta name="description" content="Target industries and aligned education pathways in Forsyth County, Georgia.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -21,28 +21,41 @@
 
 <header class="county-head">
   <div>
-    <p class="eyebrow">Piedmont &middot; North metro Atlanta</p>
     <h1>Forsyth County</h1>
     <dl class="county-facts">
       <div><dt>County seat</dt><dd>Cumming</dd></div>
-      <div><dt>Region</dt><dd>Piedmont</dd></div>
-      <div><dt>Anchor industries</dt><dd>Health care, construction, professional services</dd></div>
     </dl>
+    <p class="county-intro">Forsyth County has grown faster than almost anywhere else in Georgia, and its target industries reflect employers within commuting distance of the whole north metro.</p>
   </div>
   <img class="locator" src="../assets/img/locator-forsyth.svg" width="180" height="200"
        alt="Outline of Georgia with Forsyth County marked">
 </header>
 
-<main class="county-body">
-  <p>Forsyth County sits in the Piedmont, north of Atlanta, and has grown faster than almost anywhere else in Georgia. Its pathways are shaped by metro employers within commuting distance.</p>
+<section class="industries" id="industries" aria-labelledby="ind-title">
+  <div class="section-head">
+    <p class="eyebrow">Target industries</p>
+    <h2 id="ind-title">Where the work is in Forsyth County</h2>
+    <p class="section-note">Each industry shows how many local companies work in it and how
+      many aligned education programs are available here. Open one to see the high school,
+      technical college and university programs that lead into it.</p>
+  </div>
 
+  <div class="industry-root" id="industry-root">
+    <noscript>
+      <p class="placeholder">The target industries browser needs JavaScript. The rest of
+        this page, and the statewide map, work without it.</p>
+    </noscript>
+  </div>
+</section>
+
+<main class="county-body">
   <!-- CONTENT:START — everything between these two markers is this community's
        own page content. Replace the block below with your existing markup.
        Headings (h2), paragraphs and lists are already styled by county.css. -->
   <div class="placeholder">
     <strong>Content slot for Forsyth County.</strong><br>
     Paste the body of the existing Forsyth County page here &mdash; everything that
-    sat inside its <code>&lt;body&gt;</code>, minus its own header and footer. This is the community whose pages already exist. Drop that content in here.<br><br>
+    sat inside its <code>&lt;body&gt;</code>, minus its own header and footer. This is the community whose pages already exist &mdash; drop that content in here.<br><br>
     Keep any page-specific CSS in <code>assets/css/forsyth.css</code> and link it in
     the <code>&lt;head&gt;</code> above, so it cannot collide with the shared styles.
   </div>
@@ -63,5 +76,7 @@
   <p class="foot-note">County boundaries from the U.S. Census Bureau.</p>
 </footer>
 
+<script src="../assets/data/forsyth.js"></script>
+<script src="../assets/js/industries.js"></script>
 </body>
 </html>

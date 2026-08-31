@@ -10,8 +10,11 @@ counties/_template.html     copy this to add a fifth community
 assets/css/base.css         colors, type, shared shell
 assets/css/landing.css      landing page only
 assets/css/county.css       county pages only
-assets/js/map.js            optional polish; the site works without it
+assets/js/map.js            optional polish on the landing page
+assets/js/industries.js     draws the target industries section
+assets/data/<slug>.js       each community's industries and programs
 assets/img/locator-*.svg    small "you are here" map on each county page
+assets/img/industries/      photos for the industry detail views
 tools/build_maps.py         regenerates all map geometry
 ```
 
@@ -38,6 +41,51 @@ branch**, pick the branch and the `/ (root)` folder.
 | Houston County | `counties/houston.html` | Fall Line |
 | Thomas County | `counties/thomas.html` | Coastal Plain |
 | Glynn County | `counties/glynn.html` | Coast |
+
+## Target industries
+
+Each county page lists that community's target industries as cards showing two
+numbers: how many local companies work in the industry, and how many aligned
+education programs are available. Opening a card replaces the grid with that
+industry's detail — a picture, and three lists of programs that lead into it:
+high school CTAE pathways, technical college programs, and university programs
+offered in the county.
+
+All of it comes from one file per community, `assets/data/<slug>.js`. That is
+the only file to edit to change what a county page shows; the page markup does
+not change. The file's own comments describe every field. In short:
+
+```js
+{
+  id: "health-care",              // used in the page address
+  name: "Health Care",
+  blurb: "One sentence on why this industry matters here.",
+  companies: 486,                 // or null to show a dash
+  image: "../assets/img/industries/forsyth-health-care.jpg",
+  ctae:       [ { name: "…", org: "West Forsyth High School" } ],
+  technical:  [ { name: "…", org: "Lanier Technical College", award: "Diploma" } ],
+  university: [ { name: "…", org: "UNG — Cumming", award: "Bachelor's" } ]
+}
+```
+
+The "aligned programs" number counts the three lists for you, so it can never
+drift out of step with what is on the page. Set `programs:` explicitly only if
+you need it to say something else. Any program can take a `url` and its name
+becomes a link.
+
+**Pictures.** Put them in `assets/img/industries/` and point `image` at them.
+Until one is set, a labelled empty frame holds the same space, so adding a
+photo later does not move anything. They are shown at 3:2 and cropped to fill,
+so roughly 1200×800 works well. `imageCaption` adds a line underneath.
+
+**The sample-data notice.** Every county file currently ships with placeholder
+counts and program lists so the page has something to show. Replace them with
+your figures, then set `sample: false` at the top of the file to remove the
+notice above the cards.
+
+**Linking to one industry.** Each industry has its own address, so
+`counties/glynn.html#industry-marine-trades` opens straight to it. The back
+button returns to the grid.
 
 ## Bringing in pages you have already built
 
@@ -106,7 +154,9 @@ Rename a page and those three need to agree.
    That downloads the boundary data, computes the star position and county
    outline from it, writes the locator image, and rewrites the map inside
    `index.html`. Nothing is positioned by hand.
-3. Add a card in `index.html` and a list item in the "Other communities"
+3. Copy one of the files in `assets/data/` to `assets/data/<slug>.js` and fill
+   in that community's target industries.
+4. Add a card in `index.html` and a list item in the "Other communities"
    section of the existing county pages.
 
 `dx` in the `COUNTIES` table nudges the label left or right of the star, in
@@ -121,6 +171,10 @@ Piedmont from the Coastal Plain, and still separates the state's labor
 markets. Amber is reserved for the four communities and is used for nothing
 else on the site.
 
-Everything essential works without JavaScript. `map.js` only sizes the
-draw-on animation and moves keyboard focus after the button is pressed;
-`prefers-reduced-motion` turns the animation off entirely.
+The landing page, the county headers and every link between pages work without
+JavaScript; `map.js` only sizes the draw-on animation and moves keyboard focus,
+and `prefers-reduced-motion` turns the animation off entirely. The target
+industries section is the one part that needs JavaScript, because it is drawn
+from the data file — which is the trade that keeps four counties of programs
+editable in one structured list instead of several hundred lines of hand-written
+markup. Without it, that section shows a short note saying so.

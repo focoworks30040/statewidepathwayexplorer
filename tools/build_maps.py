@@ -176,7 +176,7 @@ def write_locators(state_d, star):
             f'<path d="{c["d"]}" fill="{COL["star"]}" fill-opacity="0.28" '
             f'stroke="{COL["star"]}" stroke-width="9" stroke-linejoin="round"/>'
             f'<path d="{star}" fill="{COL["star"]}" '
-            f'transform="translate({c["x"]} {c["y"]}) scale(48)"/>'
+            f'transform="translate({c["x"]} {c["y"]}) scale(58)"/>'
             f"</svg>"
         )
         path = os.path.join(ROOT, "assets", "img", f"locator-{c['slug']}.svg")

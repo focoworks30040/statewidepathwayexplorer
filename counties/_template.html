@@ -2,12 +2,13 @@
   Template for a new community page.
 
   1. Copy this file to counties/<slug>.html
-  2. Find and replace COUNTYNAME, COUNTYSLUG, REGION, SUBREGION, COUNTY SEAT, INDUSTRY
-  3. Add the county to COUNTIES in tools/build_maps.py and run:
-       python3 tools/build_maps.py --fetch
-     That adds its star to the statewide map and writes its locator image.
-  4. Add a card for it in index.html, and a list item in the "Other communities"
-     section of every other county page.
+  2. Find and replace COUNTYNAME, COUNTYSLUG and COUNTY SEAT
+  3. Copy an existing file in assets/data/ to assets/data/<slug>.js and fill in
+     that community's target industries
+  4. Add the county to COUNTIES in tools/build_maps.py and run
+     `python3 tools/build_maps.py --fetch` to put its star on the statewide map
+  5. Add a card for it in index.html, and a list item in the "Other communities"
+     section of every other county page
 -->
 <!doctype html>
 <html lang="en">
@@ -15,7 +16,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>COUNTYNAME County &mdash; Georgia Statewide Pathway Explorer</title>
-<meta name="description" content="Education and career pathways in COUNTYNAME County, Georgia.">
+<meta name="description" content="Target industries and aligned education pathways in COUNTYNAME County, Georgia.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -32,21 +33,34 @@
 
 <header class="county-head">
   <div>
-    <p class="eyebrow">REGION &middot; SUBREGION</p>
     <h1>COUNTYNAME County</h1>
     <dl class="county-facts">
       <div><dt>County seat</dt><dd>COUNTY SEAT</dd></div>
-      <div><dt>Region</dt><dd>REGION</dd></div>
-      <div><dt>Anchor industries</dt><dd>INDUSTRY, INDUSTRY, INDUSTRY</dd></div>
     </dl>
+    <p class="county-intro">One or two sentences on this community and what shapes the work available in it.</p>
   </div>
   <img class="locator" src="../assets/img/locator-COUNTYSLUG.svg" width="180" height="200"
        alt="Outline of Georgia with COUNTYNAME County marked">
 </header>
 
-<main class="county-body">
-  <p>One or two sentences on where this community sits and what shapes its labor market.</p>
+<section class="industries" id="industries" aria-labelledby="ind-title">
+  <div class="section-head">
+    <p class="eyebrow">Target industries</p>
+    <h2 id="ind-title">Where the work is in COUNTYNAME County</h2>
+    <p class="section-note">Each industry shows how many local companies work in it and how
+      many aligned education programs are available here. Open one to see the high school,
+      technical college and university programs that lead into it.</p>
+  </div>
 
+  <div class="industry-root" id="industry-root">
+    <noscript>
+      <p class="placeholder">The target industries browser needs JavaScript. The rest of
+        this page, and the statewide map, work without it.</p>
+    </noscript>
+  </div>
+</section>
+
+<main class="county-body">
   <!-- CONTENT:START — everything between these two markers is this community's
        own page content. Replace the block below with your existing markup.
        Headings (h2), paragraphs and lists are already styled by county.css. -->
@@ -74,5 +88,7 @@
   <p class="foot-note">County boundaries from the U.S. Census Bureau.</p>
 </footer>
 
+<script src="../assets/data/COUNTYSLUG.js"></script>
+<script src="../assets/js/industries.js"></script>
 </body>
 </html>
