@@ -16,6 +16,7 @@ assets/data/<slug>.js       each community's industries and programs
 assets/img/locator-*.svg    small "you are here" map on each county page
 assets/img/industries/      photos for the industry detail views
 tools/build_maps.py         regenerates all map geometry
+tools/import_county.py      turns a county workbook into a data file
 ```
 
 ## Running it locally
@@ -60,7 +61,7 @@ not change. The file's own comments describe every field. In short:
   id: "health-care",              // used in the page address
   name: "Health Care",
   blurb: "One sentence on why this industry matters here.",
-  companies: 486,                 // or null to show a dash
+  companies: ["Archbold", "…"],   // the card shows how many
   image: "../assets/img/industries/forsyth-health-care.jpg",
   ctae:       [ { name: "…", org: "West Forsyth High School" } ],
   technical:  [ { name: "…", org: "Lanier Technical College", award: "Diploma" } ],
@@ -68,10 +69,12 @@ not change. The file's own comments describe every field. In short:
 }
 ```
 
-The "aligned programs" number counts the three lists for you, so it can never
-drift out of step with what is on the page. Set `programs:` explicitly only if
-you need it to say something else. Any program can take a `url` and its name
-becomes a link.
+Both numbers on a card are counted from the lists below them, so neither can
+drift out of step with what the page shows. The named employers are folded away
+behind the count in the detail view. Set `programs:` explicitly only if you need
+that number to say something else, and give `companies` a plain number if you
+have a count but not the names. Any program can take a `url` and its name
+becomes a link, and a CTAE pathway can take `courses: [...]`.
 
 **Pictures.** Put them in `assets/img/industries/` and point `image` at them.
 Until one is set, a labelled empty frame holds the same space, so adding a
@@ -86,6 +89,48 @@ notice above the cards.
 **Linking to one industry.** Each industry has its own address, so
 `counties/glynn.html#industry-marine-trades` opens straight to it. The back
 button returns to the grid.
+
+## Importing a county workbook
+
+Thomas County's data came from a spreadsheet, and the importer that read it
+works for any county laid out the same way:
+
+```sh
+pip install openpyxl
+python3 tools/import_county.py Glynn_County_Info.xlsx glynn Glynn
+```
+
+The workbook needs a sheet with "Industry" in its name, and row 2 carrying
+these headings:
+
+| Column | Heading | Contents |
+|---|---|---|
+| A | Largest Industries | the industry name, once, on its first row |
+| B | Local Companies in That Industry | one employer per row |
+| C | High School Pathways (District Name) | a cell ending in `Pathway:` opens a pathway; the cells under it are its courses |
+| D | *University Name* Majors | one major per row |
+| E | *Technical College Name* | one program per row |
+
+Everything below an industry's name belongs to it, down to the next industry.
+The institution for each of the last three columns is read out of the heading
+itself, so a workbook for another county needs no code changes.
+
+A second sheet with "Education" in its name — a district in column A, its
+pathways in column B — becomes the county-wide "CTAE pathways by school
+district" list under the cards.
+
+The importer also:
+
+- **Keeps your writing.** Blurbs, images and captions already in the data file
+  survive a re-import, so an updated workbook never costs you hand-written copy.
+- **Removes repeats.** An employer listed once per site is counted once.
+- **Reads award codes.** `Automation Technology, AAS (IS13) / Diploma (IST4)`
+  becomes one program with both awards; `Nurse Aide, TCC (CN21) / Nurse Aide
+  Accelerated, TCC (NAA1)` becomes two programs, because the second half names
+  its own program.
+- **Stops shouting.** `HEALTH SCIENCE` becomes `Health Science`, while short
+  acronyms stay in capitals. If a workbook uses one it does not know, add it to
+  `ACRONYMS` at the top of the script.
 
 ## Bringing in pages you have already built
 

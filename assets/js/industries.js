@@ -25,6 +25,11 @@
     });
   }
 
+  function companyCount(ind) {
+    if (Array.isArray(ind.companies)) return ind.companies.length;
+    return typeof ind.companies === "number" ? ind.companies : null;
+  }
+
   function programCount(ind) {
     if (typeof ind.programs === "number") return ind.programs;
     return LISTS.reduce(function (n, l) {
@@ -40,9 +45,21 @@
 
   function stats(ind) {
     return '<dl class="ind-stats">' +
-      stat("Local companies", ind.companies) +
+      stat("Local companies", companyCount(ind)) +
       stat("Aligned programs", programCount(ind)) +
       "</dl>";
+  }
+
+  // Named employers fold away by default: on some industries the list runs to
+  // well over a hundred, and the count on the tile is the headline.
+  function companyList(ind) {
+    if (!Array.isArray(ind.companies) || !ind.companies.length) return "";
+    return '<details class="ind-companies">' +
+      "<summary>Local companies <span class=\"p-count\">" +
+      ind.companies.length + "</span></summary>" +
+      "<ul>" + ind.companies.map(function (c) {
+        return "<li>" + esc(c) + "</li>";
+      }).join("") + "</ul></details>";
   }
 
   function card(ind) {
@@ -67,13 +84,21 @@
       '<span class="ind-figure-label">' + esc(ind.name) + "</span></figure>";
   }
 
+  function courseList(p) {
+    if (!p.courses || !p.courses.length) return "";
+    return '<ul class="p-courses">' + p.courses.map(function (c) {
+      return "<li>" + esc(c) + "</li>";
+    }).join("") + "</ul>";
+  }
+
   function programItem(p) {
     var name = esc(p.name);
     if (p.url) name = '<a href="' + esc(p.url) + '">' + name + "</a>";
     return "<li>" +
       '<span class="p-name">' + name + "</span>" +
-      '<span class="p-org">' + esc(p.org) + "</span>" +
+      (p.org ? '<span class="p-org">' + esc(p.org) + "</span>" : "") +
       (p.award ? '<span class="p-award">' + esc(p.award) + "</span>" : "") +
+      courseList(p) +
       "</li>";
   }
 
@@ -100,6 +125,7 @@
       '<div class="ind-lists">' + LISTS.map(function (l) {
         return programList(ind, l);
       }).join("") + "</div>" +
+      companyList(ind) +
       "</div>";
   }
 
@@ -111,7 +137,24 @@
         "<code>sample</code> to <code>false</code> to remove this notice.</p>"
       : "";
     return notice + '<div class="ind-grid">' +
-      data.industries.map(card).join("") + "</div>";
+      data.industries.map(card).join("") + "</div>" + districts();
+  }
+
+  // The county-wide CTAE inventory, which is about districts rather than any
+  // one industry, so it sits under the grid instead of inside a card.
+  function districts() {
+    if (!data.districts || !data.districts.length) return "";
+    return '<section class="districts">' +
+      "<h3>CTAE pathways by school district</h3>" +
+      '<div class="district-grid">' + data.districts.map(function (d) {
+        return '<section class="district">' +
+          "<h4>" + esc(d.name) + "</h4>" +
+          "<ul>" + d.pathways.map(function (p) {
+            return "<li>" +
+              '<span class="p-name">' + esc(p.name) + "</span>" +
+              courseList(p) + "</li>";
+          }).join("") + "</ul></section>";
+      }).join("") + "</div></section>";
   }
 
   function current() {

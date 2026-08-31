@@ -288,9 +288,10 @@
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
   grid-template-areas:
-    "back  back"
-    "head  figure"
-    "lists lists";
+    "back      back"
+    "head      figure"
+    "lists     lists"
+    "companies companies";
   gap: 2rem clamp(2rem, 4vw, 3.5rem);
   align-items: start;
 }
@@ -311,6 +312,8 @@
 .ind-detail-head { grid-area: head; }
 
 .ind-detail-head h3 {
+  width: fit-content;
+  max-width: 100%;
   font-size: clamp(1.6rem, 3.6vw, 2.5rem);
   color: var(--pine);
 }
@@ -465,6 +468,103 @@
 @media (max-width: 52rem) {
   .ind-detail {
     grid-template-columns: minmax(0, 1fr);
-    grid-template-areas: "back" "head" "figure" "lists";
+    grid-template-areas: "back" "head" "figure" "lists" "companies";
   }
 }
+
+/* ---- courses inside a pathway ------------------------------------ */
+
+.p-courses {
+  margin: 0.5rem 0 0;
+  padding: 0 0 0 0.85rem;
+  list-style: none;
+  border-left: 2px solid var(--sage-soft);
+}
+
+ul.p-courses li {
+  padding: 0.15rem 0;
+  border: 0;
+  font-size: 0.875rem;
+  color: color-mix(in srgb, var(--ink) 66%, var(--kaolin));
+}
+
+/* ---- the named employers behind the count ------------------------ */
+
+.ind-companies {
+  grid-area: companies;
+  margin-top: -0.5rem;
+  border: var(--rule);
+  background: var(--kaolin);
+}
+
+.ind-companies summary {
+  padding: 1rem 1.3rem;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--pine);
+}
+.ind-companies summary:hover { color: var(--amber-deep); }
+.ind-companies[open] summary { border-bottom: var(--rule); }
+
+.ind-companies ul {
+  margin: 0;
+  padding: 1.2rem 1.3rem 1.4rem;
+  list-style: none;
+  columns: 16rem;
+  column-gap: 2rem;
+}
+
+.ind-companies li {
+  break-inside: avoid;
+  padding: 0.2rem 0;
+  font-size: 0.9375rem;
+  color: color-mix(in srgb, var(--ink) 78%, var(--kaolin));
+}
+
+/* ---- CTAE pathways by district ----------------------------------- */
+
+.districts { margin-top: 3.5rem; }
+
+.districts h3 {
+  font-size: 1.25rem;
+  color: var(--pine);
+}
+
+.district-grid {
+  margin-top: 1.25rem;
+  display: grid;
+  align-items: start;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+}
+
+.district {
+  padding: 1.4rem 1.3rem 1.5rem;
+  background: var(--kaolin);
+  border: var(--rule);
+}
+
+.district h4 {
+  margin: 0 0 1rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--pine);
+}
+
+.district ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.district li {
+  padding: 0.7rem 0;
+  border-top: 1px solid color-mix(in srgb, var(--sage-soft) 60%, var(--kaolin));
+}
+.district li:first-child { border-top: 0; padding-top: 0; }
