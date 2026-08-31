@@ -1,0 +1,275 @@
+/* ---------------------------------------------------------------
+   Landing page: title, the state, the button. In that order,
+   filling the first screen.
+   --------------------------------------------------------------- */
+
+.atlas {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: clamp(1rem, 2.5vh, 2rem);
+  min-height: 100svh;
+  padding: clamp(1.5rem, 4vh, 3rem) var(--gutter) clamp(1.5rem, 4vh, 2.75rem);
+}
+
+/* ---- masthead ---------------------------------------------------- */
+
+.masthead { text-align: center; }
+
+.masthead h1 {
+  font-size: clamp(2.1rem, 5.6vw, 4.25rem);
+  margin: 0.45rem 0 0;
+  color: var(--pine);
+}
+
+.standfirst {
+  margin: 0.9rem auto 0;
+  max-width: 40rem;
+  color: color-mix(in srgb, var(--ink) 74%, var(--kaolin));
+  font-size: 1rem;
+}
+
+/* ---- the map ----------------------------------------------------- */
+
+.map {
+  margin: 0;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  justify-items: center;
+  gap: 0.75rem;
+}
+
+/* The canvas takes whatever height is left after the title and the button,
+   and the map is absolutely positioned inside it. An absolutely positioned
+   child contributes no intrinsic height, so the map can never grow the row
+   and push the button below the fold — it letterboxes instead. */
+.map-canvas {
+  position: relative;
+  min-height: 240px;
+  width: 100%;
+}
+
+.ga {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.land {
+  fill: url(#landFill);
+  stroke: var(--sage);
+  stroke-width: 3;
+  stroke-linejoin: round;
+}
+
+.fall-line {
+  fill: none;
+  stroke: var(--sage-soft);
+  stroke-width: 2.5;
+  stroke-dasharray: 2 12;
+  stroke-linecap: round;
+  opacity: 0.65;
+}
+
+.fall-label {
+  font-family: var(--mono);
+  font-size: 19px;
+  letter-spacing: 0.22em;
+  fill: var(--sage-soft);
+  opacity: 0.7;
+}
+
+/* ---- the four communities --------------------------------------- */
+
+.pin { cursor: pointer; }
+
+.pin-county {
+  fill: var(--amber);
+  fill-opacity: 0.16;
+  stroke: var(--amber);
+  stroke-width: 3;
+  stroke-linejoin: round;
+  transition: fill-opacity 220ms ease;
+}
+
+.pin-star {
+  fill: var(--amber);
+  transition: filter 220ms ease;
+}
+
+.pin-label {
+  font-family: var(--mono);
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  fill: var(--kaolin);
+  paint-order: stroke;
+  stroke: #13342C;
+  stroke-width: 6px;
+  stroke-linejoin: round;
+}
+
+.pin:hover .pin-county,
+.pin:focus-visible .pin-county { fill-opacity: 0.42; }
+
+.pin:hover .pin-star,
+.pin:focus-visible .pin-star {
+  filter: drop-shadow(0 0 14px rgba(242, 180, 65, 0.85));
+}
+
+.pin:hover .pin-label,
+.pin:focus-visible .pin-label { fill: var(--amber); }
+
+.pin:focus-visible { outline: none; }
+.pin:focus-visible .pin-county { stroke-width: 6; }
+
+.map-note {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  color: var(--sage);
+  max-width: 30rem;
+  text-align: center;
+}
+
+/* ---- call to action ---------------------------------------------- */
+
+.cta-wrap { text-align: center; }
+
+.cta {
+  display: inline-block;
+  padding: 0.95rem 1.9rem;
+  background: var(--pine);
+  color: var(--kaolin);
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(0.95rem, 0.9rem + 0.3vw, 1.125rem);
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  border-radius: 999px;
+  border: 2px solid var(--pine);
+  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.cta:hover,
+.cta:focus-visible {
+  background: var(--amber);
+  border-color: var(--pine);
+  color: var(--pine);
+  transform: translateY(-2px);
+}
+
+/* ---- community cards --------------------------------------------- */
+
+.communities {
+  border-top: var(--rule);
+  padding: clamp(3rem, 9vh, 5.5rem) var(--gutter) clamp(3rem, 8vh, 5rem);
+  scroll-margin-top: 0;
+}
+
+.section-head { max-width: var(--measure); }
+.section-head h2 {
+  font-size: clamp(1.6rem, 3.4vw, 2.5rem);
+  margin-top: 0.4rem;
+  color: var(--pine);
+}
+
+.grid {
+  list-style: none;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1px;
+  background: var(--sage-soft);
+  border: var(--rule);
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  height: 100%;
+  padding: 1.6rem 1.5rem 1.5rem;
+  background: var(--kaolin);
+  text-decoration: none;
+  transition: background 180ms ease;
+}
+
+.card-region {
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber-deep);
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  color: var(--pine);
+}
+
+.card-seat {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--sage);
+}
+
+.card-body {
+  margin-top: 0.6rem;
+  font-size: 0.9375rem;
+  color: color-mix(in srgb, var(--ink) 78%, var(--kaolin));
+}
+
+.card-go {
+  margin-top: auto;
+  padding-top: 1.4rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--pine);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--sage);
+}
+
+.card:hover { background: var(--kaolin-deep); }
+.card:hover .card-go { text-decoration-color: var(--amber-deep); }
+
+/* ---- page-load sequence: the survey draws itself ------------------ */
+
+@media (prefers-reduced-motion: no-preference) {
+  .js .land {
+    stroke-dasharray: 4000;
+    stroke-dashoffset: 4000;
+    animation: trace 1600ms cubic-bezier(0.4, 0, 0.2, 1) 120ms forwards;
+  }
+  .js .fall-line,
+  .js .fall-label { opacity: 0; animation: fade 700ms ease 1250ms forwards; }
+  .js .pin { opacity: 0; animation: plant 520ms cubic-bezier(0.2, 1.3, 0.4, 1) forwards; }
+  .js .pin { animation-delay: calc(1450ms + var(--i) * 130ms); }
+}
+
+@keyframes trace { to { stroke-dashoffset: 0; } }
+@keyframes fade { to { opacity: 0.68; } }
+@keyframes plant {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- short viewports: let the page scroll instead of squashing ---- */
+
+@media (max-height: 620px), (max-width: 34rem) {
+  .atlas { min-height: 0; }
+  .map-canvas { position: static; min-height: 0; }
+  .ga { position: static; width: 100%; height: auto; aspect-ratio: 9 / 10; }
+}
+
+@media (max-width: 34rem) {
+  .pin-label { font-size: 32px; }
+  .fall-label { font-size: 24px; }
+  .cta { display: block; }
+}

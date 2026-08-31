@@ -1,0 +1,92 @@
+/* ---------------------------------------------------------------
+   Georgia Statewide Pathway Explorer — tokens, type, shared shell
+   Palette: kaolin (the white clay mined across middle Georgia),
+   pine (the state's timber belt), and a kiln amber used only for
+   the four communities. Amber appears nowhere else on the site.
+   --------------------------------------------------------------- */
+
+:root {
+  --kaolin:      #EFF1EC;
+  --kaolin-deep: #E2E7DE;
+  --pine:        #12302A;
+  --pine-mid:    #1D4A3E;
+  --sage:        #7E9C90;
+  --sage-soft:   #C3D2C9;
+  --amber:       #F2B441;
+  --amber-deep:  #B87914;
+  --ink:         #0C1F1B;
+
+  --display: "Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --body: "Public Sans", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --gutter: clamp(1.25rem, 5vw, 4.5rem);
+  --measure: 34rem;
+  --rule: 1px solid var(--sage-soft);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--kaolin);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--display);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+p { margin: 0; }
+
+a { color: inherit; }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--amber-deep);
+}
+
+:where(a, button, [tabindex]):focus-visible {
+  outline: 3px solid var(--amber-deep);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.site-foot {
+  border-top: var(--rule);
+  padding: 2rem var(--gutter) 3rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--pine);
+}
+.site-foot .foot-note {
+  margin-top: 0.4rem;
+  color: var(--sage);
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

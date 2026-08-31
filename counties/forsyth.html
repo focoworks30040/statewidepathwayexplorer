@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forsyth County &mdash; Georgia Statewide Pathway Explorer</title>
+<meta name="description" content="Target industries and aligned education pathways in Forsyth County, Georgia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/base.css?v=6c9ff1d9">
+<link rel="stylesheet" href="../assets/css/county.css?v=5b868f3f">
+</head>
+<body class="county">
+
+<nav class="county-nav" aria-label="Breadcrumb">
+  <a class="back" href="../index.html">Statewide map</a>
+  <span class="sep" aria-hidden="true">/</span>
+  <span class="here" aria-current="page">Forsyth County</span>
+</nav>
+
+<header class="county-head">
+  <div>
+    <h1>Forsyth County</h1>
+    <dl class="county-facts">
+      <div><dt>County seat</dt><dd>Cumming</dd></div>
+    </dl>
+    <p class="county-intro">Forsyth County has grown faster than almost anywhere else in Georgia, and its target industries reflect employers within commuting distance of the whole north metro.</p>
+  </div>
+  <img class="locator" src="../assets/img/locator-forsyth.svg?v=07368585" width="180" height="200"
+       alt="Outline of Georgia with Forsyth County marked">
+</header>
+
+<section class="industries" id="industries" aria-labelledby="ind-title">
+  <div class="section-head">
+    <p class="eyebrow">Target industries</p>
+    <h2 id="ind-title">Where the work is in Forsyth County</h2>
+    <p class="section-note">Each industry shows how many local companies work in it and how
+      many aligned education programs are available here. Open one to see the high school,
+      technical college and university programs that lead into it.</p>
+  </div>
+
+  <div class="industry-root" id="industry-root">
+    <noscript>
+      <p class="placeholder">The target industries browser needs JavaScript. The rest of
+        this page, and the statewide map, work without it.</p>
+    </noscript>
+  </div>
+</section>
+
+<main class="county-body">
+  <!-- CONTENT:START — everything between these two markers is this community's
+       own page content. Replace the block below with your existing markup.
+       Headings (h2), paragraphs and lists are already styled by county.css. -->
+  <div class="placeholder">
+    <strong>Content slot for Forsyth County.</strong><br>
+    Paste the body of the existing Forsyth County page here &mdash; everything that
+    sat inside its <code>&lt;body&gt;</code>, minus its own header and footer. This is the community whose pages already exist &mdash; drop that content in here.<br><br>
+    Keep any page-specific CSS in <code>assets/css/forsyth.css</code> and link it in
+    the <code>&lt;head&gt;</code> above, so it cannot collide with the shared styles.
+  </div>
+  <!-- CONTENT:END -->
+</main>
+
+<section class="county-more" aria-labelledby="more-title">
+  <p class="eyebrow" id="more-title">Other communities</p>
+  <ul>
+    <li><a href="houston.html"><span class="n">Houston County</span><span class="r">Fall Line &middot; Central Georgia</span></a></li>
+    <li><a href="thomas.html"><span class="n">Thomas County</span><span class="r">Coastal Plain &middot; Southwest Georgia</span></a></li>
+    <li><a href="glynn.html"><span class="n">Glynn County</span><span class="r">Coast &middot; Golden Isles</span></a></li>
+  </ul>
+</section>
+
+<footer class="site-foot">
+  <p>Georgia Statewide Pathway Explorer</p>
+  <p class="foot-note">County boundaries from the U.S. Census Bureau.</p>
+</footer>
+
+<script src="../assets/data/forsyth.js?v=319d3798"></script>
+<script src="../assets/js/industries.js?v=2a65b74b"></script>
+</body>
+</html>
