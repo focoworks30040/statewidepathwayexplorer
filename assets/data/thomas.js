@@ -22,6 +22,20 @@ window.PATHWAY_DATA = {
   "slug": "thomas",
   "county": "Thomas",
   "sample": false,
+  "institutions": {
+    "ctae": {
+      "name": "Thomas County School District",
+      "url": null
+    },
+    "technical": {
+      "name": "Southern Regional Technical College",
+      "url": "https://southernregional.edu/college-catalog/current/programs"
+    },
+    "university": {
+      "name": "Thomas University",
+      "url": "https://www.thomasu.edu/majors/"
+    }
+  },
   "industries": [
     {
       "id": "forestry-and-logging",
@@ -42,6 +56,7 @@ window.PATHWAY_DATA = {
         {
           "name": "Forestry Animal Science Pathway",
           "org": "Thomas County School District",
+          "url": "https://tcchs.tcjackets.net/fs/resource-manager/view/3437befa-efcc-4f4f-848f-8fdb47717a8f",
           "courses": [
             "Basic Agriculture Science & Technology",
             "Forestry Science",
@@ -51,6 +66,7 @@ window.PATHWAY_DATA = {
         {
           "name": "Forestry Wildlife Systems Pathway",
           "org": "Thomas County School District",
+          "url": "https://tcchs.tcjackets.net/fs/resource-manager/view/d66d3409-3feb-4c6a-9824-1337ec9304e0",
           "courses": [
             "Basic Agriculture Science & Technology",
             "Wildlife Management",
@@ -60,6 +76,7 @@ window.PATHWAY_DATA = {
         {
           "name": "Horticulture Animal Science Pathway",
           "org": "Thomas County School District",
+          "url": "https://tcchs.tcjackets.net/fs/resource-manager/view/1b0ff628-102e-4382-9330-488d1626e3af",
           "courses": [
             "Basic Agriculture Science & Technology",
             "General Horticulture & Plant Science",
@@ -69,6 +86,7 @@ window.PATHWAY_DATA = {
         {
           "name": "Horticulture Forestry Science Pathway",
           "org": "Thomas County School District",
+          "url": "https://tcchs.tcjackets.net/fs/resource-manager/view/c0de0016-e121-438e-8a70-5eca3e71a758",
           "courses": [
             "Basic Agriculture Science & Technology",
             "Forestry Science",
@@ -126,8 +144,7 @@ window.PATHWAY_DATA = {
           "name": "Marketing",
           "org": "Thomas University"
         }
-      ],
-      "imageAlt": "A stack of cut logs at a landing beside a forest track"
+      ]
     },
     {
       "id": "wood-product-manufacturing",
@@ -789,6 +806,7 @@ window.PATHWAY_DATA = {
       "pathways": [
         {
           "name": "Forestry Animal Science Pathway",
+          "url": "https://tcchs.tcjackets.net/fs/resource-manager/view/3437befa-efcc-4f4f-848f-8fdb47717a8f",
           "courses": [
             "Basic Agriculture Science & Technology",
             "Forestry Science",
@@ -797,6 +815,7 @@ window.PATHWAY_DATA = {
         },
         {
           "name": "Forestry Wildlife Systems Pathway",
+          "url": "https://tcchs.tcjackets.net/fs/resource-manager/view/d66d3409-3feb-4c6a-9824-1337ec9304e0",
           "courses": [
             "Basic Agriculture Science & Technology",
             "Wildlife Management",
@@ -805,6 +824,7 @@ window.PATHWAY_DATA = {
         },
         {
           "name": "Horticulture Animal Science Pathway",
+          "url": "https://tcchs.tcjackets.net/fs/resource-manager/view/1b0ff628-102e-4382-9330-488d1626e3af",
           "courses": [
             "Basic Agriculture Science & Technology",
             "General Horticulture & Plant Science",
@@ -813,6 +833,7 @@ window.PATHWAY_DATA = {
         },
         {
           "name": "Horticulture Forestry Science Pathway",
+          "url": "https://tcchs.tcjackets.net/fs/resource-manager/view/c0de0016-e121-438e-8a70-5eca3e71a758",
           "courses": [
             "Basic Agriculture Science & Technology",
             "Forestry Science",
@@ -821,6 +842,7 @@ window.PATHWAY_DATA = {
         },
         {
           "name": "Plant & Landscape Systems Pathway",
+          "url": "https://tcchs.tcjackets.net/fs/resource-manager/view/c66bd65a-70b4-4adc-8e8e-eb0695f0741a",
           "courses": [
             "Basic Agriculture Science & Technology",
             "General Horticulture & Plant Science",
@@ -829,6 +851,7 @@ window.PATHWAY_DATA = {
         },
         {
           "name": "Veterinary Science Pathway",
+          "url": "https://tcchs.tcjackets.net/fs/resource-manager/view/1b710c96-9f1d-432e-ba9a-60ec1235db30",
           "courses": [
             "Basic Agriculture Science & Technology",
             "Animal Science & Biotechnology",

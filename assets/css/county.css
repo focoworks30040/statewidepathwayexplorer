@@ -388,19 +388,26 @@
 
 /* ---- the three program lists ------------------------------------- */
 
+/* Three fixed columns — one per kind of institution — so the reader can
+   compare across them. They stack only when three genuinely will not fit;
+   dropping to two would leave one column orphaned below the others. */
 .ind-lists {
   grid-area: lists;
   display: grid;
   gap: 1px;
   background: var(--sage-soft);
   border: var(--rule);
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .ind-list {
+  display: flex;
+  flex-direction: column;
   padding: 1.4rem 1.3rem 1.5rem;
   background: var(--kaolin);
 }
+
+.ind-list ul { flex: 1 1 auto; }
 
 .ind-list h4 {
   margin: 0 0 1rem;
@@ -568,3 +575,66 @@ ul.p-courses li {
   border-top: 1px solid color-mix(in srgb, var(--sage-soft) 60%, var(--kaolin));
 }
 .district li:first-child { border-top: 0; padding-top: 0; }
+
+/* ---- clickable programs ------------------------------------------ */
+
+.ind-list li.has-link,
+.district li.has-link { padding: 0; }
+
+.ind-list li.has-link:first-child,
+.district li.has-link:first-child { padding-top: 0; }
+
+.p-link {
+  display: block;
+  margin: 0 -0.6rem;
+  padding: 0.7rem 0.6rem;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: background 140ms ease;
+}
+
+.p-link .p-name {
+  text-decoration: underline;
+  text-decoration-color: var(--sage);
+  text-underline-offset: 3px;
+}
+
+/* An outbound mark, so it is clear the link leaves for the institution. */
+.p-link .p-name::after {
+  content: "\2197";
+  margin-left: 0.35em;
+  font-size: 0.85em;
+  color: var(--amber-deep);
+}
+
+.p-link:hover,
+.p-link:focus-visible {
+  background: color-mix(in srgb, var(--amber) 14%, var(--kaolin));
+}
+.p-link:hover .p-name { text-decoration-color: var(--amber-deep); }
+
+.ind-list-more {
+  margin-top: 1.4rem;
+  padding-top: 1rem;
+  border-top: 1px solid color-mix(in srgb, var(--sage-soft) 60%, var(--kaolin));
+  font-family: var(--mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pine);
+  text-decoration: none;
+}
+.ind-list-more::after { content: "\2197"; margin-left: 0.4em; color: var(--amber-deep); }
+.ind-list-more:hover { color: var(--amber-deep); }
+
+.ind-companies a {
+  text-decoration: underline;
+  text-decoration-color: var(--sage);
+  text-underline-offset: 3px;
+}
+.ind-companies a:hover { text-decoration-color: var(--amber-deep); }
+
+/* Stack the three lists only when three columns genuinely stop working. */
+@media (max-width: 48rem) {
+  .ind-lists { grid-template-columns: minmax(0, 1fr); }
+}

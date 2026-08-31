@@ -110,6 +110,20 @@ counts and program lists so the page has something to show. Replace them with
 your figures, then set `sample: false` at the top of the file to remove the
 notice above the cards.
 
+**Links on programs.** A program with a `url` becomes a clickable row that
+opens the institution's page in a new tab. There are two ways to add them:
+
+- *In the workbook.* Hyperlink the cell in Excel and re-import — the link is
+  carried straight onto the page. This is the way to add a lot of them at once.
+- *In the data file.* Add `url: "https://…"` to any program by hand. A link
+  added this way survives a re-import, unless the workbook now carries one of
+  its own for that program.
+
+Where a program has no link, the reader still gets somewhere useful: the
+`institutions` block at the top of the data file gives each column a link to
+that institution's own list of programs, shown at the foot of the column. Fill
+in a `url` there for any institution that has one.
+
 **Linking to one industry.** Each industry has its own address, so
 `counties/glynn.html#industry-marine-trades` opens straight to it. The back
 button returns to the grid.

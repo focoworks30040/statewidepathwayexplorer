@@ -19,6 +19,8 @@
       empty: "No university programs listed yet." }
   ];
 
+  var institutions = data.institutions || {};
+
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
@@ -58,7 +60,11 @@
       "<summary>Local companies <span class=\"p-count\">" +
       ind.companies.length + "</span></summary>" +
       "<ul>" + ind.companies.map(function (c) {
-        return "<li>" + esc(c) + "</li>";
+        if (typeof c === "string") return "<li>" + esc(c) + "</li>";
+        return "<li>" + (c.url
+          ? '<a href="' + esc(c.url) + '" target="_blank" rel="noopener noreferrer">' +
+            esc(c.name) + "</a>"
+          : esc(c.name)) + "</li>";
       }).join("") + "</ul></details>";
   }
 
@@ -105,14 +111,32 @@
   }
 
   function programItem(p) {
-    var name = esc(p.name);
-    if (p.url) name = '<a href="' + esc(p.url) + '">' + name + "</a>";
-    return "<li>" +
-      '<span class="p-name">' + name + "</span>" +
+    var body =
+      '<span class="p-name">' + esc(p.name) + "</span>" +
       (p.org ? '<span class="p-org">' + esc(p.org) + "</span>" : "") +
-      (p.award ? '<span class="p-award">' + esc(p.award) + "</span>" : "") +
-      courseList(p) +
-      "</li>";
+      (p.award ? '<span class="p-award">' + esc(p.award) + "</span>" : "");
+
+    // With a link, the whole row is the target — a bigger hit area than the
+    // name alone. The courses stay outside it so they are read as content
+    // rather than as part of the link.
+    if (p.url) {
+      body = '<a class="p-link" href="' + esc(p.url) + '" ' +
+        'target="_blank" rel="noopener noreferrer" ' +
+        'aria-label="' + esc(p.name) + (p.org ? " at " + esc(p.org) : "") +
+        ' (opens in a new tab)">' + body + "</a>";
+    }
+    return "<li" + (p.url ? ' class="has-link"' : "") + ">" +
+      body + courseList(p) + "</li>";
+  }
+
+  // Where a program has no link of its own, the institution's own list of
+  // programs is the next best place to send someone.
+  function institutionLink(spec) {
+    var inst = institutions[spec.key];
+    if (!inst || !inst.url) return "";
+    return '<a class="ind-list-more" href="' + esc(inst.url) + '" ' +
+      'target="_blank" rel="noopener noreferrer">All programs at ' +
+      esc(inst.name || spec.title) + "</a>";
   }
 
   function programList(ind, spec) {
@@ -123,7 +147,7 @@
     return '<section class="ind-list">' +
       "<h4>" + esc(spec.title) +
       (items.length ? ' <span class="p-count">' + items.length + "</span>" : "") +
-      "</h4>" + body + "</section>";
+      "</h4>" + body + institutionLink(spec) + "</section>";
   }
 
   function detail(ind) {
@@ -163,9 +187,14 @@
         return '<section class="district">' +
           "<h4>" + esc(d.name) + "</h4>" +
           "<ul>" + d.pathways.map(function (p) {
-            return "<li>" +
-              '<span class="p-name">' + esc(p.name) + "</span>" +
-              courseList(p) + "</li>";
+            var n = '<span class="p-name">' + esc(p.name) + "</span>";
+            if (p.url) {
+              n = '<a class="p-link" href="' + esc(p.url) + '" ' +
+                'target="_blank" rel="noopener noreferrer" aria-label="' +
+                esc(p.name) + ' (opens in a new tab)">' + n + "</a>";
+            }
+            return "<li" + (p.url ? ' class="has-link"' : "") + ">" +
+              n + courseList(p) + "</li>";
           }).join("") + "</ul></section>";
       }).join("") + "</div></section>";
   }

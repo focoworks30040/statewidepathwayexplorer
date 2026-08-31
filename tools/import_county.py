@@ -20,6 +20,10 @@ heading, so a workbook for another county needs no code changes.
 In column C, a cell ending in "Pathway:" starts a pathway and the cells under
 it are its courses.
 
+Hyperlink any cell in columns B to E in Excel and that link is carried onto
+the page, so the program becomes clickable. This is the way to add links in
+bulk: hyperlink the cells in the workbook and re-import.
+
 A second sheet whose name contains "Education" is read the same way — a
 district name in column A, the pathways it offers in column B — and becomes
 the county-wide list of CTAE pathways by district shown under the cards.
@@ -151,31 +155,40 @@ def build_ctae(rows, org):
     """A cell ending in 'Pathway:' opens a pathway; the cells under it are
     its courses. A cell with no pathway open is a pathway on its own."""
     out = []
-    for text in rows:
+    for text, link in rows:
         if text.endswith(":"):
-            out.append({"name": tidy(text.rstrip(": ").strip()), "org": org, "courses": []})
+            out.append({"name": tidy(text.rstrip(": ").strip()), "org": org,
+                        "url": link, "courses": []})
         elif out and out[-1]["courses"] is not None and out[-1].get("_open"):
             out[-1]["courses"].append(text)
         elif out and out[-1].get("_open"):
             out[-1]["courses"].append(text)
         else:
-            out.append({"name": tidy(text), "org": org, "courses": []})
+            out.append({"name": tidy(text), "org": org, "url": link,
+                        "courses": []})
         if text.endswith(":"):
             out[-1]["_open"] = True
     for p in out:
         p.pop("_open", None)
         if not p["courses"]:
             del p["courses"]
+        if not p.get("url"):
+            p.pop("url", None)
     return out
 
 
 def sheet_rows(wb, word, width):
+    """Each cell comes back as a (text, link) pair. A hyperlink placed on a
+    cell in Excel is carried through and makes that program clickable."""
     sheet = next((ws for ws in wb.worksheets if word in ws.title.lower()), None)
     if sheet is None:
         return None
-    rows = [[("" if c is None else str(c).strip()) for c in r]
-            for r in sheet.iter_rows(values_only=True)]
-    return [r + [""] * (width - len(r)) for r in rows]
+    rows = []
+    for r in sheet.iter_rows():
+        row = [(("" if c.value is None else str(c.value).strip()),
+                (c.hyperlink.target if c.hyperlink else None)) for c in r]
+        rows.append(row + [("", None)] * (width - len(row)))
+    return rows
 
 
 def read_districts(wb):
@@ -185,9 +198,9 @@ def read_districts(wb):
         return []
     blocks = []
     for row in rows:
-        if row[0]:
-            blocks.append({"name": row[0], "raw": []})
-        if blocks and row[1]:
+        if row[0][0]:
+            blocks.append({"name": row[0][0], "raw": []})
+        if blocks and row[1][0]:
             blocks[-1]["raw"].append(row[1])
     out = []
     for b in blocks:
@@ -206,7 +219,7 @@ def read_industries(path):
     if rows is None:
         sys.exit("no sheet with 'Industry' in its name")
 
-    head = rows[1]
+    head = [cell[0] for cell in rows[1]]
     orgs = {
         "ctae": org_from_heading(head[2]) or "High school",
         "university": org_from_heading(head[3], (r"\bMajors\b",)),
@@ -215,20 +228,16 @@ def read_industries(path):
 
     blocks = []
     for row in rows[2:]:
-        if row[0]:
-            blocks.append({"name": row[0], "companies": [], "ctae": [],
+        if row[0][0]:
+            blocks.append({"name": row[0][0], "companies": [], "ctae": [],
                            "university": [], "technical": []})
         if not blocks:
             continue
         b = blocks[-1]
-        if row[1]:
-            b["companies"].append(row[1])
-        if row[2]:
-            b["ctae"].append(row[2])
-        if row[3]:
-            b["university"].append(row[3])
-        if row[4]:
-            b["technical"].append(row[4])
+        for key, col in (("companies", 1), ("ctae", 2),
+                         ("university", 3), ("technical", 4)):
+            if row[col][0]:
+                b[key].append(row[col])
     return blocks, orgs, read_districts(wb)
 
 
@@ -236,22 +245,28 @@ def to_industry(block, orgs):
     name = block["name"]
 
     # The company column repeats an employer that has more than one site.
-    companies = dedupe(block["companies"], lambda c: c.lower())
+    companies = []
+    for text, link in dedupe(block["companies"], lambda c: c[0].lower()):
+        companies.append({"name": text, "url": link} if link else text)
 
     technical = []
-    for text in block["technical"]:
+    for text, link in block["technical"]:
         if text.lower() == name.lower():      # a category label, not a program
             continue
         pname, award, extras = parse_award(text)
         entry = {"name": tidy(pname), "org": orgs["technical"]}
         if award:
             entry["award"] = award
+        if link:
+            entry["url"] = link
         technical.append(entry)
         for extra in extras:
             ename, eaward, _ = parse_award(extra)
             e = {"name": tidy(ename), "org": orgs["technical"]}
             if eaward:
                 e["award"] = eaward
+            if link:
+                e["url"] = link
             technical.append(e)
 
     return {
@@ -263,13 +278,16 @@ def to_industry(block, orgs):
         "ctae": build_ctae(block["ctae"], orgs["ctae"]),
         "technical": dedupe(technical, lambda t: (t["name"], t.get("award"))),
         "university": dedupe(
-            [{"name": tidy(u), "org": orgs["university"]} for u in block["university"]],
+            [dict({"name": tidy(t), "org": orgs["university"]},
+                  **({"url": link} if link else {}))
+             for t, link in block["university"]],
             lambda u: u["name"]),
     }
 
 
 def keep_handwritten(industries, slug):
-    """Carry blurb / image / imageCaption over from the existing data file."""
+    """Carry blurb / image / imageCaption / imageAlt over from the existing
+    data file, and hand back anything else worth keeping."""
     path = os.path.join(ROOT, "assets", "data", slug + ".js")
     if not os.path.exists(path):
         return
@@ -286,9 +304,17 @@ def keep_handwritten(industries, slug):
         prev = by_id.get(ind["id"])
         if not prev:
             continue
-        for field in ("blurb", "image", "imageCaption"):
+        for field in ("blurb", "image", "imageCaption", "imageAlt"):
             if prev.get(field):
                 ind[field] = prev[field]
+        # A link added by hand to the data file survives, unless the workbook
+        # now carries one of its own for that program.
+        for key in ("ctae", "technical", "university"):
+            urls = {p["name"]: p["url"] for p in prev.get(key, []) if p.get("url")}
+            for p in ind[key]:
+                if not p.get("url") and p["name"] in urls:
+                    p["url"] = urls[p["name"]]
+    return old.get("institutions")
 
 
 def main():
@@ -299,9 +325,14 @@ def main():
 
     blocks, orgs, districts = read_industries(path)
     industries = [to_industry(b, orgs) for b in blocks]
-    keep_handwritten(industries, slug)
+    institutions = keep_handwritten(industries, slug) or {
+        "ctae": {"name": orgs["ctae"], "url": None},
+        "technical": {"name": orgs["technical"], "url": None},
+        "university": {"name": orgs["university"], "url": None},
+    }
 
     data = {"slug": slug, "county": county, "sample": False,
+            "institutions": institutions,
             "industries": industries, "districts": districts}
     out = os.path.join(ROOT, "assets", "data", slug + ".js")
     with open(out, "w") as fh:
