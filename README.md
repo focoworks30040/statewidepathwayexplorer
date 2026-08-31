@@ -17,6 +17,7 @@ assets/img/locator-*.svg    small "you are here" map on each county page
 assets/img/industries/      photos for the industry detail views
 tools/build_maps.py         regenerates all map geometry
 tools/import_county.py      turns a county workbook into a data file
+tools/stamp_assets.py       cache-busts asset links after an edit
 ```
 
 ## Running it locally
@@ -33,6 +34,19 @@ python3 -m http.server 8000
 This is plain HTML, so anything that serves files will host it. The shortest
 path is GitHub Pages: repository **Settings → Pages → Source: Deploy from a
 branch**, pick the branch and the `/ (root)` folder.
+
+**After editing anything under `assets/`, run:**
+
+```sh
+python3 tools/stamp_assets.py
+```
+
+It rewrites each asset link with a hash of that file's contents
+(`base.css?v=6c9ff1d9`). GitHub Pages serves CSS and JavaScript with a
+ten-minute CDN cache, so without this a deploy can go live while browsers
+still show the previous stylesheet — the page looks unchanged, or half
+changed, even after a hard refresh. The stamp makes each version its own
+address, so an update shows up as soon as it deploys.
 
 ## The four communities
 
