@@ -1,0 +1,128 @@
+<!-- ============================================================
+     "Explore Education Opportunities Across Georgia" CTA
+     ------------------------------------------------------------
+     Drop this whole block in just before </body> in the Pathway
+     Explorer page. It is self-contained and additive: it does not
+     touch or depend on any of the existing page JavaScript.
+
+     What it does
+       * Injects a button directly beneath the "Where you can learn
+         it" school grid (#d-schools).
+       * Shows the button ONLY while the Advanced Manufacturing
+         industry detail view is open, by watching the detail
+         heading (#d-title) and eyebrow (#d-ey) for text changes.
+       * Links to advanced-manufacturing-georgia.html.
+
+     To change where it points, edit GEO_HREF below.
+     To remove it entirely, delete this block. Nothing else in the
+     page depends on it.
+     ============================================================ -->
+<style>
+  .geo-cta{
+    display:block;margin:-20px 0 44px;
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-3) 100%);
+    border-radius:var(--radius);box-shadow:var(--shadow-sm);
+    padding:22px clamp(18px,3vw,28px);
+    text-decoration:none;color:var(--white);
+    display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+    transition:box-shadow .2s var(--ease),transform .2s var(--ease);
+  }
+  .geo-cta[hidden]{display:none;}
+  .geo-cta:hover{box-shadow:var(--shadow);transform:translateY(-2px);}
+  .geo-cta:focus-visible{outline:3px solid var(--navy-3);outline-offset:3px;}
+  .geo-cta .geo-ico{
+    width:44px;height:44px;border-radius:11px;flex:none;display:grid;place-items:center;
+    background:rgba(255,255,255,.12);color:var(--white);
+  }
+  .geo-cta .geo-ico svg{width:23px;height:23px;}
+  .geo-cta .geo-txt{flex:1 1 280px;min-width:0;}
+  .geo-cta .geo-txt strong{
+    display:block;font-family:"Poppins","Inter",system-ui,sans-serif;
+    font-weight:700;font-size:clamp(16px,2.2vw,19px);letter-spacing:-.01em;line-height:1.25;
+  }
+  .geo-cta .geo-txt span{display:block;margin-top:4px;font-size:13.5px;color:#cbd7e8;line-height:1.5;}
+  .geo-cta .geo-go{
+    margin-left:auto;flex:none;display:inline-flex;align-items:center;gap:8px;
+    background:var(--white);color:var(--navy);border-radius:999px;
+    padding:11px 20px;font-weight:650;font-size:14.5px;
+  }
+  .geo-cta .geo-go svg{width:16px;height:16px;}
+  @media (max-width:620px){
+    .geo-cta .geo-go{margin-left:0;width:100%;justify-content:center;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .geo-cta{transition:none;}
+    .geo-cta:hover{transform:none;}
+  }
+</style>
+
+<script>
+(function(){
+  var GEO_HREF  = 'advanced-manufacturing-georgia.html';
+  // Which industry the button belongs to. Matched against the detail
+  // heading and eyebrow text, case-insensitively.
+  var GEO_MATCH = /advanced\s+manufacturing/i;
+
+  function build(){
+    var a = document.createElement('a');
+    a.className = 'geo-cta';
+    a.id = 'geoCta';
+    a.href = GEO_HREF;
+    a.hidden = true;
+    a.innerHTML =
+      '<span class="geo-ico" aria-hidden="true">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" ' +
+             'stroke-linecap="round" stroke-linejoin="round">' +
+          '<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/>' +
+          '<path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z"/>' +
+        '</svg>' +
+      '</span>' +
+      '<span class="geo-txt">' +
+        '<strong>Explore Education Opportunities Across Georgia</strong>' +
+        '<span>See advanced manufacturing programs at technical colleges statewide.</span>' +
+      '</span>' +
+      '<span class="geo-go">Explore' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" ' +
+             'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+          '<path d="M5 12h14"/><path d="M13 6l6 6-6 6"/>' +
+        '</svg>' +
+      '</span>';
+    return a;
+  }
+
+  function init(){
+    var schools = document.getElementById('d-schools');
+    if (!schools || document.getElementById('geoCta')) return;
+
+    var cta = build();
+    schools.parentNode.insertBefore(cta, schools.nextSibling);
+
+    var title = document.getElementById('d-title');
+    var eyebrow = document.getElementById('d-ey');
+
+    function sync(){
+      var text = ((title && title.textContent) || '') + ' ' +
+                 ((eyebrow && eyebrow.textContent) || '');
+      cta.hidden = !GEO_MATCH.test(text);
+    }
+
+    // The detail pane is populated by the page's own script, so watch for
+    // the heading text changing rather than reading it once at load.
+    if (window.MutationObserver) {
+      var obs = new MutationObserver(sync);
+      [title, eyebrow].forEach(function(node){
+        if (node) obs.observe(node, { childList: true, characterData: true, subtree: true });
+      });
+    }
+    window.addEventListener('hashchange', sync);
+    sync();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+<!-- ================= END Explore Georgia CTA ================= -->

@@ -1,0 +1,3667 @@
+{
+  "source": "TCSG Pathway Explorer — Advanced Manufacturing Programs",
+  "categories": [
+    "Automation & Robotics",
+    "Machining & CNC",
+    "Welding & Joining",
+    "Electrical & Electronics",
+    "Engineering & Drafting",
+    "Automotive & Diesel",
+    "Aviation",
+    "HVAC & Plumbing",
+    "Construction & Trades",
+    "Industrial & Maintenance"
+  ],
+  "colleges": [
+    {
+      "name": "Albany Technical College",
+      "slug": "albany-technical-college",
+      "city": "Albany",
+      "region": "South Georgia",
+      "mono": "ALB",
+      "site": "https://www.albanytech.edu",
+      "programs": [
+        {
+          "name": "Automation and Robotics Technology",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Civil Engineering Technology",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Electrical and Computer Engineering Technology",
+          "cats": [
+            "Electrical & Electronics",
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Electronics Technology",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Engineering Graphics",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Athens Technical College",
+      "slug": "athens-technical-college",
+      "city": "Athens",
+      "region": "Northeast Georgia",
+      "mono": "ATH",
+      "site": "https://www.athenstech.edu",
+      "programs": [
+        {
+          "name": "Advanced CAD Technician TCC",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Air Conditioning Electrical Technician TCC",
+          "cats": [
+            "Electrical & Electronics",
+            "HVAC & Plumbing"
+          ]
+        },
+        {
+          "name": "Air Conditioning System Maintenance Technician TCC",
+          "cats": [
+            "HVAC & Plumbing",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Air Conditioning Technology Diploma",
+          "cats": [
+            "HVAC & Plumbing"
+          ]
+        },
+        {
+          "name": "Applied Technical Management Associate Degree",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Auto",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Automotive Chassis Technician TCC",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Climate Control Technician TCC",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Collision Mechanical Electrical Helper TCC",
+          "cats": [
+            "Electrical & Electronics",
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Collision Repair Assistant I TCC",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Collision Repair Assistant II TCC",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Collision Repair Associate Degree",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Collision Repair Diploma",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Collision Specialist TCC",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Electrical/Electronic Systems Technician TCC",
+          "cats": [
+            "Electrical & Electronics",
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Engine Performance Technician TCC",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Engine Repair Technician TCC",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Fundamentals Diploma",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Refinishing Assistant I TCC",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Refinishing Assistant II TCC",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Refinishing Specialist TCC",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Technology Associate Degree",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Technology Diploma",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Transmission/Transaxle Technician TCC",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Basic Electrician TCC",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Basic Grinding Operations TCC",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Basic Machining Operator TCC",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Basic Machinist TCC",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "CAD Operator Mechanical TCC",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "CAD Operator TCC",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "CAD User TCC",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "CNC Specialist TCC",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Commercial Electrical Technician TCC",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Commercial Truck Driving TCC",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Diesel Electrical/Electronic Systems Technician TCC",
+          "cats": [
+            "Electrical & Electronics",
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Diesel Engine Service Technician TCC",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Diesel Equipment Technology Diploma",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Diesel Truck Maintenance Technician TCC",
+          "cats": [
+            "Automotive & Diesel",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Drafter's Assistant TCC",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Drafting Aide TCC",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Drafting Technology Associate Degree",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Drafting Technology Diploma",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Electrical Construction Systems Technology Associate Degree",
+          "cats": [
+            "Electrical & Electronics",
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Electrical Construction Systems Technology Diploma",
+          "cats": [
+            "Electrical & Electronics",
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Engineering Technology and Applied Science",
+          "cats": [
+            "Engineering & Drafting",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Engineering Technology Basics TCC",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Gas Metal Arc Welding TCC",
+          "cats": [
+            "Welding & Joining"
+          ]
+        },
+        {
+          "name": "Gas Tungsten Arc Welding TCC",
+          "cats": [
+            "Welding & Joining"
+          ]
+        },
+        {
+          "name": "Heavy Diesel Service Technician TCC",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Industrial Controls Technician TCC",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Electrician TCC",
+          "cats": [
+            "Electrical & Electronics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Fluid Power Technician TCC",
+          "cats": [
+            "Automation & Robotics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Motor Control Technician TCC",
+          "cats": [
+            "Automation & Robotics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Systems Technology Associate Degree",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Systems Technology Diploma",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Lathe Operator TCC",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Manufacturing Operations Specialist TCC",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Mechatronics Technician TCC",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Mill Operator TCC",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Personal Robotics TCC",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Photovoltaic Systems Technician TCC",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Precision Machining and Manufacturing Technology Associate Degree",
+          "cats": [
+            "Machining & CNC",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Precision Machining and Manufacturing Technology Diploma",
+          "cats": [
+            "Machining & CNC",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Programmable Control Technician I TCC",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Residential Electrical Technician TCC",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Shielded Metal Arc Welding TCC",
+          "cats": [
+            "Welding & Joining"
+          ]
+        },
+        {
+          "name": "Welding Technology Diploma",
+          "cats": [
+            "Welding & Joining"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Atlanta Technical College",
+      "slug": "atlanta-technical-college",
+      "city": "Atlanta",
+      "region": "Metro Atlanta",
+      "mono": "ATL",
+      "site": "https://www.atlantatech.edu",
+      "programs": [
+        {
+          "name": "Advanced CAD Technician TCC",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Advanced Shielded Metal Arc Welder TCC",
+          "cats": [
+            "Welding & Joining"
+          ]
+        },
+        {
+          "name": "Air Conditioning Electrical Technician TCC",
+          "cats": [
+            "Electrical & Electronics",
+            "HVAC & Plumbing"
+          ]
+        },
+        {
+          "name": "Air Conditioning System Maintenance Technician TCC",
+          "cats": [
+            "HVAC & Plumbing",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Air Conditioning Technician Assistant TCC",
+          "cats": [
+            "HVAC & Plumbing"
+          ]
+        },
+        {
+          "name": "Air Conditioning Technology Diploma",
+          "cats": [
+            "HVAC & Plumbing"
+          ]
+        },
+        {
+          "name": "Apartment Maintenance Technician TCC",
+          "cats": [
+            "Construction & Trades",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Auto Collision Repair Diploma",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Auto Electrical/Electronic System Technician TCC",
+          "cats": [
+            "Electrical & Electronics",
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automation Technology AAS",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Automation Technology Diploma",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Automation Technology Mechatronics TCC",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Automotive Chassis Technician Specialist TCC",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Climate Control Technician TCC",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Collision Repair Assistant I TCC",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Collision Repair Assistant II TCC",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Engine Performance Technician TCC",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Engine Repair Technician TCC",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Technology Diploma",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Transmission/Transaxle Tech Specialist TCC",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Aviation Maintenance Technician-Airframe TCC",
+          "cats": [
+            "Aviation",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Aviation Maintenance Technician-Power Plant TCC",
+          "cats": [
+            "Aviation",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Avionics Bench Technician TCC",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Avionics Installer Certificate TCC",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Avionics Technician Certificate TCC",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Basic Electricity Technician TCC",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Basic Electronic Assembler TCC",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Basic Electronics Technician TCC",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Basic Shielded Metal Arc Welder TCC",
+          "cats": [
+            "Welding & Joining"
+          ]
+        },
+        {
+          "name": "CAD Operator TCC",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Carpentry Diploma",
+          "cats": [
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Certified Construction Worker TCC",
+          "cats": [
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Civil Engineering Technology AAS",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Commercial Carpenter TCC",
+          "cats": [
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Commercial Truck Driving TCC",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Commercial Wiring TCC",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Construction Management AAS",
+          "cats": [
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Construction Management Diploma",
+          "cats": [
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Construction Manager TCC",
+          "cats": [
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Diesel Electrical and Electronic Systems Technician TCC",
+          "cats": [
+            "Electrical & Electronics",
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Diesel Engine Service Technician TCC",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Diesel Equipment Technology Diploma",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Diesel Truck Maintenance Technician TCC",
+          "cats": [
+            "Automotive & Diesel",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Drafters Assistant TCC",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Drafting Aide TCC",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Drafting Technology AAS",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Drafting Technology Diploma",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Electrical Lineworker TCC",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Electrical Systems Technology Diploma",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Electrical Utility Technology Diploma",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Engineering Technology Fundamentals TCC",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Flooring Installation Technician TCC",
+          "cats": [
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Flux Cored Arc Welder TCC",
+          "cats": [
+            "Welding & Joining"
+          ]
+        },
+        {
+          "name": "Framing Carpenter TCC",
+          "cats": [
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Gas Metal Arc Welder TCC",
+          "cats": [
+            "Welding & Joining"
+          ]
+        },
+        {
+          "name": "Heating and Air Conditioning Installation Technician TCC",
+          "cats": [
+            "HVAC & Plumbing"
+          ]
+        },
+        {
+          "name": "Industrial Electrical Controls TCC",
+          "cats": [
+            "Electrical & Electronics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Engineering Technology AAS",
+          "cats": [
+            "Engineering & Drafting",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Logistics and Supply Chain Management AAS",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Logistics and Supply Chain Management Diploma",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Logistics and Supply Chain Technician TCC",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Logistics Management Specialist TCC",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Logistics Management Technician TCC",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Natural Gas Technician TCC",
+          "cats": [
+            "HVAC & Plumbing"
+          ]
+        },
+        {
+          "name": "NCCER Advanced Carpentry TCC",
+          "cats": [
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "NCCER Carpentry Fundamentals TCC",
+          "cats": [
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Plumbing",
+          "cats": [
+            "HVAC & Plumbing"
+          ]
+        },
+        {
+          "name": "Procurement AAS",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Residential Wiring TCC",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Supply Chain Specialist TCC",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Welding and Joining Technology Diploma",
+          "cats": [
+            "Welding & Joining"
+          ]
+        },
+        {
+          "name": "Welding Blueprint Reading TCC",
+          "cats": [
+            "Welding & Joining"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Augusta Technical College",
+      "slug": "augusta-technical-college",
+      "city": "Augusta",
+      "region": "East Georgia",
+      "mono": "AUG",
+      "site": "https://www.augustatech.edu",
+      "programs": [
+        {
+          "name": "Advanced Pipe Welding, Technical Certificate of Credit",
+          "cats": [
+            "Welding & Joining"
+          ]
+        },
+        {
+          "name": "Advanced Shielded Metal Arc Welder, Technical Certificate of Credit",
+          "cats": [
+            "Welding & Joining"
+          ]
+        },
+        {
+          "name": "Air Conditioning Electrical Technician, Technical Certificate of Credit",
+          "cats": [
+            "Electrical & Electronics",
+            "HVAC & Plumbing"
+          ]
+        },
+        {
+          "name": "Air Conditioning Technician Assistant, Technical Certificate of Credit",
+          "cats": [
+            "HVAC & Plumbing"
+          ]
+        },
+        {
+          "name": "Air Conditioning Technology, Diploma",
+          "cats": [
+            "HVAC & Plumbing"
+          ]
+        },
+        {
+          "name": "Architectural and Engineering Drafting Technology, Associate of Applied Science Degree",
+          "cats": [
+            "Engineering & Drafting",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Architectural and Engineering Drafting Technology, Diploma",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Automation Technology, Associate of Applied Science Degree",
+          "cats": [
+            "Automation & Robotics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Automotive Chassis Technician Specialist, Technical Certificate of Credit",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Climate Control Technician, Technical Certificate of Credit",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Electrical/Electronic Systems Technician, Technical Certificate of Credit",
+          "cats": [
+            "Electrical & Electronics",
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Engine Performance Technician, Technical Certificate of Credit",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Engine Repair Technician, Technical Certificate of Credit",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Light Duty Diesel Engine, Technical Certificate of Credit",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Technology, Diploma",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Transmission/Transaxle Technician Specialist, Technical Certificate of Credit",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Aviation Maintenance Technician, Technical Certificate of Credit",
+          "cats": [
+            "Aviation",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Aviation Maintenance Technician-Airframe, Technical Certificate of Credit",
+          "cats": [
+            "Aviation",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Aviation Maintenance Technician-Powerplant, Technical Certificate of Credit",
+          "cats": [
+            "Aviation",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Aviation Maintenance Technology, Associate of Applied Science Degree",
+          "cats": [
+            "Aviation",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Aviation Maintenance Technology, Diploma",
+          "cats": [
+            "Aviation",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Basic Shielded Metal Arc Welder, Technical Certificate of Credit",
+          "cats": [
+            "Welding & Joining"
+          ]
+        },
+        {
+          "name": "Certified Construction Worker, Technical Certificate of Credit",
+          "cats": [
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Chemical Analysis Technician, Technical Certificate of Credit",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Chemical Engineering Technology, Technical Certificate of Credit",
+          "cats": [
+            "Engineering & Drafting",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Chemical Technology, Associate of Applied Science Degree",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Commercial Wiring, Technical Certificate of Credit",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Computer Engineering Technology, Technical Certificate of Credit",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Dual Enrollment Manufacturing Production Assistant, Technical Certificate of Credit",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Electrical and Computer Engineering Technology, Associate of Applied Science Degree",
+          "cats": [
+            "Electrical & Electronics",
+            "Engineering & Drafting",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Electrical Contracting Technician, Technical Certificate of Credit",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Electrical Control Systems, Diploma",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Electrical Engineering Technology Fundamentals, Technical Certificate of Credit",
+          "cats": [
+            "Electrical & Electronics",
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Electrical Systems Technology, Diploma",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Electronics Engineering Technology, Technical Certificate of Credit",
+          "cats": [
+            "Electrical & Electronics",
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Engineering Technology Basics, Technical Certificate of Credit",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Gas Metal Arc Welder, Technical Certificate of Credit",
+          "cats": [
+            "Welding & Joining"
+          ]
+        },
+        {
+          "name": "Industrial Construction I, Technical Certificate of Credit",
+          "cats": [
+            "Construction & Trades",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Mechanical Systems, Diploma",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Instrumentation and Control Engineering Technology, Technical Certificate of Credit",
+          "cats": [
+            "Automation & Robotics",
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Instrumentation and Controls Technician I, Technical Certificate of Credit",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Mechanical Engineering Technology, Associate of Applied Science Degree",
+          "cats": [
+            "Engineering & Drafting",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Mechatronics Technology, Associate of Applied Science Degree",
+          "cats": [
+            "Automation & Robotics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Mechatronics Technology, Diploma",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "NCCER Basic Electrical Systems Technician, Technical Certificate of Credit",
+          "cats": [
+            "Electrical & Electronics",
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "NCCER Electrical Systems Construction and Maintenance, Associate of Applied Science Degree",
+          "cats": [
+            "Electrical & Electronics",
+            "Construction & Trades",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "NCCER Electrical Systems Construction and Maintenance, Diploma",
+          "cats": [
+            "Electrical & Electronics",
+            "Construction & Trades",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "NCCER Electrical Systems Construction and Maintenance, Technical Certificate of Credit",
+          "cats": [
+            "Electrical & Electronics",
+            "Construction & Trades",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "NCCER Intermediate Electrical Systems Technician, Technical Certificate of Credit",
+          "cats": [
+            "Electrical & Electronics",
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "NCCER Specialty Electrical Services, Technical Certificate of Credit",
+          "cats": [
+            "Electrical & Electronics",
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Nuclear Engineering Technology, Associate of Applied Science Degree",
+          "cats": [
+            "Engineering & Drafting",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Nuclear Science Technology, Technical Certificate of Credit",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Photovoltaic Systems Installation and Repair Technician, Technical Certificate of Credit",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Residential Wiring Technician, Technical Certificate of Credit",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Science Technology, Technical Certificate of Credit",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Wastewater Quality Technician, Technical Certificate of Credit",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Water Quality Technician, Technical Certificate of Credit",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Welding and Joining Technology, Diploma",
+          "cats": [
+            "Welding & Joining"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Central Georgia Technical College",
+      "slug": "central-georgia-technical-college",
+      "city": "Warner Robins / Macon",
+      "region": "Middle Georgia",
+      "mono": "CGA",
+      "site": "https://www.centralgatech.edu",
+      "programs": [
+        {
+          "name": "AI Enhanced Robotic Manufacturing Specialist",
+          "cats": [
+            "Automation & Robotics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Air Conditioning Technology",
+          "cats": [
+            "HVAC & Plumbing"
+          ]
+        },
+        {
+          "name": "Aircraft Structural Technology",
+          "cats": [
+            "Aviation"
+          ]
+        },
+        {
+          "name": "Automation Technology",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Automotive Collision Repair",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Technology",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Aviation Maintenance Technology",
+          "cats": [
+            "Aviation",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Construction Management Diesel Equipment Technology",
+          "cats": [
+            "Automotive & Diesel",
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Electrical Systems Technology",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Electronics Technology",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Engineering Technology",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Mechatronics Technology",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Metrology",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Metrology (Measurement Science)",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Plumbing",
+          "cats": [
+            "HVAC & Plumbing"
+          ]
+        },
+        {
+          "name": "Precision Machining & Manufacturing Technology",
+          "cats": [
+            "Machining & CNC",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Precision Machining and Manufacturing",
+          "cats": [
+            "Machining & CNC",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Welding and Joining Technology",
+          "cats": [
+            "Welding & Joining"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chattahoochee Technical College",
+      "slug": "chattahoochee-technical-college",
+      "city": "Marietta",
+      "region": "Metro Atlanta",
+      "mono": "CHT",
+      "site": "https://www.chattahoocheetech.edu",
+      "programs": [
+        {
+          "name": "Air Conditioning Technology",
+          "cats": [
+            "HVAC & Plumbing"
+          ]
+        },
+        {
+          "name": "Automotive Technology",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Aviation Programs",
+          "cats": [
+            "Aviation"
+          ]
+        },
+        {
+          "name": "Carpentry Technology",
+          "cats": [
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Commercial Truck Driving",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Diesel Technology",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Drafting Technology",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Industrial Maintenance and Electrical Technology",
+          "cats": [
+            "Electrical & Electronics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Precision Machining and Manufacturing",
+          "cats": [
+            "Machining & CNC",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Welding and Joining Technology",
+          "cats": [
+            "Welding & Joining"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Coastal Pines Technical College",
+      "slug": "coastal-pines-technical-college",
+      "city": "Waycross",
+      "region": "Southeast Georgia",
+      "mono": "CPT",
+      "site": "https://www.coastalpines.edu",
+      "programs": [
+        {
+          "name": "Air Conditioning Technology",
+          "cats": [
+            "HVAC & Plumbing"
+          ]
+        },
+        {
+          "name": "Automotive Collision",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Technology",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Avionics Maintenance Technology",
+          "cats": [
+            "Electrical & Electronics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Commercial Truck Driving",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Construction",
+          "cats": [
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Diesel Technology",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Drafting",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Electrical Construction and Maintenance",
+          "cats": [
+            "Electrical & Electronics",
+            "Construction & Trades",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Electronics Technology",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Electronics-Computer Engineering Technology",
+          "cats": [
+            "Electrical & Electronics",
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Engineering Technology",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Industrial Systems",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Machine Tool",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Marine Engine Technology",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Railroad Industry",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Welding and Joining Technology",
+          "cats": [
+            "Welding & Joining"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Columbus Technical College",
+      "slug": "columbus-technical-college",
+      "city": "Columbus",
+      "region": "West Georgia",
+      "mono": "COL",
+      "site": "https://www.columbustech.edu",
+      "programs": [
+        {
+          "name": "Advanced CAD Technician",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Advanced Carpentry Certificate",
+          "cats": [
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Advanced Shielded Metal Arc Welder, Certificate",
+          "cats": [
+            "Welding & Joining"
+          ]
+        },
+        {
+          "name": "Air Conditioning Electrical Technician",
+          "cats": [
+            "Electrical & Electronics",
+            "HVAC & Plumbing"
+          ]
+        },
+        {
+          "name": "Air Conditioning Repair Specialist",
+          "cats": [
+            "HVAC & Plumbing"
+          ]
+        },
+        {
+          "name": "Air Conditioning Technician Assistant, Certificate",
+          "cats": [
+            "HVAC & Plumbing"
+          ]
+        },
+        {
+          "name": "Air Conditioning Technology, Diploma",
+          "cats": [
+            "HVAC & Plumbing"
+          ]
+        },
+        {
+          "name": "Auto Basic Maintenance and Detailing Technician, Certificate",
+          "cats": [
+            "Automotive & Diesel",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Automation Technology, AAS",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Automation Technology, Diploma",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Automotive Automatic Transmission Technician Specialist, Certificate",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Brake Technician Specialist, Certificate",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Chassis Technician Specialist, Certificate",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Climate Control Technician, Certificate",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Collision Repair Assistant I, Certificate",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Collision Repair Assistant II, Certificate",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Collision Repair, Diploma",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Electrical/Electronic Systems Technician, Certificate",
+          "cats": [
+            "Electrical & Electronics",
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Engine Performance Technician, Certificate",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Engine Repair Technician, Certificate",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Fundamentals, Diploma",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Light Duty Diesel Engine Tech",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Manual Transmission and Drivetrain Technician, Certificate",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Refinishing Assistant I, Certificate",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Refinishing Assistant II, Certificate",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Steering and Suspension Technician Specialist, Certificate",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Technology, AAS",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Technology, Diploma",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Transmission/Transaxle Tech Specialist, Certificate",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Basic CNC Technician",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Basic Electrical Technician",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Basic Machining Operator",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Basic Machinist, Certificate",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Basic Manufacturing AC Circuits Certificate",
+          "cats": [
+            "Electrical & Electronics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Basic Manufacturing DC Circuits",
+          "cats": [
+            "Electrical & Electronics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Basic Manufacturing Electrical Certificate",
+          "cats": [
+            "Electrical & Electronics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Basic Manufacturing Fluid Power Certificate",
+          "cats": [
+            "Automation & Robotics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Basic Manufacturing Industrial PL",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Basic Manufacturing Pumps and Piping",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Basic Shielded Metal Arc Welder, Certificate",
+          "cats": [
+            "Welding & Joining"
+          ]
+        },
+        {
+          "name": "Cabinetmaking Assembly Technician, Certificate",
+          "cats": [
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Cabinetmaking Installation Technician, Certificate",
+          "cats": [
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Cabinetmaking, Diploma",
+          "cats": [
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "CAD Operator",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Carpentry, Diploma",
+          "cats": [
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Certified Construction Worker, Certificate",
+          "cats": [
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Certified Manufacturing, Certificate",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Certified Production Technician",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Civil Engineering Technology Degree",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "CNC Technology, Diploma",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Commercial Truck Driving",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Construction Career Launch Blueprint Reading, Certificate",
+          "cats": [
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Construction Career Launch Certificate",
+          "cats": [
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Construction Career Launch Safety Certificate",
+          "cats": [
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "D Printing and Rapid Prototyping, Certificate",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Diesel Electrical Electronic Systems Technician",
+          "cats": [
+            "Electrical & Electronics",
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Diesel Engine Service Technician, Certificate",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Diesel Equipment Technology",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Diesel Truck Maintenance Technician",
+          "cats": [
+            "Automotive & Diesel",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Drafter's Assistant, Certificate",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Drafting Technology, AAS",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Drafting Technology, Diploma",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Dual Enrollment Basic Shielded Arc Welder, Certificate",
+          "cats": [
+            "Welding & Joining"
+          ]
+        },
+        {
+          "name": "Dual Enrollment Gas Metal Arc Welder, Certificate",
+          "cats": [
+            "Welding & Joining"
+          ]
+        },
+        {
+          "name": "Electric Vehicle Professional, Certificate",
+          "cats": [
+            "Electrical & Electronics",
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Engineering Technology Fundamentals",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Engineering Technology, AAS",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Framing Carpenter, Certificate",
+          "cats": [
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Gas Metal Arc Welder, Certificate",
+          "cats": [
+            "Welding & Joining"
+          ]
+        },
+        {
+          "name": "Gas Tungsten Arc Welder, Certificate",
+          "cats": [
+            "Welding & Joining"
+          ]
+        },
+        {
+          "name": "Heavy Diesel Service Technician, Certificate",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Hybrid Electric Vehicle Repair Technician, Certificate",
+          "cats": [
+            "Electrical & Electronics",
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Industrial Construction I, Certificate",
+          "cats": [
+            "Construction & Trades",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Electrician, Certificate",
+          "cats": [
+            "Electrical & Electronics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Fluid Power Technician, Certificate",
+          "cats": [
+            "Automation & Robotics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Motor Control Technician, Certificate",
+          "cats": [
+            "Automation & Robotics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Lathe Operator",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Manufacturing Maintenance Technician",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Manufacturing Production Assistant",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Mechatronics Specialist",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Mechatronics Technician",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Mechatronics Technology, AAS",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Mechatronics Technology, Diploma",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Mill Operator",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "NCCER Basic Masonry",
+          "cats": [
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "NCCER Carpentry Fundamentals",
+          "cats": [
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Precision Machining and Manufacturing",
+          "cats": [
+            "Machining & CNC",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Programmable Control Technician, Certificate",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Residential Carpentry, Diploma",
+          "cats": [
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Robotic Technician Certificate",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Site Layouts/Footings/Foundations, Certificate",
+          "cats": [
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Welding and Joining Technology, Diploma",
+          "cats": [
+            "Welding & Joining"
+          ]
+        },
+        {
+          "name": "Welding Career Launch Blueprint Reading, Certificate",
+          "cats": [
+            "Welding & Joining"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Georgia Northwestern Technical College",
+      "slug": "georgia-northwestern-technical-college",
+      "city": "Rome",
+      "region": "Northwest Georgia",
+      "mono": "GNW",
+      "site": "https://www.gntc.edu",
+      "programs": [
+        {
+          "name": "Applied Technical Management (AS33)",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Architectural and Engineering Drawing Technology (DT13) Degree",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Auto Collision Repair (ACR2) Diploma",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automation Engineering Technology (AET3) Degree",
+          "cats": [
+            "Automation & Robotics",
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Automation Technology (IS13) Degree",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Automation Technology (IST4) Diploma",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Automotive Chassis Technician Specialist (ASG1) Certificate",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Collision Repair Assistant I (AB51) Certificate",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Engine Performance Technician (AE51) Certificate",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Technology (AT23) Degree",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Aviation Maintenance Technology (AM43) Associate of Applied Science Degree",
+          "cats": [
+            "Aviation",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "CAD Operator Mechanical (CP61) Certificate",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Design Tech Assistant (DA31) Certificate",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Electrical Control Systems (EC22) Diploma",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Electrical Maintenance Technician (EM81) Certificate",
+          "cats": [
+            "Electrical & Electronics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Engineering Technology Basics (EBT1) Certificate",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Industrial Electrician (IE41)",
+          "cats": [
+            "Electrical & Electronics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Fluid Power Technician (IF11) Certificate",
+          "cats": [
+            "Automation & Robotics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Motor Controls Technician (IM41) Certificate",
+          "cats": [
+            "Automation & Robotics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Mechatronics Specialist (AM11) Certificate",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Robotic Technician (RT41) Certificate",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Technical Studies (TS23) Degree",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Georgia Piedmont Technical College",
+      "slug": "georgia-piedmont-technical-college",
+      "city": "Clarkston",
+      "region": "Metro Atlanta",
+      "mono": "GPT",
+      "site": "https://www.gptc.edu",
+      "programs": [
+        {
+          "name": "Basic Electronic Assembler technical certificate",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "CAD Operator Mechanical technical certificate",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Computer Engineering Technology technical certificate",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "D Printing and Rapid Prototyping technical certificate",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Drafting Technology AAS degree and diploma",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Electrical and Computer Engineering Technology AAS degree",
+          "cats": [
+            "Electrical & Electronics",
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Electrical Control Systems diploma",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Electronics Fundamentals diploma",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Electronics Technology AAS degree and diploma",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Industrial Mechanical Systems diploma",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Systems Technology AAS degree",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Systems Technology diploma",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Mechatronics Technician technical certificate",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Mechatronics Technology AAS degree",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Mechatronics Technology diploma",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Precision Machining and Manufacturing AAS degree",
+          "cats": [
+            "Machining & CNC",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Precision Machining and Manufacturing diploma",
+          "cats": [
+            "Machining & CNC",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Precision Manufacturing and Maintenance AAS degree",
+          "cats": [
+            "Machining & CNC",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Precision Manufacturing and Maintenance for GACATT diploma",
+          "cats": [
+            "Machining & CNC",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Welding and Joining Technology diploma",
+          "cats": [
+            "Welding & Joining"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gwinnett Technical College",
+      "slug": "gwinnett-technical-college",
+      "city": "Lawrenceville",
+      "region": "Metro Atlanta",
+      "mono": "GWT",
+      "site": "https://www.gwinnetttech.edu",
+      "programs": [
+        {
+          "name": "Advanced CAD Technician",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Automotive Technology Diploma",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Basic Electrician Assistant certificate",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Drafting Technology AAS degree and diploma",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Driverless and Driver Assist Systems certificate",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Electric Vehicle Charging Station Technician certificate",
+          "cats": [
+            "Electrical & Electronics",
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Electrical Systems Technology AAS degree",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Engineering Technology AAS degree",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Engineering Technology Basics certificate",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Hybrid/Electric Vehicle Service Technician certificate",
+          "cats": [
+            "Electrical & Electronics",
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Mechatronics Technology AAS degree, diploma, and certificate",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Rapid Transit Technology diploma",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Welding and Joining Technology diploma",
+          "cats": [
+            "Welding & Joining"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Lanier Technical College",
+      "slug": "lanier-technical-college",
+      "city": "Gainesville",
+      "region": "Northeast Georgia",
+      "mono": "LAN",
+      "site": "https://www.laniertech.edu",
+      "programs": [
+        {
+          "name": "Architectural and Engineering Drawing Technology Diploma",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Architectural Systems Drafter Certificate",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "CNC and Machine Tool Technology Diploma",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "CNC Technology Diploma",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Commercial Wiring Technician Certificate",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Electrical Systems Technology Diploma",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Engineering Technology Degree",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Gas Metal Arc Welder Certificate",
+          "cats": [
+            "Welding & Joining"
+          ]
+        },
+        {
+          "name": "Mechatronics Technology Degree",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Precision Machining & Manufacturing Diploma",
+          "cats": [
+            "Machining & CNC",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Welding and Joining Technology Diploma",
+          "cats": [
+            "Welding & Joining"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "North Georgia Technical College",
+      "slug": "north-georgia-technical-college",
+      "city": "Clarkesville",
+      "region": "Northeast Georgia",
+      "mono": "NGA",
+      "site": "https://www.northgatech.edu",
+      "programs": [
+        {
+          "name": "Advanced Manufacturing Degree",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Air Conditioning Degree",
+          "cats": [
+            "HVAC & Plumbing"
+          ]
+        },
+        {
+          "name": "Applied Technical Management Diploma",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Electrical Systems Diploma",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Precision Machining (CNC) Degree",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Welding Diploma",
+          "cats": [
+            "Welding & Joining"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Oconee Fall Line Technical College",
+      "slug": "oconee-fall-line-technical-college",
+      "city": "Sandersville / Dublin",
+      "region": "Middle Georgia",
+      "mono": "OFL",
+      "site": "https://www.oftc.edu",
+      "programs": [
+        {
+          "name": "Advanced General Machinist Certificate",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Air Conditioning Technology Diploma",
+          "cats": [
+            "HVAC & Plumbing"
+          ]
+        },
+        {
+          "name": "Automated Manufacturing Basics Certificate",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Electrical Control Systems Diploma",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Electronics Technology",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Industrial Electrician certificate",
+          "cats": [
+            "Electrical & Electronics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Motor Control Technician Certificate",
+          "cats": [
+            "Automation & Robotics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Mechatronics Technology Degree",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Repair Specialist",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Technician Assistant Certificate",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Welding and Joining Technology Diploma",
+          "cats": [
+            "Welding & Joining"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ogeechee Technical College",
+      "slug": "ogeechee-technical-college",
+      "city": "Statesboro",
+      "region": "Southeast Georgia",
+      "mono": "OGE",
+      "site": "https://www.ogeecheetech.edu",
+      "programs": [
+        {
+          "name": "Applied Robotics and Manufacturing Degree AR13",
+          "cats": [
+            "Automation & Robotics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Basic CNC Technician Technical Certificate of Credit BC21",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Basic Electrical Technician Certificate (BE11)",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Basic Shielded Metal Arc Welder Certificate (FS31)",
+          "cats": [
+            "Welding & Joining"
+          ]
+        },
+        {
+          "name": "CNC Technology Diploma CT12",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Commercial Electrical Construction Technology Diploma (CEC2)",
+          "cats": [
+            "Electrical & Electronics",
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Commercial Wiring Certificate (CW31)",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Electric Vehicle Charging Station Technician Certificate of Credit EVC1",
+          "cats": [
+            "Electrical & Electronics",
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Electrical Systems Technology Diploma (ES12)",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Electrical Technology Diploma ET12",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Electrical/Computer Engineering Technology Associate of Applied Science Degree EE13",
+          "cats": [
+            "Electrical & Electronics",
+            "Engineering & Drafting",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Gas Metal Arc Welder Certificate (GM31)",
+          "cats": [
+            "Welding & Joining"
+          ]
+        },
+        {
+          "name": "Gas Tungsten Arc Welder Certificate (GTA1)",
+          "cats": [
+            "Welding & Joining"
+          ]
+        },
+        {
+          "name": "Gas Tungsten Arc Welder Technical Certificate of Credit GTA1",
+          "cats": [
+            "Welding & Joining"
+          ]
+        },
+        {
+          "name": "Industrial Automation Technology of Applied Science Degree IAT3",
+          "cats": [
+            "Automation & Robotics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Electrical Assistant Technical Certificate of Credit IE21",
+          "cats": [
+            "Electrical & Electronics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Electrical Technology Diploma (IET2)",
+          "cats": [
+            "Electrical & Electronics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Operations Technology - Electrical/Mechanical Certificate (IA91)",
+          "cats": [
+            "Electrical & Electronics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Operations Technology - PLC Certificate (IC91)",
+          "cats": [
+            "Automation & Robotics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Operations Technology - Robotics Certificate (IE91)",
+          "cats": [
+            "Automation & Robotics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Operations Technology Diploma (IS32)",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Photovoltaic Systems Installation and Repair Technician Certificate (PS11)",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Precision Machining and Manufacturing Diploma MTT2",
+          "cats": [
+            "Machining & CNC",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Precision Manufacturing Associate of Applied Science Degree MS13",
+          "cats": [
+            "Machining & CNC",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Programmable Control Technician I Certificate (PC81)",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Surveying Field Technician Technical Certificate of Credit SFT1 Coming in 2027",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Technical Specialist Technical Certificate of Credit TC31",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Welding and Joining Diploma WAJ2",
+          "cats": [
+            "Welding & Joining"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Southeastern Technical College",
+      "slug": "southeastern-technical-college",
+      "city": "Vidalia",
+      "region": "Southeast Georgia",
+      "mono": "SET",
+      "site": "https://www.southeasterntech.edu",
+      "programs": [
+        {
+          "name": "Advanced Shielded Metal Arc Welder, Certificate",
+          "cats": [
+            "Welding & Joining"
+          ]
+        },
+        {
+          "name": "Basic CNC Technician",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Basic Machinist, Certificate",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "CNC Operator",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "CNC Specialist",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Commercial Wiring Certificate (CW31)",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Drafting Technology Degree",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Electrical Construction Technology Diploma",
+          "cats": [
+            "Electrical & Electronics",
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Electrical Contracting Technician Certificate",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Electrical Systems Assistant Certificate",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Electrical Systems Technology Diploma",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Electronics Fundamentals Diploma",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Electronics Technology",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Electronics Technology Degree",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Electronics Technology Diploma",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Gas Metal Arc Welder Certificate",
+          "cats": [
+            "Welding & Joining"
+          ]
+        },
+        {
+          "name": "General Industry Materials Handling Specialist",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Electrical Controls",
+          "cats": [
+            "Electrical & Electronics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Electrical Technology Diploma (IET2)",
+          "cats": [
+            "Electrical & Electronics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Electrician",
+          "cats": [
+            "Electrical & Electronics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Fluid Power Technician",
+          "cats": [
+            "Automation & Robotics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Systems Technology",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Lathe Operator",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Manufacturing Maintenance Fundamentals",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Mill Operator",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Precision Machining and Manufacturing Diploma",
+          "cats": [
+            "Machining & CNC",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Welding & Joining Technology Diploma",
+          "cats": [
+            "Welding & Joining"
+          ]
+        },
+        {
+          "name": "Welding and Joining Technology Diploma",
+          "cats": [
+            "Welding & Joining"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Southern Crescent Technical College",
+      "slug": "southern-crescent-technical-college",
+      "city": "Griffin",
+      "region": "Metro Atlanta",
+      "mono": "SCT",
+      "site": "https://www.sctech.edu",
+      "programs": [
+        {
+          "name": "Applied Technical Management (AAS)",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Automation and Robotics Technology (TCC)",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Automation Technology (AAS)",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Automation Technology (Diploma)",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Basic Materials Processing (TCC)",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Civil Engineering Technology (AAS)",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "CNC Specialist (TCC)",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "CNC Technology (Diploma)",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Electrical Systems Technology (Diploma)",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Industrial Electrical Controls (TCC)",
+          "cats": [
+            "Electrical & Electronics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Electrician (TCC)",
+          "cats": [
+            "Electrical & Electronics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Fluid Power Technician (TCC)",
+          "cats": [
+            "Automation & Robotics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Maintenance Assistant (TCC)",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Maintenance Technician (TCC)",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Mechanical Systems (Diploma)",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Manufacturing Maintenance Fundamentals (TCC)",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Manufacturing Maintenance Technician (TCC)",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Manufacturing Production Assistant (TCC)",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Mechatronics Technology (Diploma)",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "NCCER Welding and Joining Technician (Diploma)",
+          "cats": [
+            "Welding & Joining",
+            "Construction & Trades"
+          ]
+        },
+        {
+          "name": "Plastics and Polymer Technology (TCC)",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Precision Machining and Manufacturing (Diploma)",
+          "cats": [
+            "Machining & CNC",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Precision Manufacturing and Maintenance (AAS)",
+          "cats": [
+            "Machining & CNC",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Precision Manufacturing and Maintenance GACATT (Diploma)",
+          "cats": [
+            "Machining & CNC",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Programmable Control Technician (TCC)",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Robotic Technician (TCC)",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Technical Specialist (TCC)",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Southern Regional Technical College",
+      "slug": "southern-regional-technical-college",
+      "city": "Thomasville",
+      "region": "South Georgia",
+      "mono": "SRT",
+      "site": "https://www.southernregional.edu",
+      "programs": [
+        {
+          "name": "Automation Technology, AAS",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Automation Technology, Diploma",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Basic Machining Operator, TCC",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Basic Machinist, TCC",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "CNC Specialist, TCC",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Industrial Electrician, TCC",
+          "cats": [
+            "Electrical & Electronics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Fluid Power Technician, TCC",
+          "cats": [
+            "Automation & Robotics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Motor Control Technician, TCC",
+          "cats": [
+            "Automation & Robotics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Lathe Operator, TCC",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Manufacturing Engineering Technology Assistant I",
+          "cats": [
+            "Engineering & Drafting",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Manufacturing Engineering Technology, AAS",
+          "cats": [
+            "Engineering & Drafting",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Manufacturing Engineering Technology, Diploma",
+          "cats": [
+            "Engineering & Drafting",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Mill Operator, TCC",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Precision Machining and Manufacturing, AAS",
+          "cats": [
+            "Machining & CNC",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Precision Machining and Manufacturing, Diploma",
+          "cats": [
+            "Machining & CNC",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Programmable Control Technician, TCC",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "West Georgia Technical College",
+      "slug": "west-georgia-technical-college",
+      "city": "Waco / LaGrange",
+      "region": "West Georgia",
+      "mono": "WGT",
+      "site": "https://www.westgatech.edu",
+      "programs": [
+        {
+          "name": "Automation and Robotics Technology Degree",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Basic Machine Operator",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Basic Materials Processing (TCC)",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "CNC Technology Diploma",
+          "cats": [
+            "Machining & CNC"
+          ]
+        },
+        {
+          "name": "Commercial Wiring",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Electrical Maintenance Technician (EM81) Certificate",
+          "cats": [
+            "Electrical & Electronics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Electrical Systems Technology Diploma",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Engineering Technician",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Engineering Technology AAS Degree",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Gas Metal Arc Welder",
+          "cats": [
+            "Welding & Joining"
+          ]
+        },
+        {
+          "name": "Industrial Electrician",
+          "cats": [
+            "Electrical & Electronics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Industrial Instrumentation Technician",
+          "cats": [
+            "Automation & Robotics",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Plumbing/Pipefitting Technology Diploma",
+          "cats": [
+            "HVAC & Plumbing"
+          ]
+        },
+        {
+          "name": "Precision Machining & Manufacturing Diploma",
+          "cats": [
+            "Machining & CNC",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Precision Manufacturing & Maintenance Degree",
+          "cats": [
+            "Machining & CNC",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Precision Manufacturing and Maintenance Diploma",
+          "cats": [
+            "Machining & CNC",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Programmable Control Technician",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Residential Wiring Technician",
+          "cats": [
+            "Electrical & Electronics"
+          ]
+        },
+        {
+          "name": "Residential/Commercial Plumbing Technician",
+          "cats": [
+            "HVAC & Plumbing"
+          ]
+        },
+        {
+          "name": "Welding & Joining Technology Diploma",
+          "cats": [
+            "Welding & Joining"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Wiregrass Georgia Technical College",
+      "slug": "wiregrass-georgia-technical-college",
+      "city": "Valdosta",
+      "region": "South Georgia",
+      "mono": "WGA",
+      "site": "https://www.wiregrass.edu",
+      "programs": [
+        {
+          "name": "Automation Technology, Diploma",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Automotive Fundamentals, Diploma",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Automotive Technology, Diploma",
+          "cats": [
+            "Automotive & Diesel"
+          ]
+        },
+        {
+          "name": "Electrical and Computer Engineering Technology, AAS Degree",
+          "cats": [
+            "Electrical & Electronics",
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Engineering Technology, AAS Degree",
+          "cats": [
+            "Engineering & Drafting"
+          ]
+        },
+        {
+          "name": "Industry 4.0 Technology, AAS Degree",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Mechatronics Technology, AAS Degree",
+          "cats": [
+            "Automation & Robotics"
+          ]
+        },
+        {
+          "name": "Precision Machining and Manufacturing, Diploma",
+          "cats": [
+            "Machining & CNC",
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Telecommunications and Security Technology, Diploma",
+          "cats": [
+            "Industrial & Maintenance"
+          ]
+        },
+        {
+          "name": "Welding and Joining Technology, Diploma",
+          "cats": [
+            "Welding & Joining"
+          ]
+        }
+      ]
+    }
+  ]
+}

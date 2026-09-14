@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Advanced Manufacturing Training Across Georgia &mdash; FOCO Works Pathway Explorer</title>
+<meta name="description" content="Explore advanced manufacturing programs at Georgia's technical colleges. Browse 552 degrees, diplomas and certificates across 20 institutions statewide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0d2440;
+  --navy-2:#143257;
+  --navy-3:#1d3f6b;
+  --ink:#0d2440;
+  --grey-900:#2b3b4f;
+  --grey-700:#46566b;
+  --grey-500:#6b7a8f;
+  --grey-300:#c3ccd8;
+  --grey-200:#dde3ec;
+  --grey-100:#eef2f7;
+  --grey-50:#f6f8fb;
+  --white:#ffffff;
+
+  --mfg:#e08a2b;
+
+  /* focus-area accents */
+  --c-automation-robotics:#e08a2b;
+  --c-machining-cnc:#2563b0;
+  --c-welding-joining:#c0392b;
+  --c-electrical-electronics:#1a7a3c;
+  --c-engineering-drafting:#9b5bb5;
+  --c-automotive-diesel:#0f7c8c;
+  --c-aviation:#5d9731;
+  --c-hvac-plumbing:#b07cf2;
+  --c-construction-trades:#c9982c;
+  --c-industrial-maintenance:#46566b;
+
+  --radius:14px;
+  --shadow-sm:0 1px 2px rgba(13,36,64,.06), 0 2px 6px rgba(13,36,64,.06);
+  --shadow:0 12px 34px rgba(13,36,64,.14);
+  --ease:cubic-bezier(.4,0,.2,1);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;background:var(--grey-50);color:var(--ink);
+  font-family:"Inter","Segoe UI",system-ui,sans-serif;line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:"Poppins","Inter",system-ui,sans-serif;font-weight:700;letter-spacing:-.01em;}
+
+/* ---------- topbar ---------- */
+.topbar{
+  display:flex;align-items:center;gap:14px;
+  padding:14px clamp(16px,4vw,48px);
+  background:var(--navy);color:var(--white);
+  position:sticky;top:0;z-index:60;
+}
+.logo{display:flex;align-items:center;gap:10px;font-family:"Poppins",system-ui,sans-serif;font-weight:800;font-size:18px;letter-spacing:.02em;}
+.logo .mk{width:30px;height:30px;border-radius:8px;background:var(--white);color:var(--navy);display:grid;place-items:center;font-size:15px;flex:none;font-weight:800;}
+.topbar .sp{flex:1;}
+.crumb{font-size:13px;color:var(--grey-300);display:flex;align-items:center;gap:8px;}
+.crumb a{color:var(--grey-300);text-decoration:none;}
+.crumb a:hover{color:var(--white);text-decoration:underline;}
+
+/* ---------- hero ---------- */
+.dhead{background:var(--navy);color:var(--white);padding:clamp(26px,4vw,44px) clamp(16px,4vw,48px) clamp(30px,4vw,48px);}
+.dhead .wrap{max-width:1120px;margin:0 auto;}
+.dhead .row{display:flex;align-items:center;gap:14px;margin-bottom:10px;}
+.dhead .dot{width:16px;height:16px;border-radius:50%;background:var(--mfg);flex:none;}
+.dhead .ey{text-transform:uppercase;letter-spacing:.18em;font-size:12px;font-weight:700;color:var(--grey-300);}
+.dhead h1{font-size:clamp(25px,4vw,40px);margin:0 0 10px;color:var(--white);line-height:1.15;}
+.dhead p{margin:0;max-width:64ch;color:#d7e0ee;font-size:clamp(14px,1.8vw,17px);}
+.stats{display:flex;gap:clamp(18px,4vw,54px);flex-wrap:wrap;margin-top:26px;}
+.stat b{font-family:"Poppins",system-ui,sans-serif;font-size:clamp(22px,3.2vw,32px);line-height:1;display:block;color:var(--white);}
+.stat span{font-size:12.5px;color:var(--grey-300);text-transform:uppercase;letter-spacing:.09em;font-weight:600;}
+
+/* ---------- controls ---------- */
+.section{max-width:1120px;margin:0 auto;padding:clamp(28px,4vw,44px) clamp(16px,4vw,48px);}
+.block-head{display:flex;align-items:center;gap:12px;margin:0 0 6px;}
+.block-head .pin{width:34px;height:34px;border-radius:9px;background:var(--grey-100);color:var(--navy);display:grid;place-items:center;flex:none;}
+.block-head .pin svg{width:19px;height:19px;}
+.block-head h2{font-size:20px;margin:0;}
+.block-sub{color:var(--grey-500);font-size:14.5px;margin:0 0 20px;}
+
+.controls{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:16px;}
+.searchbar{display:flex;align-items:center;gap:10px;background:var(--white);border:1px solid var(--grey-200);border-radius:999px;padding:10px 16px;max-width:420px;box-shadow:var(--shadow-sm);flex:1 1 260px;}
+.searchbar svg{width:17px;height:17px;color:var(--grey-500);flex:none;}
+.searchbar input{border:0;outline:0;font:inherit;font-size:14.5px;background:none;width:100%;color:var(--ink);}
+.selwrap{position:relative;}
+.selwrap select{
+  appearance:none;font:inherit;font-size:14.5px;color:var(--ink);cursor:pointer;
+  background:var(--white);border:1px solid var(--grey-200);border-radius:999px;
+  padding:11px 38px 11px 18px;box-shadow:var(--shadow-sm);
+}
+.selwrap svg{position:absolute;right:14px;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--grey-500);pointer-events:none;}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;}
+.chip{
+  font:inherit;font-size:13px;font-weight:600;cursor:pointer;
+  background:var(--white);border:1px solid var(--grey-200);border-radius:999px;
+  padding:7px 14px;color:var(--grey-700);box-shadow:var(--shadow-sm);
+  display:inline-flex;align-items:center;gap:7px;
+  transition:background .15s var(--ease),border-color .15s var(--ease),color .15s var(--ease);
+}
+.chip::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--grey-300);flex:none;}
+.chip:hover{border-color:var(--grey-300);}
+.chip[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:var(--white);}
+.chip[data-cat="automation-robotics"]::before{background:var(--c-automation-robotics);}
+.chip[data-cat="machining-cnc"]::before{background:var(--c-machining-cnc);}
+.chip[data-cat="welding-joining"]::before{background:var(--c-welding-joining);}
+.chip[data-cat="electrical-electronics"]::before{background:var(--c-electrical-electronics);}
+.chip[data-cat="engineering-drafting"]::before{background:var(--c-engineering-drafting);}
+.chip[data-cat="automotive-diesel"]::before{background:var(--c-automotive-diesel);}
+.chip[data-cat="aviation"]::before{background:var(--c-aviation);}
+.chip[data-cat="hvac-plumbing"]::before{background:var(--c-hvac-plumbing);}
+.chip[data-cat="construction-trades"]::before{background:var(--c-construction-trades);}
+.chip[data-cat="industrial-maintenance"]::before{background:var(--c-industrial-maintenance);}
+.resultline{font-size:13.5px;color:var(--grey-500);margin:0 0 22px;}
+.resultline .reset{background:none;border:0;font:inherit;font-weight:650;color:var(--navy);cursor:pointer;padding:0 0 0 4px;text-decoration:underline;}
+
+/* ---------- college cards ---------- */
+.schools{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;}
+.school{
+  background:var(--white);border:1px solid var(--grey-200);border-radius:var(--radius);
+  box-shadow:var(--shadow-sm);overflow:hidden;display:flex;flex-direction:column;
+  transition:box-shadow .2s var(--ease),transform .2s var(--ease);
+}
+.school:hover{box-shadow:var(--shadow);transform:translateY(-2px);}
+.school[hidden]{display:none;}
+.school .top{display:flex;align-items:flex-start;gap:12px;padding:16px 18px 10px;}
+.badge{
+  position:relative;width:52px;height:52px;border-radius:10px;flex:none;
+  display:grid;place-items:center;background:var(--white);
+  border:1px solid var(--grey-200);overflow:hidden;
+}
+.badge .mono{
+  font-family:"Poppins",system-ui,sans-serif;font-weight:700;font-size:13px;
+  letter-spacing:.04em;color:var(--grey-500);
+}
+/* Drop a logo file at logos/<college-slug>.png and it replaces the monogram.
+   If the file is absent the <img> removes itself and the monogram shows. */
+.badge img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:contain;
+  padding:5px;background:var(--white);display:block;
+}
+.idy h3{margin:0;font-size:15px;line-height:1.3;}
+.idy small{color:var(--grey-500);font-size:12px;}
+.meta{display:flex;align-items:center;gap:10px;padding:0 18px 12px;font-size:12.5px;color:var(--grey-500);}
+.meta .count b{color:var(--ink);font-family:"Poppins",system-ui,sans-serif;font-size:14px;}
+.meta .visit{margin-left:auto;color:var(--navy);font-weight:600;text-decoration:none;}
+.meta .visit:hover{text-decoration:underline;}
+.toggle{
+  width:100%;text-align:left;font:inherit;font-size:13.5px;font-weight:650;color:var(--navy);
+  background:var(--grey-50);border:0;border-top:1px solid var(--grey-200);
+  cursor:pointer;padding:11px 18px;display:flex;align-items:center;gap:8px;
+  transition:background .15s var(--ease);
+}
+.toggle:hover,.toggle:focus-visible{background:var(--grey-100);outline:none;}
+.toggle .chev{width:15px;height:15px;margin-left:auto;transition:transform .2s var(--ease);}
+.toggle[aria-expanded="true"] .chev{transform:rotate(180deg);}
+.proglist{list-style:none;margin:0;padding:8px 10px 14px;border-top:1px solid var(--grey-200);}
+.proglist li{display:flex;align-items:flex-start;gap:9px;padding:7px 8px;border-radius:9px;font-size:14px;line-height:1.4;}
+.proglist li[hidden]{display:none;}
+.proglist li:nth-child(odd){background:var(--grey-50);}
+.dotmark{width:8px;height:8px;border-radius:50%;flex:none;margin-top:6px;background:var(--grey-300);}
+.dotmark[data-cat="automation-robotics"]{background:var(--c-automation-robotics);}
+.dotmark[data-cat="machining-cnc"]{background:var(--c-machining-cnc);}
+.dotmark[data-cat="welding-joining"]{background:var(--c-welding-joining);}
+.dotmark[data-cat="electrical-electronics"]{background:var(--c-electrical-electronics);}
+.dotmark[data-cat="engineering-drafting"]{background:var(--c-engineering-drafting);}
+.dotmark[data-cat="automotive-diesel"]{background:var(--c-automotive-diesel);}
+.dotmark[data-cat="aviation"]{background:var(--c-aviation);}
+.dotmark[data-cat="hvac-plumbing"]{background:var(--c-hvac-plumbing);}
+.dotmark[data-cat="construction-trades"]{background:var(--c-construction-trades);}
+.dotmark[data-cat="industrial-maintenance"]{background:var(--c-industrial-maintenance);}
+mark{background:#ffe9c7;color:inherit;border-radius:3px;padding:0 1px;}
+.nomatch{margin:0;padding:10px 18px 18px;color:var(--grey-500);font-size:13.5px;font-style:italic;}
+.emptyall{
+  display:none;text-align:center;padding:48px 20px;color:var(--grey-500);
+  background:var(--white);border:1px dashed var(--grey-300);border-radius:var(--radius);
+}
+.emptyall.show{display:block;}
+
+/* ---------- footer ---------- */
+.footer-wrap{
+  max-width:1120px;margin:0 auto;padding:30px clamp(16px,4vw,48px) 48px;
+  border-top:1px solid var(--grey-200);
+}
+.footer-main{font-size:14px;color:var(--grey-700);margin-bottom:12px;}
+.footer-links{display:flex;gap:10px;flex-wrap:wrap;font-size:13.5px;margin-bottom:12px;}
+.footer-links a{color:var(--navy);font-weight:600;text-decoration:none;}
+.footer-links a:hover{text-decoration:underline;}
+.footer-sep{color:var(--grey-300);}
+.footer-fine{font-size:12px;color:var(--grey-500);max-width:80ch;}
+
+@media (max-width:980px){ .schools{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:640px){
+  .schools{grid-template-columns:1fr;}
+  .stats{gap:22px;}
+  .logo small{display:none;}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;}
+  html{scroll-behavior:auto;}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="logo"><span class="mk">FW</span> FOCO Works</div>
+  <div class="sp"></div>
+  <nav class="crumb">
+    <a href="index.html">Pathway Explorer</a>
+    <span>&rsaquo;</span>
+    <span>Advanced Manufacturing &mdash; Georgia</span>
+  </nav>
+</header>
+
+<section class="dhead">
+  <div class="wrap">
+    <div class="row"><span class="dot"></span><span class="ey">Advanced Manufacturing</span></div>
+    <h1>Education Opportunities Across Georgia</h1>
+    <p>
+      Forsyth County is one entry point into advanced manufacturing &mdash; the whole state is another.
+      Georgia&rsquo;s technical colleges offer degrees, diplomas and short-term certificates that lead into
+      the same machining, automation, welding and industrial maintenance careers, close to wherever you live.
+    </p>
+    <div class="stats">
+      <div class="stat"><b>20</b><span>Institutions</span></div>
+      <div class="stat"><b>552</b><span>Programs</span></div>
+      <div class="stat"><b>10</b><span>Focus areas</span></div>
+    </div>
+  </div>
+</section>
+
+<main class="section">
+  <div class="block-head">
+    <span class="pin">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 21s-7-5.1-7-10a7 7 0 1 1 14 0c0 4.9-7 10-7 10z"/><circle cx="12" cy="11" r="2.6"/>
+      </svg>
+    </span>
+    <h2>Where you can learn it &mdash; statewide</h2>
+  </div>
+  <p class="block-sub">Search a program, filter by region or focus area, then open a college to see everything it offers.</p>
+
+  <div class="controls">
+    <label class="searchbar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" id="q" placeholder="Search programs or colleges&hellip;" aria-label="Search programs or colleges">
+    </label>
+    <div class="selwrap">
+      <select id="region" aria-label="Filter by region">
+        <option value="">All regions</option>
+          <option value="East Georgia">East Georgia</option>
+          <option value="Metro Atlanta">Metro Atlanta</option>
+          <option value="Middle Georgia">Middle Georgia</option>
+          <option value="Northeast Georgia">Northeast Georgia</option>
+          <option value="Northwest Georgia">Northwest Georgia</option>
+          <option value="South Georgia">South Georgia</option>
+          <option value="Southeast Georgia">Southeast Georgia</option>
+          <option value="West Georgia">West Georgia</option>
+      </select>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+  </div>
+
+  <div class="chips" id="chips" role="group" aria-label="Filter by focus area">
+        <button class="chip" type="button" data-cat="automation-robotics" aria-pressed="false">Automation &amp; Robotics</button>
+        <button class="chip" type="button" data-cat="machining-cnc" aria-pressed="false">Machining &amp; CNC</button>
+        <button class="chip" type="button" data-cat="welding-joining" aria-pressed="false">Welding &amp; Joining</button>
+        <button class="chip" type="button" data-cat="electrical-electronics" aria-pressed="false">Electrical &amp; Electronics</button>
+        <button class="chip" type="button" data-cat="engineering-drafting" aria-pressed="false">Engineering &amp; Drafting</button>
+        <button class="chip" type="button" data-cat="automotive-diesel" aria-pressed="false">Automotive &amp; Diesel</button>
+        <button class="chip" type="button" data-cat="aviation" aria-pressed="false">Aviation</button>
+        <button class="chip" type="button" data-cat="hvac-plumbing" aria-pressed="false">HVAC &amp; Plumbing</button>
+        <button class="chip" type="button" data-cat="construction-trades" aria-pressed="false">Construction &amp; Trades</button>
+        <button class="chip" type="button" data-cat="industrial-maintenance" aria-pressed="false">Industrial &amp; Maintenance</button>
+  </div>
+
+  <p class="resultline" id="resultline" aria-live="polite"></p>
+
+  <div class="schools" id="schools">
+      <article class="school" data-region="South Georgia" data-cats="automation-robotics electrical-electronics engineering-drafting">
+        <div class="top">
+          <div class="badge">
+            <span class="mono">ALB</span>
+            <img src="logos/albany-technical-college.png" alt="Albany Technical College logo" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="idy">
+            <h3>Albany Technical College</h3>
+            <small>Albany &middot; South Georgia</small>
+          </div>
+        </div>
+        <div class="meta">
+          <span class="count"><b>5</b> programs</span>
+          <a class="visit" href="https://www.albanytech.edu" target="_blank" rel="noopener noreferrer">Visit site &#8599;</a>
+        </div>
+        <button class="toggle" type="button" aria-expanded="false">
+          <span class="tlabel">Show programs</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul class="proglist" hidden>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Automation and Robotics Technology</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Civil Engineering Technology</span></li>
+        <li class="prog" data-cats="electrical-electronics engineering-drafting"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical and Computer Engineering Technology</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electronics Technology</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Engineering Graphics</span></li>
+        </ul>
+        <p class="nomatch" hidden>No programs match the current filters.</p>
+      </article>
+      <article class="school" data-region="Northeast Georgia" data-cats="automation-robotics automotive-diesel construction-trades electrical-electronics engineering-drafting hvac-plumbing industrial-maintenance machining-cnc welding-joining">
+        <div class="top">
+          <div class="badge">
+            <span class="mono">ATH</span>
+            <img src="logos/athens-technical-college.png" alt="Athens Technical College logo" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="idy">
+            <h3>Athens Technical College</h3>
+            <small>Athens &middot; Northeast Georgia</small>
+          </div>
+        </div>
+        <div class="meta">
+          <span class="count"><b>67</b> programs</span>
+          <a class="visit" href="https://www.athenstech.edu" target="_blank" rel="noopener noreferrer">Visit site &#8599;</a>
+        </div>
+        <button class="toggle" type="button" aria-expanded="false">
+          <span class="tlabel">Show programs</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul class="proglist" hidden>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Advanced CAD Technician TCC</span></li>
+        <li class="prog" data-cats="electrical-electronics hvac-plumbing"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Air Conditioning Electrical Technician TCC</span></li>
+        <li class="prog" data-cats="hvac-plumbing industrial-maintenance"><span class="dotmark" data-cat="hvac-plumbing"></span><span class="pname">Air Conditioning System Maintenance Technician TCC</span></li>
+        <li class="prog" data-cats="hvac-plumbing"><span class="dotmark" data-cat="hvac-plumbing"></span><span class="pname">Air Conditioning Technology Diploma</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Applied Technical Management Associate Degree</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Auto</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Chassis Technician TCC</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Climate Control Technician TCC</span></li>
+        <li class="prog" data-cats="electrical-electronics automotive-diesel"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Automotive Collision Mechanical Electrical Helper TCC</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Collision Repair Assistant I TCC</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Collision Repair Assistant II TCC</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Collision Repair Associate Degree</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Collision Repair Diploma</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Collision Specialist TCC</span></li>
+        <li class="prog" data-cats="electrical-electronics automotive-diesel"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Automotive Electrical/Electronic Systems Technician TCC</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Engine Performance Technician TCC</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Engine Repair Technician TCC</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Fundamentals Diploma</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Refinishing Assistant I TCC</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Refinishing Assistant II TCC</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Refinishing Specialist TCC</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Technology Associate Degree</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Technology Diploma</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Transmission/Transaxle Technician TCC</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Basic Electrician TCC</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Basic Grinding Operations TCC</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Basic Machining Operator TCC</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Basic Machinist TCC</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">CAD Operator Mechanical TCC</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">CAD Operator TCC</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">CAD User TCC</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">CNC Specialist TCC</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Commercial Electrical Technician TCC</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Commercial Truck Driving TCC</span></li>
+        <li class="prog" data-cats="electrical-electronics automotive-diesel"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Diesel Electrical/Electronic Systems Technician TCC</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Diesel Engine Service Technician TCC</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Diesel Equipment Technology Diploma</span></li>
+        <li class="prog" data-cats="automotive-diesel industrial-maintenance"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Diesel Truck Maintenance Technician TCC</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Drafter&#x27;s Assistant TCC</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Drafting Aide TCC</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Drafting Technology Associate Degree</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Drafting Technology Diploma</span></li>
+        <li class="prog" data-cats="electrical-electronics construction-trades"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical Construction Systems Technology Associate Degree</span></li>
+        <li class="prog" data-cats="electrical-electronics construction-trades"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical Construction Systems Technology Diploma</span></li>
+        <li class="prog" data-cats="engineering-drafting industrial-maintenance"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Engineering Technology and Applied Science</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Engineering Technology Basics TCC</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Gas Metal Arc Welding TCC</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Gas Tungsten Arc Welding TCC</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Heavy Diesel Service Technician TCC</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Industrial Controls Technician TCC</span></li>
+        <li class="prog" data-cats="electrical-electronics industrial-maintenance"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Industrial Electrician TCC</span></li>
+        <li class="prog" data-cats="automation-robotics industrial-maintenance"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Industrial Fluid Power Technician TCC</span></li>
+        <li class="prog" data-cats="automation-robotics industrial-maintenance"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Industrial Motor Control Technician TCC</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Industrial Systems Technology Associate Degree</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Industrial Systems Technology Diploma</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Lathe Operator TCC</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Manufacturing Operations Specialist TCC</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Mechatronics Technician TCC</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Mill Operator TCC</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Personal Robotics TCC</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Photovoltaic Systems Technician TCC</span></li>
+        <li class="prog" data-cats="machining-cnc industrial-maintenance"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Precision Machining and Manufacturing Technology Associate Degree</span></li>
+        <li class="prog" data-cats="machining-cnc industrial-maintenance"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Precision Machining and Manufacturing Technology Diploma</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Programmable Control Technician I TCC</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Residential Electrical Technician TCC</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Shielded Metal Arc Welding TCC</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Welding Technology Diploma</span></li>
+        </ul>
+        <p class="nomatch" hidden>No programs match the current filters.</p>
+      </article>
+      <article class="school" data-region="Metro Atlanta" data-cats="automation-robotics automotive-diesel aviation construction-trades electrical-electronics engineering-drafting hvac-plumbing industrial-maintenance welding-joining">
+        <div class="top">
+          <div class="badge">
+            <span class="mono">ATL</span>
+            <img src="logos/atlanta-technical-college.png" alt="Atlanta Technical College logo" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="idy">
+            <h3>Atlanta Technical College</h3>
+            <small>Atlanta &middot; Metro Atlanta</small>
+          </div>
+        </div>
+        <div class="meta">
+          <span class="count"><b>72</b> programs</span>
+          <a class="visit" href="https://www.atlantatech.edu" target="_blank" rel="noopener noreferrer">Visit site &#8599;</a>
+        </div>
+        <button class="toggle" type="button" aria-expanded="false">
+          <span class="tlabel">Show programs</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul class="proglist" hidden>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Advanced CAD Technician TCC</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Advanced Shielded Metal Arc Welder TCC</span></li>
+        <li class="prog" data-cats="electrical-electronics hvac-plumbing"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Air Conditioning Electrical Technician TCC</span></li>
+        <li class="prog" data-cats="hvac-plumbing industrial-maintenance"><span class="dotmark" data-cat="hvac-plumbing"></span><span class="pname">Air Conditioning System Maintenance Technician TCC</span></li>
+        <li class="prog" data-cats="hvac-plumbing"><span class="dotmark" data-cat="hvac-plumbing"></span><span class="pname">Air Conditioning Technician Assistant TCC</span></li>
+        <li class="prog" data-cats="hvac-plumbing"><span class="dotmark" data-cat="hvac-plumbing"></span><span class="pname">Air Conditioning Technology Diploma</span></li>
+        <li class="prog" data-cats="construction-trades industrial-maintenance"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">Apartment Maintenance Technician TCC</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Auto Collision Repair Diploma</span></li>
+        <li class="prog" data-cats="electrical-electronics automotive-diesel"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Auto Electrical/Electronic System Technician TCC</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Automation Technology AAS</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Automation Technology Diploma</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Automation Technology Mechatronics TCC</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Chassis Technician Specialist TCC</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Climate Control Technician TCC</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Collision Repair Assistant I TCC</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Collision Repair Assistant II TCC</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Engine Performance Technician TCC</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Engine Repair Technician TCC</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Technology Diploma</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Transmission/Transaxle Tech Specialist TCC</span></li>
+        <li class="prog" data-cats="aviation industrial-maintenance"><span class="dotmark" data-cat="aviation"></span><span class="pname">Aviation Maintenance Technician-Airframe TCC</span></li>
+        <li class="prog" data-cats="aviation industrial-maintenance"><span class="dotmark" data-cat="aviation"></span><span class="pname">Aviation Maintenance Technician-Power Plant TCC</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Avionics Bench Technician TCC</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Avionics Installer Certificate TCC</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Avionics Technician Certificate TCC</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Basic Electricity Technician TCC</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Basic Electronic Assembler TCC</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Basic Electronics Technician TCC</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Basic Shielded Metal Arc Welder TCC</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">CAD Operator TCC</span></li>
+        <li class="prog" data-cats="construction-trades"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">Carpentry Diploma</span></li>
+        <li class="prog" data-cats="construction-trades"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">Certified Construction Worker TCC</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Civil Engineering Technology AAS</span></li>
+        <li class="prog" data-cats="construction-trades"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">Commercial Carpenter TCC</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Commercial Truck Driving TCC</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Commercial Wiring TCC</span></li>
+        <li class="prog" data-cats="construction-trades"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">Construction Management AAS</span></li>
+        <li class="prog" data-cats="construction-trades"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">Construction Management Diploma</span></li>
+        <li class="prog" data-cats="construction-trades"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">Construction Manager TCC</span></li>
+        <li class="prog" data-cats="electrical-electronics automotive-diesel"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Diesel Electrical and Electronic Systems Technician TCC</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Diesel Engine Service Technician TCC</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Diesel Equipment Technology Diploma</span></li>
+        <li class="prog" data-cats="automotive-diesel industrial-maintenance"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Diesel Truck Maintenance Technician TCC</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Drafters Assistant TCC</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Drafting Aide TCC</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Drafting Technology AAS</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Drafting Technology Diploma</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical Lineworker TCC</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical Systems Technology Diploma</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical Utility Technology Diploma</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Engineering Technology Fundamentals TCC</span></li>
+        <li class="prog" data-cats="construction-trades"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">Flooring Installation Technician TCC</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Flux Cored Arc Welder TCC</span></li>
+        <li class="prog" data-cats="construction-trades"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">Framing Carpenter TCC</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Gas Metal Arc Welder TCC</span></li>
+        <li class="prog" data-cats="hvac-plumbing"><span class="dotmark" data-cat="hvac-plumbing"></span><span class="pname">Heating and Air Conditioning Installation Technician TCC</span></li>
+        <li class="prog" data-cats="electrical-electronics industrial-maintenance"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Industrial Electrical Controls TCC</span></li>
+        <li class="prog" data-cats="engineering-drafting industrial-maintenance"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Industrial Engineering Technology AAS</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Logistics and Supply Chain Management AAS</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Logistics and Supply Chain Management Diploma</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Logistics and Supply Chain Technician TCC</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Logistics Management Specialist TCC</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Logistics Management Technician TCC</span></li>
+        <li class="prog" data-cats="hvac-plumbing"><span class="dotmark" data-cat="hvac-plumbing"></span><span class="pname">Natural Gas Technician TCC</span></li>
+        <li class="prog" data-cats="construction-trades"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">NCCER Advanced Carpentry TCC</span></li>
+        <li class="prog" data-cats="construction-trades"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">NCCER Carpentry Fundamentals TCC</span></li>
+        <li class="prog" data-cats="hvac-plumbing"><span class="dotmark" data-cat="hvac-plumbing"></span><span class="pname">Plumbing</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Procurement AAS</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Residential Wiring TCC</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Supply Chain Specialist TCC</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Welding and Joining Technology Diploma</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Welding Blueprint Reading TCC</span></li>
+        </ul>
+        <p class="nomatch" hidden>No programs match the current filters.</p>
+      </article>
+      <article class="school" data-region="East Georgia" data-cats="automation-robotics automotive-diesel aviation construction-trades electrical-electronics engineering-drafting hvac-plumbing industrial-maintenance welding-joining">
+        <div class="top">
+          <div class="badge">
+            <span class="mono">AUG</span>
+            <img src="logos/augusta-technical-college.png" alt="Augusta Technical College logo" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="idy">
+            <h3>Augusta Technical College</h3>
+            <small>Augusta &middot; East Georgia</small>
+          </div>
+        </div>
+        <div class="meta">
+          <span class="count"><b>58</b> programs</span>
+          <a class="visit" href="https://www.augustatech.edu" target="_blank" rel="noopener noreferrer">Visit site &#8599;</a>
+        </div>
+        <button class="toggle" type="button" aria-expanded="false">
+          <span class="tlabel">Show programs</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul class="proglist" hidden>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Advanced Pipe Welding, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Advanced Shielded Metal Arc Welder, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="electrical-electronics hvac-plumbing"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Air Conditioning Electrical Technician, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="hvac-plumbing"><span class="dotmark" data-cat="hvac-plumbing"></span><span class="pname">Air Conditioning Technician Assistant, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="hvac-plumbing"><span class="dotmark" data-cat="hvac-plumbing"></span><span class="pname">Air Conditioning Technology, Diploma</span></li>
+        <li class="prog" data-cats="engineering-drafting industrial-maintenance"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Architectural and Engineering Drafting Technology, Associate of Applied Science Degree</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Architectural and Engineering Drafting Technology, Diploma</span></li>
+        <li class="prog" data-cats="automation-robotics industrial-maintenance"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Automation Technology, Associate of Applied Science Degree</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Chassis Technician Specialist, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Climate Control Technician, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="electrical-electronics automotive-diesel"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Automotive Electrical/Electronic Systems Technician, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Engine Performance Technician, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Engine Repair Technician, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Light Duty Diesel Engine, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Technology, Diploma</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Transmission/Transaxle Technician Specialist, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="aviation industrial-maintenance"><span class="dotmark" data-cat="aviation"></span><span class="pname">Aviation Maintenance Technician, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="aviation industrial-maintenance"><span class="dotmark" data-cat="aviation"></span><span class="pname">Aviation Maintenance Technician-Airframe, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="aviation industrial-maintenance"><span class="dotmark" data-cat="aviation"></span><span class="pname">Aviation Maintenance Technician-Powerplant, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="aviation industrial-maintenance"><span class="dotmark" data-cat="aviation"></span><span class="pname">Aviation Maintenance Technology, Associate of Applied Science Degree</span></li>
+        <li class="prog" data-cats="aviation industrial-maintenance"><span class="dotmark" data-cat="aviation"></span><span class="pname">Aviation Maintenance Technology, Diploma</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Basic Shielded Metal Arc Welder, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="construction-trades"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">Certified Construction Worker, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Chemical Analysis Technician, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="engineering-drafting industrial-maintenance"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Chemical Engineering Technology, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Chemical Technology, Associate of Applied Science Degree</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Commercial Wiring, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Computer Engineering Technology, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Dual Enrollment Manufacturing Production Assistant, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="electrical-electronics engineering-drafting industrial-maintenance"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical and Computer Engineering Technology, Associate of Applied Science Degree</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical Contracting Technician, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical Control Systems, Diploma</span></li>
+        <li class="prog" data-cats="electrical-electronics engineering-drafting"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical Engineering Technology Fundamentals, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical Systems Technology, Diploma</span></li>
+        <li class="prog" data-cats="electrical-electronics engineering-drafting"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electronics Engineering Technology, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Engineering Technology Basics, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Gas Metal Arc Welder, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="construction-trades industrial-maintenance"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">Industrial Construction I, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Industrial Mechanical Systems, Diploma</span></li>
+        <li class="prog" data-cats="automation-robotics engineering-drafting"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Instrumentation and Control Engineering Technology, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Instrumentation and Controls Technician I, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="engineering-drafting industrial-maintenance"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Mechanical Engineering Technology, Associate of Applied Science Degree</span></li>
+        <li class="prog" data-cats="automation-robotics industrial-maintenance"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Mechatronics Technology, Associate of Applied Science Degree</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Mechatronics Technology, Diploma</span></li>
+        <li class="prog" data-cats="electrical-electronics construction-trades"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">NCCER Basic Electrical Systems Technician, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="electrical-electronics construction-trades industrial-maintenance"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">NCCER Electrical Systems Construction and Maintenance, Associate of Applied Science Degree</span></li>
+        <li class="prog" data-cats="electrical-electronics construction-trades industrial-maintenance"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">NCCER Electrical Systems Construction and Maintenance, Diploma</span></li>
+        <li class="prog" data-cats="electrical-electronics construction-trades industrial-maintenance"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">NCCER Electrical Systems Construction and Maintenance, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="electrical-electronics construction-trades"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">NCCER Intermediate Electrical Systems Technician, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="electrical-electronics construction-trades"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">NCCER Specialty Electrical Services, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="engineering-drafting industrial-maintenance"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Nuclear Engineering Technology, Associate of Applied Science Degree</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Nuclear Science Technology, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Photovoltaic Systems Installation and Repair Technician, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Residential Wiring Technician, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Science Technology, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Wastewater Quality Technician, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Water Quality Technician, Technical Certificate of Credit</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Welding and Joining Technology, Diploma</span></li>
+        </ul>
+        <p class="nomatch" hidden>No programs match the current filters.</p>
+      </article>
+      <article class="school" data-region="Middle Georgia" data-cats="automation-robotics automotive-diesel aviation construction-trades electrical-electronics engineering-drafting hvac-plumbing industrial-maintenance machining-cnc welding-joining">
+        <div class="top">
+          <div class="badge">
+            <span class="mono">CGA</span>
+            <img src="logos/central-georgia-technical-college.png" alt="Central Georgia Technical College logo" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="idy">
+            <h3>Central Georgia Technical College</h3>
+            <small>Warner Robins / Macon &middot; Middle Georgia</small>
+          </div>
+        </div>
+        <div class="meta">
+          <span class="count"><b>18</b> programs</span>
+          <a class="visit" href="https://www.centralgatech.edu" target="_blank" rel="noopener noreferrer">Visit site &#8599;</a>
+        </div>
+        <button class="toggle" type="button" aria-expanded="false">
+          <span class="tlabel">Show programs</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul class="proglist" hidden>
+        <li class="prog" data-cats="automation-robotics industrial-maintenance"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">AI Enhanced Robotic Manufacturing Specialist</span></li>
+        <li class="prog" data-cats="hvac-plumbing"><span class="dotmark" data-cat="hvac-plumbing"></span><span class="pname">Air Conditioning Technology</span></li>
+        <li class="prog" data-cats="aviation"><span class="dotmark" data-cat="aviation"></span><span class="pname">Aircraft Structural Technology</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Automation Technology</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Collision Repair</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Technology</span></li>
+        <li class="prog" data-cats="aviation industrial-maintenance"><span class="dotmark" data-cat="aviation"></span><span class="pname">Aviation Maintenance Technology</span></li>
+        <li class="prog" data-cats="automotive-diesel construction-trades"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Construction Management Diesel Equipment Technology</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical Systems Technology</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electronics Technology</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Engineering Technology</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Mechatronics Technology</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Metrology</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Metrology (Measurement Science)</span></li>
+        <li class="prog" data-cats="hvac-plumbing"><span class="dotmark" data-cat="hvac-plumbing"></span><span class="pname">Plumbing</span></li>
+        <li class="prog" data-cats="machining-cnc industrial-maintenance"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Precision Machining &amp; Manufacturing Technology</span></li>
+        <li class="prog" data-cats="machining-cnc industrial-maintenance"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Precision Machining and Manufacturing</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Welding and Joining Technology</span></li>
+        </ul>
+        <p class="nomatch" hidden>No programs match the current filters.</p>
+      </article>
+      <article class="school" data-region="Metro Atlanta" data-cats="automotive-diesel aviation construction-trades electrical-electronics engineering-drafting hvac-plumbing industrial-maintenance machining-cnc welding-joining">
+        <div class="top">
+          <div class="badge">
+            <span class="mono">CHT</span>
+            <img src="logos/chattahoochee-technical-college.png" alt="Chattahoochee Technical College logo" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="idy">
+            <h3>Chattahoochee Technical College</h3>
+            <small>Marietta &middot; Metro Atlanta</small>
+          </div>
+        </div>
+        <div class="meta">
+          <span class="count"><b>10</b> programs</span>
+          <a class="visit" href="https://www.chattahoocheetech.edu" target="_blank" rel="noopener noreferrer">Visit site &#8599;</a>
+        </div>
+        <button class="toggle" type="button" aria-expanded="false">
+          <span class="tlabel">Show programs</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul class="proglist" hidden>
+        <li class="prog" data-cats="hvac-plumbing"><span class="dotmark" data-cat="hvac-plumbing"></span><span class="pname">Air Conditioning Technology</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Technology</span></li>
+        <li class="prog" data-cats="aviation"><span class="dotmark" data-cat="aviation"></span><span class="pname">Aviation Programs</span></li>
+        <li class="prog" data-cats="construction-trades"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">Carpentry Technology</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Commercial Truck Driving</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Diesel Technology</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Drafting Technology</span></li>
+        <li class="prog" data-cats="electrical-electronics industrial-maintenance"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Industrial Maintenance and Electrical Technology</span></li>
+        <li class="prog" data-cats="machining-cnc industrial-maintenance"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Precision Machining and Manufacturing</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Welding and Joining Technology</span></li>
+        </ul>
+        <p class="nomatch" hidden>No programs match the current filters.</p>
+      </article>
+      <article class="school" data-region="Southeast Georgia" data-cats="automotive-diesel construction-trades electrical-electronics engineering-drafting hvac-plumbing industrial-maintenance machining-cnc welding-joining">
+        <div class="top">
+          <div class="badge">
+            <span class="mono">CPT</span>
+            <img src="logos/coastal-pines-technical-college.png" alt="Coastal Pines Technical College logo" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="idy">
+            <h3>Coastal Pines Technical College</h3>
+            <small>Waycross &middot; Southeast Georgia</small>
+          </div>
+        </div>
+        <div class="meta">
+          <span class="count"><b>17</b> programs</span>
+          <a class="visit" href="https://www.coastalpines.edu" target="_blank" rel="noopener noreferrer">Visit site &#8599;</a>
+        </div>
+        <button class="toggle" type="button" aria-expanded="false">
+          <span class="tlabel">Show programs</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul class="proglist" hidden>
+        <li class="prog" data-cats="hvac-plumbing"><span class="dotmark" data-cat="hvac-plumbing"></span><span class="pname">Air Conditioning Technology</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Collision</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Technology</span></li>
+        <li class="prog" data-cats="electrical-electronics industrial-maintenance"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Avionics Maintenance Technology</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Commercial Truck Driving</span></li>
+        <li class="prog" data-cats="construction-trades"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">Construction</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Diesel Technology</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Drafting</span></li>
+        <li class="prog" data-cats="electrical-electronics construction-trades industrial-maintenance"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical Construction and Maintenance</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electronics Technology</span></li>
+        <li class="prog" data-cats="electrical-electronics engineering-drafting"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electronics-Computer Engineering Technology</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Engineering Technology</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Industrial Systems</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Machine Tool</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Marine Engine Technology</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Railroad Industry</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Welding and Joining Technology</span></li>
+        </ul>
+        <p class="nomatch" hidden>No programs match the current filters.</p>
+      </article>
+      <article class="school" data-region="West Georgia" data-cats="automation-robotics automotive-diesel construction-trades electrical-electronics engineering-drafting hvac-plumbing industrial-maintenance machining-cnc welding-joining">
+        <div class="top">
+          <div class="badge">
+            <span class="mono">COL</span>
+            <img src="logos/columbus-technical-college.png" alt="Columbus Technical College logo" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="idy">
+            <h3>Columbus Technical College</h3>
+            <small>Columbus &middot; West Georgia</small>
+          </div>
+        </div>
+        <div class="meta">
+          <span class="count"><b>93</b> programs</span>
+          <a class="visit" href="https://www.columbustech.edu" target="_blank" rel="noopener noreferrer">Visit site &#8599;</a>
+        </div>
+        <button class="toggle" type="button" aria-expanded="false">
+          <span class="tlabel">Show programs</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul class="proglist" hidden>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Advanced CAD Technician</span></li>
+        <li class="prog" data-cats="construction-trades"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">Advanced Carpentry Certificate</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Advanced Shielded Metal Arc Welder, Certificate</span></li>
+        <li class="prog" data-cats="electrical-electronics hvac-plumbing"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Air Conditioning Electrical Technician</span></li>
+        <li class="prog" data-cats="hvac-plumbing"><span class="dotmark" data-cat="hvac-plumbing"></span><span class="pname">Air Conditioning Repair Specialist</span></li>
+        <li class="prog" data-cats="hvac-plumbing"><span class="dotmark" data-cat="hvac-plumbing"></span><span class="pname">Air Conditioning Technician Assistant, Certificate</span></li>
+        <li class="prog" data-cats="hvac-plumbing"><span class="dotmark" data-cat="hvac-plumbing"></span><span class="pname">Air Conditioning Technology, Diploma</span></li>
+        <li class="prog" data-cats="automotive-diesel industrial-maintenance"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Auto Basic Maintenance and Detailing Technician, Certificate</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Automation Technology, AAS</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Automation Technology, Diploma</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Automatic Transmission Technician Specialist, Certificate</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Brake Technician Specialist, Certificate</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Chassis Technician Specialist, Certificate</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Climate Control Technician, Certificate</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Collision Repair Assistant I, Certificate</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Collision Repair Assistant II, Certificate</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Collision Repair, Diploma</span></li>
+        <li class="prog" data-cats="electrical-electronics automotive-diesel"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Automotive Electrical/Electronic Systems Technician, Certificate</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Engine Performance Technician, Certificate</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Engine Repair Technician, Certificate</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Fundamentals, Diploma</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Light Duty Diesel Engine Tech</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Manual Transmission and Drivetrain Technician, Certificate</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Refinishing Assistant I, Certificate</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Refinishing Assistant II, Certificate</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Steering and Suspension Technician Specialist, Certificate</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Technology, AAS</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Technology, Diploma</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Transmission/Transaxle Tech Specialist, Certificate</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Basic CNC Technician</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Basic Electrical Technician</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Basic Machining Operator</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Basic Machinist, Certificate</span></li>
+        <li class="prog" data-cats="electrical-electronics industrial-maintenance"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Basic Manufacturing AC Circuits Certificate</span></li>
+        <li class="prog" data-cats="electrical-electronics industrial-maintenance"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Basic Manufacturing DC Circuits</span></li>
+        <li class="prog" data-cats="electrical-electronics industrial-maintenance"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Basic Manufacturing Electrical Certificate</span></li>
+        <li class="prog" data-cats="automation-robotics industrial-maintenance"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Basic Manufacturing Fluid Power Certificate</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Basic Manufacturing Industrial PL</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Basic Manufacturing Pumps and Piping</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Basic Shielded Metal Arc Welder, Certificate</span></li>
+        <li class="prog" data-cats="construction-trades"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">Cabinetmaking Assembly Technician, Certificate</span></li>
+        <li class="prog" data-cats="construction-trades"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">Cabinetmaking Installation Technician, Certificate</span></li>
+        <li class="prog" data-cats="construction-trades"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">Cabinetmaking, Diploma</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">CAD Operator</span></li>
+        <li class="prog" data-cats="construction-trades"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">Carpentry, Diploma</span></li>
+        <li class="prog" data-cats="construction-trades"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">Certified Construction Worker, Certificate</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Certified Manufacturing, Certificate</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Certified Production Technician</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Civil Engineering Technology Degree</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">CNC Technology, Diploma</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Commercial Truck Driving</span></li>
+        <li class="prog" data-cats="construction-trades"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">Construction Career Launch Blueprint Reading, Certificate</span></li>
+        <li class="prog" data-cats="construction-trades"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">Construction Career Launch Certificate</span></li>
+        <li class="prog" data-cats="construction-trades"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">Construction Career Launch Safety Certificate</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">D Printing and Rapid Prototyping, Certificate</span></li>
+        <li class="prog" data-cats="electrical-electronics automotive-diesel"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Diesel Electrical Electronic Systems Technician</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Diesel Engine Service Technician, Certificate</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Diesel Equipment Technology</span></li>
+        <li class="prog" data-cats="automotive-diesel industrial-maintenance"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Diesel Truck Maintenance Technician</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Drafter&#x27;s Assistant, Certificate</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Drafting Technology, AAS</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Drafting Technology, Diploma</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Dual Enrollment Basic Shielded Arc Welder, Certificate</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Dual Enrollment Gas Metal Arc Welder, Certificate</span></li>
+        <li class="prog" data-cats="electrical-electronics automotive-diesel"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electric Vehicle Professional, Certificate</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Engineering Technology Fundamentals</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Engineering Technology, AAS</span></li>
+        <li class="prog" data-cats="construction-trades"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">Framing Carpenter, Certificate</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Gas Metal Arc Welder, Certificate</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Gas Tungsten Arc Welder, Certificate</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Heavy Diesel Service Technician, Certificate</span></li>
+        <li class="prog" data-cats="electrical-electronics automotive-diesel"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Hybrid Electric Vehicle Repair Technician, Certificate</span></li>
+        <li class="prog" data-cats="construction-trades industrial-maintenance"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">Industrial Construction I, Certificate</span></li>
+        <li class="prog" data-cats="electrical-electronics industrial-maintenance"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Industrial Electrician, Certificate</span></li>
+        <li class="prog" data-cats="automation-robotics industrial-maintenance"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Industrial Fluid Power Technician, Certificate</span></li>
+        <li class="prog" data-cats="automation-robotics industrial-maintenance"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Industrial Motor Control Technician, Certificate</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Lathe Operator</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Manufacturing Maintenance Technician</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Manufacturing Production Assistant</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Mechatronics Specialist</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Mechatronics Technician</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Mechatronics Technology, AAS</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Mechatronics Technology, Diploma</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Mill Operator</span></li>
+        <li class="prog" data-cats="construction-trades"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">NCCER Basic Masonry</span></li>
+        <li class="prog" data-cats="construction-trades"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">NCCER Carpentry Fundamentals</span></li>
+        <li class="prog" data-cats="machining-cnc industrial-maintenance"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Precision Machining and Manufacturing</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Programmable Control Technician, Certificate</span></li>
+        <li class="prog" data-cats="construction-trades"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">Residential Carpentry, Diploma</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Robotic Technician Certificate</span></li>
+        <li class="prog" data-cats="construction-trades"><span class="dotmark" data-cat="construction-trades"></span><span class="pname">Site Layouts/Footings/Foundations, Certificate</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Welding and Joining Technology, Diploma</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Welding Career Launch Blueprint Reading, Certificate</span></li>
+        </ul>
+        <p class="nomatch" hidden>No programs match the current filters.</p>
+      </article>
+      <article class="school" data-region="Northwest Georgia" data-cats="automation-robotics automotive-diesel aviation electrical-electronics engineering-drafting industrial-maintenance">
+        <div class="top">
+          <div class="badge">
+            <span class="mono">GNW</span>
+            <img src="logos/georgia-northwestern-technical-college.png" alt="Georgia Northwestern Technical College logo" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="idy">
+            <h3>Georgia Northwestern Technical College</h3>
+            <small>Rome &middot; Northwest Georgia</small>
+          </div>
+        </div>
+        <div class="meta">
+          <span class="count"><b>22</b> programs</span>
+          <a class="visit" href="https://www.gntc.edu" target="_blank" rel="noopener noreferrer">Visit site &#8599;</a>
+        </div>
+        <button class="toggle" type="button" aria-expanded="false">
+          <span class="tlabel">Show programs</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul class="proglist" hidden>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Applied Technical Management (AS33)</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Architectural and Engineering Drawing Technology (DT13) Degree</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Auto Collision Repair (ACR2) Diploma</span></li>
+        <li class="prog" data-cats="automation-robotics engineering-drafting"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Automation Engineering Technology (AET3) Degree</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Automation Technology (IS13) Degree</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Automation Technology (IST4) Diploma</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Chassis Technician Specialist (ASG1) Certificate</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Collision Repair Assistant I (AB51) Certificate</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Engine Performance Technician (AE51) Certificate</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Technology (AT23) Degree</span></li>
+        <li class="prog" data-cats="aviation industrial-maintenance"><span class="dotmark" data-cat="aviation"></span><span class="pname">Aviation Maintenance Technology (AM43) Associate of Applied Science Degree</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">CAD Operator Mechanical (CP61) Certificate</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Design Tech Assistant (DA31) Certificate</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical Control Systems (EC22) Diploma</span></li>
+        <li class="prog" data-cats="electrical-electronics industrial-maintenance"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical Maintenance Technician (EM81) Certificate</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Engineering Technology Basics (EBT1) Certificate</span></li>
+        <li class="prog" data-cats="electrical-electronics industrial-maintenance"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Industrial Electrician (IE41)</span></li>
+        <li class="prog" data-cats="automation-robotics industrial-maintenance"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Industrial Fluid Power Technician (IF11) Certificate</span></li>
+        <li class="prog" data-cats="automation-robotics industrial-maintenance"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Industrial Motor Controls Technician (IM41) Certificate</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Mechatronics Specialist (AM11) Certificate</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Robotic Technician (RT41) Certificate</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Technical Studies (TS23) Degree</span></li>
+        </ul>
+        <p class="nomatch" hidden>No programs match the current filters.</p>
+      </article>
+      <article class="school" data-region="Metro Atlanta" data-cats="automation-robotics electrical-electronics engineering-drafting industrial-maintenance machining-cnc welding-joining">
+        <div class="top">
+          <div class="badge">
+            <span class="mono">GPT</span>
+            <img src="logos/georgia-piedmont-technical-college.png" alt="Georgia Piedmont Technical College logo" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="idy">
+            <h3>Georgia Piedmont Technical College</h3>
+            <small>Clarkston &middot; Metro Atlanta</small>
+          </div>
+        </div>
+        <div class="meta">
+          <span class="count"><b>20</b> programs</span>
+          <a class="visit" href="https://www.gptc.edu" target="_blank" rel="noopener noreferrer">Visit site &#8599;</a>
+        </div>
+        <button class="toggle" type="button" aria-expanded="false">
+          <span class="tlabel">Show programs</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul class="proglist" hidden>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Basic Electronic Assembler technical certificate</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">CAD Operator Mechanical technical certificate</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Computer Engineering Technology technical certificate</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">D Printing and Rapid Prototyping technical certificate</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Drafting Technology AAS degree and diploma</span></li>
+        <li class="prog" data-cats="electrical-electronics engineering-drafting"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical and Computer Engineering Technology AAS degree</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical Control Systems diploma</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electronics Fundamentals diploma</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electronics Technology AAS degree and diploma</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Industrial Mechanical Systems diploma</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Industrial Systems Technology AAS degree</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Industrial Systems Technology diploma</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Mechatronics Technician technical certificate</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Mechatronics Technology AAS degree</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Mechatronics Technology diploma</span></li>
+        <li class="prog" data-cats="machining-cnc industrial-maintenance"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Precision Machining and Manufacturing AAS degree</span></li>
+        <li class="prog" data-cats="machining-cnc industrial-maintenance"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Precision Machining and Manufacturing diploma</span></li>
+        <li class="prog" data-cats="machining-cnc industrial-maintenance"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Precision Manufacturing and Maintenance AAS degree</span></li>
+        <li class="prog" data-cats="machining-cnc industrial-maintenance"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Precision Manufacturing and Maintenance for GACATT diploma</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Welding and Joining Technology diploma</span></li>
+        </ul>
+        <p class="nomatch" hidden>No programs match the current filters.</p>
+      </article>
+      <article class="school" data-region="Metro Atlanta" data-cats="automation-robotics automotive-diesel electrical-electronics engineering-drafting industrial-maintenance welding-joining">
+        <div class="top">
+          <div class="badge">
+            <span class="mono">GWT</span>
+            <img src="logos/gwinnett-technical-college.png" alt="Gwinnett Technical College logo" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="idy">
+            <h3>Gwinnett Technical College</h3>
+            <small>Lawrenceville &middot; Metro Atlanta</small>
+          </div>
+        </div>
+        <div class="meta">
+          <span class="count"><b>13</b> programs</span>
+          <a class="visit" href="https://www.gwinnetttech.edu" target="_blank" rel="noopener noreferrer">Visit site &#8599;</a>
+        </div>
+        <button class="toggle" type="button" aria-expanded="false">
+          <span class="tlabel">Show programs</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul class="proglist" hidden>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Advanced CAD Technician</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Technology Diploma</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Basic Electrician Assistant certificate</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Drafting Technology AAS degree and diploma</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Driverless and Driver Assist Systems certificate</span></li>
+        <li class="prog" data-cats="electrical-electronics automotive-diesel"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electric Vehicle Charging Station Technician certificate</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical Systems Technology AAS degree</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Engineering Technology AAS degree</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Engineering Technology Basics certificate</span></li>
+        <li class="prog" data-cats="electrical-electronics automotive-diesel"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Hybrid/Electric Vehicle Service Technician certificate</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Mechatronics Technology AAS degree, diploma, and certificate</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Rapid Transit Technology diploma</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Welding and Joining Technology diploma</span></li>
+        </ul>
+        <p class="nomatch" hidden>No programs match the current filters.</p>
+      </article>
+      <article class="school" data-region="Northeast Georgia" data-cats="automation-robotics electrical-electronics engineering-drafting industrial-maintenance machining-cnc welding-joining">
+        <div class="top">
+          <div class="badge">
+            <span class="mono">LAN</span>
+            <img src="logos/lanier-technical-college.png" alt="Lanier Technical College logo" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="idy">
+            <h3>Lanier Technical College</h3>
+            <small>Gainesville &middot; Northeast Georgia</small>
+          </div>
+        </div>
+        <div class="meta">
+          <span class="count"><b>11</b> programs</span>
+          <a class="visit" href="https://www.laniertech.edu" target="_blank" rel="noopener noreferrer">Visit site &#8599;</a>
+        </div>
+        <button class="toggle" type="button" aria-expanded="false">
+          <span class="tlabel">Show programs</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul class="proglist" hidden>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Architectural and Engineering Drawing Technology Diploma</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Architectural Systems Drafter Certificate</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">CNC and Machine Tool Technology Diploma</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">CNC Technology Diploma</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Commercial Wiring Technician Certificate</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical Systems Technology Diploma</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Engineering Technology Degree</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Gas Metal Arc Welder Certificate</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Mechatronics Technology Degree</span></li>
+        <li class="prog" data-cats="machining-cnc industrial-maintenance"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Precision Machining &amp; Manufacturing Diploma</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Welding and Joining Technology Diploma</span></li>
+        </ul>
+        <p class="nomatch" hidden>No programs match the current filters.</p>
+      </article>
+      <article class="school" data-region="Northeast Georgia" data-cats="electrical-electronics hvac-plumbing industrial-maintenance machining-cnc welding-joining">
+        <div class="top">
+          <div class="badge">
+            <span class="mono">NGA</span>
+            <img src="logos/north-georgia-technical-college.png" alt="North Georgia Technical College logo" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="idy">
+            <h3>North Georgia Technical College</h3>
+            <small>Clarkesville &middot; Northeast Georgia</small>
+          </div>
+        </div>
+        <div class="meta">
+          <span class="count"><b>6</b> programs</span>
+          <a class="visit" href="https://www.northgatech.edu" target="_blank" rel="noopener noreferrer">Visit site &#8599;</a>
+        </div>
+        <button class="toggle" type="button" aria-expanded="false">
+          <span class="tlabel">Show programs</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul class="proglist" hidden>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Advanced Manufacturing Degree</span></li>
+        <li class="prog" data-cats="hvac-plumbing"><span class="dotmark" data-cat="hvac-plumbing"></span><span class="pname">Air Conditioning Degree</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Applied Technical Management Diploma</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical Systems Diploma</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Precision Machining (CNC) Degree</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Welding Diploma</span></li>
+        </ul>
+        <p class="nomatch" hidden>No programs match the current filters.</p>
+      </article>
+      <article class="school" data-region="Middle Georgia" data-cats="automation-robotics electrical-electronics hvac-plumbing industrial-maintenance machining-cnc welding-joining">
+        <div class="top">
+          <div class="badge">
+            <span class="mono">OFL</span>
+            <img src="logos/oconee-fall-line-technical-college.png" alt="Oconee Fall Line Technical College logo" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="idy">
+            <h3>Oconee Fall Line Technical College</h3>
+            <small>Sandersville / Dublin &middot; Middle Georgia</small>
+          </div>
+        </div>
+        <div class="meta">
+          <span class="count"><b>11</b> programs</span>
+          <a class="visit" href="https://www.oftc.edu" target="_blank" rel="noopener noreferrer">Visit site &#8599;</a>
+        </div>
+        <button class="toggle" type="button" aria-expanded="false">
+          <span class="tlabel">Show programs</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul class="proglist" hidden>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Advanced General Machinist Certificate</span></li>
+        <li class="prog" data-cats="hvac-plumbing"><span class="dotmark" data-cat="hvac-plumbing"></span><span class="pname">Air Conditioning Technology Diploma</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Automated Manufacturing Basics Certificate</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical Control Systems Diploma</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electronics Technology</span></li>
+        <li class="prog" data-cats="electrical-electronics industrial-maintenance"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Industrial Electrician certificate</span></li>
+        <li class="prog" data-cats="automation-robotics industrial-maintenance"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Industrial Motor Control Technician Certificate</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Mechatronics Technology Degree</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Repair Specialist</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Technician Assistant Certificate</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Welding and Joining Technology Diploma</span></li>
+        </ul>
+        <p class="nomatch" hidden>No programs match the current filters.</p>
+      </article>
+      <article class="school" data-region="Southeast Georgia" data-cats="automation-robotics automotive-diesel construction-trades electrical-electronics engineering-drafting industrial-maintenance machining-cnc welding-joining">
+        <div class="top">
+          <div class="badge">
+            <span class="mono">OGE</span>
+            <img src="logos/ogeechee-technical-college.png" alt="Ogeechee Technical College logo" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="idy">
+            <h3>Ogeechee Technical College</h3>
+            <small>Statesboro &middot; Southeast Georgia</small>
+          </div>
+        </div>
+        <div class="meta">
+          <span class="count"><b>28</b> programs</span>
+          <a class="visit" href="https://www.ogeecheetech.edu" target="_blank" rel="noopener noreferrer">Visit site &#8599;</a>
+        </div>
+        <button class="toggle" type="button" aria-expanded="false">
+          <span class="tlabel">Show programs</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul class="proglist" hidden>
+        <li class="prog" data-cats="automation-robotics industrial-maintenance"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Applied Robotics and Manufacturing Degree AR13</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Basic CNC Technician Technical Certificate of Credit BC21</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Basic Electrical Technician Certificate (BE11)</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Basic Shielded Metal Arc Welder Certificate (FS31)</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">CNC Technology Diploma CT12</span></li>
+        <li class="prog" data-cats="electrical-electronics construction-trades"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Commercial Electrical Construction Technology Diploma (CEC2)</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Commercial Wiring Certificate (CW31)</span></li>
+        <li class="prog" data-cats="electrical-electronics automotive-diesel"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electric Vehicle Charging Station Technician Certificate of Credit EVC1</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical Systems Technology Diploma (ES12)</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical Technology Diploma ET12</span></li>
+        <li class="prog" data-cats="electrical-electronics engineering-drafting industrial-maintenance"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical/Computer Engineering Technology Associate of Applied Science Degree EE13</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Gas Metal Arc Welder Certificate (GM31)</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Gas Tungsten Arc Welder Certificate (GTA1)</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Gas Tungsten Arc Welder Technical Certificate of Credit GTA1</span></li>
+        <li class="prog" data-cats="automation-robotics industrial-maintenance"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Industrial Automation Technology of Applied Science Degree IAT3</span></li>
+        <li class="prog" data-cats="electrical-electronics industrial-maintenance"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Industrial Electrical Assistant Technical Certificate of Credit IE21</span></li>
+        <li class="prog" data-cats="electrical-electronics industrial-maintenance"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Industrial Electrical Technology Diploma (IET2)</span></li>
+        <li class="prog" data-cats="electrical-electronics industrial-maintenance"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Industrial Operations Technology - Electrical/Mechanical Certificate (IA91)</span></li>
+        <li class="prog" data-cats="automation-robotics industrial-maintenance"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Industrial Operations Technology - PLC Certificate (IC91)</span></li>
+        <li class="prog" data-cats="automation-robotics industrial-maintenance"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Industrial Operations Technology - Robotics Certificate (IE91)</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Industrial Operations Technology Diploma (IS32)</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Photovoltaic Systems Installation and Repair Technician Certificate (PS11)</span></li>
+        <li class="prog" data-cats="machining-cnc industrial-maintenance"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Precision Machining and Manufacturing Diploma MTT2</span></li>
+        <li class="prog" data-cats="machining-cnc industrial-maintenance"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Precision Manufacturing Associate of Applied Science Degree MS13</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Programmable Control Technician I Certificate (PC81)</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Surveying Field Technician Technical Certificate of Credit SFT1 Coming in 2027</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Technical Specialist Technical Certificate of Credit TC31</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Welding and Joining Diploma WAJ2</span></li>
+        </ul>
+        <p class="nomatch" hidden>No programs match the current filters.</p>
+      </article>
+      <article class="school" data-region="Southeast Georgia" data-cats="automation-robotics construction-trades electrical-electronics engineering-drafting industrial-maintenance machining-cnc welding-joining">
+        <div class="top">
+          <div class="badge">
+            <span class="mono">SET</span>
+            <img src="logos/southeastern-technical-college.png" alt="Southeastern Technical College logo" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="idy">
+            <h3>Southeastern Technical College</h3>
+            <small>Vidalia &middot; Southeast Georgia</small>
+          </div>
+        </div>
+        <div class="meta">
+          <span class="count"><b>28</b> programs</span>
+          <a class="visit" href="https://www.southeasterntech.edu" target="_blank" rel="noopener noreferrer">Visit site &#8599;</a>
+        </div>
+        <button class="toggle" type="button" aria-expanded="false">
+          <span class="tlabel">Show programs</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul class="proglist" hidden>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Advanced Shielded Metal Arc Welder, Certificate</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Basic CNC Technician</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Basic Machinist, Certificate</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">CNC Operator</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">CNC Specialist</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Commercial Wiring Certificate (CW31)</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Drafting Technology Degree</span></li>
+        <li class="prog" data-cats="electrical-electronics construction-trades"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical Construction Technology Diploma</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical Contracting Technician Certificate</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical Systems Assistant Certificate</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical Systems Technology Diploma</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electronics Fundamentals Diploma</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electronics Technology</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electronics Technology Degree</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electronics Technology Diploma</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Gas Metal Arc Welder Certificate</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">General Industry Materials Handling Specialist</span></li>
+        <li class="prog" data-cats="electrical-electronics industrial-maintenance"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Industrial Electrical Controls</span></li>
+        <li class="prog" data-cats="electrical-electronics industrial-maintenance"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Industrial Electrical Technology Diploma (IET2)</span></li>
+        <li class="prog" data-cats="electrical-electronics industrial-maintenance"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Industrial Electrician</span></li>
+        <li class="prog" data-cats="automation-robotics industrial-maintenance"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Industrial Fluid Power Technician</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Industrial Systems Technology</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Lathe Operator</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Manufacturing Maintenance Fundamentals</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Mill Operator</span></li>
+        <li class="prog" data-cats="machining-cnc industrial-maintenance"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Precision Machining and Manufacturing Diploma</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Welding &amp; Joining Technology Diploma</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Welding and Joining Technology Diploma</span></li>
+        </ul>
+        <p class="nomatch" hidden>No programs match the current filters.</p>
+      </article>
+      <article class="school" data-region="Metro Atlanta" data-cats="automation-robotics construction-trades electrical-electronics engineering-drafting industrial-maintenance machining-cnc welding-joining">
+        <div class="top">
+          <div class="badge">
+            <span class="mono">SCT</span>
+            <img src="logos/southern-crescent-technical-college.png" alt="Southern Crescent Technical College logo" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="idy">
+            <h3>Southern Crescent Technical College</h3>
+            <small>Griffin &middot; Metro Atlanta</small>
+          </div>
+        </div>
+        <div class="meta">
+          <span class="count"><b>27</b> programs</span>
+          <a class="visit" href="https://www.sctech.edu" target="_blank" rel="noopener noreferrer">Visit site &#8599;</a>
+        </div>
+        <button class="toggle" type="button" aria-expanded="false">
+          <span class="tlabel">Show programs</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul class="proglist" hidden>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Applied Technical Management (AAS)</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Automation and Robotics Technology (TCC)</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Automation Technology (AAS)</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Automation Technology (Diploma)</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Basic Materials Processing (TCC)</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Civil Engineering Technology (AAS)</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">CNC Specialist (TCC)</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">CNC Technology (Diploma)</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical Systems Technology (Diploma)</span></li>
+        <li class="prog" data-cats="electrical-electronics industrial-maintenance"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Industrial Electrical Controls (TCC)</span></li>
+        <li class="prog" data-cats="electrical-electronics industrial-maintenance"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Industrial Electrician (TCC)</span></li>
+        <li class="prog" data-cats="automation-robotics industrial-maintenance"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Industrial Fluid Power Technician (TCC)</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Industrial Maintenance Assistant (TCC)</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Industrial Maintenance Technician (TCC)</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Industrial Mechanical Systems (Diploma)</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Manufacturing Maintenance Fundamentals (TCC)</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Manufacturing Maintenance Technician (TCC)</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Manufacturing Production Assistant (TCC)</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Mechatronics Technology (Diploma)</span></li>
+        <li class="prog" data-cats="welding-joining construction-trades"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">NCCER Welding and Joining Technician (Diploma)</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Plastics and Polymer Technology (TCC)</span></li>
+        <li class="prog" data-cats="machining-cnc industrial-maintenance"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Precision Machining and Manufacturing (Diploma)</span></li>
+        <li class="prog" data-cats="machining-cnc industrial-maintenance"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Precision Manufacturing and Maintenance (AAS)</span></li>
+        <li class="prog" data-cats="machining-cnc industrial-maintenance"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Precision Manufacturing and Maintenance GACATT (Diploma)</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Programmable Control Technician (TCC)</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Robotic Technician (TCC)</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Technical Specialist (TCC)</span></li>
+        </ul>
+        <p class="nomatch" hidden>No programs match the current filters.</p>
+      </article>
+      <article class="school" data-region="South Georgia" data-cats="automation-robotics electrical-electronics engineering-drafting industrial-maintenance machining-cnc">
+        <div class="top">
+          <div class="badge">
+            <span class="mono">SRT</span>
+            <img src="logos/southern-regional-technical-college.png" alt="Southern Regional Technical College logo" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="idy">
+            <h3>Southern Regional Technical College</h3>
+            <small>Thomasville &middot; South Georgia</small>
+          </div>
+        </div>
+        <div class="meta">
+          <span class="count"><b>16</b> programs</span>
+          <a class="visit" href="https://www.southernregional.edu" target="_blank" rel="noopener noreferrer">Visit site &#8599;</a>
+        </div>
+        <button class="toggle" type="button" aria-expanded="false">
+          <span class="tlabel">Show programs</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul class="proglist" hidden>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Automation Technology, AAS</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Automation Technology, Diploma</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Basic Machining Operator, TCC</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Basic Machinist, TCC</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">CNC Specialist, TCC</span></li>
+        <li class="prog" data-cats="electrical-electronics industrial-maintenance"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Industrial Electrician, TCC</span></li>
+        <li class="prog" data-cats="automation-robotics industrial-maintenance"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Industrial Fluid Power Technician, TCC</span></li>
+        <li class="prog" data-cats="automation-robotics industrial-maintenance"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Industrial Motor Control Technician, TCC</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Lathe Operator, TCC</span></li>
+        <li class="prog" data-cats="engineering-drafting industrial-maintenance"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Manufacturing Engineering Technology Assistant I</span></li>
+        <li class="prog" data-cats="engineering-drafting industrial-maintenance"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Manufacturing Engineering Technology, AAS</span></li>
+        <li class="prog" data-cats="engineering-drafting industrial-maintenance"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Manufacturing Engineering Technology, Diploma</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Mill Operator, TCC</span></li>
+        <li class="prog" data-cats="machining-cnc industrial-maintenance"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Precision Machining and Manufacturing, AAS</span></li>
+        <li class="prog" data-cats="machining-cnc industrial-maintenance"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Precision Machining and Manufacturing, Diploma</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Programmable Control Technician, TCC</span></li>
+        </ul>
+        <p class="nomatch" hidden>No programs match the current filters.</p>
+      </article>
+      <article class="school" data-region="West Georgia" data-cats="automation-robotics electrical-electronics engineering-drafting hvac-plumbing industrial-maintenance machining-cnc welding-joining">
+        <div class="top">
+          <div class="badge">
+            <span class="mono">WGT</span>
+            <img src="logos/west-georgia-technical-college.png" alt="West Georgia Technical College logo" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="idy">
+            <h3>West Georgia Technical College</h3>
+            <small>Waco / LaGrange &middot; West Georgia</small>
+          </div>
+        </div>
+        <div class="meta">
+          <span class="count"><b>20</b> programs</span>
+          <a class="visit" href="https://www.westgatech.edu" target="_blank" rel="noopener noreferrer">Visit site &#8599;</a>
+        </div>
+        <button class="toggle" type="button" aria-expanded="false">
+          <span class="tlabel">Show programs</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul class="proglist" hidden>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Automation and Robotics Technology Degree</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Basic Machine Operator</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Basic Materials Processing (TCC)</span></li>
+        <li class="prog" data-cats="machining-cnc"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">CNC Technology Diploma</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Commercial Wiring</span></li>
+        <li class="prog" data-cats="electrical-electronics industrial-maintenance"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical Maintenance Technician (EM81) Certificate</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical Systems Technology Diploma</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Engineering Technician</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Engineering Technology AAS Degree</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Gas Metal Arc Welder</span></li>
+        <li class="prog" data-cats="electrical-electronics industrial-maintenance"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Industrial Electrician</span></li>
+        <li class="prog" data-cats="automation-robotics industrial-maintenance"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Industrial Instrumentation Technician</span></li>
+        <li class="prog" data-cats="hvac-plumbing"><span class="dotmark" data-cat="hvac-plumbing"></span><span class="pname">Plumbing/Pipefitting Technology Diploma</span></li>
+        <li class="prog" data-cats="machining-cnc industrial-maintenance"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Precision Machining &amp; Manufacturing Diploma</span></li>
+        <li class="prog" data-cats="machining-cnc industrial-maintenance"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Precision Manufacturing &amp; Maintenance Degree</span></li>
+        <li class="prog" data-cats="machining-cnc industrial-maintenance"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Precision Manufacturing and Maintenance Diploma</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Programmable Control Technician</span></li>
+        <li class="prog" data-cats="electrical-electronics"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Residential Wiring Technician</span></li>
+        <li class="prog" data-cats="hvac-plumbing"><span class="dotmark" data-cat="hvac-plumbing"></span><span class="pname">Residential/Commercial Plumbing Technician</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Welding &amp; Joining Technology Diploma</span></li>
+        </ul>
+        <p class="nomatch" hidden>No programs match the current filters.</p>
+      </article>
+      <article class="school" data-region="South Georgia" data-cats="automation-robotics automotive-diesel electrical-electronics engineering-drafting industrial-maintenance machining-cnc welding-joining">
+        <div class="top">
+          <div class="badge">
+            <span class="mono">WGA</span>
+            <img src="logos/wiregrass-georgia-technical-college.png" alt="Wiregrass Georgia Technical College logo" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="idy">
+            <h3>Wiregrass Georgia Technical College</h3>
+            <small>Valdosta &middot; South Georgia</small>
+          </div>
+        </div>
+        <div class="meta">
+          <span class="count"><b>10</b> programs</span>
+          <a class="visit" href="https://www.wiregrass.edu" target="_blank" rel="noopener noreferrer">Visit site &#8599;</a>
+        </div>
+        <button class="toggle" type="button" aria-expanded="false">
+          <span class="tlabel">Show programs</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <ul class="proglist" hidden>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Automation Technology, Diploma</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Fundamentals, Diploma</span></li>
+        <li class="prog" data-cats="automotive-diesel"><span class="dotmark" data-cat="automotive-diesel"></span><span class="pname">Automotive Technology, Diploma</span></li>
+        <li class="prog" data-cats="electrical-electronics engineering-drafting"><span class="dotmark" data-cat="electrical-electronics"></span><span class="pname">Electrical and Computer Engineering Technology, AAS Degree</span></li>
+        <li class="prog" data-cats="engineering-drafting"><span class="dotmark" data-cat="engineering-drafting"></span><span class="pname">Engineering Technology, AAS Degree</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Industry 4.0 Technology, AAS Degree</span></li>
+        <li class="prog" data-cats="automation-robotics"><span class="dotmark" data-cat="automation-robotics"></span><span class="pname">Mechatronics Technology, AAS Degree</span></li>
+        <li class="prog" data-cats="machining-cnc industrial-maintenance"><span class="dotmark" data-cat="machining-cnc"></span><span class="pname">Precision Machining and Manufacturing, Diploma</span></li>
+        <li class="prog" data-cats="industrial-maintenance"><span class="dotmark" data-cat="industrial-maintenance"></span><span class="pname">Telecommunications and Security Technology, Diploma</span></li>
+        <li class="prog" data-cats="welding-joining"><span class="dotmark" data-cat="welding-joining"></span><span class="pname">Welding and Joining Technology, Diploma</span></li>
+        </ul>
+        <p class="nomatch" hidden>No programs match the current filters.</p>
+      </article>
+  </div>
+
+  <div class="emptyall" id="emptyall">
+    <strong>No colleges match those filters.</strong><br>Try a different search term, region or focus area.
+  </div>
+</main>
+
+<footer>
+  <div class="footer-wrap">
+    <div class="footer-main">
+      <strong>FOCO Works Pathway Explorer</strong> &mdash; a Forsyth County Chamber of Commerce resource connecting
+      students, schools, job seekers, and local employers.
+    </div>
+    <div class="footer-links">
+      <a href="index.html">&larr; Back to the Pathway Explorer</a>
+      <span class="footer-sep">&middot;</span>
+      <a href="https://www.tcsg.edu/" target="_blank" rel="noopener noreferrer">Technical College System of Georgia &#8599;</a>
+    </div>
+    <div class="footer-fine">
+      Program lists compiled from the TCSG Pathway Explorer advanced manufacturing program inventory.
+      Offerings, credential names and campus locations change &mdash; confirm details with each college before applying.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var q = document.getElementById('q');
+  var region = document.getElementById('region');
+  var chipBox = document.getElementById('chips');
+  var schools = Array.prototype.slice.call(document.querySelectorAll('.school'));
+  var line = document.getElementById('resultline');
+  var emptyAll = document.getElementById('emptyall');
+  var active = [];
+
+  schools.forEach(function(s){
+    s.__progs = Array.prototype.slice.call(s.querySelectorAll('.prog')).map(function(li){
+      var span = li.querySelector('.pname');
+      return { li: li, span: span, text: span.textContent, low: span.textContent.toLowerCase() };
+    });
+    s.__name = s.querySelector('.idy h3').textContent.toLowerCase();
+    s.__city = s.querySelector('.idy small').textContent.toLowerCase();
+    s.__list = s.querySelector('.proglist');
+    s.__none = s.querySelector('.nomatch');
+    s.__toggle = s.querySelector('.toggle');
+    s.__count = s.querySelector('.count');
+    s.__total = s.__progs.length;
+    s.__label = s.querySelector('.tlabel');
+    s.__toggle.addEventListener('click', function(){
+      var open = s.__toggle.getAttribute('aria-expanded') === 'true';
+      setOpen(s, !open);
+    });
+  });
+
+  function setOpen(s, open){
+    s.__toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    s.__list.hidden = !open;
+    s.__label.textContent = open ? 'Hide programs' : 'Show programs';
+  }
+
+  function esc(t){ return t.replace(/[&<>"]/g, function(c){
+    return { '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' }[c]; }); }
+
+  function mark(span, text, term){
+    if (!term) { span.textContent = text; return; }
+    var i = text.toLowerCase().indexOf(term);
+    if (i < 0) { span.textContent = text; return; }
+    span.innerHTML = esc(text.slice(0, i)) + '<mark>' + esc(text.slice(i, i + term.length)) +
+                     '</mark>' + esc(text.slice(i + term.length));
+  }
+
+  function apply(){
+    var term = q.value.trim().toLowerCase();
+    var reg = region.value;
+    var shown = 0, progShown = 0;
+
+    schools.forEach(function(s){
+      var regionOk = !reg || s.dataset.region === reg;
+      var collegeHit = !!term && (s.__name.indexOf(term) >= 0 || s.__city.indexOf(term) >= 0);
+      var hits = 0;
+
+      s.__progs.forEach(function(p){
+        var catOk = !active.length || active.some(function(c){
+          return (' ' + p.li.dataset.cats + ' ').indexOf(' ' + c + ' ') >= 0; });
+        var textOk = !term || collegeHit || p.low.indexOf(term) >= 0;
+        var ok = catOk && textOk;
+        p.li.hidden = !ok;
+        if (ok) { hits++; mark(p.span, p.text, collegeHit ? '' : term); }
+      });
+
+      var ok = regionOk && hits > 0;
+      s.hidden = !ok;
+      s.__none.hidden = true;
+      if (ok) {
+        shown++; progShown += hits;
+        s.__count.innerHTML = (hits === s.__total)
+          ? '<b>' + s.__total + '</b> programs'
+          : '<b>' + hits + '</b> of ' + s.__total + ' programs';
+      }
+      // Auto-open while a search or focus-area filter is narrowing things down.
+      if (ok && (term || active.length)) setOpen(s, true);
+      else if (ok) setOpen(s, false);
+    });
+
+    emptyAll.classList.toggle('show', shown === 0);
+    var filtered = term || reg || active.length;
+    line.innerHTML = filtered
+      ? 'Showing <strong>' + progShown + '</strong> program' + (progShown === 1 ? '' : 's') +
+        ' at <strong>' + shown + '</strong> college' + (shown === 1 ? '' : 's') +
+        '<button class="reset" type="button" id="reset">Clear filters</button>'
+      : 'Showing all <strong>' + progShown + '</strong> programs at <strong>' + shown + '</strong> colleges.';
+    var r = document.getElementById('reset');
+    if (r) r.addEventListener('click', function(){
+      q.value = ''; region.value = ''; active = [];
+      chipBox.querySelectorAll('.chip').forEach(function(c){ c.setAttribute('aria-pressed','false'); });
+      apply();
+    });
+  }
+
+  chipBox.addEventListener('click', function(ev){
+    var chip = ev.target.closest('.chip');
+    if (!chip) return;
+    var cat = chip.dataset.cat;
+    var on = chip.getAttribute('aria-pressed') === 'true';
+    chip.setAttribute('aria-pressed', on ? 'false' : 'true');
+    if (on) active = active.filter(function(c){ return c !== cat; });
+    else active.push(cat);
+    apply();
+  });
+
+  q.addEventListener('input', apply);
+  region.addEventListener('change', apply);
+
+  // Deep link: advanced-manufacturing-georgia.html?focus=welding-joining&q=cnc
+  var params = new URLSearchParams(location.search);
+  if (params.get('q')) q.value = params.get('q');
+  if (params.get('region')) region.value = params.get('region');
+  (params.get('focus') || '').split(',').filter(Boolean).forEach(function(cat){
+    var chip = chipBox.querySelector('.chip[data-cat="' + cat + '"]');
+    if (chip) { chip.setAttribute('aria-pressed','true'); active.push(cat); }
+  });
+
+  apply();
+})();
+</script>
+</body>
+</html>
