@@ -11,7 +11,8 @@
        * Shows the button ONLY while the Advanced Manufacturing
          industry detail view is open, by watching the detail
          heading (#d-title) and eyebrow (#d-ey) for text changes.
-       * Links to advanced-manufacturing-georgia.html.
+       * Links to /advanced-manufacturing-georgia.html (root-relative, so it
+         works with Netlify Pretty URLs either way).
 
      To change where it points, edit GEO_HREF below.
      To remove it entirely, delete this block. Nothing else in the
@@ -58,7 +59,7 @@
 
 <script>
 (function(){
-  var GEO_HREF  = 'advanced-manufacturing-georgia.html';
+  var GEO_HREF  = '/advanced-manufacturing-georgia.html';
   // Which industry the button belongs to. Matched against the detail
   // heading and eyebrow text, case-insensitively.
   var GEO_MATCH = /advanced\s+manufacturing/i;

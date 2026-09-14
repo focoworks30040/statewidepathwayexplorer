@@ -29,16 +29,29 @@ Two constants at the top of the script control it:
 
 | Constant | Default | Purpose |
 | --- | --- | --- |
-| `GEO_HREF` | `advanced-manufacturing-georgia.html` | Where the button links |
+| `GEO_HREF` | `/advanced-manufacturing-georgia.html` | Where the button links |
 | `GEO_MATCH` | `/advanced\s+manufacturing/i` | Which industry shows the button |
 
 To remove the button, delete the block. Nothing else depends on it.
 
-## 2. Deploy the statewide page
+## 2. Deploy the statewide page (Netlify)
 
-Upload `advanced-manufacturing-georgia.html` next to the Pathway Explorer page so
-the relative link resolves. It is a single file with inline CSS and JS — no build
-step, no dependencies beyond the Google Fonts link in `<head>`.
+The site is hosted on Netlify. `advanced-manufacturing-georgia.html` is a single
+static file with inline CSS and JS — no build step, no dependencies beyond the
+Google Fonts link in `<head>`, and no `netlify.toml` changes required.
+
+**Manual deploy:** drop the file into the site folder you deploy, next to the
+Pathway Explorer HTML, and redeploy. Netlify serves it at
+`/advanced-manufacturing-georgia` (it resolves extensionless paths to `.html`).
+
+**Git-connected deploy:** merge it to the production branch and Netlify publishes
+it. Pull requests get a Deploy Preview URL, so the page and the button can be
+checked on a real Netlify URL before anything reaches the live site.
+
+Links are root-relative (`/advanced-manufacturing-georgia.html`, and `/` for the
+back link) so they hold up whether or not Netlify's Pretty URLs setting is on. If
+the Pathway Explorer is not served from `/`, change the two `href="/"` links in
+the topbar and footer, and `GEO_HREF` in the snippet.
 
 The page has:
 
@@ -51,9 +64,6 @@ The page has:
   expandable list of every program, each tagged by focus area.
 - Deep links, e.g.
   `advanced-manufacturing-georgia.html?focus=welding-joining&region=Metro%20Atlanta`.
-
-The back link in the topbar and footer points at `index.html`. Change it if the
-Pathway Explorer is served under a different filename.
 
 ## 3. Add college logos
 
