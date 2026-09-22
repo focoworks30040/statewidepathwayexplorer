@@ -575,6 +575,10 @@ footer{text-align:center;padding:32px 20px 48px;color:var(--grey-500);font-size:
 .ga-cta{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
   background:var(--white);border:1px solid var(--grey-200);border-left:5px solid var(--ga-accent,var(--navy));
   border-radius:var(--radius);box-shadow:var(--shadow-sm);padding:18px 22px;margin:-20px 0 44px;}
+.ga-cta-main{display:flex;flex-direction:column;align-items:flex-start;gap:14px;min-width:0;flex:1;}
+.ga-cta-map{width:78px;height:auto;flex:none;margin-right:6px;}
+.ga-cta-map path{fill:var(--grey-100);stroke:var(--navy);stroke-width:1.6;stroke-linejoin:round;}
+.ga-cta-map circle{fill:var(--ga-accent,var(--navy));stroke:var(--white);stroke-width:1.2;}
 .ga-cta-text{display:flex;flex-direction:column;gap:2px;min-width:0;}
 .ga-cta-text strong{font-family:"Poppins","Inter",system-ui,sans-serif;font-weight:700;font-size:20px;letter-spacing:-.01em;line-height:1.3;}
 .ga-cta-text span{color:var(--grey-500);font-size:14px;}
@@ -615,6 +619,10 @@ footer{text-align:center;padding:32px 20px 48px;color:var(--grey-500);font-size:
 @media(max-width:640px){
   #ga-schools{grid-template-columns:1fr;}
   .ga-cta-btn{width:100%;justify-content:center;}
+  .ga-cta{display:grid;grid-template-columns:1fr auto;align-items:start;gap:14px;}
+  .ga-cta-main{display:contents;}
+  .ga-cta-map{width:52px;margin:2px 0 0;grid-column:2;grid-row:1;}
+  .ga-cta-btn{grid-column:1/-1;}
   .ga-controls .searchbar{max-width:none;flex-basis:100%;}
   .ga-select{width:100%;}
   .ga-stats{gap:8px;}
@@ -758,14 +766,21 @@ footer{text-align:center;padding:32px 20px 48px;color:var(--grey-500);font-size:
     <div class="schools" id="d-schools"></div>
 
     <div class="ga-cta">
-      <div class="ga-cta-text">
-        <strong>Explore Opportunities across the State of Georgia</strong>
-        <span id="d-ga-sub">Explore programs at technical colleges across Georgia.</span>
+      <div class="ga-cta-main">
+        <div class="ga-cta-text">
+          <strong>Explore Opportunities across the State of Georgia</strong>
+          <span id="d-ga-sub">Explore programs at technical colleges across Georgia.</span>
+        </div>
+        <button class="ga-cta-btn" id="d-ga-btn" type="button">
+          Learn more about training opportunities across Georgia
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
       </div>
-      <button class="ga-cta-btn" id="d-ga-btn" type="button">
-        Learn more about training opportunities across Georgia
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </button>
+      <!-- outline of Georgia; the dot marks Forsyth County -->
+      <svg class="ga-cta-map" viewBox="0 0 84 96" aria-hidden="true">
+        <path d="M1.6 2.0 L43.7 2.0 L42.5 4.4 L40.1 7.4 L39.6 8.4 L44.3 12.0 L48.0 15.0 L49.9 18.0 L52.4 21.6 L55.6 25.4 L59.0 29.0 L61.8 32.2 L63.5 35.0 L66.0 38.0 L68.7 40.4 L70.8 43.4 L72.5 47.0 L72.8 50.4 L75.8 53.0 L77.2 58.0 L81.4 61.4 L77.5 65.0 L76.2 71.0 L74.5 76.0 L72.5 80.0 L71.9 84.0 L71.4 87.8 L67.1 87.2 L63.2 85.4 L62.0 86.2 L61.7 90.0 L62.0 93.2 L58.8 94.0 L58.5 90.6 L54.6 90.4 L14.2 87.8 L11.8 82.0 L9.9 76.0 L11.0 70.0 L9.4 64.0 L11.0 59.0 L12.5 56.0 L11.8 52.0 L8.8 44.8Z"/>
+        <circle cx="26.3" cy="17.8" r="3.2"/>
+      </svg>
     </div>
 
     <div class="block-head">
