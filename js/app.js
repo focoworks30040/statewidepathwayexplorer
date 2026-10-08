@@ -35,6 +35,24 @@
   const money = (n) => (n >= 239000 ? "$239K+" : "$" + Math.round(n / 1000) + "K");
   const SVGNS = "http://www.w3.org/2000/svg";
 
+  // ── Videos ──────────────────────────────────────────────
+  const VIDEOS = (window.VIDEOS || []).filter((v) => CAREERS[v.career]);
+  const SAMPLES = window.SHOW_SAMPLE_VIDEOS ? (window.SAMPLE_VIDEOS || []).filter((v) => CAREERS[v.career]) : [];
+  const ALL_VIDEOS = [...VIDEOS, ...SAMPLES].map((v, i) => ({ ...v, idx: i }));
+  // Inside an embedded viewer, third-party players can't load, so videos open on their own site.
+  const FRAMED = (() => { try { return window.self !== window.top; } catch (e) { return true; } })();
+  const videosFor = (careerId) => ALL_VIDEOS.filter((v) => !v.sample && v.career === careerId);
+  const hasVideo = (careerId) => VIDEOS.some((v) => v.career === careerId);
+  function videoUrl(v) {
+    if (!v.video) return null;
+    if (v.video.type === "youtube") return "https://www.youtube.com/watch?v=" + encodeURIComponent(v.video.id);
+    if (v.video.type === "vimeo") return "https://vimeo.com/" + encodeURIComponent(v.video.id);
+    return v.video.src;
+  }
+  function ytSearch(careerId) {
+    return "https://www.youtube.com/results?search_query=" + encodeURIComponent("day in the life " + CAREERS[careerId].title);
+  }
+
   function project(lat, lon) {
     const x = MAP.scale * (lon * Math.PI / 180) + MAP.tx;
     const y = -MAP.scale * Math.log(Math.tan(Math.PI / 4 + (lat * Math.PI) / 360)) + MAP.ty;
@@ -200,7 +218,7 @@
         const c = CAREERS[p.id];
         return `<button class="c-node" type="button" data-career="${p.id}" style="left:${p.x.toFixed(2)}%;top:${p.y.toFixed(2)}%">
           ${c.gem ? '<span class="c-node__gem">Hidden gem</span>' : ""}
-          <span class="c-node__title">${esc(c.title)}</span>
+          <span class="c-node__title">${hasVideo(p.id) ? '<span class="play-dot" aria-label="Has video">▶</span> ' : ""}${esc(c.title)}</span>
           <span class="c-node__meta"><i class="dot dot--edu-${c.edu}" aria-hidden="true"></i>${esc(c.years)} · ${money(c.wage)}</span>
         </button>`;
       }).join("")}`;
@@ -237,6 +255,98 @@
         rail.scrollBy({ left: Number(b.dataset.scroll) * Math.min(640, rail.clientWidth * 0.8), behavior: "smooth" });
       })
     );
+  }
+
+  // ── Recent grad videos ──────────────────────────────────
+  let gradSector = "all";
+
+  function gradCard(v) {
+    const c = CAREERS[v.career];
+    const poster = v.video && v.video.type === "file" && v.video.poster ? ` style="--poster:url('${esc(v.video.poster)}')"` : "";
+    if (v.sample) {
+      return `<article class="grad-card grad-card--sample" aria-label="Sample video slot: ${esc(c.title)}">
+        <span class="grad-card__badge">Sample · video coming soon</span>
+        <div class="grad-card__body">
+          <p class="grad-card__quote">“${esc(v.quote)}”</p>
+          <p class="grad-card__name">${esc(c.title)}</p>
+          <p class="grad-card__meta">${esc(v.program)} · ${esc(v.school)}</p>
+        </div>
+      </article>`;
+    }
+    return `<button class="grad-card${poster ? " has-poster" : ""}" type="button" data-video="${v.idx}"${poster} aria-label="Play video: ${esc(v.name)}, ${esc(c.title)}">
+      <span class="grad-card__play" aria-hidden="true">▶</span>
+      ${v.duration ? `<span class="grad-card__time">${esc(v.duration)}</span>` : ""}
+      <span class="grad-card__body">
+        <span class="grad-card__quote">“${esc(v.quote)}”</span>
+        <span class="grad-card__name">${esc(v.name)} · ${esc(c.title)}</span>
+        <span class="grad-card__meta">Class of ${esc(v.gradYear)} · ${esc(v.school)}</span>
+        <span class="grad-card__meta">Now at ${esc(v.employer)}</span>
+      </span>
+    </button>`;
+  }
+
+  function renderGradFilters() {
+    const used = [...new Set(ALL_VIDEOS.map((v) => CAREERS[v.career].sector))];
+    const box = $("#gradFilters");
+    box.innerHTML = [`<button class="chip" type="button" data-g-sector="all">All</button>`]
+      .concat(SECTORS.filter((s) => used.includes(s.id)).map((s) => `<button class="chip" type="button" data-g-sector="${s.id}">${esc(s.name)}</button>`)).join("");
+    box.addEventListener("click", (e) => {
+      const b = e.target.closest("[data-g-sector]");
+      if (!b) return;
+      gradSector = b.dataset.gSector;
+      renderGrads();
+    });
+  }
+
+  function renderGrads() {
+    document.querySelectorAll("[data-g-sector]").forEach((b) => b.classList.toggle("is-on", b.dataset.gSector === gradSector));
+    const list = ALL_VIDEOS.filter((v) => gradSector === "all" || CAREERS[v.career].sector === gradSector);
+    $("#gradRail").innerHTML = list.map(gradCard).join("") + `
+      <div class="grad-card grad-card--invite">
+        <div class="grad-card__body">
+          <p class="grad-card__name">Know a recent grad?</p>
+          <p class="grad-card__meta">Students learn the most from people only a few years ahead of them. Ask your school counselor or college how to share a story.</p>
+        </div>
+      </div>`;
+  }
+
+  function playVideo(idx) {
+    const v = ALL_VIDEOS[idx];
+    if (!v || v.sample) return;
+    const c = CAREERS[v.career];
+    const url = videoUrl(v);
+    let player;
+    if (v.video.type === "file") {
+      player = `<video class="player" controls playsinline autoplay ${v.video.poster ? `poster="${esc(v.video.poster)}"` : ""} src="${esc(v.video.src)}"></video>`;
+    } else if (FRAMED) {
+      player = `<a class="player player--link" href="${esc(url)}" target="_blank" rel="noopener"><span class="grad-card__play" aria-hidden="true">▶</span><span>Watch on ${v.video.type === "vimeo" ? "Vimeo" : "YouTube"} ›</span></a>`;
+    } else {
+      const src = v.video.type === "vimeo"
+        ? `https://player.vimeo.com/video/${encodeURIComponent(v.video.id)}?autoplay=1`
+        : `https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.video.id)}?autoplay=1&rel=0&playsinline=1`;
+      player = `<iframe class="player" src="${src}" title="${esc(v.name)}, ${esc(c.title)}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+    }
+    const where = v.county ? `${esc(v.employer)}, ${esc(v.county)} County` : esc(v.employer);
+    $("#videoDialogBody").innerHTML = `
+      <button class="sheet__close" type="button" data-close aria-label="Close">✕</button>
+      <div class="video-layout">
+        <div class="player-frame">${player}</div>
+        <div class="video-story">
+          <p class="dlg-sector">${esc(sectorById[c.sector].name)}</p>
+          <h2 class="dlg-title dlg-title--sm" id="vidTitle">${esc(v.name)}</h2>
+          <p class="dlg-summary">“${esc(v.quote)}”</p>
+          <ol class="path">
+            ${v.hometown ? `<li><strong>High school</strong><span>${esc(v.hometown)}</span></li>` : ""}
+            <li><strong>Trained at ${esc(v.school)}</strong><span>${esc(v.program)} · Class of ${esc(v.gradYear)}</span></li>
+            <li><strong>Now: ${esc(c.title)}</strong><span>${where}</span></li>
+          </ol>
+          <div class="dlg-actions">
+            <button class="pill pill--blue pill--lg" type="button" data-career="${v.career}">Explore this career</button>
+          </div>
+        </div>
+      </div>`;
+    const dlg = $("#videoDialog");
+    if (!dlg.open) dlg.showModal();
   }
 
   // ── Library ─────────────────────────────────────────────
@@ -329,6 +439,10 @@
       <ul class="dlg-list">${c.day.map((d) => `<li>${esc(d)}</li>`).join("")}</ul>
       <h3 class="dlg-h">Your path in Georgia</h3>
       <ol class="path">${steps.map((s) => `<li><strong>${esc(s.h)}</strong><span>${esc(s.t)}</span></li>`).join("")}</ol>
+      <h3 class="dlg-h">Meet a recent grad</h3>
+      ${videosFor(id).length
+        ? `<div class="grad-strip">${videosFor(id).map(gradCard).join("")}</div>`
+        : `<p class="muted-note">We're still collecting videos from recent ${esc(c.title.toLowerCase())} grads. In the meantime, <a class="link" href="${ytSearch(id)}" target="_blank" rel="noopener">watch day-in-the-life videos on YouTube ›</a></p>`}
       <h3 class="dlg-h">Careers next door</h3>
       <div class="related">${(c.also || []).filter((a) => CAREERS[a]).map((a) => `<button class="chip" type="button" data-career="${a}">${esc(CAREERS[a].title)}${CAREERS[a].gem ? ' <span class="gem-label">· gem</span>' : ""}</button>`).join("")}</div>
       <div class="dlg-actions">
@@ -401,6 +515,7 @@
       .filter(([n]) => (seen.has(n) ? false : seen.add(n)));
     if (career) employers.sort((a, b) => (b[2].includes(career.sector) ? 1 : 0) - (a[2].includes(career.sector) ? 1 : 0));
 
+    const regionVideos = ALL_VIDEOS.filter((v) => !v.sample && v.county && regionOf[v.county] === regionId);
     const sectorHits = {};
     employers.forEach((e) => e[2].forEach((s) => (sectorHits[s] = (sectorHits[s] || 0) + 1)));
     const localSectors = new Set(Object.keys(sectorHits).filter((s) => sectorHits[s] >= 2));
@@ -443,6 +558,11 @@
         <h4>Closest universities (USG)</h4>
         <ul class="row-list">${schoolRows(usg, career && career.usg)}</ul>
       </div>
+      ${regionVideos.length ? `<div class="panel-card">
+        <h4>Recent grads working nearby</h4>
+        <p class="sub">Young Georgians working in the ${esc(region.name)} region.</p>
+        <div class="grad-strip">${regionVideos.map(gradCard).join("")}</div>
+      </div>` : ""}
       ${suggestions.length ? `<div class="panel-card">
         <h4>Hidden gems with local employers</h4>
         <p class="sub">Careers tied to industries hiring around ${esc(name)} County.</p>
@@ -489,10 +609,17 @@
         more.remove();
         return;
       }
+      const vid = e.target.closest("[data-video]");
+      if (vid) { playVideo(Number(vid.dataset.video)); return; }
+      const rail = e.target.closest("[data-rail]");
+      if (rail) {
+        const el = document.getElementById(rail.dataset.rail);
+        el.scrollBy({ left: Number(rail.dataset.dir) * Math.min(640, el.clientWidth * 0.8), behavior: "smooth" });
+        return;
+      }
       const card = e.target.closest("[data-career]");
       if (card) {
-        const sd = $("#savedDialog");
-        if (sd.open) sd.close();
+        ["#savedDialog", "#videoDialog"].forEach((sel) => { const d = $(sel); if (d.open) d.close(); });
         openCareer(card.dataset.career);
       }
     });
@@ -506,6 +633,7 @@
       d.addEventListener("click", (e) => { if (e.target === d) d.close(); })
     );
     $("#openSaved").addEventListener("click", openSaved);
+    $("#videoDialog").addEventListener("close", () => { $("#videoDialogBody").innerHTML = ""; });
   }
 
   // ── Init ────────────────────────────────────────────────
@@ -515,6 +643,8 @@
     $("#savedCount").textContent = state.saved.length;
     renderDreamChips();
     renderConstellation();
+    renderGradFilters();
+    renderGrads();
     renderSectors();
     renderFilters();
     renderLibrary();

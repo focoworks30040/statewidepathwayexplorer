@@ -16,6 +16,8 @@
   --county: #ffffff;
   --county-stroke: #c9c9ce;
   --nav-bg: rgba(255, 255, 255, 0.8);
+  --video-bg: #1d1d1f;
+  --video-fg: #f5f5f7;
   --edu-cert: #0071e3;
   --edu-assoc: #3a9b5c;
   --edu-bach: #8a56d6;
@@ -48,6 +50,8 @@
     --county: #1c1c1e;
     --county-stroke: #3a3a3e;
     --nav-bg: rgba(0, 0, 0, 0.72);
+    --video-bg: #1c1c1e;
+    --video-fg: #f5f5f7;
     --edu-cert: #2997ff;
     --edu-assoc: #4cc37a;
     --edu-bach: #b18cf0;
@@ -58,7 +62,7 @@
 :root[data-theme="dark"] {
   --white: #000000; --mist: #111113; --frost: #161618; --hairline: #38383c; --control: #2a2a2d;
   --ink: #f5f5f7; --slate: #a1a1a6; --steel: #86868b; --link: #2997ff; --blue: #0a84ff; --orange: #ff8a3d;
-  --hover: #10233b; --county: #1c1c1e; --county-stroke: #3a3a3e; --nav-bg: rgba(0, 0, 0, 0.72);
+  --hover: #10233b; --county: #1c1c1e; --county-stroke: #3a3a3e; --nav-bg: rgba(0, 0, 0, 0.72); --video-bg: #1c1c1e; --video-fg: #f5f5f7;
   --edu-cert: #2997ff; --edu-assoc: #4cc37a; --edu-bach: #b18cf0; --edu-adv: #f5f5f7;
   color-scheme: dark;
 }
@@ -386,6 +390,63 @@ a { color: inherit; }
 .saved-list button.linkish { border: 0; background: none; text-align: left; cursor: pointer; padding: 0; }
 .saved-list .name { font-weight: 600; display: block; }
 .saved-list .meta { font-size: 12px; color: var(--slate); }
+
+/* ── Recent grad videos ───────────────────────── */
+#grads .filter-row { margin-bottom: 24px; }
+.grad-rail {
+  display: flex; gap: var(--gap); overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+  padding: 0 max(22px, calc((100vw - 1080px) / 2 + 22px)) 8px; scrollbar-width: none;
+}
+.grad-rail::-webkit-scrollbar { display: none; }
+.grad-strip { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: thin; }
+.grad-card {
+  flex: none; width: 232px; aspect-ratio: 9 / 16; max-width: 100%; scroll-snap-align: start;
+  position: relative; display: flex; flex-direction: column; justify-content: flex-end;
+  border: 0; border-radius: var(--r-card); padding: 0; overflow: hidden; text-align: left; cursor: pointer;
+  background: var(--video-bg); color: var(--video-fg);
+}
+.grad-strip .grad-card { width: 168px; }
+.grad-card.has-poster { background-image: linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,0) 60%), var(--poster); background-size: cover; background-position: center; }
+.grad-card:hover .grad-card__play { transform: translate(-50%, -50%) scale(1.08); }
+.grad-card__play {
+  position: absolute; left: 50%; top: 32%; transform: translate(-50%, -50%);
+  width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; padding-left: 4px;
+  background: rgba(255, 255, 255, 0.92); color: #1d1d1f; font-size: 20px; transition: transform 0.25s ease;
+}
+.grad-card__time { position: absolute; top: 16px; right: 16px; font-size: 12px; padding: 3px 9px; border-radius: var(--r-pill); background: rgba(0, 0, 0, 0.45); color: #fff; }
+.grad-card__body { display: flex; flex-direction: column; gap: 4px; padding: 20px; position: relative; }
+.grad-card__body > * { display: block; margin: 0; }
+.grad-card__quote { font-family: var(--font-display); font-size: 17px; font-weight: 600; line-height: 1.24; margin-bottom: 8px !important; }
+.grad-strip .grad-card__quote { font-size: 14px; }
+.grad-strip .grad-card__play { top: 22%; width: 44px; height: 44px; font-size: 16px; }
+.grad-card__name { font-size: 14px; font-weight: 600; letter-spacing: -0.224px; }
+.grad-card__meta { font-size: 12px; opacity: 0.75; letter-spacing: -0.12px; line-height: 1.33; }
+.grad-card--sample { cursor: default; background: var(--mist); color: var(--ink); box-shadow: inset 0 0 0 1px var(--control); }
+.grad-card--sample::before {
+  content: "▶"; position: absolute; left: 50%; top: 38%; transform: translate(-50%, -50%);
+  width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; padding-left: 4px;
+  box-shadow: inset 0 0 0 1.5px var(--steel); color: var(--steel); font-size: 18px;
+}
+.grad-card__badge { position: absolute; top: 16px; left: 16px; font-size: 12px; font-weight: 600; color: var(--orange); letter-spacing: -0.12px; }
+.grad-card--invite { cursor: default; background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px var(--hairline); justify-content: center; }
+.play-dot { color: var(--blue); font-size: 10px; vertical-align: 1px; }
+.muted-note { margin: 0; color: var(--slate); font-size: 14px; letter-spacing: -0.224px; }
+
+.sheet--video { width: min(920px, calc(100vw - 24px)); }
+.video-layout { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 32px; align-items: start; }
+.player-frame { border-radius: 20px; overflow: hidden; background: #000; aspect-ratio: 9 / 16; max-height: 70dvh; max-width: 100%; margin: 0 auto; width: 100%; }
+.player { display: block; width: 100%; height: 100%; border: 0; object-fit: contain; background: #000; }
+.player--link { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 72px; color: #fff; text-decoration: none; font-size: 17px; position: relative; }
+.player--link .grad-card__play { top: 45%; }
+.player--link span:last-child { margin-top: 120px; }
+.video-story .path { margin-top: 20px; }
+.dlg-title--sm { font-size: clamp(28px, 4vw, 40px); }
+@media (max-width: 734px) {
+  .video-layout { grid-template-columns: 1fr; gap: 20px; }
+  .player-frame { max-height: 60dvh; width: auto; }
+  .grad-rail { padding: 0 16px 8px; }
+  .grad-card { width: 200px; }
+}
 
 /* ── Responsive ───────────────────────────────── */
 @media (max-width: 900px) {

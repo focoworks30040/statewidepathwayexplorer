@@ -5,6 +5,7 @@ An interactive website where high school students and their parents can explore 
 ## What's inside
 
 - **Dream bigger.** Students start from a career they already know ("I want to be a doctor") and see the whole team of related roles around it: anesthesiologist, physician assistant, surgical technologist, perfusionist, sterile processing tech, and more. "Hidden gem" labels mark careers students rarely think of.
+- **Meet recent grads.** Short videos of young Georgians working in these careers. They appear in their own section, on each career's page, and in the county view. Careers without a video link to day-in-the-life searches on YouTube. See `docs/video-guide.md` for how to record and add videos.
 - **Top industries.** Twelve high-demand Georgia sectors: healthcare, advanced manufacturing & EV, IT & cyber, logistics, construction trades, energy, aerospace, education, business & FinTech, public safety, agriculture, and film.
 - **Career library.** You can search all 100+ careers and filter by industry, training time, or "hidden gems only". You can sort by pay or by how fast you can start. Every career has a detail page with typical Georgia pay, a day on the job, a high school → TCSG → USG path, and related careers.
 - **Your county.** All 159 counties are on a clickable map. Each county shows its region's industries, major employers, the closest Technical College System of Georgia campuses, and the closest University System of Georgia institutions. If you pick a career first, matching employers are highlighted.
@@ -24,6 +25,7 @@ Open `index.html` in a browser, or serve the folder with any static host (for ex
 | `js/app.js` | Interactivity |
 | `js/data-careers.js` | Careers, sectors, education levels, and "dream" groupings |
 | `js/data-places.js` | Regions, employers, TCSG campuses, USG campuses |
+| `js/data-videos.js` | Recent grad videos (YouTube, Vimeo, or self-hosted files in `videos/`) |
 | `js/georgia-map.js` | Generated county geometry (U.S. Census boundaries via `us-atlas`) |
 
 ## Updating data
