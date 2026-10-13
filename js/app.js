@@ -281,7 +281,8 @@
         </div>
       </article>`;
     }
-    return `<button class="grad-card${poster ? " has-poster" : ""}" type="button" data-video="${v.idx}"${poster} aria-label="Play video: ${v.name ? esc(v.name) + ", " : ""}${esc(c.title)}">
+    return `<button class="grad-card${poster ? " has-poster" : ""}" type="button" data-video="${v.idx}"${poster} aria-label="Play ${v.example ? "example " : ""}video: ${v.name ? esc(v.name) + ", " : ""}${esc(c.title)}">
+      ${v.example ? '<span class="grad-card__badge grad-card__badge--example">Example</span>' : ""}
       <span class="grad-card__play" aria-hidden="true">▶</span>
       ${v.duration ? `<span class="grad-card__time">${esc(v.duration)}</span>` : ""}
       <span class="grad-card__body">
@@ -340,7 +341,7 @@
       <div class="video-layout">
         <div class="player-frame">${player}</div>
         <div class="video-story">
-          <p class="dlg-sector">${esc(sectorById[c.sector].name)}</p>
+          <p class="dlg-sector">${esc(sectorById[c.sector].name)}${v.example ? ' · <span class="gem-label">Example video</span>' : ""}</p>
           <h2 class="dlg-title dlg-title--sm" id="vidTitle">${esc(v.name || c.title)}</h2>
           <p class="dlg-summary">“${esc(v.quote)}”</p>
           <ol class="path">

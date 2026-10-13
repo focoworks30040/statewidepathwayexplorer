@@ -15,6 +15,7 @@
 //   hometown   optional: where they went to high school
 //   quote      one sentence, in their own words
 //   duration   "1:12"
+//   example    optional: true labels the video "Example" on the page
 //   video      one of:
 //                { type: "youtube", id: "VIDEO_ID" }
 //                { type: "vimeo",   id: "VIDEO_ID" }
@@ -27,12 +28,12 @@ window.SHOW_SAMPLE_VIDEOS = true;
 
 window.VIDEOS = [
   {
-    career: "pa",
+    example: true, // shown with an "Example" label; remove once a real grad's video replaces it
+    career: "pa", name: "Priya", gradYear: 2024,
+    school: "Augusta University", program: "Physician Assistant Studies",
     quote: "Why did you choose PA school instead of med school?",
-    program: "Physician Assistant",
     duration: "0:10",
     video: { type: "file", src: "videos/pa-why-pa-school.mp4", poster: "videos/pa-why-pa-school.jpg" }
-    // Add name, gradYear, school, employer, county, and hometown when known.
   },
   // Real entries go here, for example:
   // {
