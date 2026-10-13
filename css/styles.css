@@ -406,7 +406,7 @@ a { color: inherit; }
   background: var(--video-bg); color: var(--video-fg);
 }
 .grad-strip .grad-card { width: 168px; }
-.grad-card.has-poster { background-image: linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,0) 60%), var(--poster); background-size: cover; background-position: center; }
+.grad-card.has-poster { background-size: cover; background-position: center; color: #fff; }
 .grad-card:hover .grad-card__play { transform: translate(-50%, -50%) scale(1.08); }
 .grad-card__play {
   position: absolute; left: 50%; top: 32%; transform: translate(-50%, -50%);

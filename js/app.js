@@ -38,7 +38,15 @@
   // ── Videos ──────────────────────────────────────────────
   const VIDEOS = (window.VIDEOS || []).filter((v) => CAREERS[v.career]);
   const SAMPLES = window.SHOW_SAMPLE_VIDEOS ? (window.SAMPLE_VIDEOS || []).filter((v) => CAREERS[v.career]) : [];
-  const ALL_VIDEOS = [...VIDEOS, ...SAMPLES].map((v, i) => ({ ...v, idx: i }));
+  // A real video takes the place of the sample slot for the same career, keeping its position.
+  const usedVideos = new Set();
+  const slotted = SAMPLES.map((s) => {
+    const v = VIDEOS.find((x) => x.career === s.career && !usedVideos.has(x));
+    if (!v) return s;
+    usedVideos.add(v);
+    return v;
+  });
+  const ALL_VIDEOS = [...VIDEOS.filter((v) => !usedVideos.has(v)), ...slotted].map((v, i) => ({ ...v, idx: i }));
   // Inside an embedded viewer, third-party players can't load, so videos open on their own site.
   const FRAMED = (() => { try { return window.self !== window.top; } catch (e) { return true; } })();
   const videosFor = (careerId) => ALL_VIDEOS.filter((v) => !v.sample && v.career === careerId);
@@ -262,7 +270,7 @@
 
   function gradCard(v) {
     const c = CAREERS[v.career];
-    const poster = v.video && v.video.type === "file" && v.video.poster ? ` style="--poster:url('${esc(v.video.poster)}')"` : "";
+    const poster = v.video && v.video.type === "file" && v.video.poster ? ` style="background-image:linear-gradient(to top, rgba(0,0,0,.75), rgba(0,0,0,0) 55%), url('${esc(v.video.poster)}')"` : "";
     if (v.sample) {
       return `<article class="grad-card grad-card--sample" aria-label="Sample video slot: ${esc(c.title)}">
         <span class="grad-card__badge">Sample · video coming soon</span>
@@ -273,14 +281,14 @@
         </div>
       </article>`;
     }
-    return `<button class="grad-card${poster ? " has-poster" : ""}" type="button" data-video="${v.idx}"${poster} aria-label="Play video: ${esc(v.name)}, ${esc(c.title)}">
+    return `<button class="grad-card${poster ? " has-poster" : ""}" type="button" data-video="${v.idx}"${poster} aria-label="Play video: ${v.name ? esc(v.name) + ", " : ""}${esc(c.title)}">
       <span class="grad-card__play" aria-hidden="true">▶</span>
       ${v.duration ? `<span class="grad-card__time">${esc(v.duration)}</span>` : ""}
       <span class="grad-card__body">
         <span class="grad-card__quote">“${esc(v.quote)}”</span>
-        <span class="grad-card__name">${esc(v.name)} · ${esc(c.title)}</span>
-        <span class="grad-card__meta">Class of ${esc(v.gradYear)} · ${esc(v.school)}</span>
-        <span class="grad-card__meta">Now at ${esc(v.employer)}</span>
+        <span class="grad-card__name">${v.name ? esc(v.name) + " · " : ""}${esc(c.title)}</span>
+        ${v.gradYear || v.school ? `<span class="grad-card__meta">${[v.gradYear && "Class of " + esc(v.gradYear), v.school && esc(v.school)].filter(Boolean).join(" · ")}</span>` : ""}
+        ${v.employer ? `<span class="grad-card__meta">Now at ${esc(v.employer)}</span>` : ""}
       </span>
     </button>`;
   }
@@ -324,21 +332,21 @@
       const src = v.video.type === "vimeo"
         ? `https://player.vimeo.com/video/${encodeURIComponent(v.video.id)}?autoplay=1`
         : `https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.video.id)}?autoplay=1&rel=0&playsinline=1`;
-      player = `<iframe class="player" src="${src}" title="${esc(v.name)}, ${esc(c.title)}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+      player = `<iframe class="player" src="${src}" title="${esc(v.name || c.title)}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
     }
-    const where = v.county ? `${esc(v.employer)}, ${esc(v.county)} County` : esc(v.employer);
+    const where = v.employer ? (v.county ? `${esc(v.employer)}, ${esc(v.county)} County` : esc(v.employer)) : (v.county ? `${esc(v.county)} County` : "");
     $("#videoDialogBody").innerHTML = `
       <button class="sheet__close" type="button" data-close aria-label="Close">✕</button>
       <div class="video-layout">
         <div class="player-frame">${player}</div>
         <div class="video-story">
           <p class="dlg-sector">${esc(sectorById[c.sector].name)}</p>
-          <h2 class="dlg-title dlg-title--sm" id="vidTitle">${esc(v.name)}</h2>
+          <h2 class="dlg-title dlg-title--sm" id="vidTitle">${esc(v.name || c.title)}</h2>
           <p class="dlg-summary">“${esc(v.quote)}”</p>
           <ol class="path">
             ${v.hometown ? `<li><strong>High school</strong><span>${esc(v.hometown)}</span></li>` : ""}
-            <li><strong>Trained at ${esc(v.school)}</strong><span>${esc(v.program)} · Class of ${esc(v.gradYear)}</span></li>
-            <li><strong>Now: ${esc(c.title)}</strong><span>${where}</span></li>
+            ${v.school ? `<li><strong>Trained at ${esc(v.school)}</strong><span>${[v.program && esc(v.program), v.gradYear && "Class of " + esc(v.gradYear)].filter(Boolean).join(" · ")}</span></li>` : ""}
+            <li><strong>Now: ${esc(c.title)}</strong>${where ? `<span>${where}</span>` : ""}</li>
           </ol>
           <div class="dlg-actions">
             <button class="pill pill--blue pill--lg" type="button" data-career="${v.career}">Explore this career</button>

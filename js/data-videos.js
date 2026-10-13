@@ -26,6 +26,14 @@
 window.SHOW_SAMPLE_VIDEOS = true;
 
 window.VIDEOS = [
+  {
+    career: "pa",
+    quote: "Why did you choose PA school instead of med school?",
+    program: "Physician Assistant",
+    duration: "0:10",
+    video: { type: "file", src: "videos/pa-why-pa-school.mp4", poster: "videos/pa-why-pa-school.jpg" }
+    // Add name, gradYear, school, employer, county, and hometown when known.
+  },
   // Real entries go here, for example:
   // {
   //   career: "surgtech", name: "Jordan M.", gradYear: 2023,
