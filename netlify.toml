@@ -1,0 +1,6 @@
+# Netlify settings for Git-connected deploys.
+# The build step copies only the website files into dist/, so repo extras
+# (docs, README, .claude) are not published.
+[build]
+  command = "rm -rf dist && mkdir dist && cp -r index.html css js videos _headers dist/"
+  publish = "dist"
