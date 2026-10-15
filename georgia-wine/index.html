@@ -5,451 +5,475 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Georgia Pours</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="An editorial guide to the best wines grown in Georgia, from Dahlonega Plateau reds to South Georgia muscadine.">
+<meta name="description" content="A guide to the best wines grown in Georgia, from Dahlonega Plateau reds to South Georgia muscadine.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Inter:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
 <style>
-/* Layout: monochrome gallery wall. White hero, full-bleed landscape, black wine wall, white regions, black grape glossary, white footer. */
+/* Layout: white gallery. Centered hero with bottle renders as the event, a mist highlights band of large white cards, white editorial chapters with imagery entering from the side. */
 :root {
-  --black: #000000;
   --white: #ffffff;
-  --fog: #f2f2f2;
-  --graphite: #737373;
-  --ash: #b8b8b8;
-  --silver: #d9d9d9;
-  --steel: #999999;
-  --amber: #f1a900;
-  --goldenrod: #ffbc3c;
+  --mist: #f5f5f7;
+  --frost: #fafafc;
+  --hairline: #d6d6d6;
+  --control: #e6e6e8;
+  --ink: #1d1d1f;
+  --slate: #707070;
+  --steel: #86868b;
+  --link: #0066cc;
+  --cta: #0071e3;
+  --cta-hover: #0077ed;
+  --launch: #b64400;
 
-  --font-display: 'Oswald', 'Arial Narrow', 'Roboto Condensed', ui-sans-serif, sans-serif;
-  --font-body: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  --font-text: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
 
-  --max: 1280px;
+  --max: 1024px;
+  --max-wide: 1260px;
   --gutter-l: max(16px, env(safe-area-inset-left, 0px));
   --gutter-r: max(16px, env(safe-area-inset-right, 0px));
-  --r-sm: 4px;
-  --r-pill: 999px;
+  --r-card: 28px;
+  --r-pill: 9999px;
+  --section: 90px;
   color-scheme: light;
 }
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   background: var(--white);
-  color: var(--black);
-  font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.5;
-  font-feature-settings: "clig" 0, "liga" 0;
+  color: var(--ink);
+  font-family: var(--font-text);
+  font-size: 17px;
+  line-height: 1.47;
+  letter-spacing: -0.022em;
+  -webkit-font-smoothing: antialiased;
 }
-a { color: inherit; text-decoration: none; }
-:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
-.wrap {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding-left: var(--gutter-l);
-  padding-right: var(--gutter-r);
-}
-h1, h2, h3 { font-family: var(--font-display); margin: 0; text-wrap: balance; }
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+:focus-visible { outline: 2px solid var(--cta); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { margin: 0; font-family: var(--font-display); font-weight: 600; text-wrap: balance; }
 p { margin: 0; }
+.wrap { max-width: var(--max); margin: 0 auto; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
+.wrap-wide { max-width: var(--max-wide); margin: 0 auto; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
 
-/* Labels and buttons */
-.label {
-  font-family: var(--font-display);
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+/* Buttons */
+.pill {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 12px; line-height: 16px; letter-spacing: -0.01em; font-weight: 400;
+  padding: 4px 11px; border-radius: var(--r-pill);
+  border: 1px solid transparent; cursor: pointer; white-space: nowrap;
+  font-family: var(--font-text);
 }
-.btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-family: var(--font-display);
-  font-size: 13px; font-weight: 500;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  padding: 6px 20px; min-height: 34px;
-  border-radius: var(--r-pill);
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: background-color .15s, color .15s, border-color .15s;
+.pill:hover { text-decoration: none; }
+.pill-blue { background: var(--cta); color: var(--white); }
+.pill-blue:hover { background: var(--cta-hover); }
+.pill-outline { background: transparent; color: var(--ink); border-color: var(--steel); }
+.pill-outline:hover { border-color: var(--ink); }
+.btn-lg {
+  display: inline-flex; align-items: center; font-size: 17px; line-height: 1.18;
+  padding: 11px 21px; border-radius: var(--r-pill); background: var(--cta); color: var(--white);
 }
-.btn-black { background: var(--black); color: var(--white); }
-.btn-black:hover { background: #262626; }
-.btn-amber { background: var(--amber); color: var(--black); }
-.btn-amber:hover { background: var(--goldenrod); }
-.btn-ghost-dark { background: transparent; color: var(--white); border-color: var(--silver); }
-.btn-ghost-dark:hover { border-color: var(--white); }
-.btn-ghost { background: transparent; color: var(--black); border-color: var(--black); }
-.btn-ghost:hover { background: var(--black); color: var(--white); }
+.btn-lg:hover { background: var(--cta-hover); text-decoration: none; }
+.more::after { content: " \203A"; }
+.launch { color: var(--launch); font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: -0.01em; }
 
-/* Nav */
-.nav { background: var(--white); }
-.nav .wrap {
-  display: flex; align-items: center; justify-content: space-between; gap: 24px;
-  min-height: 68px;
+/* Global nav */
+.gnav { background: rgba(255,255,255,.92); }
+.gnav .wrap { height: 44px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.gnav a { color: rgba(0,0,0,.8); font-size: 12px; letter-spacing: -0.01em; }
+.gnav a:hover { color: var(--ink); text-decoration: none; }
+.gnav-links { display: flex; gap: 32px; }
+.glyph { display: inline-flex; align-items: center; }
+.glyph svg { width: 18px; height: 18px; }
+
+/* Local nav */
+.lnav {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
+  background: rgba(255,255,255,.82);
+  -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--hairline);
 }
-.logo { display: flex; align-items: center; gap: 10px; }
-.logo-mark {
-  width: 36px; height: 36px; border-radius: 50%;
-  border: 2px solid var(--black);
-  display: grid; place-items: center;
-  font-family: var(--font-display); font-weight: 600; font-size: 13px; letter-spacing: 0.04em;
-}
-.logo-word { font-family: var(--font-display); font-weight: 600; font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; }
-.nav-links { display: flex; gap: 28px; }
-.nav-links a:hover { color: var(--graphite); }
-.nav-right { display: flex; align-items: center; gap: 20px; }
+.lnav .wrap { height: 52px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.lnav-title { font-family: var(--font-display); font-size: 19px; line-height: 1.21; font-weight: 600; letter-spacing: 0.012em; color: var(--ink); }
+.lnav-title:hover { text-decoration: none; }
+.lnav-right { display: flex; align-items: center; gap: 20px; }
+.lnav-right .txt { color: var(--ink); font-size: 12px; opacity: .8; }
 
 /* Hero */
-.hero .wrap { padding-block: 56px 48px; display: grid; gap: 28px; }
-.eyebrow { color: var(--graphite); display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
-.badge {
-  font-family: var(--font-display);
-  display: inline-block;
-  background: var(--amber); color: var(--black);
-  font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
-  padding: 2px 6px; border-radius: var(--r-sm);
-  line-height: 1.4;
+.hero { text-align: center; overflow: hidden; }
+.hero .wrap { padding-block: 64px 0; display: grid; gap: 14px; justify-items: center; }
+.kicker { font-family: var(--font-display); font-size: 21px; line-height: 1; font-weight: 600; letter-spacing: 0.011em; }
+.hero-display {
+  font-size: clamp(44px, 7.8vw, 80px);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  max-width: 14ch;
 }
-.display {
-  font-weight: 600;
-  font-size: clamp(52px, 9.4vw, 98px);
-  line-height: 0.93;
-  letter-spacing: -0.05em;
-  text-transform: uppercase;
-  max-width: 13ch;
+.hero-sub { font-size: clamp(19px, 2.2vw, 21px); line-height: 1.38; color: var(--ink); max-width: 36ch; margin-top: 6px; }
+.hero-links { display: flex; gap: 28px; flex-wrap: wrap; justify-content: center; margin-top: 6px; font-size: 19px; }
+.stage { position: relative; max-width: var(--max-wide); margin: 0 auto; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
+.stage-img { display: flex; justify-content: center; align-items: flex-end; gap: 0; padding-top: 40px; }
+.stage-img svg { height: clamp(300px, 52vw, 600px); width: auto; max-width: 34%; }
+.stage-img svg:nth-child(2) { height: clamp(330px, 57vw, 660px); margin-inline: -2%; position: relative; z-index: 1; }
+.floor { height: 1px; background: var(--hairline); margin-top: 0; }
+.callout {
+  position: relative; margin: -36px auto 0; z-index: 2;
+  background: var(--white); border-radius: var(--r-card);
+  box-shadow: 0 0 0 1px var(--control);
+  padding: 14px 14px 14px 24px; display: flex; align-items: center; gap: 20px;
+  width: fit-content; max-width: 100%; text-align: left;
 }
-.hero-foot {
-  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px; align-items: end;
-}
-.lede { max-width: 58ch; font-size: 17px; }
-.actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.callout b { font-size: 14px; font-weight: 600; line-height: 1.29; display: block; }
+.callout span { font-size: 12px; color: var(--slate); }
 
-/* Full-bleed photo band */
-.band { position: relative; background: var(--black); line-height: 0; }
-.band svg { display: block; width: 100%; height: clamp(280px, 52vw, 640px); }
-.band-caption {
-  position: absolute; left: 0; right: 0; bottom: 0;
-  line-height: 1.4;
-}
-.band-caption .wrap {
-  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
-  padding-block: 20px; color: var(--white);
-}
-.band-caption .label { text-shadow: 0 1px 2px rgba(0,0,0,.6); }
+/* Anchor nav */
+.anchors .wrap { display: flex; gap: 36px; justify-content: center; flex-wrap: wrap; padding-block: 28px; }
+.anchors a { color: var(--ink); font-size: 17px; font-weight: 500; line-height: 25px; }
+.anchors a:hover { color: var(--link); text-decoration: none; }
 
-/* Dark wine wall */
-.dark { background: var(--black); color: var(--white); }
-.section .wrap { padding-block: 64px 72px; }
-.section-head { display: grid; gap: 16px; margin-bottom: 28px; }
-.h-section {
-  font-weight: 600;
-  font-size: clamp(38px, 5.6vw, 54px);
-  line-height: 1.04;
-  letter-spacing: -0.05em;
-  text-transform: uppercase;
-}
-.section-head p { max-width: 60ch; color: var(--ash); }
-.light .section-head p { color: var(--graphite); }
+/* Section headers */
+.sec { padding-block: var(--section); }
+.mist { background: var(--mist); }
+.sec-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin-bottom: 40px; }
+.h-sec { font-size: clamp(32px, 5.4vw, 56px); line-height: 1.07; letter-spacing: -0.005em; }
 
-.tabs {
-  display: flex; gap: 24px; flex-wrap: wrap;
-  border-bottom: 1px solid #262626;
-  margin-bottom: 28px;
+/* Highlights carousel */
+.rail {
+  display: grid; grid-auto-flow: column; grid-auto-columns: min(820px, 86vw);
+  gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory;
+  padding-left: max(var(--gutter-l), calc((100vw - var(--max-wide)) / 2 + 16px));
+  padding-right: var(--gutter-r);
+  scroll-padding-left: max(var(--gutter-l), calc((100vw - var(--max-wide)) / 2 + 16px));
+  scrollbar-width: none;
 }
-.tab {
-  background: none; border: 0; padding: 0 0 12px; cursor: pointer;
-  color: var(--graphite);
-  border-bottom: 1px solid transparent; margin-bottom: -1px;
-  font: inherit;
-}
-.tab .label { font-size: 13px; }
-.tab:hover { color: var(--ash); }
-.tab[aria-selected="true"] { color: var(--white); border-bottom-color: var(--white); }
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 12px;
-}
-.card {
-  background: var(--black);
-  border-radius: var(--r-sm);
-  overflow: hidden;
-  display: flex; flex-direction: column;
+.rail::-webkit-scrollbar { display: none; }
+.slide {
+  scroll-snap-align: start;
+  background: var(--white); border-radius: var(--r-card);
+  min-height: 520px; overflow: hidden; position: relative;
+  display: grid; grid-template-rows: auto 1fr;
   min-width: 0;
 }
-.card-img { aspect-ratio: 4 / 5; max-width: 100%; background: #111; line-height: 0; overflow: hidden; }
-.card-img svg { width: 100%; height: 100%; display: block; transition: transform .5s ease; }
-.card:hover .card-img svg { transform: scale(1.03); }
-.card-body { padding: 16px 2px 8px; display: grid; gap: 6px; }
-.card-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
-.card-name { font-size: 24px; font-weight: 500; line-height: 1.1; letter-spacing: -0.03em; text-transform: none; }
-.card-meta { color: var(--steel); font-size: 11px; letter-spacing: 0.1em; }
-.card-note { color: var(--ash); font-size: 14px; line-height: 1.45; }
-.arrow { font-family: var(--font-body); font-size: 14px; color: var(--white); }
-.card[hidden] { display: none !important; }
-.fine { margin-top: 28px; color: var(--graphite); font-size: 13px; max-width: 70ch; }
+.slide-text { padding: 40px 40px 0; font-family: var(--font-display); font-size: clamp(22px, 2.6vw, 28px); line-height: 1.14; font-weight: 600; letter-spacing: 0.007em; max-width: 26ch; }
+.slide-text em { font-style: normal; color: var(--slate); }
+.slide-art { display: flex; align-items: flex-end; justify-content: center; line-height: 0; }
+.slide-art svg { width: 100%; height: 100%; max-height: 400px; }
+.controls { display: flex; justify-content: center; margin-top: 28px; gap: 12px; }
+.ctrl-track {
+  display: flex; align-items: center; gap: 10px; padding: 0 20px; height: 56px;
+  background: rgba(210,210,215,.64); border-radius: 36px;
+  -webkit-backdrop-filter: blur(7px); backdrop-filter: blur(7px);
+}
+.dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(0,0,0,.42); border: 0; padding: 0; cursor: pointer; transition: width .3s, background .3s; }
+.dot[aria-current="true"] { width: 48px; border-radius: 4px; background: rgba(0,0,0,.8); }
+.ctrl-btn {
+  width: 56px; height: 56px; border-radius: 50%; border: 0; cursor: pointer;
+  background: rgba(210,210,215,.64); color: rgba(0,0,0,.56); font-size: 22px; line-height: 1;
+  display: grid; place-items: center;
+}
+.ctrl-btn:hover { color: rgba(0,0,0,.8); }
+.ctrl-btn:disabled { opacity: .4; cursor: default; }
 
-/* Regions */
-.regions {
-  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0;
-  border-top: 1px solid var(--black);
+/* Wine list */
+.filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+.chip {
+  font-family: var(--font-text); font-size: 14px; letter-spacing: -0.016em; line-height: 1.29;
+  padding: 8px 16px; border-radius: var(--r-pill);
+  background: var(--white); color: var(--ink); border: 1px solid var(--steel); cursor: pointer;
 }
-.region {
-  padding: 24px 24px 28px 0;
-  display: grid; gap: 12px; align-content: start;
-  min-width: 0;
+.chip:hover { border-color: var(--ink); }
+.chip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--white); }
+.wines { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+@media (max-width: 1100px) { .wines { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .wines { gap: 10px; } .wine { padding: 18px 16px; grid-template-rows: auto 200px auto; } .wine-art svg { height: 195px; } .wine-name { font-size: 19px; } .wine-note { font-size: 14px; } }
+.wine {
+  background: var(--mist); border-radius: var(--r-card);
+  padding: 28px 22px; display: grid; grid-template-rows: auto 260px auto; gap: 16px; min-width: 0;
 }
-.region + .region { padding-left: 24px; border-left: 1px solid var(--silver); }
-.region-stat {
-  font-family: var(--font-display);
-  font-weight: 600; font-size: clamp(54px, 7vw, 89px);
-  line-height: 0.95; letter-spacing: -0.05em;
-  font-variant-numeric: tabular-nums;
-}
-.region h3 { font-size: 24px; font-weight: 500; letter-spacing: -0.03em; line-height: 1.2; }
-.region p { color: var(--graphite); font-size: 15px; }
-.region .label { color: var(--black); }
+.wine[hidden] { display: none !important; }
+.wine-top { min-height: 16px; }
+.wine-art { display: flex; justify-content: center; align-items: flex-end; }
+.wine-art svg { height: 250px; width: auto; }
+.wine-body { display: grid; gap: 6px; }
+.wine-name { font-size: 24px; line-height: 1.17; letter-spacing: 0.009em; }
+.wine-meta { font-size: 14px; line-height: 1.29; color: var(--slate); }
+.wine-note { font-size: 17px; line-height: 1.33; margin-top: 6px; }
+.fine { color: var(--slate); font-size: 12px; line-height: 1.33; margin-top: 28px; max-width: 72ch; }
+
+/* Editorial chapters */
+.chapter { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 48px; align-items: center; }
+.chapter + .chapter { margin-top: 120px; }
+.chapter.flip { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
+.chapter.flip .chapter-text { order: 2; }
+.chapter-text { display: grid; gap: 16px; }
+.chapter-kicker { font-family: var(--font-display); font-size: 21px; font-weight: 600; line-height: 1.19; color: var(--launch); }
+.chapter-kicker.k-ink { color: var(--ink); }
+.chapter-statement { font-size: clamp(32px, 4.4vw, 48px); line-height: 1.08; letter-spacing: -0.003em; }
+.chapter-text p { color: var(--slate); font-size: 17px; line-height: 1.47; max-width: 42ch; }
+.chapter-text p b { color: var(--ink); font-weight: 600; }
+.chapter-fig { border-radius: var(--r-card); overflow: hidden; line-height: 0; margin: 0 calc(-1 * var(--gutter-r)) 0 0; }
+.chapter.flip .chapter-fig { margin: 0 0 0 calc(-1 * var(--gutter-l)); }
+.chapter-fig svg { width: 100%; height: auto; aspect-ratio: 7 / 5; max-width: 100%; display: block; }
+.stat-row { display: flex; gap: 40px; flex-wrap: wrap; margin-top: 12px; }
+.stat b { display: block; font-family: var(--font-display); font-size: 40px; line-height: 1; font-weight: 600; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+.stat span { font-size: 14px; color: var(--slate); }
 
 /* Grapes */
-.grapes { display: grid; gap: 0; border-top: 1px solid #262626; }
-.grape {
-  display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 2fr) minmax(0, 5fr);
-  gap: 24px; align-items: baseline;
-  padding-block: 22px; border-bottom: 1px solid #262626;
-}
-.grape-name {
-  font-family: var(--font-display);
-  font-weight: 600; font-size: clamp(32px, 4.2vw, 54px); line-height: 1;
-  letter-spacing: -0.05em; text-transform: uppercase;
-}
-.grape .label { color: var(--steel); }
-.grape p { color: var(--ash); font-size: 15px; }
-.grape:hover .grape-name { color: var(--goldenrod); }
+.grape-card { background: var(--white); border-radius: var(--r-card); padding: 12px 40px; }
+.grape { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 3fr) minmax(0, 5fr); gap: 24px; align-items: baseline; padding-block: 28px; }
+.grape + .grape { border-top: 1px solid var(--hairline); }
+.grape h3 { font-size: 28px; line-height: 1.14; letter-spacing: 0.007em; }
+.grape .type { font-size: 14px; color: var(--slate); }
+.grape p { font-size: 17px; line-height: 1.33; }
 
 /* Trail */
-.trail-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-.stop {
-  background: var(--fog); border-radius: var(--r-sm);
-  padding: 20px; display: grid; gap: 10px; align-content: start; min-width: 0;
+.days { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; border-top: 1px solid var(--hairline); padding-top: 28px; }
+.day { display: grid; gap: 10px; align-content: start; min-width: 0; }
+.day .when { font-size: 14px; color: var(--slate); }
+.day h3 { font-size: 28px; line-height: 1.14; }
+.day p { font-size: 17px; line-height: 1.47; }
+.trail-callout {
+  margin-top: 64px; background: var(--mist); border-radius: var(--r-card);
+  padding: 40px; display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap;
 }
-.stop .label { color: var(--graphite); }
-.stop h3 { font-size: 29px; font-weight: 500; letter-spacing: -0.05em; line-height: 1.15; }
-.stop p { font-size: 15px; color: #333; }
-.trail-cta { margin-top: 28px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
-.trail-cta p { color: var(--graphite); font-size: 14px; margin-left: 8px; }
+.trail-callout h3 { font-size: clamp(24px, 3vw, 40px); line-height: 1.1; max-width: 20ch; }
+.trail-callout p { color: var(--slate); font-size: 14px; margin-top: 8px; }
 
 /* Footer */
-.footer { background: var(--white); border-top: 1px solid var(--fog); }
-.footer .wrap { padding-block: 48px 24px; display: grid; gap: 40px; }
-.footer-top { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
-.cols { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; }
-.col { display: grid; gap: 14px; align-content: start; }
-.col .label { font-weight: 600; }
-.col a { color: var(--graphite); font-size: 15px; }
-.col a:hover { color: var(--black); }
-.footer-bottom {
-  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
-  color: var(--graphite); font-size: 13px; padding-top: 20px; border-top: 1px solid var(--fog);
-}
+.footer { background: var(--mist); color: var(--slate); font-size: 12px; line-height: 1.33; }
+.footer .wrap { padding-block: 20px 28px; }
+.foot-notes { display: grid; gap: 10px; padding-bottom: 16px; border-bottom: 1px solid var(--hairline); }
+.foot-cols { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; padding-block: 24px; }
+.foot-col { display: grid; gap: 10px; align-content: start; }
+.foot-col h4 { margin: 0; color: var(--ink); font-size: 12px; font-weight: 600; }
+.foot-col a { color: var(--slate); }
+.foot-col a:hover { color: var(--ink); }
+.foot-bottom { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 16px; border-top: 1px solid var(--hairline); }
 
-/* Responsive */
-@media (max-width: 1100px) {
-  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
 @media (max-width: 860px) {
-  .nav-links { display: none; }
-  .hero-foot { grid-template-columns: 1fr; }
-  .regions, .trail-grid { grid-template-columns: 1fr; }
-  .region, .region + .region { padding: 24px 0; border-left: 0; }
-  .region + .region { border-top: 1px solid var(--silver); }
-  .grape { grid-template-columns: 1fr; gap: 8px; }
-  .cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .gnav-links { display: none; }
+  .chapter, .chapter.flip { grid-template-columns: 1fr; gap: 28px; }
+  .chapter.flip .chapter-text { order: 0; }
+  .chapter-fig, .chapter.flip .chapter-fig { margin: 0; }
+  .grape { grid-template-columns: 1fr; gap: 6px; }
+  .grape-card { padding: 4px 24px; }
+  .days { grid-template-columns: 1fr; gap: 28px; }
+  .foot-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .slide { min-height: 440px; }
+  .slide-text { padding: 28px 28px 0; }
+  .anchors .wrap { gap: 20px; }
+  .anchors a { font-size: 15px; }
 }
 @media (max-width: 560px) {
-  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-  .card-name { font-size: 20px; }
-  .card-note { font-size: 13px; }
-  .nav-right .signin { display: none; }
-  .logo-word { display: none; }
+  .lnav-right .txt { display: none; }
+  .callout { flex-direction: column; align-items: flex-start; padding: 20px 24px; gap: 12px; }
+  .trail-callout { padding: 28px; }
+  :root { --section: 64px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; }
+  * { transition: none !important; scroll-behavior: auto !important; }
 }
+html { scroll-behavior: smooth; }
 </style>
 </head>
 <body>
 
-<header class="nav">
+<header class="gnav">
   <div class="wrap">
-    <a class="logo" href="#top" aria-label="Georgia Pours home">
-      <span class="logo-mark">GA</span>
-      <span class="logo-word">Georgia Pours</span>
+    <a class="glyph" href="#top" aria-label="Georgia Pours home">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1.5c.4 1.6 1.6 2.6 3.2 2.8" stroke="#1d1d1f" stroke-width="1.4" fill="none" stroke-linecap="round"/><g fill="#1d1d1f"><circle cx="6.5" cy="7.5" r="2.2"/><circle cx="11" cy="7.5" r="2.2"/><circle cx="15.2" cy="7.8" r="1.9"/><circle cx="8.6" cy="11.4" r="2.2"/><circle cx="13" cy="11.4" r="2.1"/><circle cx="10.8" cy="15.2" r="2.1"/></g></svg>
     </a>
-    <nav class="nav-links" aria-label="Primary">
-      <a class="label" href="#wines">Wines</a>
-      <a class="label" href="#regions">Regions</a>
-      <a class="label" href="#grapes">Grapes</a>
-      <a class="label" href="#trail">Trail</a>
+    <nav class="gnav-links" aria-label="Site">
+      <a href="#highlights">Highlights</a>
+      <a href="#wines">Wines</a>
+      <a href="#regions">Regions</a>
+      <a href="#grapes">Grapes</a>
+      <a href="#trail">Visit</a>
     </nav>
-    <div class="nav-right">
-      <a class="label signin" href="#trail">Plan a trip</a>
-      <a class="btn btn-black" href="#wines">The list</a>
-    </div>
+    <a href="#trail">Plan a trip</a>
   </div>
 </header>
+
+<div class="lnav">
+  <div class="wrap">
+    <a class="lnav-title" href="#top">Georgia Pours</a>
+    <div class="lnav-right">
+      <a class="txt" href="#regions">Regions</a>
+      <a class="pill pill-outline" href="#wines">Explore</a>
+      <a class="pill pill-blue" href="#trail">Plan a trip</a>
+    </div>
+  </div>
+</div>
 
 <main id="top">
   <section class="hero">
     <div class="wrap">
-      <div class="eyebrow label"><span class="badge">2026 edition</span> North Georgia to the Coastal Plain</div>
-      <h1 class="display">The best wine grown in Georgia</h1>
-      <div class="hero-foot">
-        <p class="lede">Ten bottles that show what the state does well. High-elevation reds from the Dahlonega Plateau, crisp mountain whites from the Hiwassee valley, and the native muscadine that has grown in Georgia longer than anyone has been making wine from it.</p>
-        <div class="actions">
-          <a class="btn btn-black" href="#wines">See the ten</a>
-          <a class="btn btn-amber" href="#trail">Map a weekend</a>
+      <span class="launch">New for the 2026 harvest</span>
+      <p class="kicker">Georgia Wine</p>
+      <h1 class="hero-display">Mountain grown. Southern made.</h1>
+      <p class="hero-sub">The ten best wines from Georgia's vineyards, from Dahlonega Plateau reds to native muscadine.</p>
+      <div class="hero-links">
+        <a class="more" href="#wines">See the list</a>
+        <a class="more" href="#trail">Plan a weekend</a>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="stage-img" id="hero-bottles" aria-label="Three Georgia wine bottles: a sparkling, a red, and a white" role="img"></div>
+      <div class="floor"></div>
+      <div class="callout">
+        <div>
+          <b>Ten wines. Three regions. One weekend.</b>
+          <span>About 90 minutes north of Atlanta.</span>
         </div>
+        <a class="pill pill-blue" href="#trail">Plan a trip</a>
       </div>
     </div>
   </section>
 
-  <figure class="band" aria-label="Blue Ridge foothills with vineyard rows at golden hour" style="margin:0">
-    <svg id="landscape" viewBox="0 0 1600 640" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Layered Blue Ridge ridgelines over vineyard rows"></svg>
-    <figcaption class="band-caption">
-      <div class="wrap">
-        <span class="label">Dahlonega Plateau AVA · Lumpkin &amp; White counties</span>
-        <span class="label">Harvest, late September</span>
-      </div>
-    </figcaption>
-  </figure>
-
-  <section class="section dark" id="wines">
+  <nav class="anchors" aria-label="On this page">
     <div class="wrap">
-      <div class="section-head">
-        <h2 class="h-section">The list</h2>
-        <p>Our picks for the wines that best represent Georgia right now, chosen by grape and style. Each winery pours these regularly at its tasting room.</p>
+      <a href="#highlights">Highlights</a>
+      <a href="#wines">The ten</a>
+      <a href="#regions">Regions</a>
+      <a href="#grapes">Grapes</a>
+      <a href="#trail">Weekend</a>
+    </div>
+  </nav>
+
+  <section class="sec mist" id="highlights">
+    <div class="wrap-wide">
+      <div class="sec-head">
+        <h2 class="h-sec">Get the highlights.</h2>
+        <a class="more" href="#wines">See all ten wines</a>
       </div>
-      <div class="tabs" role="tablist" aria-label="Filter wines by style">
-        <button class="tab" role="tab" id="tab-all" aria-selected="true" data-filter="all"><span class="label">All</span></button>
-        <button class="tab" role="tab" id="tab-red" aria-selected="false" data-filter="red"><span class="label">Red</span></button>
-        <button class="tab" role="tab" id="tab-white" aria-selected="false" data-filter="white"><span class="label">White</span></button>
-        <button class="tab" role="tab" id="tab-sparkling" aria-selected="false" data-filter="sparkling"><span class="label">Sparkling</span></button>
-        <button class="tab" role="tab" id="tab-muscadine" aria-selected="false" data-filter="muscadine"><span class="label">Muscadine</span></button>
-      </div>
-      <div class="grid" id="grid"></div>
-      <p class="fine">Picks are editorial and grouped by style, not by vintage. Releases change year to year, so check with each winery for what is pouring now. Please drink responsibly; 21+.</p>
+    </div>
+    <div class="rail" id="rail" tabindex="0" aria-label="Highlights">
+      <article class="slide"><p class="slide-text">Petit Manseng. <em>Thick skins that shrug off Southern humidity, and a glass full of pineapple and lime.</em></p><div class="slide-art" data-art="manseng"></div></article>
+      <article class="slide"><p class="slide-text">Two wine regions. <em>Both in the mountains, both recognized by the federal government.</em></p><div class="slide-art" data-art="ridges"></div></article>
+      <article class="slide"><p class="slide-text">Muscadine. <em>The Southeast's native grape, growing here long before anyone planted a vineyard.</em></p><div class="slide-art" data-art="muscadine"></div></article>
+      <article class="slide"><p class="slide-text">Made the slow way. <em>Traditional-method sparkling, with its second fermentation in the bottle.</em></p><div class="slide-art" data-art="flute"></div></article>
+    </div>
+    <div class="controls">
+      <div class="ctrl-track" id="dots"></div>
+      <button class="ctrl-btn" id="prev" aria-label="Previous highlight">&#8249;</button>
+      <button class="ctrl-btn" id="next" aria-label="Next highlight">&#8250;</button>
     </div>
   </section>
 
-  <section class="section light" id="regions">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 class="h-section">Three places to know</h2>
-        <p>Georgia has two federally recognized wine regions in the mountains, plus a long tradition of muscadine growing across the south of the state.</p>
+  <section class="sec" id="wines">
+    <div class="wrap-wide">
+      <div class="sec-head">
+        <h2 class="h-sec">The ten.</h2>
+        <a class="more" href="#trail">Taste them in person</a>
       </div>
-      <div class="regions">
-        <article class="region">
-          <span class="label">American Viticultural Area</span>
-          <div class="region-stat">2018</div>
-          <h3>Dahlonega Plateau</h3>
-          <p>Georgia's first AVA entirely within the state. A rolling upland in Lumpkin and White counties where cool nights and well-drained slopes suit Cabernet Franc, Tannat and Petit Manseng. The densest cluster of tasting rooms in the state.</p>
-        </article>
-        <article class="region">
-          <span class="label">American Viticultural Area</span>
-          <div class="region-stat">2014</div>
-          <h3>Upper Hiwassee Highlands</h3>
-          <p>A higher, cooler valley region shared with North Carolina, around Blairsville, Hiawassee and Young Harris. Hybrids and aromatic whites do well here, along with lakeside tasting rooms.</p>
-        </article>
-        <article class="region">
-          <span class="label">Native grape country</span>
-          <div class="region-stat">Vitis</div>
-          <h3>South Georgia &amp; the Coastal Plain</h3>
-          <p>Heat and humidity that defeat European vines suit the native muscadine. Expect bronze and black muscadine wines that range from bone dry to lush and sweet.</p>
-        </article>
+      <div class="filters" role="group" aria-label="Filter by style">
+        <button class="chip" id="f-all" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" id="f-red" data-filter="red" aria-pressed="false">Red</button>
+        <button class="chip" id="f-white" data-filter="white" aria-pressed="false">White</button>
+        <button class="chip" id="f-sparkling" data-filter="sparkling" aria-pressed="false">Sparkling</button>
+        <button class="chip" id="f-muscadine" data-filter="muscadine" aria-pressed="false">Muscadine</button>
+      </div>
+      <div class="wines" id="wine-grid"></div>
+      <p class="fine">Picks are editorial and grouped by grape and style, not by vintage. Releases change from year to year, so check with each winery for what is pouring now. Please drink responsibly. 21+.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="regions" style="padding-top:0">
+    <div class="wrap-wide">
+      <div class="chapter">
+        <div class="chapter-text">
+          <span class="chapter-kicker">Dahlonega Plateau</span>
+          <h2 class="chapter-statement">Georgia's first wine region drawn entirely inside the state.</h2>
+          <p>Recognized in <b>2018</b>, this rolling upland in Lumpkin and White counties has cool nights and well-drained slopes. <b>Cabernet Franc, Tannat and Petit Manseng</b> do especially well. It also has the most tasting rooms in Georgia.</p>
+          <div class="stat-row">
+            <div class="stat"><b>2018</b><span>AVA established</span></div>
+            <div class="stat"><b>2</b><span>Counties</span></div>
+          </div>
+        </div>
+        <figure class="chapter-fig" style="margin-block:0" data-art="plateau"></figure>
+      </div>
+      <div class="chapter flip">
+        <div class="chapter-text">
+          <span class="chapter-kicker k-ink">Upper Hiwassee Highlands</span>
+          <h2 class="chapter-statement">Higher. Cooler. Shared with North Carolina.</h2>
+          <p>Recognized in <b>2014</b>, these mountain valleys around Blairsville, Hiawassee and Young Harris suit <b>hybrids and aromatic whites</b>. Several tasting rooms overlook the lakes.</p>
+        </div>
+        <figure class="chapter-fig" style="margin-block:0" data-art="lakes"></figure>
+      </div>
+      <div class="chapter">
+        <div class="chapter-text">
+          <span class="chapter-kicker k-ink">South Georgia</span>
+          <h2 class="chapter-statement">Where the native grape is at home.</h2>
+          <p>Heat and humidity defeat European vines on the Coastal Plain, but they suit <b>muscadine</b>. Its bronze and black wines range from bone dry to lush and sweet.</p>
+        </div>
+        <figure class="chapter-fig" style="margin-block:0" data-art="plain"></figure>
       </div>
     </div>
   </section>
 
-  <section class="section dark" id="grapes">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 class="h-section">Grapes to know</h2>
-        <p>The varieties that keep showing up on Georgia's best lists, and what to expect in the glass.</p>
+  <section class="sec mist" id="grapes">
+    <div class="wrap-wide">
+      <div class="sec-head">
+        <h2 class="h-sec">Grapes to know.</h2>
+        <a class="more" href="#wines">Find them in the list</a>
       </div>
-      <div class="grapes">
-        <div class="grape"><span class="grape-name">Petit Manseng</span><span class="label">White · Southwest France</span><p>Thick skins shrug off Southern humidity. Tropical fruit with bright acidity, made dry or off-dry.</p></div>
-        <div class="grape"><span class="grape-name">Norton / Cynthiana</span><span class="label">Red · Native American</span><p>A homegrown hybrid of the Southeast. Dark berries, plum, a firm acidic spine. Ages better than you expect.</p></div>
-        <div class="grape"><span class="grape-name">Tannat</span><span class="label">Red · Southwest France</span><p>Big tannin and deep color. Mountain sites in Rabun County give it a lifted, peppery edge.</p></div>
-        <div class="grape"><span class="grape-name">Cabernet Franc</span><span class="label">Red · Bordeaux</span><p>Ripens earlier than Cabernet Sauvignon, which matters before autumn rains. Red fruit, herbs, graphite.</p></div>
-        <div class="grape"><span class="grape-name">Muscadine</span><span class="label">Red &amp; bronze · Native</span><p>Vitis rotundifolia, the native grape of the Southeast. Musky, floral and grapey. Scuppernong is its best-known bronze form.</p></div>
+      <div class="grape-card">
+        <div class="grape"><h3>Petit Manseng</h3><span class="type">White · Southwest France</span><p>Handles humidity well. Tropical fruit and bright acidity, made dry or off-dry.</p></div>
+        <div class="grape"><h3>Norton / Cynthiana</h3><span class="type">Red · Native American</span><p>Grown in the Southeast for generations. Dark berries, plum and firm acidity. It ages better than you'd expect.</p></div>
+        <div class="grape"><h3>Tannat</h3><span class="type">Red · Southwest France</span><p>Big tannin and deep color. Mountain vineyards in Rabun County give it a peppery edge.</p></div>
+        <div class="grape"><h3>Cabernet Franc</h3><span class="type">Red · Bordeaux</span><p>It ripens before Cabernet Sauvignon, so it is usually picked before the autumn rains. Red fruit, herbs and graphite.</p></div>
+        <div class="grape"><h3>Muscadine</h3><span class="type">Red &amp; bronze · Native</span><p>Vitis rotundifolia, the native grape of the Southeast. Musky, floral and grapey. Scuppernong is its best-known bronze form.</p></div>
       </div>
     </div>
   </section>
 
-  <section class="section light" id="trail">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 class="h-section">A weekend in the hills</h2>
-        <p>A two-day loop from Atlanta. About 90 minutes to the first pour, with each day kept to three tasting rooms so the drive stays easy.</p>
+  <section class="sec" id="trail">
+    <div class="wrap-wide">
+      <div class="sec-head">
+        <h2 class="h-sec">A weekend in the hills.</h2>
       </div>
-      <div class="trail-grid">
-        <article class="stop">
-          <span class="label">Day 1 · Morning</span>
+      <div class="days">
+        <article class="day">
+          <span class="when">Day 1 · Morning</span>
           <h3>Dahlonega</h3>
-          <p>Start at Three Sisters for Cynthiana, then Wolf Mountain for sparkling and lunch. Finish at Frogtown with a red blend on the deck.</p>
+          <p>Start at Three Sisters for Cynthiana, then go to Wolf Mountain for sparkling wine and lunch. End at Frogtown with a red blend on the deck.</p>
         </article>
-        <article class="stop">
-          <span class="label">Day 1 · Evening</span>
+        <article class="day">
+          <span class="when">Day 1 · Evening</span>
           <h3>Cleveland &amp; Helen</h3>
-          <p>Yonah Mountain's cave tour, then dinner in Helen and a stop at Habersham, one of Georgia's oldest wineries, for muscadine.</p>
+          <p>Take the cave tour at Yonah Mountain, then have dinner in Helen. Stop at Habersham, one of Georgia's oldest wineries, for muscadine.</p>
         </article>
-        <article class="stop">
-          <span class="label">Day 2</span>
+        <article class="day">
+          <span class="when">Day 2</span>
           <h3>Tiger, Rabun County</h3>
-          <p>Tiger Mountain for Petit Manseng, Stonewall Creek for Tannat. Drive home through Tallulah Gorge.</p>
+          <p>Taste Petit Manseng at Tiger Mountain and Tannat at Stonewall Creek. Drive home past Tallulah Gorge.</p>
         </article>
       </div>
-      <div class="trail-cta">
-        <a class="btn btn-black" href="#wines">Back to the list</a>
-        <a class="btn btn-ghost" href="#regions">Read about the regions</a>
-        <p>Book a designated driver or a tour shuttle. Most tasting rooms take walk-ins on weekdays.</p>
+      <div class="trail-callout">
+        <div>
+          <h3>Three tasting rooms a day keeps the drive easy.</h3>
+          <p>Book a designated driver or a tour shuttle before you go.</p>
+        </div>
+        <a class="btn-lg" href="#wines">Pick your wines</a>
       </div>
     </div>
   </section>
 </main>
 
 <footer class="footer">
-  <div class="wrap">
-    <div class="footer-top">
-      <a class="logo" href="#top"><span class="logo-mark">GA</span><span class="logo-word">Georgia Pours</span></a>
-      <div class="actions">
-        <a class="btn btn-ghost" href="#trail">Plan a trip</a>
-        <a class="btn btn-black" href="#wines">The list</a>
-      </div>
+  <div class="wrap-wide">
+    <div class="foot-notes">
+      <p>Georgia Pours is an independent editorial guide and is not affiliated with any winery listed. Wine availability, hours and tours vary by season.</p>
+      <p>You must be 21 or older to taste. Please drink responsibly and never drink and drive.</p>
     </div>
-    <div class="cols">
-      <div class="col">
-        <span class="label">Wines</span>
-        <a href="#wines">Red</a><a href="#wines">White</a><a href="#wines">Sparkling</a><a href="#wines">Muscadine</a>
-      </div>
-      <div class="col">
-        <span class="label">Regions</span>
-        <a href="#regions">Dahlonega Plateau</a><a href="#regions">Upper Hiwassee Highlands</a><a href="#regions">Coastal Plain</a>
-      </div>
-      <div class="col">
-        <span class="label">Grapes</span>
-        <a href="#grapes">Petit Manseng</a><a href="#grapes">Norton</a><a href="#grapes">Tannat</a><a href="#grapes">Muscadine</a>
-      </div>
-      <div class="col">
-        <span class="label">Visit</span>
-        <a href="#trail">Weekend loop</a><a href="#trail">Getting there</a><a href="#trail">Tasting etiquette</a>
-      </div>
+    <div class="foot-cols">
+      <div class="foot-col"><h4>Wines</h4><a href="#wines">Red</a><a href="#wines">White</a><a href="#wines">Sparkling</a><a href="#wines">Muscadine</a></div>
+      <div class="foot-col"><h4>Regions</h4><a href="#regions">Dahlonega Plateau</a><a href="#regions">Upper Hiwassee Highlands</a><a href="#regions">South Georgia</a></div>
+      <div class="foot-col"><h4>Grapes</h4><a href="#grapes">Petit Manseng</a><a href="#grapes">Norton</a><a href="#grapes">Tannat</a><a href="#grapes">Muscadine</a></div>
+      <div class="foot-col"><h4>Visit</h4><a href="#trail">Weekend loop</a><a href="#highlights">Highlights</a></div>
     </div>
-    <div class="footer-bottom">
-      <span>Georgia Pours · An independent editorial guide</span>
+    <div class="foot-bottom">
+      <span>Georgia Pours · 2026 edition</span>
       <span>Enjoy responsibly · 21+</span>
     </div>
   </div>
@@ -457,138 +481,151 @@ p { margin: 0; }
 
 <script>
 (function () {
-  var WINES = [
-    { winery: 'Three Sisters', grape: 'Cynthiana', town: 'Dahlonega', type: 'red', motif: 'cluster', note: 'Dark cherry and plum from the native Norton grape. A Georgia original.' },
-    { winery: 'Wolf Mountain', grape: 'Sparkling Brut', town: 'Dahlonega', type: 'sparkling', motif: 'flute', note: 'Traditional-method bubbles with fine bead and green-apple snap.', tag: 'Pick' },
-    { winery: 'Frogtown Cellars', grape: 'Red Blend', town: 'Dahlonega', type: 'red', motif: 'bottle', note: 'Bordeaux-style blend from estate fruit. Cedar, cassis, structure.' },
-    { winery: 'Tiger Mountain', grape: 'Petit Manseng', town: 'Tiger', type: 'white', motif: 'ridge', note: 'Pineapple and lime with vivid acidity. Built for the mountains.', tag: 'Pick' },
-    { winery: 'Yonah Mountain', grape: 'Cabernet', town: 'Cleveland', type: 'red', motif: 'cave', note: 'Cave-aged reserve reds with real depth. Take the barrel tour.' },
-    { winery: 'Montaluce', grape: 'Italian-style Red', town: 'Dahlonega', type: 'red', motif: 'rows', note: 'Tuscan-inspired blends poured at a hilltop estate.' },
-    { winery: 'Stonewall Creek', grape: 'Tannat', town: 'Tiger', type: 'red', motif: 'bottle', note: 'Firm, peppery, and dark. Rabun County in a glass.' },
-    { winery: 'Crane Creek', grape: 'Seyval Blanc', town: 'Young Harris', type: 'white', motif: 'glass', note: 'Bright citrus white from the Upper Hiwassee Highlands.' },
-    { winery: 'Habersham', grape: 'Muscadine', town: 'Helen', type: 'muscadine', motif: 'cluster', note: 'Floral, grapey and sweet, from one of the state’s oldest wineries.' },
-    { winery: 'CeNita', grape: 'Muscadine', town: 'Cordele', type: 'muscadine', motif: 'sun', note: 'South Georgia muscadine, from dry to dessert. Pure native fruit.' }
-  ];
-
-  // Deterministic pseudo-random for repeatable art
+  var uid = 0;
   function rng(seed) { return function () { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }; }
 
-  function ridge(r, w, base, amp, step) {
-    var pts = ['0,' + (base + 400)], y = base;
-    for (var x = 0; x <= w; x += step) {
-      y = base + Math.sin(x / (w / 3) + r() * 0.6) * amp * 0.6 + (r() - 0.5) * amp * 0.5;
-      pts.push(x + ',' + y.toFixed(1));
-    }
-    pts.push(w + ',' + (base + 400));
+  // Bottle render. The glass sheen is part of the image, not UI chrome.
+  var KINDS = {
+    red:       { glass: ['#14100f', '#3a2a24', '#0b0908'], cap: '#5b1222', label: '#f4efe6', ink: '#1d1d1f', w: 110, fill: null },
+    white:     { glass: ['#8e9a6a', '#d7ddb8', '#6f7a4e'], cap: '#c7a24e', label: '#ffffff', ink: '#1d1d1f', w: 106, fill: '#e3cf7a' },
+    sparkling: { glass: ['#18221a', '#45563f', '#0e140f'], cap: '#c9a54f', label: '#1d1d1f', ink: '#c9a54f', w: 122, fill: null, foil: true },
+    muscadine: { glass: ['#c6c6c8', '#f5f5f7', '#a9a9ad'], cap: '#3b1430', label: '#ffffff', ink: '#1d1d1f', w: 106, fill: '#6b1d45' },
+    bronze:    { glass: ['#c6c6c8', '#f5f5f7', '#a9a9ad'], cap: '#8a5a1c', label: '#ffffff', ink: '#1d1d1f', w: 106, fill: '#c98b2b' }
+  };
+  function bottle(kind, name) {
+    var k = KINDS[kind], id = 'b' + (uid++);
+    var W = 160, cx = 80, bw = k.w, hw = bw / 2, top = 18, neck = 13, shoulder = 150, base = 488;
+    var body = 'M' + (cx - neck) + ' ' + top + ' L' + (cx - neck) + ' 120 C' + (cx - neck) + ' 140 ' + (cx - hw) + ' ' + (shoulder - 6) + ' ' + (cx - hw) + ' ' + (shoulder + 30) +
+      ' L' + (cx - hw) + ' ' + (base - 8) + ' Q' + (cx - hw) + ' ' + base + ' ' + (cx - hw + 8) + ' ' + base + ' L' + (cx + hw - 8) + ' ' + base + ' Q' + (cx + hw) + ' ' + base + ' ' + (cx + hw) + ' ' + (base - 8) +
+      ' L' + (cx + hw) + ' ' + (shoulder + 30) + ' C' + (cx + hw) + ' ' + (shoulder - 6) + ' ' + (cx + neck) + ' 140 ' + (cx + neck) + ' 120 L' + (cx + neck) + ' ' + top + ' Z';
+    var s = '<defs><linearGradient id="' + id + 'g" x1="0" x2="1"><stop offset="0" stop-color="' + k.glass[2] + '"/><stop offset=".3" stop-color="' + k.glass[1] + '"/><stop offset=".55" stop-color="' + k.glass[0] + '"/><stop offset="1" stop-color="' + k.glass[2] + '"/></linearGradient>' +
+      '<clipPath id="' + id + 'c"><path d="' + body + '"/></clipPath></defs>';
+    s += '<path d="' + body + '" fill="url(#' + id + 'g)"/>';
+    if (k.fill) s += '<rect clip-path="url(#' + id + 'c)" x="0" y="190" width="' + W + '" height="300" fill="' + k.fill + '" opacity=".85"/>' +
+      '<rect clip-path="url(#' + id + 'c)" x="' + (cx - hw + 10) + '" y="160" width="7" height="320" fill="#ffffff" opacity=".35"/>';
+    else s += '<rect clip-path="url(#' + id + 'c)" x="' + (cx - hw + 12) + '" y="160" width="6" height="320" fill="#ffffff" opacity=".18"/>';
+    var capH = k.foil ? 110 : 52;
+    s += '<rect x="' + (cx - neck - 1.5) + '" y="' + top + '" width="' + (2 * neck + 3) + '" height="' + capH + '" rx="3" fill="' + k.cap + '"/>';
+    s += '<rect x="' + (cx - neck - 1.5) + '" y="' + (top + capH - 8) + '" width="' + (2 * neck + 3) + '" height="3" fill="#000" opacity=".2"/>';
+    var ly = 300, lh = 120;
+    s += '<rect x="' + (cx - hw + 7) + '" y="' + ly + '" width="' + (bw - 14) + '" height="' + lh + '" fill="' + k.label + '"/>';
+    s += '<text x="' + cx + '" y="' + (ly + 34) + '" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="9" letter-spacing="1.6" fill="' + k.ink + '">GEORGIA</text>';
+    s += '<text x="' + cx + '" y="' + (ly + 62) + '" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-weight="600" font-size="' + (name.length > 12 ? 10 : 13) + '" fill="' + k.ink + '">' + esc(name) + '</text>';
+    s += '<rect x="' + (cx - 14) + '" y="' + (ly + 78) + '" width="28" height="1" fill="' + k.ink + '"/>';
+    s += '<text x="' + cx + '" y="' + (ly + 98) + '" text-anchor="middle" font-family="Inter, Helvetica, Arial, sans-serif" font-size="7.5" letter-spacing="1" fill="' + k.ink + '" opacity=".7">ESTATE GROWN</text>';
+    return '<svg viewBox="0 0 ' + W + ' 500" aria-hidden="true">' + s + '</svg>';
+  }
+
+  function ridgePts(r, w, h, base, amp, step) {
+    var pts = ['0,' + h];
+    for (var x = 0; x <= w; x += step) pts.push(x + ',' + (base + Math.sin(x / (w / 2.6) + r() * 0.5) * amp * 0.6 + (r() - 0.5) * amp * 0.45).toFixed(1));
+    pts.push(w + ',' + h);
     return pts.join(' ');
   }
 
-  // Full-bleed landscape: layered ridgelines, amber sun, vine rows
-  (function landscape() {
-    var svg = document.getElementById('landscape');
-    var r = rng(42), W = 1600, s = '';
-    s += '<rect width="1600" height="640" fill="#f2f2f2"/>';
-    s += '<circle cx="1130" cy="250" r="78" fill="#f1a900"/>';
-    var tones = ['#d9d9d9', '#b8b8b8', '#999999', '#737373', '#404040'];
-    var bases = [230, 290, 345, 395, 440];
-    for (var i = 0; i < tones.length; i++) {
-      s += '<polygon fill="' + tones[i] + '" points="' + ridge(r, W, bases[i], 70 - i * 8, 40 - i * 4) + '"/>';
+  function landscape(opts) {
+    var r = rng(opts.seed), W = 700, H = 500, s = '<rect width="700" height="500" fill="' + opts.sky + '"/>';
+    if (opts.sun) s += '<circle cx="' + opts.sun[0] + '" cy="' + opts.sun[1] + '" r="46" fill="' + opts.sunColor + '"/>';
+    opts.layers.forEach(function (c, i) { s += '<polygon fill="' + c + '" points="' + ridgePts(r, W, H, opts.base + i * opts.gap, opts.amp - i * 6, 22 - i * 2) + '"/>'; });
+    if (opts.water) s += '<rect y="' + opts.water + '" width="700" height="' + (H - opts.water) + '" fill="' + opts.waterColor + '"/><rect x="120" y="' + (opts.water + 18) + '" width="180" height="2" fill="#ffffff" opacity=".5"/><rect x="380" y="' + (opts.water + 34) + '" width="120" height="2" fill="#ffffff" opacity=".4"/>';
+    if (opts.rows) {
+      var y0 = opts.rows;
+      s += '<rect y="' + y0 + '" width="700" height="' + (H - y0) + '" fill="' + opts.rowGround + '"/>';
+      for (var k = -12; k <= 12; k++) s += '<line x1="' + (350 + k * 14) + '" y1="' + y0 + '" x2="' + (350 + k * 90) + '" y2="500" stroke="' + opts.rowColor + '" stroke-width="' + (3 + Math.abs(k) * 0.4) + '"/>';
     }
-    s += '<rect y="470" width="1600" height="170" fill="#000"/>';
-    // vine rows converging to a vanishing point
-    for (var k = -14; k <= 14; k++) {
-      var x2 = 800 + k * 140;
-      s += '<line x1="' + (800 + k * 18) + '" y1="470" x2="' + x2 + '" y2="640" stroke="#262626" stroke-width="' + (2 + Math.abs(k) * 0.25) + '"/>';
-    }
-    // posts along the rows
-    for (var row = 0; row < 4; row++) {
-      var t = 0.25 + row * 0.25, yy = 470 + 170 * t;
-      for (var k2 = -14; k2 <= 14; k2 += 2) {
-        var xx = (800 + k2 * 18) + ((800 + k2 * 140) - (800 + k2 * 18)) * t;
-        s += '<rect x="' + (xx - 1.5) + '" y="' + (yy - 22 * t) + '" width="3" height="' + (22 * t) + '" fill="#595959"/>';
-      }
-    }
-    svg.innerHTML = s;
-  })();
-
-  function art(w, i) {
-    var r = rng(17 + i * 31), s = '';
-    var light = i % 2 === 0;
-    var bg = light ? '#d9d9d9' : '#1a1a1a';
-    var fg = light ? '#000' : '#f2f2f2';
-    var mid = light ? '#999' : '#404040';
-    s += '<rect width="400" height="500" fill="' + bg + '"/>';
-    s += '<polygon fill="' + mid + '" points="' + ridge(r, 400, 330, 50, 25) + '"/>';
-    switch (w.motif) {
-      case 'bottle':
-        s += '<path fill="' + fg + '" d="M180 70h40v80c0 20 34 34 34 70v230h-108v-230c0-36 34-50 34-70z"/>';
-        s += '<rect x="146" y="290" width="108" height="70" fill="' + bg + '"/>';
-        s += '<rect x="160" y="310" width="80" height="4" fill="' + fg + '"/><rect x="170" y="324" width="60" height="3" fill="' + fg + '"/>';
-        break;
-      case 'cluster':
-        var cx = 200, cy = 170;
-        s += '<path d="M200 110 C 205 80, 230 70, 250 60" stroke="' + fg + '" stroke-width="5" fill="none"/>';
-        s += '<path d="M205 95 c 30 -30 70 -20 80 10 c -30 10 -60 10 -80 -10z" fill="' + mid + '"/>';
-        var rows = [5, 6, 5, 4, 3, 2, 1];
-        for (var a = 0; a < rows.length; a++) {
-          for (var b = 0; b < rows[a]; b++) {
-            var x = cx + (b - (rows[a] - 1) / 2) * 34, y = cy + a * 30;
-            s += '<circle cx="' + x + '" cy="' + y + '" r="17" fill="' + fg + '"/>';
-          }
-        }
-        break;
-      case 'flute':
-        s += '<path fill="none" stroke="' + fg + '" stroke-width="4" d="M175 80h50l-6 190c-2 20-12 26-19 26s-17-6-19-26z"/><line x1="200" y1="296" x2="200" y2="420" stroke="' + fg + '" stroke-width="4"/><line x1="160" y1="422" x2="240" y2="422" stroke="' + fg + '" stroke-width="5"/>';
-        s += '<path fill="' + fg + '" d="M179 150h42l-4 118c-2 14-10 20-17 20s-15-6-17-20z"/>';
-        for (var q = 0; q < 9; q++) s += '<circle cx="' + (186 + r() * 28) + '" cy="' + (110 + r() * 40) + '" r="' + (2 + r() * 3) + '" fill="#f1a900"/>';
-        break;
-      case 'glass':
-        s += '<path fill="none" stroke="' + fg + '" stroke-width="4" d="M140 90h120c0 90-20 150-60 150s-60-60-60-150z"/><line x1="200" y1="240" x2="200" y2="400" stroke="' + fg + '" stroke-width="4"/><line x1="150" y1="402" x2="250" y2="402" stroke="' + fg + '" stroke-width="5"/>';
-        s += '<path fill="' + fg + '" d="M146 160h108c-6 50-24 76-54 76s-48-26-54-76z"/>';
-        break;
-      case 'ridge':
-        s += '<circle cx="270" cy="150" r="46" fill="#f1a900"/>';
-        s += '<polygon fill="' + fg + '" points="' + ridge(r, 400, 250, 90, 20) + '"/>';
-        break;
-      case 'cave':
-        s += '<path fill="' + fg + '" d="M60 500V260c0-90 62-150 140-150s140 60 140 150v240z"/>';
-        for (var c = 0; c < 3; c++) s += '<ellipse cx="' + (120 + c * 80) + '" cy="420" rx="36" ry="40" fill="' + mid + '"/><ellipse cx="' + (120 + c * 80) + '" cy="420" rx="6" ry="8" fill="' + fg + '"/>';
-        break;
-      case 'rows':
-        for (var k = -8; k <= 8; k++) s += '<line x1="' + (200 + k * 6) + '" y1="250" x2="' + (200 + k * 60) + '" y2="500" stroke="' + fg + '" stroke-width="5"/>';
-        s += '<rect x="0" y="240" width="400" height="12" fill="' + fg + '"/>';
-        break;
-      case 'sun':
-        s += '<circle cx="200" cy="200" r="90" fill="#f1a900"/>';
-        s += '<rect y="290" width="400" height="210" fill="' + fg + '"/>';
-        for (var m = 0; m < 8; m++) s += '<rect x="' + (20 + m * 50) + '" y="' + (250 - (m % 3) * 12) + '" width="6" height="' + (40 + (m % 3) * 12) + '" fill="' + fg + '"/>';
-        break;
-    }
-    return '<svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">' + s + '</svg>';
+    return '<svg viewBox="0 0 700 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">' + s + '</svg>';
   }
+
+  function grapes(color, hi, seed) {
+    var r = rng(seed), s = '<path d="M350 70 C 356 40, 380 26, 410 18" stroke="#5a4a2e" stroke-width="7" fill="none" stroke-linecap="round"/>' +
+      '<path d="M360 58 c 50 -60 140 -40 150 20 c -60 20 -110 14 -150 -20z" fill="#7d8f4e"/>';
+    var rows = [6, 7, 6, 5, 4, 3, 2];
+    for (var a = 0; a < rows.length; a++) for (var b = 0; b < rows[a]; b++) {
+      var x = 350 + (b - (rows[a] - 1) / 2) * 44 + (r() - 0.5) * 6, y = 110 + a * 38;
+      s += '<circle cx="' + x + '" cy="' + y + '" r="23" fill="' + color + '"/><circle cx="' + (x - 7) + '" cy="' + (y - 8) + '" r="5" fill="' + hi + '" opacity=".7"/>';
+    }
+    return '<svg viewBox="0 0 700 400" preserveAspectRatio="xMidYMax meet" aria-hidden="true">' + s + '</svg>';
+  }
+
+  function flute() {
+    var r = rng(9), s = '<path d="M310 30h80l-8 210c-3 26-16 38-32 38s-29-12-32-38z" fill="none" stroke="#86868b" stroke-width="3"/>' +
+      '<path d="M314 80h72l-7 160c-3 20-14 30-29 30s-26-10-29-30z" fill="#e8cf7c"/>' +
+      '<line x1="350" y1="278" x2="350" y2="380" stroke="#86868b" stroke-width="3"/><path d="M300 384h100" stroke="#86868b" stroke-width="4" stroke-linecap="round"/>';
+    for (var i = 0; i < 26; i++) s += '<circle cx="' + (326 + r() * 48) + '" cy="' + (90 + r() * 170) + '" r="' + (1.5 + r() * 2.5) + '" fill="#ffffff" opacity=".85"/>';
+    return '<svg viewBox="0 0 700 400" preserveAspectRatio="xMidYMax meet" aria-hidden="true">' + s + '</svg>';
+  }
+
+  var ART = {
+    manseng: function () { return grapes('#c9b45a', '#fff6c8', 3); },
+    muscadine: function () { return grapes('#3a1530', '#b47aa0', 7); },
+    flute: flute,
+    ridges: function () { return landscape({ seed: 5, sky: '#ffffff', base: 150, gap: 50, amp: 70, layers: ['#dfe3e8', '#c4cbd3', '#9aa5b1', '#6f7d8c', '#3f4b58'] }); },
+    plateau: function () { return landscape({ seed: 11, sky: '#f2ede4', sun: [520, 140], sunColor: '#e9a23b', base: 200, gap: 40, amp: 60, layers: ['#c9cbb8', '#a3ab8c', '#7c8a64'], rows: 330, rowGround: '#4e5c3c', rowColor: '#2f3a24' }); },
+    lakes: function () { return landscape({ seed: 23, sky: '#e9eef3', base: 170, gap: 45, amp: 80, layers: ['#cfd8df', '#a7b6c2', '#71879a', '#3d5466'], water: 360, waterColor: '#5b7486' }); },
+    plain: function () { return landscape({ seed: 31, sky: '#f6efe2', sun: [180, 170], sunColor: '#d98a2b', base: 330, gap: 20, amp: 14, layers: ['#b9a77d', '#8f7f55'], rows: 380, rowGround: '#5d4a2a', rowColor: '#3a2d18' }); }
+  };
+  document.querySelectorAll('[data-art]').forEach(function (el) { el.innerHTML = ART[el.dataset.art](); });
 
   function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
 
-  var grid = document.getElementById('grid');
-  grid.innerHTML = WINES.map(function (w, i) {
-    return '<article class="card" data-type="' + w.type + '">' +
-      '<div class="card-img">' + art(w, i) + '</div>' +
-      '<div class="card-body">' +
-        '<div class="card-top"><span class="label">' + esc(w.winery) + '</span><span class="arrow" aria-hidden="true">↗</span></div>' +
-        '<h3 class="card-name">' + esc(w.grape) + '</h3>' +
-        '<span class="label card-meta">' + esc(w.town) + ', GA' + (w.tag ? ' &nbsp;<span class="badge">' + esc(w.tag) + '</span>' : '') + '</span>' +
-        '<p class="card-note">' + esc(w.note) + '</p>' +
-      '</div></article>';
+  document.getElementById('hero-bottles').innerHTML = bottle('sparkling', 'Brut') + bottle('red', 'Cynthiana') + bottle('white', 'Petit Manseng');
+
+  var WINES = [
+    { winery: 'Three Sisters Vineyards', grape: 'Cynthiana', town: 'Dahlonega', type: 'red', b: 'red', note: 'Dark cherry and plum from the Norton grape. A Georgia original.' },
+    { winery: 'Wolf Mountain Vineyards', grape: 'Sparkling Brut', town: 'Dahlonega', type: 'sparkling', b: 'sparkling', note: 'Traditional-method bubbles with a fine bead and green-apple snap.', pick: true },
+    { winery: 'Frogtown Cellars', grape: 'Red Blend', town: 'Dahlonega', type: 'red', b: 'red', note: 'Bordeaux-style blend from estate fruit. Cedar, cassis and structure.' },
+    { winery: 'Tiger Mountain Vineyards', grape: 'Petit Manseng', town: 'Tiger', type: 'white', b: 'white', note: 'Pineapple and lime with vivid acidity. Built for the mountains.', pick: true },
+    { winery: 'Yonah Mountain Vineyards', grape: 'Cabernet', town: 'Cleveland', type: 'red', b: 'red', note: 'Cave-aged reserve reds with real depth. Take the barrel tour.' },
+    { winery: 'Montaluce Winery', grape: 'Italian-style Red', town: 'Dahlonega', type: 'red', b: 'red', note: 'Tuscan-inspired blends poured at a hilltop estate.' },
+    { winery: 'Stonewall Creek Vineyards', grape: 'Tannat', town: 'Tiger', type: 'red', b: 'red', note: 'Firm, peppery and dark. Rabun County in a glass.' },
+    { winery: 'Crane Creek Vineyards', grape: 'Seyval Blanc', town: 'Young Harris', type: 'white', b: 'white', note: 'Bright citrus white from the Upper Hiwassee Highlands.' },
+    { winery: 'Habersham Winery', grape: 'Muscadine', town: 'Helen', type: 'muscadine', b: 'muscadine', note: 'Floral, grapey and sweet, from one of the state’s oldest wineries.' },
+    { winery: 'CeNita Vineyards', grape: 'Bronze Muscadine', town: 'Cordele', type: 'muscadine', b: 'bronze', note: 'South Georgia muscadine, made dry through dessert-sweet.' }
+  ];
+  var grid = document.getElementById('wine-grid');
+  grid.innerHTML = WINES.map(function (w) {
+    return '<article class="wine" data-type="' + w.type + '">' +
+      '<div class="wine-top">' + (w.pick ? '<span class="launch">Editor’s pick</span>' : '') + '</div>' +
+      '<div class="wine-art">' + bottle(w.b, w.grape.length > 14 ? w.grape.split(' ').pop() : w.grape) + '</div>' +
+      '<div class="wine-body"><h3 class="wine-name">' + esc(w.grape) + '</h3>' +
+      '<span class="wine-meta">' + esc(w.winery) + ' · ' + esc(w.town) + ', GA</span>' +
+      '<p class="wine-note">' + esc(w.note) + '</p></div></article>';
   }).join('');
 
-  var tabs = document.querySelectorAll('.tab');
+  var chips = document.querySelectorAll('.chip');
   function setFilter(f) {
-    tabs.forEach(function (t) { t.setAttribute('aria-selected', t.dataset.filter === f ? 'true' : 'false'); });
-    grid.querySelectorAll('.card').forEach(function (c) { c.hidden = !(f === 'all' || c.dataset.type === f); });
+    chips.forEach(function (c) { c.setAttribute('aria-pressed', c.dataset.filter === f ? 'true' : 'false'); });
+    grid.querySelectorAll('.wine').forEach(function (c) { c.hidden = !(f === 'all' || c.dataset.type === f); });
     try { localStorage.setItem('gp-filter', f); } catch (e) {}
   }
-  tabs.forEach(function (t) { t.addEventListener('click', function () { setFilter(t.dataset.filter); }); });
+  chips.forEach(function (c) { c.addEventListener('click', function () { setFilter(c.dataset.filter); }); });
   try { var saved = localStorage.getItem('gp-filter'); if (saved) setFilter(saved); } catch (e) {}
+
+  // Highlights carousel
+  var rail = document.getElementById('rail'), slides = rail.querySelectorAll('.slide'), dots = document.getElementById('dots');
+  var prev = document.getElementById('prev'), next = document.getElementById('next'), cur = 0;
+  slides.forEach(function (_, i) {
+    var d = document.createElement('button');
+    d.className = 'dot'; d.setAttribute('aria-label', 'Highlight ' + (i + 1));
+    d.addEventListener('click', function () { go(i); });
+    dots.appendChild(d);
+  });
+  function go(i) {
+    i = Math.max(0, Math.min(slides.length - 1, i));
+    rail.scrollTo({ left: slides[i].offsetLeft - slides[0].offsetLeft, behavior: 'smooth' });
+  }
+  function sync() {
+    var x = rail.scrollLeft, best = 0, bd = Infinity;
+    slides.forEach(function (s, i) { var d = Math.abs(s.offsetLeft - slides[0].offsetLeft - x); if (d < bd) { bd = d; best = i; } });
+    if (rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 4) best = slides.length - 1;
+    cur = best;
+    dots.querySelectorAll('.dot').forEach(function (d, i) { d.setAttribute('aria-current', i === cur ? 'true' : 'false'); });
+    prev.disabled = cur === 0; next.disabled = cur === slides.length - 1;
+  }
+  prev.addEventListener('click', function () { go(cur - 1); });
+  next.addEventListener('click', function () { go(cur + 1); });
+  rail.addEventListener('scroll', function () { window.requestAnimationFrame(sync); }, { passive: true });
+  sync();
 })();
 </script>
 </body>
