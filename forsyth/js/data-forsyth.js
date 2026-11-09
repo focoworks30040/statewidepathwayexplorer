@@ -7021,7 +7021,8 @@ window.FOCO = {
        "name": "Surgical Technology Associate Degree",
        "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
       }
-     ]
+     ],
+     "logo": "img/logos/athens.png"
     },
     {
      "name": "Atlanta Technical College",
@@ -7118,7 +7119,8 @@ window.FOCO = {
        "name": "Radiologic Technology",
        "url": null
       }
-     ]
+     ],
+     "logo": "img/logos/atlanta.png"
     },
     {
      "name": "North Georgia Technical College",
@@ -7579,7 +7581,8 @@ window.FOCO = {
        "name": "Health Care Assistant TCCs",
        "url": "https://www.centralgatech.edu/academics"
       }
-     ]
+     ],
+     "logo": "img/logos/central-georgia.jpg"
     },
     {
      "name": "Augusta Technical College",
@@ -7692,7 +7695,9 @@ window.FOCO = {
        "name": "Vascular Technology, Associate of Applied Science Degree",
        "url": null
       }
-     ]
+     ],
+     "logo": "img/logos/augusta.jpg",
+     "logoFill": true
     },
     {
      "name": "Oconee Fall Line Technical College",
@@ -7737,7 +7742,8 @@ window.FOCO = {
        "name": "Practical Nursing Technical Certificate",
        "url": "https://oftc.edu/departments/"
       }
-     ]
+     ],
+     "logo": "img/logos/oconee-fall-line.png"
     },
     {
      "name": "Columbus Technical College",
@@ -8190,7 +8196,8 @@ window.FOCO = {
        "name": "Surgical Technology",
        "url": "https://www.albanytech.edu/college-catalog/current/colleges/healthcare/surgical-technology"
       }
-     ]
+     ],
+     "logo": "img/logos/albany.png"
     },
     {
      "name": "Ogeechee Technical College",

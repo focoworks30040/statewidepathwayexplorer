@@ -696,6 +696,8 @@ a { color: inherit; }
 .panel-school-head .sub { margin: 0 0 2px; }
 @media (max-width: 734px) { .school-logo { width: 64px; height: 52px; } }
 .tcsg-college summary.has-logo { grid-template-columns: auto minmax(0, 1fr) auto; }
-.tcsg-college summary.has-logo .tcsg-logo { grid-row: 1 / span 2; width: 72px; height: 48px; }
+.tcsg-college summary.has-logo .tcsg-logo { grid-row: 1 / span 2; width: 72px; height: 52px; }
+.tcsg-logo.school-logo--fill { background: transparent; }
 .tcsg-college summary.has-logo .tcsg-college__meta { grid-column: 2; }
 .tcsg-college summary.has-logo .tcsg-college__count { grid-column: 3; }
+.tcsg-logo--initials { background: var(--white); color: var(--slate); font-size: 15px; font-weight: 600; letter-spacing: 0.5px; }

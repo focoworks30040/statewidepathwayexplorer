@@ -385,8 +385,10 @@
       : `${data.colleges.length} colleges · ${data.colleges.reduce((a, c) => a + c.programs.length, 0)} programs · closest first`;
     $("#tcsgList").innerHTML = cols.map((c, i) => `
       <details class="tcsg-college"${filtering || i < 3 ? " open" : ""}>
-        <summary${c.logo ? ' class="has-logo"' : ""}>
-          ${c.logo ? `<span class="school-logo tcsg-logo${c.logoFill ? " school-logo--fill" : ""}"><img src="${esc(c.logo)}" alt="${esc(c.name)} logo"></span>` : ""}
+        <summary class="has-logo">
+          ${c.logo
+            ? `<span class="school-logo tcsg-logo${c.logoFill ? " school-logo--fill" : ""}"><img src="${esc(c.logo)}" alt="${esc(c.name)} logo"></span>`
+            : `<span class="school-logo tcsg-logo tcsg-logo--initials" aria-hidden="true">${esc(c.name.split(/\s+/).map((w) => w[0]).join(""))}</span>`}
           <span class="tcsg-college__name">${esc(c.name)}</span>
           <span class="tcsg-college__meta">Closest campus: ${esc(c.nearestCampus)} · ${c.miles} mi from Forsyth</span>
           <span class="tcsg-college__count">${filtering ? `${c.hits.length} match${c.hits.length === 1 ? "" : "es"}` : `${c.programs.length} programs`}</span>
