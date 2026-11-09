@@ -482,8 +482,10 @@ window.FOCO = {
    ],
    "also": [
     "dentist",
-    "radtech"
-   ]
+    "radtech",
+    "dentalasst"
+   ],
+   "soc": "29-1292"
   },
   "medassist": {
    "title": "Medical Assistant",
@@ -813,7 +815,8 @@ window.FOCO = {
     "medlabtech",
     "phlebotomist",
     "researchasst"
-   ]
+   ],
+   "soc": "29-2018"
   },
   "biologist": {
    "title": "Biologist",
@@ -1895,8 +1898,11 @@ window.FOCO = {
     "pa",
     "np",
     "anesthesiologist",
-    "surgeon"
-   ]
+    "surgeon",
+    "internist",
+    "erphysician"
+   ],
+   "soc": "29-1215"
   },
   "anesthesiologist": {
    "title": "Anesthesiologist",
@@ -2208,7 +2214,8 @@ window.FOCO = {
    "also": [
     "radtech",
     "physician"
-   ]
+   ],
+   "soc": "29-2032"
   },
   "resptherapist": {
    "title": "Respiratory Therapist",
@@ -2420,8 +2427,11 @@ window.FOCO = {
    "usg": "Pre-dental bachelor's → DMD at the Dental College of Georgia (Augusta University)",
    "also": [
     "dentalhyg",
-    "physician"
-   ]
+    "physician",
+    "dentalasst",
+    "dentallab"
+   ],
+   "soc": "29-1021"
   },
   "slp": {
    "title": "Speech-Language Pathologist",
@@ -2540,7 +2550,8 @@ window.FOCO = {
    "also": [
     "phlebotomist",
     "pharmacist"
-   ]
+   ],
+   "soc": "29-2018"
   },
   "vet": {
    "title": "Veterinarian",
@@ -3519,6 +3530,217 @@ window.FOCO = {
     "pt"
    ],
    "soc": "21-1015"
+  },
+  "cardiotech": {
+   "title": "Cardiovascular Technologist",
+   "inds": [
+    "health"
+   ],
+   "local": false,
+   "edu": "assoc",
+   "years": "2 yrs",
+   "demand": "High",
+   "gem": true,
+   "summary": "Runs the tests that show how a heart is working, from EKGs and stress tests to heart ultrasounds, and assists in the cardiac cath lab.",
+   "wage": 65000,
+   "day": [
+    "Run EKGs and stress tests",
+    "Take ultrasound images of the heart",
+    "Assist doctors during heart procedures"
+   ],
+   "hs": [
+    "Allied Health & Medicine",
+    "Anatomy & Physiology"
+   ],
+   "tcsg": "Cardiovascular Technology AAS",
+   "usg": null,
+   "also": [
+    "sonographer",
+    "perfusionist",
+    "rn"
+   ],
+   "soc": "29-2031"
+  },
+  "psychologist": {
+   "title": "Clinical Psychologist",
+   "inds": [
+    "health"
+   ],
+   "local": false,
+   "edu": "adv",
+   "years": "8+ yrs",
+   "demand": "High",
+   "gem": false,
+   "summary": "Diagnoses and treats mental health conditions through therapy, testing, and research.",
+   "wage": 90000,
+   "day": [
+    "Meet with clients for therapy",
+    "Give psychological tests",
+    "Work in clinics, hospitals, or private practice"
+   ],
+   "hs": [
+    "Mental Health Professional",
+    "Psychology"
+   ],
+   "tcsg": null,
+   "usg": "Bachelor's in Psychology → Doctorate (Ph.D. or Psy.D.)",
+   "also": [
+    "mhcounselor",
+    "mhsw",
+    "rehabcounselor"
+   ],
+   "soc": "19-3033"
+  },
+  "dentalasst": {
+   "title": "Dental Assistant",
+   "inds": [
+    "health"
+   ],
+   "local": false,
+   "edu": "cert",
+   "years": "1 yr",
+   "demand": "High",
+   "gem": false,
+   "summary": "Works chairside with the dentist, preparing patients, taking X-rays, and keeping instruments ready. One of the fastest ways into a dental office.",
+   "wage": 45000,
+   "day": [
+    "Prepare patients and rooms",
+    "Hand instruments during procedures",
+    "Take X-rays and impressions"
+   ],
+   "hs": [
+    "Allied Health & Medicine"
+   ],
+   "tcsg": "Dental Assisting diploma (Lanier Tech offers Dental Hygiene & Dental Assisting)",
+   "usg": null,
+   "also": [
+    "dentalhyg",
+    "dentist",
+    "dentallab"
+   ],
+   "soc": "31-9091"
+  },
+  "dentallab": {
+   "title": "Dental Lab Technician",
+   "inds": [
+    "health"
+   ],
+   "local": false,
+   "edu": "cert",
+   "years": "1–2 yrs",
+   "demand": "High",
+   "gem": true,
+   "summary": "Builds crowns, bridges, dentures, and retainers by hand and with 3D printers, all from a dentist's prescription.",
+   "wage": 45000,
+   "day": [
+    "Read dental impressions and scans",
+    "Shape crowns and dentures",
+    "Use 3D design and milling tools"
+   ],
+   "hs": [
+    "Allied Health & Medicine",
+    "Engineering & Technology"
+   ],
+   "tcsg": "Dental laboratory coursework or on-the-job training",
+   "usg": null,
+   "also": [
+    "dentalasst",
+    "dentist",
+    "ophlab"
+   ],
+   "soc": "51-9081"
+  },
+  "dietitian": {
+   "title": "Dietitian & Nutritionist",
+   "inds": [
+    "health"
+   ],
+   "local": false,
+   "edu": "adv",
+   "years": "5–6 yrs",
+   "demand": "High",
+   "gem": false,
+   "summary": "Uses the science of food to help patients manage diabetes, heart disease, sports performance, and more.",
+   "wage": 65000,
+   "day": [
+    "Assess patients' nutrition needs",
+    "Build meal plans",
+    "Work in hospitals, clinics, schools, or sports"
+   ],
+   "hs": [
+    "Allied Health & Medicine",
+    "Public Health"
+   ],
+   "tcsg": null,
+   "usg": "B.S. in Nutrition / Dietetics → master's and supervised internship to become a Registered Dietitian",
+   "also": [
+    "hes",
+    "rn",
+    "athletictrainer"
+   ],
+   "soc": "29-1031"
+  },
+  "erphysician": {
+   "title": "Emergency Medicine Physician",
+   "inds": [
+    "health"
+   ],
+   "local": false,
+   "edu": "adv",
+   "years": "11+ yrs",
+   "demand": "High",
+   "gem": false,
+   "summary": "The doctor in the emergency room, treating everything from broken bones to heart attacks, fast.",
+   "wage": 239000,
+   "day": [
+    "Treat patients as they arrive",
+    "Make quick, life-saving decisions",
+    "Lead the ER care team"
+   ],
+   "hs": [
+    "Biology",
+    "Chemistry",
+    "Health Science pathway"
+   ],
+   "tcsg": null,
+   "usg": "Pre-med bachelor's → MD or DO → 3–4 year emergency medicine residency",
+   "also": [
+    "paramedic",
+    "physician",
+    "pa"
+   ],
+   "soc": "29-1214"
+  },
+  "internist": {
+   "title": "Internal Medicine Physician",
+   "inds": [
+    "health"
+   ],
+   "local": false,
+   "edu": "adv",
+   "years": "11+ yrs",
+   "demand": "High",
+   "gem": false,
+   "summary": "An adult-medicine doctor who diagnoses complex illnesses and manages long-term conditions like diabetes and heart disease.",
+   "wage": 230000,
+   "day": [
+    "See adult patients in clinic or hospital",
+    "Diagnose complex conditions",
+    "Coordinate care with specialists"
+   ],
+   "hs": [
+    "Biology",
+    "Chemistry",
+    "Health Science pathway"
+   ],
+   "tcsg": null,
+   "usg": "Pre-med bachelor's → MD or DO → 3-year internal medicine residency",
+   "also": [
+    "physician",
+    "np",
+    "pa"
+   ],
+   "soc": "29-1216"
   }
  },
  "industries": [
@@ -4048,7 +4270,14 @@ window.FOCO = {
     "psychtech",
     "mhcounselor",
     "chw",
-    "rehabcounselor"
+    "rehabcounselor",
+    "cardiotech",
+    "psychologist",
+    "dentalasst",
+    "dentallab",
+    "dietitian",
+    "erphysician",
+    "internist"
    ],
    "programs": {
     "fcs": [
@@ -6058,8 +6287,68 @@ window.FOCO = {
  },
  "highDemand": {
   "name": "Georgia High-Demand Career List",
-  "note": "Partial list: only the Health Science and Human Services rows provided so far. Add the remaining rows to mark more careers.",
+  "note": "Rows provided so far: Health Science (Cardiovascular Technologists through Therapists, All Other) and part of Human Services. Add more rows to mark more careers.",
   "occupations": [
+   {
+    "cluster": "Health Science",
+    "title": "Cardiovascular Technologists and Technicians",
+    "soc": "29-2031"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Clinical and Counseling Psychologists",
+    "soc": "19-3033"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Clinical Laboratory Technologists and Technicians",
+    "soc": "29-2018"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Dental Assistants",
+    "soc": "31-9091"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Dental Hygienists",
+    "soc": "29-1292"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Dental Laboratory Technicians",
+    "soc": "51-9081"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Dentists, General",
+    "soc": "29-1021"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Diagnostic Medical Sonographers",
+    "soc": "29-2032"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Dietitians and Nutritionists",
+    "soc": "29-1031"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Emergency Medicine Physicians",
+    "soc": "29-1214"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Family Medicine Physicians",
+    "soc": "29-1215"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "General Internal Medicine Physicians",
+    "soc": "29-1216"
+   },
    {
     "cluster": "Health Science",
     "title": "Health Education Specialists",
