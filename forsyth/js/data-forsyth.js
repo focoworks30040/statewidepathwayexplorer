@@ -12,6 +12,9 @@
 // tcsgPrograms lists programs at every Technical College System of Georgia
 // college, by industry, for the "additional education options" view.
 //
+// usgPrograms lists university programs (University System of Georgia, then
+// private Georgia colleges), by industry, for the university options view.
+//
 // Edit this file directly to change what the site shows.
 window.FOCO = {
  "careers": {
@@ -8559,6 +8562,1927 @@ window.FOCO = {
       }
      ],
      "logo": "img/logos/savannah.png"
+    }
+   ]
+  }
+ },
+ "usgPrograms": {
+  "health": {
+   "source": "Georgia college and university healthcare programs list",
+   "note": "Program names are links to each school's website; check there for current details. Distances are straight-line miles from the center of Forsyth County to each school's closest campus.",
+   "groups": {
+    "usg": "University System of Georgia",
+    "private": "Private colleges & universities in Georgia"
+   },
+   "colleges": [
+    {
+     "name": "University of North Georgia",
+     "programs": [
+      {
+       "name": "Clinical Health Sciences Pathway",
+       "url": null
+      },
+      {
+       "name": "Family Nurse Practitioner (MSN)",
+       "url": null
+      },
+      {
+       "name": "Family Nurse Practitioner Post-Master’s Certificate",
+       "url": null
+      },
+      {
+       "name": "Health Informatics and Administration (B.S.)",
+       "url": null
+      },
+      {
+       "name": "Health Informatics and Administration Pathway",
+       "url": null
+      },
+      {
+       "name": "Kinesiology (M.S.)",
+       "url": null
+      },
+      {
+       "name": "Kinesiology Major with a Health & Fitness Concentration (B.S.)",
+       "url": null
+      },
+      {
+       "name": "Kinesiology Pathway",
+       "url": null
+      },
+      {
+       "name": "Nursing (BSN)",
+       "url": null
+      },
+      {
+       "name": "Nursing Education (MSN)",
+       "url": null
+      },
+      {
+       "name": "Nursing Education Post-Master’s Certificate",
+       "url": null
+      },
+      {
+       "name": "Nursing Practice (DNP)",
+       "url": null
+      },
+      {
+       "name": "Physical Therapy (DPT)",
+       "url": null
+      },
+      {
+       "name": "Applied Gerontology (NEX)",
+       "url": null
+      },
+      {
+       "name": "Gerontology Graduate Certificate",
+       "url": null
+      },
+      {
+       "name": "Neuroscience Minor",
+       "url": null
+      }
+     ],
+     "group": "usg",
+     "site": "https://ung.edu",
+     "nearestCampus": "Cumming",
+     "miles": 2,
+     "logo": "img/logos/ung.png",
+     "logoFill": true
+    },
+    {
+     "name": "Georgia State University",
+     "programs": [
+      {
+       "name": "Exercise Science (B.S.)",
+       "url": null
+      },
+      {
+       "name": "Gerontology (B.I.S.)",
+       "url": null
+      },
+      {
+       "name": "Health Informatics (B.I.S.)",
+       "url": null
+      },
+      {
+       "name": "Health Sciences: Rehabilitation Sciences (B.I.S.)",
+       "url": null
+      },
+      {
+       "name": "Nursing (B.S.N.)",
+       "url": null
+      },
+      {
+       "name": "Nursing (LPN to BSN)",
+       "url": null
+      },
+      {
+       "name": "Nursing (RN to BSN)",
+       "url": null
+      },
+      {
+       "name": "Nutrition (B.S.)",
+       "url": null
+      },
+      {
+       "name": "Public Health — Health Policy and Behavioral Sciences (B.S.)",
+       "url": null
+      },
+      {
+       "name": "Public Health — Population Health Sciences (B.S.)",
+       "url": null
+      },
+      {
+       "name": "Respiratory Therapy (B.S.)",
+       "url": null
+      },
+      {
+       "name": "Speech, Language, and Hearing Sciences (B.I.S.)",
+       "url": null
+      },
+      {
+       "name": "Audiology Assistant (Certificate)",
+       "url": null
+      },
+      {
+       "name": "Gerontology (Certificate)",
+       "url": null
+      },
+      {
+       "name": "Personal Training and Entrepreneurship (Certificate)",
+       "url": null
+      }
+     ],
+     "group": "usg",
+     "site": "https://www.gsu.edu",
+     "nearestCampus": "Alpharetta",
+     "miles": 14
+    },
+    {
+     "name": "Georgia Gwinnett College",
+     "programs": [
+      {
+       "name": "Nursing (B.S.)",
+       "url": null
+      },
+      {
+       "name": "Health Science (B.S.)",
+       "url": null
+      },
+      {
+       "name": "Exercise Science (B.S.; Minor)",
+       "url": null
+      },
+      {
+       "name": "Nutrition (Minor)",
+       "url": null
+      },
+      {
+       "name": "Human Services (B.S.)",
+       "url": null
+      },
+      {
+       "name": "Psychology (B.S.)",
+       "url": null
+      },
+      {
+       "name": "Social Work (Minor)",
+       "url": null
+      },
+      {
+       "name": "Gerontology (Certificate)",
+       "url": null
+      },
+      {
+       "name": "Clinical Laboratory Science",
+       "url": null
+      },
+      {
+       "name": "Pharmacy",
+       "url": null
+      }
+     ],
+     "group": "usg",
+     "site": "https://www.ggc.edu",
+     "nearestCampus": "Lawrenceville",
+     "miles": 18
+    },
+    {
+     "name": "Kennesaw State University",
+     "programs": [
+      {
+       "name": "Nursing (BS)",
+       "url": null
+      },
+      {
+       "name": "Public Health (BS)",
+       "url": null
+      },
+      {
+       "name": "Integrated Health Science (BS)",
+       "url": null
+      },
+      {
+       "name": "Exercise Science (BS)",
+       "url": null
+      },
+      {
+       "name": "Health and Physical Activity Leadership (BS)",
+       "url": null
+      },
+      {
+       "name": "Psychology (BS)",
+       "url": null
+      },
+      {
+       "name": "Nursing – Family Nurse Practitioner (MSN)",
+       "url": null
+      },
+      {
+       "name": "Nursing – Leadership (MSN)",
+       "url": null
+      },
+      {
+       "name": "Healthcare Management and Informatics (MS)",
+       "url": null
+      },
+      {
+       "name": "Prosthetics and Orthotics (MS)",
+       "url": null
+      },
+      {
+       "name": "Exercise Science (MS)",
+       "url": null
+      }
+     ],
+     "group": "usg",
+     "site": "https://www.kennesaw.edu",
+     "nearestCampus": "Kennesaw",
+     "miles": 29
+    },
+    {
+     "name": "Georgia Highlands College",
+     "programs": [
+      {
+       "name": "Nursing (Traditional B.S.N.)",
+       "url": null
+      },
+      {
+       "name": "Nursing (RN to B.S.N. Completion)",
+       "url": null
+      },
+      {
+       "name": "Dental Hygiene (RDH, A.S.)",
+       "url": null
+      },
+      {
+       "name": "Dental Hygiene (RDH to BSDH Completion, B.S.)",
+       "url": null
+      },
+      {
+       "name": "Health Science (B.S.H.S.)",
+       "url": null
+      },
+      {
+       "name": "Healthcare Management (B.B.A.)",
+       "url": null
+      },
+      {
+       "name": "Health Professions Pathway (A.S.)",
+       "url": null
+      },
+      {
+       "name": "Exercise Science Pathway (A.S.)",
+       "url": null
+      },
+      {
+       "name": "Psychology Pathway (A.A.)",
+       "url": null
+      }
+     ],
+     "group": "usg",
+     "site": "https://www.highlands.edu",
+     "nearestCampus": "Marietta",
+     "miles": 29
+    },
+    {
+     "name": "Georgia Institute of Technology",
+     "programs": [
+      {
+       "name": "Applied Physiology (PhD)",
+       "url": null
+      },
+      {
+       "name": "Health and Medical Sciences (Minor)",
+       "url": null
+      },
+      {
+       "name": "Health Policy and Economics (Minor)",
+       "url": null
+      },
+      {
+       "name": "Health Systems (MS)",
+       "url": null
+      },
+      {
+       "name": "Health, Medicine, and Society (Minor)",
+       "url": null
+      },
+      {
+       "name": "Medical Physics (MS)",
+       "url": null
+      },
+      {
+       "name": "Nuclear Engineering (MS) · Nuclear Engineering (PhD)",
+       "url": null
+      },
+      {
+       "name": "Physiology (Minor)",
+       "url": null
+      },
+      {
+       "name": "Science of Mental Health and Well-Being (Minor)",
+       "url": null
+      }
+     ],
+     "group": "usg",
+     "site": "https://www.gatech.edu",
+     "nearestCampus": "Atlanta",
+     "miles": 35,
+     "short": "GT"
+    },
+    {
+     "name": "Atlanta Metropolitan State College",
+     "programs": [
+      {
+       "name": "Organizational Leadership, Health Care Administration (B.S., eMajor)",
+       "url": null
+      },
+      {
+       "name": "Health Sciences Transfer (A.S. Pathway)",
+       "url": null
+      },
+      {
+       "name": "Phlebotomy (Certificate)",
+       "url": null
+      },
+      {
+       "name": "Psychology (A.S. Pathway)",
+       "url": null
+      },
+      {
+       "name": "Social Work (A.S. Pathway)",
+       "url": null
+      }
+     ],
+     "group": "usg",
+     "site": "https://www.atlm.edu",
+     "nearestCampus": "Atlanta",
+     "miles": 39
+    },
+    {
+     "name": "Clayton State University",
+     "programs": [
+      {
+       "name": "Dental Hygiene (BS)",
+       "url": null
+      },
+      {
+       "name": "RDH-BSDH Completion",
+       "url": null
+      },
+      {
+       "name": "Double Bachelor’s Degrees in Dental Hygiene and Health Care Management",
+       "url": null
+      },
+      {
+       "name": "Nursing (BSN)",
+       "url": null
+      },
+      {
+       "name": "Nursing (MSN)",
+       "url": null
+      },
+      {
+       "name": "RN-BSN Completion",
+       "url": null
+      },
+      {
+       "name": "Double Bachelor Degrees in Nursing and Health Care Management",
+       "url": null
+      },
+      {
+       "name": "Family Nurse Practitioner (Certificate)",
+       "url": null
+      },
+      {
+       "name": "Health Care Management (BS)",
+       "url": null
+      },
+      {
+       "name": "Health Care Management (Minor)",
+       "url": null
+      },
+      {
+       "name": "Health Administration (MHA)",
+       "url": null
+      },
+      {
+       "name": "Health and Fitness Management (BS)",
+       "url": null
+      },
+      {
+       "name": "Health and Fitness Management (Minor)",
+       "url": null
+      },
+      {
+       "name": "Health Sciences (BS)",
+       "url": null
+      },
+      {
+       "name": "Interdisciplinary Studies, Pre-Pharmacy Concentration (AS)",
+       "url": null
+      }
+     ],
+     "group": "usg",
+     "site": "https://www.clayton.edu",
+     "nearestCampus": "Morrow",
+     "miles": 46
+    },
+    {
+     "name": "University of Georgia",
+     "programs": [
+      {
+       "name": "Psychology",
+       "url": null
+      },
+      {
+       "name": "Neuroscience",
+       "url": null
+      },
+      {
+       "name": "Biology",
+       "url": null
+      },
+      {
+       "name": "Biochemistry and Molecular Biology",
+       "url": null
+      },
+      {
+       "name": "Cellular Biology",
+       "url": null
+      },
+      {
+       "name": "Genetics",
+       "url": null
+      },
+      {
+       "name": "Microbiology",
+       "url": null
+      },
+      {
+       "name": "Applied Biotechnology",
+       "url": null
+      },
+      {
+       "name": "Plant Pathology",
+       "url": null
+      },
+      {
+       "name": "Veterinary Medicine",
+       "url": null
+      },
+      {
+       "name": "Biomedical Sciences",
+       "url": null
+      },
+      {
+       "name": "Veterinary Medical Sciences",
+       "url": null
+      },
+      {
+       "name": "Avian Health and Medicine",
+       "url": null
+      },
+      {
+       "name": "Food Animal Medicine",
+       "url": null
+      },
+      {
+       "name": "Toxicology",
+       "url": null
+      },
+      {
+       "name": "Public Health",
+       "url": null
+      },
+      {
+       "name": "Epidemiology",
+       "url": null
+      },
+      {
+       "name": "Health Policy and Management",
+       "url": null
+      },
+      {
+       "name": "Health Promotion and Behavior",
+       "url": null
+      },
+      {
+       "name": "Environmental Health Science",
+       "url": null
+      },
+      {
+       "name": "Biomedical Physiology",
+       "url": null
+      },
+      {
+       "name": "Communication Sciences and Disorders",
+       "url": null
+      },
+      {
+       "name": "Dietetics",
+       "url": null
+      },
+      {
+       "name": "Nutritional Sciences",
+       "url": null
+      },
+      {
+       "name": "Exercise and Sport Science",
+       "url": null
+      },
+      {
+       "name": "Health and Physical Education, B.S.Ed.",
+       "url": null
+      },
+      {
+       "name": "Kinesiology",
+       "url": null
+      },
+      {
+       "name": "Health Promotion",
+       "url": null
+      },
+      {
+       "name": "Pharmaceutical Sciences",
+       "url": null
+      },
+      {
+       "name": "Pharmacy",
+       "url": null
+      }
+     ],
+     "group": "usg",
+     "site": "https://www.uga.edu",
+     "nearestCampus": "Athens",
+     "miles": 47
+    },
+    {
+     "name": "Dalton State College",
+     "programs": [
+      {
+       "name": "Nursing (BSN)",
+       "url": null
+      },
+      {
+       "name": "Nursing (RN-BSN, Online)",
+       "url": null
+      },
+      {
+       "name": "Licensed Practical Nursing (Certificate)",
+       "url": null
+      },
+      {
+       "name": "Radiologic Technology (AAS)",
+       "url": null
+      },
+      {
+       "name": "Respiratory Therapy (AAS)",
+       "url": null
+      },
+      {
+       "name": "Respiratory Therapy (BS, Online)",
+       "url": null
+      },
+      {
+       "name": "Medical Laboratory Technology (AAS)",
+       "url": null
+      },
+      {
+       "name": "Phlebotomy (Mini-Certificate)",
+       "url": null
+      },
+      {
+       "name": "Biology (BS), Pre-Health Sciences concentration",
+       "url": null
+      },
+      {
+       "name": "Chemistry (BS), Pre-Health Sciences concentration",
+       "url": null
+      },
+      {
+       "name": "Health & Wellness (BS)",
+       "url": null
+      },
+      {
+       "name": "Health & Wellness (Minor)",
+       "url": null
+      },
+      {
+       "name": "Organizational Leadership (BS), Health Care Administration concentration (Online)",
+       "url": null
+      },
+      {
+       "name": "Psychology (BS)",
+       "url": null
+      },
+      {
+       "name": "Psychology (Minor)",
+       "url": null
+      }
+     ],
+     "group": "usg",
+     "site": "https://www.daltonstate.edu",
+     "nearestCampus": "Dalton",
+     "miles": 60
+    },
+    {
+     "name": "University of West Georgia",
+     "programs": [
+      {
+       "name": "Nursing — Pre-Licensure BSN, Carrollton",
+       "url": null
+      },
+      {
+       "name": "Health & Community Wellness",
+       "url": null
+      },
+      {
+       "name": "Health & Community Wellness — Athletic Training Track",
+       "url": null
+      },
+      {
+       "name": "Health & Community Wellness — Occupational Therapy Track",
+       "url": null
+      },
+      {
+       "name": "Health & Community Wellness — Physical Therapy Track",
+       "url": null
+      },
+      {
+       "name": "Social & Behavioral Health",
+       "url": null
+      },
+      {
+       "name": "Speech-Language Pathology",
+       "url": null
+      },
+      {
+       "name": "Biology — Biomedical Sciences Concentration",
+       "url": null
+      },
+      {
+       "name": "Chemistry — Pharmacy Focus",
+       "url": null
+      },
+      {
+       "name": "Anthropology — Cross-Cultural Health & Spirituality",
+       "url": null
+      }
+     ],
+     "group": "usg",
+     "site": "https://www.westga.edu",
+     "nearestCampus": "Newnan",
+     "miles": 70
+    },
+    {
+     "name": "Gordon State College",
+     "programs": [
+      {
+       "name": "Nursing (B.S.)",
+       "url": null
+      },
+      {
+       "name": "Health Sciences (B.S.)",
+       "url": null
+      },
+      {
+       "name": "Respiratory Therapy (B.S.)",
+       "url": null
+      },
+      {
+       "name": "Human Services (B.S.)",
+       "url": null
+      },
+      {
+       "name": "Psychology (A.A.)",
+       "url": null
+      }
+     ],
+     "group": "usg",
+     "site": "https://www.gordonstate.edu",
+     "nearestCampus": "Barnesville",
+     "miles": 81
+    },
+    {
+     "name": "Georgia College & State University",
+     "programs": [
+      {
+       "name": "Nursing (B.S.N.)",
+       "url": null
+      },
+      {
+       "name": "Exercise Science (B.S.)",
+       "url": null
+      },
+      {
+       "name": "Public Health (B.S.; Minor)",
+       "url": null
+      },
+      {
+       "name": "Music Therapy (B.M.T.)",
+       "url": null
+      },
+      {
+       "name": "Psychology (B.S.)",
+       "url": null
+      }
+     ],
+     "group": "usg",
+     "site": "https://www.gcsu.edu",
+     "nearestCampus": "Milledgeville",
+     "miles": 94
+    },
+    {
+     "name": "Middle Georgia State University",
+     "programs": [
+      {
+       "name": "Health Science (A.S.)",
+       "url": null
+      },
+      {
+       "name": "Health Science (B.S.)",
+       "url": null
+      },
+      {
+       "name": "Health Services Administration (B.S.), Clinical/Practice Management, Long Term Care Administration, Pre-Professional Management, and Public Health Management concentrations",
+       "url": null
+      },
+      {
+       "name": "Nursing (A.S.N.)",
+       "url": null
+      },
+      {
+       "name": "Nursing (B.S.N.)",
+       "url": null
+      },
+      {
+       "name": "Nursing (RN to BSN Completion)",
+       "url": null
+      },
+      {
+       "name": "Occupational Therapy Assistant (A.S.)",
+       "url": null
+      },
+      {
+       "name": "Rehabilitation Science (B.S.)",
+       "url": null
+      },
+      {
+       "name": "Respiratory Therapy (B.S., Entry Level)",
+       "url": null
+      },
+      {
+       "name": "Respiratory Therapy (B.S., Bridge/Completion)",
+       "url": null
+      },
+      {
+       "name": "Psychology (B.S.)",
+       "url": null
+      },
+      {
+       "name": "Social Work (B.S.W.)",
+       "url": null
+      }
+     ],
+     "group": "usg",
+     "site": "https://www.mga.edu",
+     "nearestCampus": "Macon",
+     "miles": 100
+    },
+    {
+     "name": "Fort Valley State University",
+     "programs": [
+      {
+       "name": "Allied Health",
+       "url": null
+      },
+      {
+       "name": "Clinical Mental Health Counseling (Master of Science)",
+       "url": null
+      },
+      {
+       "name": "Clinical Rehabilitation Counseling (Master of Science, Online)",
+       "url": null
+      },
+      {
+       "name": "Gerontology (Minor)",
+       "url": null
+      },
+      {
+       "name": "Health Administration (Online)",
+       "url": null
+      },
+      {
+       "name": "Master of Public Health",
+       "url": null
+      },
+      {
+       "name": "Nursing",
+       "url": null
+      }
+     ],
+     "group": "usg",
+     "site": "https://www.fvsu.edu",
+     "nearestCampus": "Fort Valley",
+     "miles": 117
+    },
+    {
+     "name": "Columbus State University",
+     "programs": [
+      {
+       "name": "Exercise Science (B.S.)",
+       "url": null
+      },
+      {
+       "name": "Health Care (Adv. Cert.)",
+       "url": null
+      },
+      {
+       "name": "Health Science (B.S.; Minor)",
+       "url": null
+      },
+      {
+       "name": "Kinesiology (B.S.; M.S.)",
+       "url": null
+      },
+      {
+       "name": "Mental Health Counseling (M.S.)",
+       "url": null
+      },
+      {
+       "name": "Nursing (B.S.N.; R.N. to B.S.N.; M.S.N.)",
+       "url": null
+      },
+      {
+       "name": "Public Health (M.P.H.)",
+       "url": null
+      }
+     ],
+     "group": "usg",
+     "site": "https://www.columbusstate.edu",
+     "nearestCampus": "Columbus",
+     "miles": 128
+    },
+    {
+     "name": "Augusta University",
+     "programs": [
+      {
+       "name": "Clinical Laboratory Sciences (BS; MHS)",
+       "url": null
+      },
+      {
+       "name": "Dental Hygiene (BS)",
+       "url": null
+      },
+      {
+       "name": "Health Information Administration (BS)",
+       "url": null
+      },
+      {
+       "name": "Health Services (BS)",
+       "url": null
+      },
+      {
+       "name": "Kinesiology (BS; MS)",
+       "url": null
+      },
+      {
+       "name": "Nuclear Medicine Technology (BS)",
+       "url": null
+      },
+      {
+       "name": "Nursing (BS; PhD)",
+       "url": null
+      },
+      {
+       "name": "Nursing Practice (DNP)",
+       "url": null
+      },
+      {
+       "name": "Acute Care, Family, Pediatric, and Physical and Mental Health Nurse Practitioner (Certificates)",
+       "url": null
+      },
+      {
+       "name": "Public Health (BS; Certificate; MPH)",
+       "url": null
+      },
+      {
+       "name": "Radiation Therapy (BS)",
+       "url": null
+      },
+      {
+       "name": "Respiratory Therapy (BS)",
+       "url": null
+      },
+      {
+       "name": "Epidemiology (MS)",
+       "url": null
+      },
+      {
+       "name": "Occupational Therapy (MHS)",
+       "url": null
+      },
+      {
+       "name": "Speech-Language Pathology (MHS)",
+       "url": null
+      },
+      {
+       "name": "Physician Assistant (MPA)",
+       "url": null
+      },
+      {
+       "name": "Physical Therapy (DPT)",
+       "url": null
+      },
+      {
+       "name": "Dentistry (DMD)",
+       "url": null
+      },
+      {
+       "name": "Medicine (MD)",
+       "url": null
+      },
+      {
+       "name": "Applied Health Sciences (PhD)",
+       "url": null
+      },
+      {
+       "name": "Biostatistics (PhD)",
+       "url": null
+      }
+     ],
+     "group": "usg",
+     "site": "https://www.augusta.edu",
+     "nearestCampus": "Augusta",
+     "miles": 133
+    },
+    {
+     "name": "Georgia Southwestern State University",
+     "programs": [
+      {
+       "name": "Nursing (A.S.N.)",
+       "url": null
+      },
+      {
+       "name": "Nursing (B.S.N.)",
+       "url": null
+      },
+      {
+       "name": "Nursing (2nd Degree B.S.N.)",
+       "url": null
+      },
+      {
+       "name": "Nursing (LPN to B.S.N.)",
+       "url": null
+      },
+      {
+       "name": "Nursing (RN to B.S.N.)",
+       "url": null
+      },
+      {
+       "name": "Exercise Science (B.S.), Occupational Therapy, Physician’s Assistant, and Physical Therapy concentrations",
+       "url": null
+      },
+      {
+       "name": "Long-Term Care Management (B.S.)",
+       "url": null
+      },
+      {
+       "name": "Psychology (B.S.)",
+       "url": null
+      },
+      {
+       "name": "Sociology (B.S.), Social Work concentration",
+       "url": null
+      },
+      {
+       "name": "Pre-Athletic Training",
+       "url": null
+      },
+      {
+       "name": "Pre-Dentistry",
+       "url": null
+      },
+      {
+       "name": "Pre-Medicine",
+       "url": null
+      },
+      {
+       "name": "Pre-Occupational Therapy",
+       "url": null
+      },
+      {
+       "name": "Pre-Optometry",
+       "url": null
+      },
+      {
+       "name": "Pre-Pharmacy",
+       "url": null
+      },
+      {
+       "name": "Pre-Physical Therapy",
+       "url": null
+      }
+     ],
+     "group": "usg",
+     "site": "https://www.gsw.edu",
+     "nearestCampus": "Americus",
+     "miles": 150
+    },
+    {
+     "name": "Georgia Southern University",
+     "programs": [
+      {
+       "name": "Nursing",
+       "url": null
+      },
+      {
+       "name": "Nursing Accelerated",
+       "url": null
+      },
+      {
+       "name": "Nursing RN-BSN - Online",
+       "url": null
+      },
+      {
+       "name": "Nursing Practice",
+       "url": null
+      },
+      {
+       "name": "Post-BSN to DNP",
+       "url": null
+      },
+      {
+       "name": "Post-MSN Acute Care Adult/Gerontology Nurse Practitioner",
+       "url": null
+      },
+      {
+       "name": "Post-MSN Family Nurse Practitioner",
+       "url": null
+      },
+      {
+       "name": "Post-MSN Primary Care Adult/Gerontology Nurse Practitioner",
+       "url": null
+      },
+      {
+       "name": "Post-MSN Psychiatric Mental Health Nurse Practitioner",
+       "url": null
+      },
+      {
+       "name": "Physical Therapy",
+       "url": null
+      },
+      {
+       "name": "Athletic Training",
+       "url": null
+      },
+      {
+       "name": "Respiratory Therapy",
+       "url": null
+      },
+      {
+       "name": "Radiologic Sciences",
+       "url": null
+      },
+      {
+       "name": "Clinical Specialist in Advanced Imaging Certificate",
+       "url": null
+      },
+      {
+       "name": "Medical Laboratory Science",
+       "url": null
+      },
+      {
+       "name": "Health Sciences",
+       "url": null
+      },
+      {
+       "name": "Master of Health Administration",
+       "url": null
+      },
+      {
+       "name": "Communication Sciences and Disorders",
+       "url": null
+      },
+      {
+       "name": "Public Health",
+       "url": null
+      },
+      {
+       "name": "Clinical Psychology",
+       "url": null
+      },
+      {
+       "name": "Exercise Science",
+       "url": null
+      },
+      {
+       "name": "Kinesiology",
+       "url": null
+      },
+      {
+       "name": "Nutrition and Food Science",
+       "url": null
+      }
+     ],
+     "group": "usg",
+     "site": "https://www.georgiasouthern.edu",
+     "nearestCampus": "Swainsboro",
+     "miles": 152
+    },
+    {
+     "name": "Albany State University",
+     "programs": [
+      {
+       "name": "Nursing (MSN) — Family Nurse Practitioner",
+       "url": null
+      },
+      {
+       "name": "Nursing (MSN) — Nurse Educator",
+       "url": null
+      },
+      {
+       "name": "Nursing (MSN) — Nursing Informatics",
+       "url": null
+      },
+      {
+       "name": "Athletic Training (Masters)",
+       "url": null
+      },
+      {
+       "name": "Healthcare Leadership (Graduate Certificate)",
+       "url": null
+      },
+      {
+       "name": "Health Services Management (Graduate Certificate)",
+       "url": null
+      },
+      {
+       "name": "Nursing (BSN)",
+       "url": null
+      },
+      {
+       "name": "Nursing (RN to BSN)",
+       "url": null
+      },
+      {
+       "name": "Health and Human Performance",
+       "url": null
+      },
+      {
+       "name": "Health Sciences",
+       "url": null
+      },
+      {
+       "name": "Dental Hygiene",
+       "url": null
+      },
+      {
+       "name": "Diagnostic Medical Sonography",
+       "url": null
+      },
+      {
+       "name": "Health Information Technology",
+       "url": null
+      },
+      {
+       "name": "Histologic Technician",
+       "url": null
+      },
+      {
+       "name": "Medical Laboratory Technology",
+       "url": null
+      },
+      {
+       "name": "Nursing (ASN)",
+       "url": null
+      },
+      {
+       "name": "Physical Therapist Assistant",
+       "url": null
+      },
+      {
+       "name": "Radiologic Science",
+       "url": null
+      },
+      {
+       "name": "Respiratory Therapy",
+       "url": null
+      },
+      {
+       "name": "Computed Tomography (Certificate)",
+       "url": null
+      },
+      {
+       "name": "Histologic Technician (Certificate)",
+       "url": null
+      },
+      {
+       "name": "Medical Coding (Certificate)",
+       "url": null
+      },
+      {
+       "name": "Phlebotomy Technician (Certificate)",
+       "url": null
+      }
+     ],
+     "group": "usg",
+     "site": "https://www.asurams.edu",
+     "nearestCampus": "Albany",
+     "miles": 184
+    },
+    {
+     "name": "Abraham Baldwin Agricultural College",
+     "programs": [
+      {
+       "name": "Nursing (AS; RN to BSN)",
+       "url": null
+      }
+     ],
+     "group": "usg",
+     "site": "https://www.abac.edu",
+     "nearestCampus": "Tifton",
+     "miles": 193
+    },
+    {
+     "name": "South Georgia State College",
+     "programs": [
+      {
+       "name": "Nursing (A.S.)",
+       "url": null
+      },
+      {
+       "name": "Allied Health (A.S.)",
+       "url": null
+      },
+      {
+       "name": "Health and Human Performance (A.S.)",
+       "url": null
+      },
+      {
+       "name": "Psychology (A.A.)",
+       "url": null
+      }
+     ],
+     "group": "usg",
+     "site": "https://www.sgsc.edu",
+     "nearestCampus": "Douglas",
+     "miles": 202
+    },
+    {
+     "name": "Valdosta State University",
+     "programs": [
+      {
+       "name": "Nursing, B.S.N.",
+       "url": null
+      },
+      {
+       "name": "Health Sciences, B.S.",
+       "url": null
+      },
+      {
+       "name": "Exercise Physiology, B.S.E.P.",
+       "url": null
+      },
+      {
+       "name": "Dental Hygiene, A.A.S.",
+       "url": null
+      },
+      {
+       "name": "Communication Disorders, B.S.Ed.",
+       "url": null
+      },
+      {
+       "name": "Psychology, B.A.",
+       "url": null
+      },
+      {
+       "name": "Biology, B.A.",
+       "url": null
+      },
+      {
+       "name": "Chemistry, B.S.",
+       "url": null
+      }
+     ],
+     "group": "usg",
+     "site": "https://www.valdosta.edu",
+     "nearestCampus": "Valdosta",
+     "miles": 238
+    },
+    {
+     "name": "College of Coastal Georgia",
+     "programs": [
+      {
+       "name": "Nursing (AS; BS)",
+       "url": null
+      },
+      {
+       "name": "Radiologic Science (AS)",
+       "url": null
+      },
+      {
+       "name": "Health Sciences (BS), Exercise Science and Health Promotion concentrations",
+       "url": null
+      },
+      {
+       "name": "Psychology (BS), Human Services and Psychological Science concentrations",
+       "url": null
+      },
+      {
+       "name": "General Business (BBA), Health Care Administration concentration",
+       "url": null
+      },
+      {
+       "name": "Workforce Management and Leadership (BS), Healthcare Information Management concentration",
+       "url": null
+      },
+      {
+       "name": "Interdisciplinary Studies (BS), Health concentration",
+       "url": null
+      }
+     ],
+     "group": "usg",
+     "site": "https://www.ccga.edu",
+     "nearestCampus": "Brunswick",
+     "miles": 260
+    },
+    {
+     "name": "Brenau University",
+     "programs": [
+      {
+       "name": "Accelerated Bachelor of Science in Nursing",
+       "url": null
+      },
+      {
+       "name": "Adult-Gerontology Acute Care Nurse Practitioner Post-Master’s Certificate",
+       "url": null
+      },
+      {
+       "name": "ASN-to-BSN",
+       "url": null
+      },
+      {
+       "name": "Bachelor of Business Administration in Healthcare Management",
+       "url": null
+      },
+      {
+       "name": "Bachelor of Science in Exercise Science",
+       "url": null
+      },
+      {
+       "name": "Bachelor of Science in Health Science",
+       "url": null
+      },
+      {
+       "name": "Bachelor of Science in Health Science with Pre-Occupational Therapy Concentration",
+       "url": null
+      },
+      {
+       "name": "Bachelor of Science in Nursing",
+       "url": null
+      },
+      {
+       "name": "Bachelor of Science in Psychology",
+       "url": null
+      },
+      {
+       "name": "Bachelor of Science in Psychology with Pre-Occupational Therapy Concentration",
+       "url": null
+      },
+      {
+       "name": "Dance/Movement Therapy Graduate Certificate Program",
+       "url": null
+      },
+      {
+       "name": "Doctor of Clinical Psychology",
+       "url": null
+      },
+      {
+       "name": "Doctor of Nursing Practice – Advanced Practice Nurse",
+       "url": null
+      },
+      {
+       "name": "Doctor of Nursing Practice – Leadership & Management",
+       "url": null
+      },
+      {
+       "name": "Doctor of Physical Therapy",
+       "url": null
+      },
+      {
+       "name": "Family Nurse Practitioner Post-Master’s Certificate",
+       "url": null
+      },
+      {
+       "name": "Graduate Health Care Management Certificate",
+       "url": null
+      },
+      {
+       "name": "Master of Science in Clinical Counseling Psychology",
+       "url": null
+      },
+      {
+       "name": "Master of Science in Nursing – Direct Entry",
+       "url": null
+      },
+      {
+       "name": "Master of Science in Nursing – Family Nurse Practitioner",
+       "url": null
+      },
+      {
+       "name": "Master of Science in Nursing – Nursing Leadership and Management",
+       "url": null
+      },
+      {
+       "name": "Master of Science in Occupational Therapy",
+       "url": null
+      },
+      {
+       "name": "Master of Science in Physician Assistant Studies",
+       "url": null
+      },
+      {
+       "name": "Police Mental Health Collaborative Certificate",
+       "url": null
+      },
+      {
+       "name": "Post Baccalaureate Physical Therapy Preparatory Program",
+       "url": null
+      },
+      {
+       "name": "Post Baccalaureate Pre-Medical Program",
+       "url": null
+      },
+      {
+       "name": "Post Baccalaureate Pre-Nursing",
+       "url": null
+      },
+      {
+       "name": "Post Baccalaureate Pre-Occupational Therapy Program",
+       "url": null
+      },
+      {
+       "name": "Post Baccalaureate Pre-Physician Assistant Preparatory Program",
+       "url": null
+      },
+      {
+       "name": "Psychiatric Mental Health Nurse Practitioner Post-Master’s Certificate",
+       "url": null
+      }
+     ],
+     "group": "private",
+     "site": "https://www.brenau.edu/",
+     "nearestCampus": "Gainesville",
+     "miles": 18
+    },
+    {
+     "name": "Oglethorpe University",
+     "programs": [
+      {
+       "name": "Allied Health",
+       "url": null
+      },
+      {
+       "name": "Public Health",
+       "url": null
+      },
+      {
+       "name": "Psychology",
+       "url": null
+      },
+      {
+       "name": "Medical & Scientific Illustration",
+       "url": null
+      },
+      {
+       "name": "Pre-Dentistry, Pre-Medical, Pre-Nursing, Pre-Pharmacy, and Pre-Physical Therapy Studies",
+       "url": null
+      }
+     ],
+     "group": "private",
+     "site": "https://oglethorpe.edu/",
+     "nearestCampus": "Brookhaven",
+     "miles": 27
+    },
+    {
+     "name": "Emory University",
+     "programs": [
+      {
+       "name": "Human Health (Major)",
+       "url": null
+      },
+      {
+       "name": "Global Health, Culture, and Society (Minor)",
+       "url": null
+      },
+      {
+       "name": "Health Innovation",
+       "url": null
+      },
+      {
+       "name": "Predictive Health (Minor)",
+       "url": null
+      },
+      {
+       "name": "Nutrition Science (Minor)",
+       "url": null
+      },
+      {
+       "name": "Psychology (Major)",
+       "url": null
+      }
+     ],
+     "group": "private",
+     "site": "https://www.emory.edu/",
+     "nearestCampus": "Atlanta",
+     "miles": 32
+    },
+    {
+     "name": "Agnes Scott College",
+     "programs": [
+      {
+       "name": "Nursing (Dual Degree, Major)",
+       "url": null
+      },
+      {
+       "name": "Early Acceptance Clinical Nurse Leader (CNL) Program",
+       "url": null
+      },
+      {
+       "name": "Public Health (Major; Minor)",
+       "url": null
+      },
+      {
+       "name": "Psychology (Major; Minor)",
+       "url": null
+      },
+      {
+       "name": "Pre-Health (Pre-professional Track)",
+       "url": null
+      }
+     ],
+     "group": "private",
+     "site": "https://www.agnesscott.edu/",
+     "nearestCampus": "Decatur",
+     "miles": 33
+    },
+    {
+     "name": "Truett McConnell University",
+     "programs": [
+      {
+       "name": "Nursing",
+       "url": null
+      },
+      {
+       "name": "Psychology",
+       "url": null
+      }
+     ],
+     "group": "private",
+     "site": "https://truett.edu/",
+     "nearestCampus": "Cleveland",
+     "miles": 33
+    },
+    {
+     "name": "Piedmont University",
+     "programs": [
+      {
+       "name": "Applied Health Sciences (PhD)",
+       "url": null
+      },
+      {
+       "name": "Art Therapy",
+       "url": null
+      },
+      {
+       "name": "Communication Sciences and Disorders",
+       "url": null
+      },
+      {
+       "name": "Exercise & Sport Science",
+       "url": null
+      },
+      {
+       "name": "Health Care Administration",
+       "url": null
+      },
+      {
+       "name": "Nursing",
+       "url": null
+      },
+      {
+       "name": "Psychology",
+       "url": null
+      }
+     ],
+     "group": "private",
+     "site": "https://www.piedmont.edu/",
+     "nearestCampus": "Demorest",
+     "miles": 40
+    },
+    {
+     "name": "Toccoa Falls College",
+     "programs": [
+      {
+       "name": "Nursing",
+       "url": null
+      },
+      {
+       "name": "Pre-Nursing Plan (Online)",
+       "url": null
+      },
+      {
+       "name": "Public Health",
+       "url": null
+      },
+      {
+       "name": "Biology: Public Health (Online)",
+       "url": null
+      },
+      {
+       "name": "Exercise Science (Online)",
+       "url": null
+      },
+      {
+       "name": "Counseling Psychology",
+       "url": null
+      },
+      {
+       "name": "Social Work",
+       "url": null
+      },
+      {
+       "name": "Sport Psychology",
+       "url": null
+      }
+     ],
+     "group": "private",
+     "site": "https://tfc.edu/",
+     "nearestCampus": "Toccoa Falls",
+     "miles": 50
+    },
+    {
+     "name": "Young Harris College",
+     "programs": [
+      {
+       "name": "Kinesiology & Sport (BS)",
+       "url": null
+      },
+      {
+       "name": "Psychology (BS), Human Services and Psychological Science concentrations",
+       "url": null
+      }
+     ],
+     "group": "private",
+     "site": "https://www.yhc.edu/",
+     "nearestCampus": "Young Harris",
+     "miles": 51
+    },
+    {
+     "name": "Berry College",
+     "programs": [
+      {
+       "name": "Nursing",
+       "url": null
+      },
+      {
+       "name": "Exercise Science",
+       "url": null
+      },
+      {
+       "name": "Applied Behavior Analysis",
+       "url": null
+      },
+      {
+       "name": "One Health",
+       "url": null
+      },
+      {
+       "name": "Psychology",
+       "url": null
+      },
+      {
+       "name": "Pre-Medical Studies / Allied Health",
+       "url": null
+      },
+      {
+       "name": "Pre-Dentistry",
+       "url": null
+      },
+      {
+       "name": "Pre-Pharmacy",
+       "url": null
+      },
+      {
+       "name": "Pre-Physical Therapy",
+       "url": null
+      }
+     ],
+     "group": "private",
+     "site": "https://www.berry.edu/",
+     "nearestCampus": "Mount Berry",
+     "miles": 61
+    },
+    {
+     "name": "Mercer University",
+     "programs": [
+      {
+       "name": "Adult-Gerontology Acute Care Nurse Practitioner, M.S.N.",
+       "url": null
+      },
+      {
+       "name": "Adult-Gerontology Primary Care Nurse Practitioner, M.S.N.",
+       "url": null
+      },
+      {
+       "name": "Family Nurse Practitioner, M.S.N.",
+       "url": null
+      },
+      {
+       "name": "Psychiatric-Mental Health Nurse Practitioner, M.S.N.",
+       "url": null
+      },
+      {
+       "name": "Doctor of Nursing Practice (D.N.P.)",
+       "url": null
+      },
+      {
+       "name": "Nursing, Ph.D.",
+       "url": null
+      },
+      {
+       "name": "Nursing, B.S.N. — Prelicensure",
+       "url": null
+      },
+      {
+       "name": "Nursing, B.S.N. — RN-BSN Completion",
+       "url": null
+      },
+      {
+       "name": "Nursing, B.S.N. — Second Degree Accelerated",
+       "url": null
+      },
+      {
+       "name": "Doctor of Medicine (M.D.)",
+       "url": null
+      },
+      {
+       "name": "Doctor of Pharmacy (Pharm.D.)",
+       "url": null
+      },
+      {
+       "name": "Doctor of Pharmacy/Master of Public Health",
+       "url": null
+      },
+      {
+       "name": "Pharm.D./Master of Science in Health Informatics",
+       "url": null
+      },
+      {
+       "name": "Doctor of Physical Therapy (DPT)",
+       "url": null
+      },
+      {
+       "name": "Doctor of Physical Therapy/MPH",
+       "url": null
+      },
+      {
+       "name": "Doctor of Occupational Therapy (OTD)",
+       "url": null
+      },
+      {
+       "name": "Doctor of Psychology (PsyD)",
+       "url": null
+      },
+      {
+       "name": "Physician Assistant (MMSc)",
+       "url": null
+      },
+      {
+       "name": "Master of Medical Science/Master of Public Health",
+       "url": null
+      },
+      {
+       "name": "Master of Athletic Training (MAT)",
+       "url": null
+      },
+      {
+       "name": "Doctor of Public Health (DrPH) — Diverse Populations and Health Equity",
+       "url": null
+      },
+      {
+       "name": "Kinesiology, B.S.",
+       "url": null
+      },
+      {
+       "name": "Clinical Mental Health Counseling, M.S.",
+       "url": null
+      },
+      {
+       "name": "Clinical Rehabilitation Counseling, M.S.",
+       "url": null
+      },
+      {
+       "name": "Family Therapy, M.F.T.",
+       "url": null
+      },
+      {
+       "name": "Health Informatics, M.S.",
+       "url": null
+      },
+      {
+       "name": "Health Informatics Graduate Certificate",
+       "url": null
+      },
+      {
+       "name": "Healthcare Management and Analytics Graduate Certificate",
+       "url": null
+      },
+      {
+       "name": "Healthcare Leadership, B.S.",
+       "url": null
+      },
+      {
+       "name": "Global Health Studies, B.A.",
+       "url": null
+      },
+      {
+       "name": "Health and Physical Education, B.S.Ed.",
+       "url": null
+      },
+      {
+       "name": "Pre-Anesthesiologist Assistant Studies",
+       "url": null
+      },
+      {
+       "name": "Pre-Optometry",
+       "url": null
+      },
+      {
+       "name": "Pre-Podiatry",
+       "url": null
+      },
+      {
+       "name": "Pre-ABSN",
+       "url": null
+      },
+      {
+       "name": "Pre-Athletic Training",
+       "url": null
+      },
+      {
+       "name": "Pre-Dentistry",
+       "url": null
+      },
+      {
+       "name": "Pre-Nursing",
+       "url": null
+      },
+      {
+       "name": "Pre-Occupational Therapy",
+       "url": null
+      },
+      {
+       "name": "Pre-Pharmacy",
+       "url": null
+      },
+      {
+       "name": "Pre-Physical Therapy",
+       "url": null
+      },
+      {
+       "name": "Pre-Physician Assistant Studies",
+       "url": null
+      }
+     ],
+     "group": "private",
+     "site": "https://www.mercer.edu/",
+     "nearestCampus": "Macon",
+     "miles": 100
     }
    ]
   }
