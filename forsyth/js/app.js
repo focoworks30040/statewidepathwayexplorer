@@ -323,28 +323,35 @@
       <p class="center-note">Start in high school, keep going after graduation. Select a program to visit the school's page.</p>
 
       <div class="learn">${learnSection(ind, "fcs")}${learnSection(ind, "lanier")}${learnSection(ind, "ung")}</div>
-      <div class="more-options-row">
-      ${TCSG_PROGRAMS[ind.id] ? (() => {
-        const t = TCSG_PROGRAMS[ind.id];
-        const n = t.colleges.reduce((a, c) => a + c.programs.length, 0);
-        return `<section class="more-options">
-          <h3 class="dlg-h dlg-h--center">Additional education options across the Technical College System of Georgia</h3>
-          <p class="center-note">${t.colleges.length} technical colleges offer ${n} ${esc(ind.name.toLowerCase())} programs across the state.</p>
-          <p class="center-btn"><button class="pill pill--blue pill--lg" type="button" data-programs="tcsg" data-ind="${ind.id}">Explore technical college programs ›</button></p>
+      ${(() => {
+        const cols = [];
+        if (TCSG_PROGRAMS[ind.id]) {
+          const t = TCSG_PROGRAMS[ind.id];
+          const n = t.colleges.reduce((a, c) => a + c.programs.length, 0);
+          cols.push(`<div class="edu-panel__col">
+            <h3>Technical College System of Georgia</h3>
+            <p>${t.colleges.length} technical colleges offer ${n} ${esc(ind.name.toLowerCase())} programs across the state.</p>
+            <p class="edu-panel__action"><button class="pill pill--blue pill--lg" type="button" data-programs="tcsg" data-ind="${ind.id}">Explore technical college programs ›</button></p>
+          </div>`);
+        }
+        if (USG_PROGRAMS[ind.id]) {
+          const u = USG_PROGRAMS[ind.id];
+          const pub = u.colleges.filter((c) => c.group === "usg");
+          const n = pub.reduce((a, c) => a + c.programs.length, 0);
+          const priv = u.colleges.length - pub.length;
+          cols.push(`<div class="edu-panel__col">
+            <h3>University System of Georgia</h3>
+            <p>${pub.length} public universities and colleges offer ${n} ${esc(ind.name.toLowerCase())} programs${priv ? `, plus ${priv} private colleges in Georgia` : ""}.</p>
+            <p class="edu-panel__action"><button class="pill pill--blue pill--lg" type="button" data-programs="usg" data-ind="${ind.id}">Explore university programs ›</button></p>
+          </div>`);
+        }
+        if (!cols.length) return "";
+        return `<section class="edu-panel" aria-labelledby="eduPanelTitle">
+          <h2 class="edu-panel__title" id="eduPanelTitle">Additional education options across Georgia</h2>
+          <p class="edu-panel__sub">Find ${esc(ind.name.toLowerCase())} programs at colleges and universities statewide.</p>
+          <div class="edu-panel__grid${cols.length === 1 ? " edu-panel__grid--single" : ""}">${cols.join("")}</div>
         </section>`;
-      })() : ""}
-      ${USG_PROGRAMS[ind.id] ? (() => {
-        const u = USG_PROGRAMS[ind.id];
-        const pub = u.colleges.filter((c) => c.group === "usg");
-        const n = pub.reduce((a, c) => a + c.programs.length, 0);
-        const priv = u.colleges.length - pub.length;
-        return `<section class="more-options">
-          <h3 class="dlg-h dlg-h--center">Additional education options across the University System of Georgia</h3>
-          <p class="center-note">${pub.length} public universities and colleges offer ${n} ${esc(ind.name.toLowerCase())} programs${priv ? `, plus ${priv} private colleges in Georgia` : ""}.</p>
-          <p class="center-btn"><button class="pill pill--blue pill--lg" type="button" data-programs="usg" data-ind="${ind.id}">Explore university programs ›</button></p>
-        </section>`;
-      })() : ""}
-      </div>
+      })()}
 
       <h3 class="dlg-h dlg-h--center">Where you could work</h3>
       <p class="center-note">${total} Forsyth County companies in ${esc(ind.name)}.</p>

@@ -487,9 +487,9 @@ a { color: inherit; }
 }
 
 /* ── Forsyth County additions ─────────────────── */
-:root { --city: #b64400; --hd: #1a7f4b; --hd-bg: #e9f5ee; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --hd: #4cc37a; --hd-bg: #122a1d; } }
-:root[data-theme="dark"] { --hd: #4cc37a; --hd-bg: #122a1d; }
+:root { --city: #b64400; --hd: #1a7f4b; --hd-bg: #e9f5ee; --panel-tint: #f4f7fb; --panel-divider: #d6dce4; --panel-muted: #5b6270; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --hd: #4cc37a; --hd-bg: #122a1d; --panel-tint: #151a21; --panel-divider: #2c333d; --panel-muted: #a8b0bc; } }
+:root[data-theme="dark"] { --hd: #4cc37a; --hd-bg: #122a1d; --panel-tint: #151a21; --panel-divider: #2c333d; --panel-muted: #a8b0bc; }
 
 /* Bands alternate white / mist; cards take the opposite surface. */
 #industries .sector-card, #local .panel-card { background: var(--white); }
@@ -664,10 +664,6 @@ a { color: inherit; }
 .toggle--hd input { accent-color: var(--hd); }
 
 /* ── Statewide technical college programs ───────── */
-.center-btn { text-align: center; margin: 0; }
-.more-options { margin-top: 20px; padding: 4px 24px 28px; border-radius: 24px; box-shadow: inset 0 0 0 1px var(--control); }
-.more-options .dlg-h--center { margin-top: 24px; text-wrap: balance; }
-.center-btn .pill { white-space: normal; text-align: center; line-height: 1.3; max-width: 100%; }
 .tcsg-search input { max-width: 100%; margin: 20px 0 14px; }
 .tcsg-filters { margin-bottom: 12px; }
 .tcsg-filters .chip { padding: 7px 14px; font-size: 13px; }
@@ -713,10 +709,27 @@ a { color: inherit; }
 .prog-group:first-child { margin-top: 0; }
 .prog-group-note { margin: -4px 0 12px; font-size: 13px; color: var(--slate); }
 
-/* Statewide options: two boxes side by side, stacked on narrow screens */
-.more-options-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-top: 20px; }
-.more-options-row:empty { display: none; }
-.more-options-row .more-options { margin-top: 0; display: flex; flex-direction: column; }
-.more-options-row .more-options .dlg-h--center { font-size: 19px; line-height: 1.3; }
-.more-options-row .more-options .center-btn { margin-top: auto; padding-top: 4px; }
-@media (max-width: 734px) { .more-options-row { grid-template-columns: 1fr; } }
+/* Statewide education options: one panel, two columns split by a divider */
+.edu-panel { margin-top: 24px; padding: 40px 48px; border-radius: 20px; background: var(--panel-tint); }
+.edu-panel__title { margin: 0; font-family: var(--font-display); font-size: 28px; font-weight: 700; line-height: 1.2; letter-spacing: -0.2px; color: var(--ink); text-wrap: balance; }
+.edu-panel__sub, .edu-panel__col p { font-size: 16px; line-height: 1.5; letter-spacing: -0.2px; color: var(--panel-muted); }
+.edu-panel__sub { margin: 8px 0 0; }
+.edu-panel__grid { display: grid; grid-template-columns: 1fr 1fr; margin-top: 32px; }
+.edu-panel__grid--single { grid-template-columns: 1fr; }
+.edu-panel__col { display: flex; flex-direction: column; min-width: 0; }
+.edu-panel__col:first-child { padding-right: 48px; }
+.edu-panel__col + .edu-panel__col { padding-left: 48px; border-left: 1px solid var(--panel-divider); }
+.edu-panel__grid--single .edu-panel__col { padding-right: 0; }
+.edu-panel__col h3 { margin: 0; font-family: var(--font-display); font-size: 20px; font-weight: 600; line-height: 1.3; color: var(--ink); }
+.edu-panel__col p { margin: 8px 0 0; }
+.edu-panel__col .edu-panel__action { margin-top: auto; padding-top: 24px; }
+.edu-panel__action .pill { min-height: 44px; justify-content: center; text-align: center; line-height: 1.3; white-space: normal; max-width: 100%; }
+@media (max-width: 767px) {
+  .edu-panel { padding: 24px; }
+  .edu-panel__title { font-size: 24px; }
+  .edu-panel__grid { grid-template-columns: 1fr; margin-top: 24px; }
+  .edu-panel__col:first-child { padding-right: 0; }
+  .edu-panel__col + .edu-panel__col { padding-left: 0; border-left: 0; border-top: 1px solid var(--panel-divider); margin-top: 24px; padding-top: 24px; }
+  .edu-panel__col .edu-panel__action { padding-top: 20px; }
+  .edu-panel__action .pill { width: 100%; }
+}
