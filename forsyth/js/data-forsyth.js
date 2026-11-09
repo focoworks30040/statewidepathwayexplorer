@@ -7258,7 +7258,8 @@ window.FOCO = {
        "name": "Paramedicine Degree",
        "url": "https://www.westgatech.edu/"
       }
-     ]
+     ],
+     "logo": "img/logos/west-georgia.png"
     },
     {
      "name": "Georgia Northwestern Technical College",
@@ -7492,7 +7493,8 @@ window.FOCO = {
        "name": "Medical Information Specialist (TCC)",
        "url": "https://www.sctech.edu/"
       }
-     ]
+     ],
+     "logo": "img/logos/southern-crescent.png"
     },
     {
      "name": "Central Georgia Technical College",
@@ -8131,7 +8133,8 @@ window.FOCO = {
        "name": "Surgical Technology, AAS Degree",
        "url": "https://www.wiregrass.edu/course-catalog/current/programs"
       }
-     ]
+     ],
+     "logo": "img/logos/wiregrass.png"
     },
     {
      "name": "Albany Technical College",
@@ -8476,7 +8479,8 @@ window.FOCO = {
        "name": "Interdisciplinary Studies, AAS",
        "url": "https://southernregional.edu/college-catalog/current/programs"
       }
-     ]
+     ],
+     "logo": "img/logos/southern-regional.png"
     },
     {
      "name": "Savannah Technical College",
