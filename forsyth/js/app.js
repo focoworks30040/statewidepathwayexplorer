@@ -323,6 +323,7 @@
       <p class="center-note">Start in high school, keep going after graduation. Select a program to visit the school's page.</p>
 
       <div class="learn">${learnSection(ind, "fcs")}${learnSection(ind, "lanier")}${learnSection(ind, "ung")}</div>
+      <div class="more-options-row">
       ${TCSG_PROGRAMS[ind.id] ? (() => {
         const t = TCSG_PROGRAMS[ind.id];
         const n = t.colleges.reduce((a, c) => a + c.programs.length, 0);
@@ -343,6 +344,7 @@
           <p class="center-btn"><button class="pill pill--blue pill--lg" type="button" data-programs="usg" data-ind="${ind.id}">Explore university programs ›</button></p>
         </section>`;
       })() : ""}
+      </div>
 
       <h3 class="dlg-h dlg-h--center">Where you could work</h3>
       <p class="center-note">${total} Forsyth County companies in ${esc(ind.name)}.</p>
