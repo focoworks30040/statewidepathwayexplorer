@@ -705,10 +705,7 @@ a { color: inherit; }
 .tcsg-college summary.has-logo .tcsg-college__count { grid-column: 3; }
 .tcsg-logo--initials { background: var(--white); color: var(--slate); font-size: 15px; font-weight: 600; letter-spacing: 0.5px; }
 
-/* Member cards with a website link */
-.emp-cards li.emp-card--site { display: flex; flex-direction: column; border-radius: 14px; background: var(--hover); }
-.emp-cards li.emp-card--site .emp-link { background: transparent; min-height: 0; padding: 12px 16px 2px; }
-.emp-cards li.emp-card--site:hover { box-shadow: inset 0 0 0 1.5px var(--blue); }
-.emp-site { padding: 0 16px 12px; font-size: 12px; color: var(--link); text-decoration: none; overflow-wrap: anywhere; letter-spacing: -0.12px; }
-.emp-site:hover { text-decoration: underline; }
-.emp-cards li.emp-card--site .emp-link:hover { box-shadow: none; }
+/* Website line on the company sheet */
+.emp-website { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 16px; padding: 10px 16px; border-radius: 14px; background: var(--mist); font-size: 15px; }
+.emp-website span { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--slate); }
+.emp-website a { font-weight: 600; overflow-wrap: anywhere; }

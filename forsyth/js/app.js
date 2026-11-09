@@ -291,12 +291,7 @@
       <p class="emp-tab-note">${tab.id === "members"
         ? `Forsyth County Chamber of Commerce members in ${esc(ind.name)}. Members often partner with schools on internships, apprenticeships, and work-based learning.`
         : `Local ${esc(tab.label.toLowerCase())} companies in Forsyth County.`} Select a company to learn more.</p>
-      <ul class="emp-cards">${names.map((n) => {
-        const url = tab.id === "members" && EMP[n] && EMP[n].url;
-        return url
-          ? `<li class="emp-card--site">${employerLink(n)}<a class="emp-site" href="${esc(url)}" target="_blank" rel="noopener" aria-label="${esc(n)} website">${esc(siteLabel(url))} ↗</a></li>`
-          : `<li>${employerLink(n)}</li>`;
-      }).join("") || `<li class="empty-note">No companies match “${esc(indQuery)}”.</li>`}</ul>`;
+      <ul class="emp-cards">${names.map((n) => `<li>${employerLink(n)}</li>`).join("") || `<li class="empty-note">No companies match “${esc(indQuery)}”.</li>`}</ul>`;
   }
 
   function openIndustry(id) {
@@ -453,6 +448,7 @@
       <p class="dlg-sector${e.member ? " member-kind" : ""}">${e.member ? "Forsyth County Chamber of Commerce Member" : "Local community company"}</p>
       <h2 class="dlg-title dlg-title--sm" id="empTitle">${esc(name)}</h2>
       <p class="emp-meta">Forsyth County${e.cats.length ? " · " + esc(e.cats.join(", ")) : ""} · ${esc(indNames.join(" · "))}</p>
+      ${e.url ? `<p class="emp-website"><span>Website</span><a class="link" href="${esc(e.url)}" target="_blank" rel="noopener">${esc(siteLabel(e.url))} ↗</a></p>` : ""}
       <div class="tag-list">${inds.map((i) => `<span><i class="ind-dot" style="--ind:${indById[i].color}"></i>${esc(indById[i].name)}</span>`).join("")}${e.cats.map((c) => `<span>${esc(c)}</span>`).join("")}</div>
       <h3 class="dlg-h">Why it's here</h3>
       <p class="dlg-text">${esc(why)}</p>
