@@ -688,9 +688,12 @@ a { color: inherit; }
 
 /* School logos */
 .school-logo { flex: none; display: grid; place-items: center; width: 84px; height: 64px; padding: 6px; border-radius: 14px; background: #fff; box-shadow: inset 0 0 0 1px var(--control); }
-.school-logo img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+.school-logo { position: relative; overflow: hidden; }
+.school-logo img { position: absolute; inset: 6px; width: calc(100% - 12px); height: calc(100% - 12px); object-fit: contain; display: block; }
 .school-logo--fill { padding: 0; overflow: hidden; background: #1f3d7c; }
-.school-logo--fill img { width: 100%; height: 100%; object-fit: cover; }
+.school-logo--fill img { inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.school-logo--bg { padding: 3px; overflow: hidden; }
+.school-logo--bg img { inset: 3px; width: calc(100% - 6px); height: calc(100% - 6px); object-fit: contain; }
 .panel-school-head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
 .panel-school-head h4 { margin: 0; }
 .panel-school-head .sub { margin: 0 0 2px; }

@@ -8310,7 +8310,8 @@ window.FOCO = {
        "name": "Funeral Service Education AAS Degree (FS23)",
        "url": "https://www.ogeecheetech.edu/academics/academic-programs"
       }
-     ]
+     ],
+     "logo": "img/logos/ogeechee.png"
     },
     {
      "name": "Coastal Pines Technical College",
@@ -8359,7 +8360,9 @@ window.FOCO = {
        "name": "Surgical Technology",
        "url": "https://catalog.coastalpines.edu/classes"
       }
-     ]
+     ],
+     "logo": "img/logos/coastal-pines.png",
+     "logoBg": "#1f3e7c"
     },
     {
      "name": "Southern Regional Technical College",
@@ -8550,7 +8553,8 @@ window.FOCO = {
        "name": "Medical Coding/Insurance Data Technical Certificate of Credit MC71",
        "url": "https://www.savannahtech.edu/academics/all-programs/"
       }
-     ]
+     ],
+     "logo": "img/logos/savannah.png"
     }
    ]
   }

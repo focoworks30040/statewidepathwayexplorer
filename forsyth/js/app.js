@@ -387,7 +387,7 @@
       <details class="tcsg-college"${filtering || i < 3 ? " open" : ""}>
         <summary class="has-logo">
           ${c.logo
-            ? `<span class="school-logo tcsg-logo${c.logoFill ? " school-logo--fill" : ""}"><img src="${esc(c.logo)}" alt="${esc(c.name)} logo"></span>`
+            ? `<span class="school-logo tcsg-logo${c.logoBg ? " school-logo--bg" : c.logoFill ? " school-logo--fill" : ""}"${c.logoBg ? ` style="background:${esc(c.logoBg)}"` : ""}><img src="${esc(c.logo)}" alt="${esc(c.name)} logo"></span>`
             : `<span class="school-logo tcsg-logo tcsg-logo--initials" aria-hidden="true">${esc(c.name.split(/\s+/).map((w) => w[0]).join(""))}</span>`}
           <span class="tcsg-college__name">${esc(c.name)}</span>
           <span class="tcsg-college__meta">Closest campus: ${esc(c.nearestCampus)} · ${c.miles} mi from Forsyth</span>
