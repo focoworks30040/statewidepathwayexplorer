@@ -6766,7 +6766,9 @@ window.FOCO = {
        "name": "Healthcare Assistant certificate",
        "url": "https://gwinnetttech.edu/programs/"
       }
-     ]
+     ],
+     "logo": "img/logos/gwinnett.png",
+     "logoBg": "#0a2c74"
     },
     {
      "name": "Chattahoochee Technical College",
@@ -6839,7 +6841,8 @@ window.FOCO = {
        "name": "Surgical Technology",
        "url": "https://www.chattahoocheetech.edu/"
       }
-     ]
+     ],
+     "logo": "img/logos/chattahoochee.png"
     },
     {
      "name": "Georgia Piedmont Technical College",
@@ -8073,7 +8076,8 @@ window.FOCO = {
        "name": "Advanced EMT",
        "url": "https://catalog.southeasterntech.edu/college-catalog/current/programs"
       }
-     ]
+     ],
+     "logo": "img/logos/southeastern.png"
     },
     {
      "name": "Wiregrass Georgia Technical College",
