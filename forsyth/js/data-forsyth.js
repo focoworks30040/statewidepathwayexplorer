@@ -6900,7 +6900,8 @@ window.FOCO = {
        "name": "Surgical Technology Associate of Applied Science Degree",
        "url": "https://www.gptc.edu/college-catalog/current/programs/type/all"
       }
-     ]
+     ],
+     "logo": "img/logos/georgia-piedmont.png"
     },
     {
      "name": "Athens Technical College",
@@ -7149,7 +7150,8 @@ window.FOCO = {
        "name": "Health Care Science Certificate",
        "url": "https://northgatech.edu/academic-programs/"
       }
-     ]
+     ],
+     "logo": "img/logos/north-georgia.png"
     },
     {
      "name": "West Georgia Technical College",
@@ -7384,7 +7386,8 @@ window.FOCO = {
        "name": "Vascular (VA13) Degree",
        "url": "https://www.gntc.edu/programs/"
       }
-     ]
+     ],
+     "logo": "img/logos/georgia-northwestern.png"
     },
     {
      "name": "Southern Crescent Technical College",
@@ -7934,7 +7937,8 @@ window.FOCO = {
        "name": "Respiratory Care, Associate of Applied Science Degree,",
        "url": "https://www.columbustech.edu/programsofstudy/"
       }
-     ]
+     ],
+     "logo": "img/logos/columbus.png"
     },
     {
      "name": "South Georgia Technical College",
@@ -7975,7 +7979,8 @@ window.FOCO = {
        "name": "Advanced Emergency Medical Technician",
        "url": "https://www.southgatech.edu/college-catalog/current/departments"
       }
-     ]
+     ],
+     "logo": "img/logos/south-georgia.png"
     },
     {
      "name": "Southeastern Technical College",
