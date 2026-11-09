@@ -67,6 +67,8 @@
   });
   // Careers can name employers that aren't in either list.
   Object.values(CAREERS).forEach((c) => (c.employers || []).forEach((n) => { if (!EMP[n]) addEmp(n, { inds: c.inds }); }));
+  // "https://www.example.com/path" → "example.com"
+  const siteLabel = (url) => { try { return new URL(url).hostname.replace(/^www\./, ""); } catch (e) { return url; } };
   const employerLink = (name) =>
     `<button class="emp-link${EMP[name] && EMP[name].member ? " is-member" : ""}" type="button" data-employer="${esc(name)}">${esc(name)}</button>`;
   const schoolUrl = (school, p) => p.url || SCHOOLS[school].programsUrl || SCHOOLS[school].site;
@@ -289,7 +291,12 @@
       <p class="emp-tab-note">${tab.id === "members"
         ? `Forsyth County Chamber of Commerce members in ${esc(ind.name)}. Members often partner with schools on internships, apprenticeships, and work-based learning.`
         : `Local ${esc(tab.label.toLowerCase())} companies in Forsyth County.`} Select a company to learn more.</p>
-      <ul class="emp-cards">${names.map((n) => `<li>${employerLink(n)}</li>`).join("") || `<li class="empty-note">No companies match “${esc(indQuery)}”.</li>`}</ul>`;
+      <ul class="emp-cards">${names.map((n) => {
+        const url = tab.id === "members" && EMP[n] && EMP[n].url;
+        return url
+          ? `<li class="emp-card--site">${employerLink(n)}<a class="emp-site" href="${esc(url)}" target="_blank" rel="noopener" aria-label="${esc(n)} website">${esc(siteLabel(url))} ↗</a></li>`
+          : `<li>${employerLink(n)}</li>`;
+      }).join("") || `<li class="empty-note">No companies match “${esc(indQuery)}”.</li>`}</ul>`;
   }
 
   function openIndustry(id) {

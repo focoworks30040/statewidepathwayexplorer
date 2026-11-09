@@ -4487,12 +4487,12 @@ window.FOCO = {
     },
     {
      "name": "A Plus Dentistry",
-     "url": "https://www.aplusdentistry.com/",
+     "url": "https://aplusdentistry.com/",
      "also": []
     },
     {
      "name": "ABW Solutions, LLC",
-     "url": "https://awbsolutions.xyz/",
+     "url": "https://abwmedtrans.com/",
      "also": []
     },
     {
@@ -4502,7 +4502,7 @@ window.FOCO = {
     },
     {
      "name": "Central EMS",
-     "url": "https://www.centralems.com/",
+     "url": "https://priorityambulance.com/brands/central-ems/",
      "also": []
     },
     {
@@ -4517,7 +4517,7 @@ window.FOCO = {
     },
     {
      "name": "ConfiDENT Cumming, LLC.",
-     "url": "https://confidentsmiles4u.com/cumming/",
+     "url": "https://confidentsmiles4u.com/",
      "also": []
     },
     {
@@ -4527,17 +4527,17 @@ window.FOCO = {
     },
     {
      "name": "Dermani MedSpa - Cumming",
-     "url": "https://dermanimedspa.com/",
+     "url": "https://dermanimedspa.com/cumming-ga/",
      "also": []
     },
     {
      "name": "Encompass Health Rehabilitation Hospital",
-     "url": "https://www.encompasshealth.com/",
+     "url": "https://www.encompasshealth.com/locations/cumming-rehab",
      "also": []
     },
     {
      "name": "Georgia Implants and Dentures",
-     "url": "https://georgiaimplantsanddentures.com/",
+     "url": "https://www.georgiaimplantsanddentures.com/",
      "also": []
     },
     {
@@ -4547,19 +4547,19 @@ window.FOCO = {
     },
     {
      "name": "Hello Family Dental",
-     "url": "https://www.myjohnscreekdentist.com/",
+     "url": "https://www.hellofamilydental.com/",
      "also": []
     },
     {
      "name": "Homestead Animal Hospital",
-     "url": "https://vethomestead.com/",
+     "url": "https://www.vethomestead.com/",
      "also": [
       "bio"
      ]
     },
     {
      "name": "Kaiser Permanente",
-     "url": "https://healthy.kaiserpermanente.org/georgia/front-door",
+     "url": "https://healthy.kaiserpermanente.org/",
      "also": [
       "pro"
      ]
@@ -4580,7 +4580,7 @@ window.FOCO = {
     },
     {
      "name": "North Atlanta Family Dentistry",
-     "url": "https://www.smilegeorgia.com/cumming-ga/",
+     "url": "https://www.smilegeorgia.com/",
      "also": []
     },
     {
@@ -4590,12 +4590,12 @@ window.FOCO = {
     },
     {
      "name": "Northside Hospital-Forsyth",
-     "url": "https://www.northside.com/",
+     "url": "https://www.northside.com/locations/northside-hospital-forsyth",
      "also": []
     },
     {
      "name": "Reboot Health (Zivel Cumming)",
-     "url": "https://zivel.com/",
+     "url": "https://www.zivel.com/locations/georgia/windermere",
      "also": []
     },
     {
@@ -4605,7 +4605,7 @@ window.FOCO = {
     },
     {
      "name": "Serenity Orthodontics",
-     "url": "https://www.serenitysmiles.com/",
+     "url": "https://www.serenityortho.com/",
      "also": []
     },
     {
@@ -4615,7 +4615,7 @@ window.FOCO = {
     },
     {
      "name": "Vickery Animal Hospital",
-     "url": "https://www.vickeryanimalhospital.com/",
+     "url": "https://vickeryanimalhospital.com/",
      "also": [
       "bio"
      ]
@@ -5009,14 +5009,14 @@ window.FOCO = {
     },
     {
      "name": "Homestead Animal Hospital",
-     "url": "https://vethomestead.com/",
+     "url": "https://www.vethomestead.com/",
      "also": [
       "health"
      ]
     },
     {
      "name": "Vickery Animal Hospital",
-     "url": "https://www.vickeryanimalhospital.com/",
+     "url": "https://vickeryanimalhospital.com/",
      "also": [
       "health"
      ]
