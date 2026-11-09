@@ -46,12 +46,25 @@
   const indName = (c) => indById[c.inds[0]].name;
   const SVGNS = "http://www.w3.org/2000/svg";
 
-  // Employer name → website, from every industry's employer list.
-  const employerUrl = {};
-  INDUSTRIES.forEach((ind) => ind.employers.forEach((e) => { if (e.url) employerUrl[e.name] = e.url; }));
-  const employerLink = (name) => employerUrl[name]
-    ? `<a class="name link" href="${esc(employerUrl[name])}" target="_blank" rel="noopener">${esc(name)}</a>`
-    : `<span class="name">${esc(name)}</span>`;
+  // Every company, by name. Chamber members come from each industry's employer list;
+  // the rest are local community companies listed by category.
+  const EMP = {};
+  const addEmp = (name, fields) => {
+    const e = (EMP[name] ||= { name, url: null, member: false, inds: [], cats: [] });
+    if (fields.url) e.url = fields.url;
+    if (fields.member) e.member = true;
+    (fields.inds || []).forEach((i) => { if (!e.inds.includes(i)) e.inds.push(i); });
+    if (fields.cat && !e.cats.includes(fields.cat)) e.cats.push(fields.cat);
+    return e;
+  };
+  INDUSTRIES.forEach((ind) => {
+    ind.employers.forEach((e) => addEmp(e.name, { url: e.url, member: true, inds: [ind.id, ...e.also] }));
+    Object.entries(ind.community).forEach(([cat, names]) => names.forEach((n) => addEmp(n, { inds: [ind.id], cat })));
+  });
+  // Careers can name employers that aren't in either list.
+  Object.values(CAREERS).forEach((c) => (c.employers || []).forEach((n) => { if (!EMP[n]) addEmp(n, { inds: c.inds }); }));
+  const employerLink = (name) =>
+    `<button class="emp-link${EMP[name] && EMP[name].member ? " is-member" : ""}" type="button" data-employer="${esc(name)}">${esc(name)}</button>`;
   const schoolUrl = (school, p) => p.url || SCHOOLS[school].programsUrl || SCHOOLS[school].site;
   const communityCount = (ind) => Object.values(ind.community).reduce((a, x) => a + x.length, 0);
   const programCount = (ind) => Object.values(ind.programs).reduce((a, x) => a + x.length, 0);
@@ -237,23 +250,49 @@
       </button>`).join("");
   }
 
+  let indOpen = null, indTab = "members", indQuery = "";
+
+  function learnSection(ind, school) {
+    const list = ind.programs[school];
+    if (!list.length) return "";
+    const S = SCHOOLS[school];
+    return `<section class="learn-school" style="--school:${S.color}">
+      <header class="learn-school__head">
+        <span class="learn-school__badge" aria-hidden="true">${esc(S.short)}</span>
+        <div><p class="learn-school__stage">${esc(S.stage)}</p><h4>${esc(S.name)}</h4></div>
+        <a class="link learn-school__all" href="${esc(S.programsUrl || S.site)}" target="_blank" rel="noopener">All programs ›</a>
+      </header>
+      <ul class="learn-grid">${list.map((p) => `<li class="learn-tile">
+        <a class="learn-tile__name" href="${esc(schoolUrl(school, p))}" target="_blank" rel="noopener">${esc(p.name)}</a>
+        ${p.desc ? `<p class="learn-tile__desc">${esc(p.desc)}</p>` : ""}
+        ${p.highSchools && p.highSchools.length ? `<p class="learn-tile__label">Offered at</p>
+          <div class="learn-tile__chips">${p.highSchools.map((k) => `<span>${esc(HIGH_SCHOOLS[k].name.replace(" High School", ""))}</span>`).join("")}</div>` : ""}
+        ${p.careers.length ? `<p class="learn-tile__label">Leads to</p>
+          <div class="learn-tile__chips">${p.careers.map((cid) => `<button class="mini-chip" type="button" data-career="${cid}">${esc(CAREERS[cid].title)}</button>`).join("")}</div>` : ""}
+      </li>`).join("")}</ul>
+    </section>`;
+  }
+
+  function renderIndEmployers() {
+    const ind = indById[indOpen];
+    const q = indQuery.toLowerCase();
+    const tabs = [{ id: "members", label: "Chamber members", names: ind.employers.map((e) => e.name) }]
+      .concat(Object.entries(ind.community).map(([cat, names]) => ({ id: cat, label: cat, names })));
+    const tab = tabs.find((t) => t.id === indTab) || tabs[0];
+    const names = tab.names.filter((n) => !q || n.toLowerCase().includes(q)).sort((x, y) => x.localeCompare(y));
+    $("#indEmployers").innerHTML = `
+      <div class="emp-tabs" role="tablist" aria-label="Employer groups">${tabs.map((t) => `<button class="emp-tab${t.id === tab.id ? " is-on" : ""}${t.id === "members" ? " emp-tab--members" : ""}" role="tab" aria-selected="${t.id === tab.id}" type="button" data-ind-tab="${esc(t.id)}">${esc(t.label)} <span>${t.names.length}</span></button>`).join("")}</div>
+      <p class="emp-tab-note">${tab.id === "members"
+        ? `Forsyth County Chamber of Commerce members in ${esc(ind.name)}. Members often partner with schools on internships, apprenticeships, and work-based learning.`
+        : `Local ${esc(tab.label.toLowerCase())} companies in Forsyth County.`} Select a company to learn more.</p>
+      <ul class="emp-cards">${names.map((n) => `<li>${employerLink(n)}</li>`).join("") || `<li class="empty-note">No companies match “${esc(indQuery)}”.</li>`}</ul>`;
+  }
+
   function openIndustry(id) {
     const ind = indById[id];
-    const careerIds = ind.careers.slice().sort((a, b) => (CAREERS[b].local - CAREERS[a].local) || CAREERS[a].title.localeCompare(CAREERS[b].title));
-    const col = (school) => {
-      const list = ind.programs[school];
-      if (!list.length) return "";
-      return `<div class="school-col" style="--school:${SCHOOLS[school].color}">
-        <p class="school-col__stage">${esc(SCHOOLS[school].stage)}</p>
-        <h4>${esc(SCHOOLS[school].name)}</h4>
-        <ul class="prog-list">${list.map((p) => `<li>
-          <a class="link" href="${esc(schoolUrl(school, p))}" target="_blank" rel="noopener">${esc(p.name)}</a>
-          ${p.desc ? `<span class="meta">${esc(p.desc)}</span>` : ""}
-          ${p.highSchools && p.highSchools.length ? `<span class="meta">Offered at ${esc(p.highSchools.map((k) => HIGH_SCHOOLS[k].name.replace(" High School", "")).join(", "))}</span>` : ""}
-        </li>`).join("")}</ul>
-      </div>`;
-    };
-    const cats = Object.entries(ind.community);
+    indOpen = id; indTab = "members"; indQuery = "";
+    const careerIds = ind.careers.slice().sort((a, b) => CAREERS[a].title.localeCompare(CAREERS[b].title));
+    const total = ind.employers.length + communityCount(ind);
     $("#industryDialogBody").innerHTML = `
       <button class="sheet__close" type="button" data-close aria-label="Close">✕</button>
       <p class="dlg-sector" style="color:${esc(ind.color)}">${esc(ind.tag)}</p>
@@ -263,23 +302,70 @@
         <div class="stat"><small>Projected growth</small><strong>${esc(ind.growth || "—")}</strong></div>
         <div class="stat"><small>Careers to explore</small><strong>${ind.careers.length}</strong></div>
         <div class="stat"><small>School programs</small><strong>${programCount(ind)}</strong></div>
-        <div class="stat"><small>Forsyth companies</small><strong>${ind.employers.length + communityCount(ind)}</strong></div>
+        <div class="stat"><small>Forsyth companies</small><strong>${total}</strong></div>
       </div>
       ${ind.growthSource ? `<p class="fine">Growth: ${esc(ind.growthSource)}.</p>` : ""}
-      <h3 class="dlg-h">Careers in ${esc(ind.name)}</h3>
-      <div class="related">${careerIds.map((cid) => `<button class="chip${CAREERS[cid].local ? " chip--local" : ""}" type="button" data-career="${cid}">${esc(CAREERS[cid].title)}</button>`).join("")}</div>
-      <h3 class="dlg-h">Where you can learn it</h3>
-      <div class="school-cols">${col("fcs")}${col("lanier")}${col("ung")}</div>
-      <h3 class="dlg-h">Where you could work</h3>
-      <ul class="emp-grid">${ind.employers.map((e) => `<li>${employerLink(e.name)}</li>`).join("")}</ul>
-      ${cats.length ? `<details class="more-companies"><summary>${communityCount(ind)} more Forsyth companies in ${esc(ind.name)}</summary>
-        ${cats.map(([cat, names]) => `<p class="cat-h">${esc(cat)} <span>${names.length}</span></p><p class="cat-names">${names.map(esc).join(" · ")}</p>`).join("")}
-      </details>` : ""}
+
+      <h3 class="dlg-h dlg-h--center">Careers in ${esc(ind.name)}</h3>
+      <p class="center-note"><i class="local-dot" aria-hidden="true"></i>Hiring in Forsyth</p>
+      <div class="career-cols">${careerIds.map((cid) => `<button class="career-btn" type="button" data-career="${cid}">${CAREERS[cid].local ? '<i class="local-dot" aria-label="Hiring in Forsyth"></i>' : ""}${esc(CAREERS[cid].title)}</button>`).join("")}</div>
+
+      <h3 class="dlg-h dlg-h--center">Where you can learn it</h3>
+      <p class="center-note">Start in high school, keep going after graduation. Select a program to visit the school's page.</p>
+      <div class="learn">${learnSection(ind, "fcs")}${learnSection(ind, "lanier")}${learnSection(ind, "ung")}</div>
+
+      <h3 class="dlg-h dlg-h--center">Where you could work</h3>
+      <p class="center-note">${total} Forsyth County companies in ${esc(ind.name)}.</p>
+      <label class="search search--small emp-search"><span class="sr-only">Search companies</span><input type="search" id="indEmpSearch" placeholder="Search ${esc(ind.name)} companies" autocomplete="off"></label>
+      <div id="indEmployers"></div>
+
       <div class="dlg-actions">
         <button class="pill pill--blue pill--lg" type="button" data-library="${ind.id}">See all ${ind.careers.length} careers</button>
         <button class="pill pill--outline pill--lg" type="button" data-employers="${ind.id}">Find local employers</button>
       </div>`;
+    renderIndEmployers();
     const dlg = $("#industryDialog");
+    if (!dlg.open) dlg.showModal();
+    dlg.scrollTop = 0;
+  }
+
+  // ── Employer sheet ──────────────────────────────────────
+  function openEmployer(name) {
+    const e = EMP[name];
+    if (!e) return;
+    const inds = e.inds.length ? e.inds : ["pro"];
+    const indNames = inds.map((i) => indById[i].name);
+    const hiring = Object.keys(CAREERS).filter((id) => (CAREERS[id].employers || []).includes(name));
+    const related = hiring.length ? hiring : Object.keys(CAREERS).filter((id) => CAREERS[id].local && CAREERS[id].inds.some((i) => inds.includes(i))).slice(0, 8);
+    // Up to three programs from each school, so high school, Lanier Tech, and UNG all show.
+    const feeders = [];
+    ["fcs", "lanier", "ung"].forEach((school) => {
+      const list = [];
+      inds.forEach((i) => indById[i].programs[school].forEach((p) => { if (!list.some((x) => x.name === p.name)) list.push(p); }));
+      list.slice(0, 3).forEach((p) => feeders.push({ p, school }));
+    });
+    const why = e.member
+      ? `A Forsyth County Chamber of Commerce member in ${indNames.join(" and ")}. Local companies like this one partner with schools on internships, apprenticeships, and work-based learning.`
+      : `A ${e.cats.length ? e.cats[0].toLowerCase() + " " : ""}company in our community working in ${indNames.join(" and ")}. Companies like this show the range of local opportunity these pathways can lead to.`;
+    const maps = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(name + " Forsyth County GA");
+    $("#employerDialogBody").innerHTML = `
+      <button class="sheet__close" type="button" data-close aria-label="Close">✕</button>
+      <p class="dlg-sector${e.member ? " member-kind" : ""}">${e.member ? "Forsyth County Chamber of Commerce Member" : "Local community company"}</p>
+      <h2 class="dlg-title dlg-title--sm" id="empTitle">${esc(name)}</h2>
+      <p class="emp-meta">Forsyth County${e.cats.length ? " · " + esc(e.cats.join(", ")) : ""} · ${esc(indNames.join(" · "))}</p>
+      <div class="tag-list">${inds.map((i) => `<span><i class="ind-dot" style="--ind:${indById[i].color}"></i>${esc(indById[i].name)}</span>`).join("")}${e.cats.map((c) => `<span>${esc(c)}</span>`).join("")}</div>
+      <h3 class="dlg-h">Why it's here</h3>
+      <p class="dlg-text">${esc(why)}</p>
+      <h3 class="dlg-h">${hiring.length ? "Careers listed with this employer" : "Careers in this industry"}</h3>
+      <div class="related">${related.map((id) => `<button class="chip" type="button" data-career="${id}">${esc(CAREERS[id].title)}</button>`).join("")}</div>
+      <h3 class="dlg-h">Programs that can lead here</h3>
+      <ul class="feeder-list">${feeders.map(({ p, school }) => `<li style="--school:${SCHOOLS[school].color}">
+        <a class="link" href="${esc(schoolUrl(school, p))}" target="_blank" rel="noopener">${esc(p.name)}</a><span>${esc(SCHOOLS[school].name)}</span></li>`).join("")}</ul>
+      <div class="dlg-actions">
+        ${e.url ? `<a class="pill pill--blue pill--lg" href="${esc(e.url)}" target="_blank" rel="noopener">Visit website ↗</a>` : ""}
+        <a class="pill pill--outline pill--lg" href="${esc(maps)}" target="_blank" rel="noopener">Find on Google Maps ↗</a>
+      </div>`;
+    const dlg = $("#employerDialog");
     if (!dlg.open) dlg.showModal();
     dlg.scrollTop = 0;
   }
@@ -613,7 +699,7 @@
       <label class="search search--small"><span class="sr-only">Search employers</span><input type="search" id="empSearch" value="${esc(state.empQuery)}" placeholder="Search employers" autocomplete="off"></label>
       ${hiring ? `<p class="match-line">${c.employers.length} employer${c.employers.length === 1 ? "" : "s"} listed for <strong>${esc(c.title)}</strong> are marked and shown first.</p>` : ""}
       <ul class="row-list" id="empList">${list.map((r, i) => `<li class="${hiring && hiring.has(r.name) ? "is-match" : ""}" ${i >= shown ? "hidden" : ""}>
-        <span>${employerLink(r.name)}<span class="meta">${esc(r.inds.map((x) => indById[x].name).join(" · "))}</span></span></li>`).join("") || `<li><span class="meta">No employers match that search.</span></li>`}</ul>
+        <span>${employerLink(r.name)}<span class="meta">${EMP[r.name] && EMP[r.name].member ? "Chamber member · " : ""}${esc(r.inds.map((x) => indById[x].name).join(" · "))}</span></span></li>`).join("") || `<li><span class="meta">No employers match that search.</span></li>`}</ul>
       ${list.length > shown ? `<button class="toggle-more" type="button" data-more="empList">Show all ${list.length} ›</button>` : ""}
       ${more ? `<p class="fine">Plus ${more} more Forsyth companies in ${state.empInd === "all" ? "these industries" : esc(indById[state.empInd].name)}. Open an industry in Top industries to browse them by category.</p>` : ""}
     </div>`;
@@ -652,6 +738,10 @@
       if (unsave) { toggleSaved(unsave.dataset.unsave); openSaved(); return; }
       const close = t.closest("[data-close]");
       if (close) { close.closest("dialog").close(); return; }
+      const emp = t.closest("[data-employer]");
+      if (emp) { openEmployer(emp.dataset.employer); return; }
+      const tab = t.closest("[data-ind-tab]");
+      if (tab) { indTab = tab.dataset.indTab; renderIndEmployers(); return; }
       const industry = t.closest("[data-industry]");
       if (industry) { openIndustry(industry.dataset.industry); return; }
       const lib = t.closest("[data-library]");
@@ -688,12 +778,13 @@
       }
       const card = t.closest("[data-career]");
       if (card) {
-        ["#savedDialog", "#videoDialog", "#industryDialog"].forEach((sel) => { const d = $(sel); if (d.open) d.close(); });
+        ["#savedDialog", "#videoDialog", "#industryDialog", "#employerDialog"].forEach((sel) => { const d = $(sel); if (d.open) d.close(); });
         openCareer(card.dataset.career);
       }
     });
     document.addEventListener("input", (e) => {
       if (e.target.id === "empSearch") { state.empQuery = e.target.value.trim(); renderLocal({ keepFocus: true }); }
+      if (e.target.id === "indEmpSearch") { indQuery = e.target.value.trim(); renderIndEmployers(); }
     });
     document.addEventListener("keydown", (e) => {
       if ((e.key === "Enter" || e.key === " ") && e.target.matches("article[data-career]")) {
