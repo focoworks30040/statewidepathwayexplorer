@@ -12,6 +12,9 @@
   const HIGH_SCHOOLS = D.highSchools;
 
   const indById = Object.fromEntries(INDUSTRIES.map((i) => [i.id, i]));
+  // Careers whose occupation code is on the Georgia High-Demand Career List.
+  const HIGH_DEMAND = new Set(((D.highDemand || {}).occupations || []).map((o) => o.soc));
+  const isHighDemand = (c) => !!c.soc && HIGH_DEMAND.has(c.soc);
 
   // Approximate campus locations, used only to place markers on the map.
   const PLACES = [
@@ -28,6 +31,7 @@
     edu: "all",
     gems: false,
     localOnly: false,
+    hdOnly: false,
     sort: "az",
     query: "",
     career: null,
@@ -307,8 +311,11 @@
       ${ind.growthSource ? `<p class="fine">Growth: ${esc(ind.growthSource)}.</p>` : ""}
 
       <h3 class="dlg-h dlg-h--center">Careers in ${esc(ind.name)}</h3>
-      <p class="center-note"><i class="local-dot" aria-hidden="true"></i>Hiring in Forsyth</p>
-      <div class="career-cols">${careerIds.map((cid) => `<button class="career-btn" type="button" data-career="${cid}">${CAREERS[cid].local ? '<i class="local-dot" aria-label="Hiring in Forsyth"></i>' : ""}${esc(CAREERS[cid].title)}</button>`).join("")}</div>
+      ${careerIds.some((cid) => isHighDemand(CAREERS[cid])) ? `<p class="center-note"><span class="hd-key"><i class="hd-dot" aria-hidden="true"></i>Georgia High-Demand Career</span></p>` : `<p class="center-note">${careerIds.length} careers, A to Z.</p>`}
+      <div class="career-cols">${careerIds.map((cid) => {
+        const hd = isHighDemand(CAREERS[cid]);
+        return `<button class="career-btn${hd ? " is-hd" : ""}" type="button" data-career="${cid}"${hd ? ' aria-label="' + esc(CAREERS[cid].title) + ', Georgia High-Demand Career"' : ""}>${hd ? '<i class="hd-dot" aria-hidden="true"></i>' : ""}${esc(CAREERS[cid].title)}</button>`;
+      }).join("")}</div>
 
       <h3 class="dlg-h dlg-h--center">Where you can learn it</h3>
       <p class="center-note">Start in high school, keep going after graduation. Select a program to visit the school's page.</p>
@@ -485,6 +492,7 @@
 
     $("#gemsOnly").addEventListener("change", (e) => { state.gems = e.target.checked; renderLibrary(); });
     $("#localOnly").addEventListener("change", (e) => { state.localOnly = e.target.checked; renderLibrary(); });
+    $("#hdOnly").addEventListener("change", (e) => { state.hdOnly = e.target.checked; renderLibrary(); });
     $("#sort").addEventListener("change", (e) => { state.sort = e.target.value; renderLibrary(); });
     $("#search").addEventListener("input", (e) => { state.query = e.target.value.trim().toLowerCase(); renderLibrary(); });
   }
@@ -496,6 +504,7 @@
       <span class="career-card__sector">${esc(indName(c))}${c.gem ? ' · <span class="gem-label">Hidden gem</span>' : ""}</span>
       <h3>${esc(c.title)}</h3>
       <p>${esc(c.summary)}</p>
+      ${isHighDemand(c) ? `<span class="hd-label"><i class="hd-dot" aria-hidden="true"></i>Georgia High-Demand Career</span>` : ""}
       ${c.local ? `<span class="local-label">Hiring in Forsyth · ${c.employers.length} local employer${c.employers.length === 1 ? "" : "s"}</span>` : ""}
       <div class="career-card__stats">
         <span><strong>${esc(pay(c))}</strong> ${payLabel(c)}</span>
@@ -515,6 +524,7 @@
       if (state.edu !== "all" && c.edu !== state.edu) return false;
       if (state.gems && !c.gem) return false;
       if (state.localOnly && !c.local) return false;
+      if (state.hdOnly && !isHighDemand(c)) return false;
       if (q) {
         const hay = [c.title, c.summary, ...c.inds.map((i) => indById[i].name), c.learn, c.dayText, c.tcsg, c.usg, ...(c.day || []), ...(c.hs || []), ...(c.employers || [])].join(" ").toLowerCase();
         if (!q.split(/\s+/).every((w) => hay.includes(w))) return false;
@@ -565,6 +575,7 @@
     $("#careerDialogBody").innerHTML = `
       <button class="sheet__close" type="button" data-close aria-label="Close">✕</button>
       <p class="dlg-sector">${c.inds.map((i) => esc(indById[i].name)).join(" · ")}${c.gem ? ' · <span class="gem-label">Hidden gem</span>' : ""}</p>
+      ${isHighDemand(c) ? `<p class="hd-badge"><i class="hd-dot" aria-hidden="true"></i>Georgia High-Demand Career</p>` : ""}
       <h2 class="dlg-title" id="dlgTitle">${esc(c.title)}</h2>
       <p class="dlg-summary">${esc(c.summary)}</p>
       <div class="stats">

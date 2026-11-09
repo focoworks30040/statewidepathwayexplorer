@@ -6,6 +6,9 @@
 // Careers marked local: false are statewide roles added so students can see the
 // whole team around a familiar job; their pay is an approximate Georgia median.
 //
+// highDemand lists occupations (by SOC code) from Georgia's High-Demand Career
+// List; a career with a matching "soc" is marked "Georgia High-Demand Career".
+//
 // Edit this file directly to change what the site shows.
 window.FOCO = {
  "careers": {
@@ -442,7 +445,8 @@ window.FOCO = {
     "np",
     "crna",
     "cna"
-   ]
+   ],
+   "soc": "29-1141"
   },
   "dentalhyg": {
    "title": "Dental Hygienist",
@@ -551,7 +555,8 @@ window.FOCO = {
     "lpn",
     "pa",
     "phlebotomist"
-   ]
+   ],
+   "soc": "31-9092"
   },
   "paramedic": {
    "title": "EMT / Paramedic",
@@ -641,7 +646,8 @@ window.FOCO = {
     "sonographer",
     "physician",
     "surgtech"
-   ]
+   ],
+   "soc": "29-2034"
   },
   "pta": {
    "title": "Physical Therapist Assistant",
@@ -673,7 +679,8 @@ window.FOCO = {
     "pt",
     "athletictrainer",
     "ota"
-   ]
+   ],
+   "soc": "31-2021"
   },
   "healthinfo": {
    "title": "Health Information Specialist",
@@ -701,7 +708,8 @@ window.FOCO = {
    "also": [
     "medassist",
     "dataanalyst"
-   ]
+   ],
+   "soc": "29-2072"
   },
   "phlebotomist": {
    "title": "Phlebotomist",
@@ -748,7 +756,8 @@ window.FOCO = {
     "medlabtech",
     "cna",
     "medassist"
-   ]
+   ],
+   "soc": "31-9097"
   },
   "labtech": {
    "title": "Lab Technician",
@@ -1016,7 +1025,8 @@ window.FOCO = {
    "also": [
     "pharmacist",
     "medassist"
-   ]
+   ],
+   "soc": "29-2052"
   },
   "marketing": {
    "title": "Marketing Specialist",
@@ -1982,7 +1992,8 @@ window.FOCO = {
     "np",
     "surgtech",
     "paramedic"
-   ]
+   ],
+   "soc": "29-1071"
   },
   "np": {
    "title": "Nurse Practitioner",
@@ -2014,7 +2025,8 @@ window.FOCO = {
     "pa",
     "crna",
     "physician"
-   ]
+   ],
+   "soc": "29-1171"
   },
   "crna": {
    "title": "Nurse Anesthetist (CRNA)",
@@ -2106,7 +2118,8 @@ window.FOCO = {
     "surgeon",
     "anesthesiatech",
     "pa"
-   ]
+   ],
+   "soc": "29-2055"
   },
   "anesthesiatech": {
    "title": "Anesthesia Technologist",
@@ -2165,7 +2178,8 @@ window.FOCO = {
    "also": [
     "surgtech",
     "medlabtech"
-   ]
+   ],
+   "soc": "31-9093"
   },
   "sonographer": {
    "title": "Diagnostic Medical Sonographer",
@@ -2225,7 +2239,8 @@ window.FOCO = {
     "paramedic",
     "anesthesiatech",
     "perfusionist"
-   ]
+   ],
+   "soc": "29-1126"
   },
   "pharmacist": {
    "title": "Pharmacist",
@@ -2256,7 +2271,8 @@ window.FOCO = {
     "pharmtech",
     "medlabtech",
     "physician"
-   ]
+   ],
+   "soc": "29-1051"
   },
   "pt": {
    "title": "Physical Therapist",
@@ -2286,7 +2302,8 @@ window.FOCO = {
     "pta",
     "athletictrainer",
     "ot"
-   ]
+   ],
+   "soc": "29-1123"
   },
   "athletictrainer": {
    "title": "Athletic Trainer",
@@ -2345,7 +2362,8 @@ window.FOCO = {
     "ota",
     "pt",
     "slp"
-   ]
+   ],
+   "soc": "29-1122"
   },
   "ota": {
    "title": "Occupational Therapy Assistant",
@@ -2373,7 +2391,8 @@ window.FOCO = {
    "also": [
     "ot",
     "pta"
-   ]
+   ],
+   "soc": "31-2011"
   },
   "dentist": {
    "title": "Dentist",
@@ -2430,7 +2449,8 @@ window.FOCO = {
    "usg": "Bachelor's in communication sciences → Master's in Speech-Language Pathology",
    "also": [
     "ot"
-   ]
+   ],
+   "soc": "29-1127"
   },
   "cna": {
    "title": "Certified Nursing Assistant",
@@ -2459,7 +2479,8 @@ window.FOCO = {
     "rn",
     "medassist",
     "pa"
-   ]
+   ],
+   "soc": "31-1131"
   },
   "lpn": {
    "title": "Licensed Practical Nurse",
@@ -2488,7 +2509,8 @@ window.FOCO = {
     "rn",
     "cna",
     "medassist"
-   ]
+   ],
+   "soc": "29-2061"
   },
   "medlabtech": {
    "title": "Medical Laboratory Scientist",
@@ -3054,6 +3076,449 @@ window.FOCO = {
     "datascientist",
     "indeng"
    ]
+  },
+  "hes": {
+   "title": "Health Education Specialist",
+   "inds": [
+    "health"
+   ],
+   "local": false,
+   "edu": "bach",
+   "years": "4 yrs",
+   "demand": "High",
+   "gem": true,
+   "summary": "Teaches people and communities how to stay healthy, from nutrition classes to vaccine drives.",
+   "wage": 60000,
+   "day": [
+    "Plan health programs and events",
+    "Teach classes in clinics, schools, or workplaces",
+    "Track whether programs are working"
+   ],
+   "hs": [
+    "Public Health",
+    "Health Science pathway"
+   ],
+   "tcsg": null,
+   "usg": "B.S. in Public Health or Health Promotion",
+   "also": [
+    "chw",
+    "healthmgr",
+    "rn"
+   ],
+   "soc": "21-1091"
+  },
+  "hcsw": {
+   "title": "Healthcare Social Worker",
+   "inds": [
+    "health"
+   ],
+   "local": false,
+   "edu": "adv",
+   "years": "6 yrs",
+   "demand": "High",
+   "gem": false,
+   "summary": "Helps patients and families handle the hard parts of an illness: insurance, home care, and next steps after the hospital.",
+   "wage": 62000,
+   "day": [
+    "Meet patients and families in the hospital",
+    "Plan safe discharges home",
+    "Connect people to community resources"
+   ],
+   "hs": [
+    "Mental Health Professional",
+    "Psychology"
+   ],
+   "tcsg": null,
+   "usg": "Bachelor's → Master of Social Work (MSW)",
+   "also": [
+    "mhsw",
+    "mhcounselor",
+    "rn"
+   ],
+   "soc": "21-1022"
+  },
+  "massage": {
+   "title": "Massage Therapist",
+   "inds": [
+    "health"
+   ],
+   "local": false,
+   "edu": "cert",
+   "years": "Under 1 yr",
+   "demand": "High",
+   "gem": true,
+   "summary": "Uses massage to relieve pain, speed injury recovery, and reduce stress, often alongside chiropractors and physical therapists.",
+   "wage": 50000,
+   "day": [
+    "Assess each client's needs",
+    "Give therapeutic massage",
+    "Work in spas, clinics, or sports settings"
+   ],
+   "hs": [
+    "Allied Health & Medicine",
+    "Sports Medicine"
+   ],
+   "tcsg": "Massage Therapy diploma",
+   "usg": null,
+   "also": [
+    "pta",
+    "athletictrainer",
+    "pt"
+   ],
+   "soc": "31-9011"
+  },
+  "healthmgr": {
+   "title": "Medical & Health Services Manager",
+   "inds": [
+    "health"
+   ],
+   "local": false,
+   "edu": "bach",
+   "years": "4+ yrs",
+   "demand": "High",
+   "gem": true,
+   "summary": "Runs the business side of healthcare: managing staff, budgets, and operations for a clinic, department, or hospital.",
+   "wage": 110000,
+   "day": [
+    "Manage schedules, staff, and budgets",
+    "Improve patient experience and quality",
+    "Keep the practice compliant with health laws"
+   ],
+   "hs": [
+    "Allied Health & Medicine",
+    "Business & Entrepreneurship"
+   ],
+   "tcsg": "Health Information Management as a starting point",
+   "usg": "B.S. in Health Informatics & Administration or Healthcare Management",
+   "also": [
+    "healthinfo",
+    "medsec",
+    "rn"
+   ],
+   "soc": "11-9111"
+  },
+  "medsec": {
+   "title": "Medical Secretary",
+   "inds": [
+    "health"
+   ],
+   "local": false,
+   "edu": "cert",
+   "years": "Under 1 yr",
+   "demand": "High",
+   "gem": false,
+   "summary": "Keeps a medical office running: scheduling patients, handling records and insurance, and greeting everyone who walks in.",
+   "wage": 40000,
+   "day": [
+    "Schedule appointments",
+    "Update patient records",
+    "Handle insurance and billing questions"
+   ],
+   "hs": [
+    "Allied Health & Medicine",
+    "Business & Entrepreneurship"
+   ],
+   "tcsg": "Medical Administrative Assistant certificate",
+   "usg": null,
+   "also": [
+    "medassist",
+    "healthinfo",
+    "healthmgr"
+   ],
+   "soc": "43-6013"
+  },
+  "mhsw": {
+   "title": "Mental Health Social Worker",
+   "inds": [
+    "health"
+   ],
+   "local": false,
+   "edu": "adv",
+   "years": "6 yrs",
+   "demand": "High",
+   "gem": false,
+   "summary": "Supports people living with mental illness or addiction and helps them find treatment, housing, and stability.",
+   "wage": 52000,
+   "day": [
+    "Counsel clients one-on-one",
+    "Coordinate treatment plans",
+    "Connect families to support services"
+   ],
+   "hs": [
+    "Mental Health Professional",
+    "Psychology"
+   ],
+   "tcsg": null,
+   "usg": "Bachelor's → Master of Social Work (MSW)",
+   "also": [
+    "mhcounselor",
+    "hcsw",
+    "psychtech"
+   ],
+   "soc": "21-1023"
+  },
+  "ohsspec": {
+   "title": "Occupational Health & Safety Specialist",
+   "inds": [
+    "health"
+   ],
+   "local": false,
+   "edu": "bach",
+   "years": "4 yrs",
+   "demand": "High",
+   "gem": true,
+   "summary": "Keeps workers safe by inspecting workplaces, preventing injuries, and making sure companies follow safety laws.",
+   "wage": 80000,
+   "day": [
+    "Inspect plants and job sites",
+    "Investigate accidents",
+    "Train employees on safety"
+   ],
+   "hs": [
+    "Public Health",
+    "Engineering & Technology"
+   ],
+   "tcsg": null,
+   "usg": "B.S. in Occupational Safety, Environmental Health, or Engineering",
+   "also": [
+    "ohstech",
+    "hes",
+    "qualitytech"
+   ],
+   "soc": "19-5011"
+  },
+  "ohstech": {
+   "title": "Occupational Health & Safety Technician",
+   "inds": [
+    "health"
+   ],
+   "local": false,
+   "edu": "assoc",
+   "years": "1–2 yrs",
+   "demand": "High",
+   "gem": true,
+   "summary": "Tests air, noise, and equipment on the job to catch hazards before anyone gets hurt.",
+   "wage": 55000,
+   "day": [
+    "Collect air and noise samples",
+    "Check safety equipment",
+    "Help write safety reports"
+   ],
+   "hs": [
+    "Public Health",
+    "Engineering & Technology"
+   ],
+   "tcsg": "Occupational safety certificates (ask Lanier Tech)",
+   "usg": null,
+   "also": [
+    "ohsspec",
+    "qualitytech"
+   ],
+   "soc": "19-5012"
+  },
+  "ophlab": {
+   "title": "Ophthalmic Lab Technician",
+   "inds": [
+    "health"
+   ],
+   "local": false,
+   "edu": "cert",
+   "years": "Under 1 yr",
+   "demand": "High",
+   "gem": true,
+   "summary": "Makes the lenses for eyeglasses, cutting, grinding, and fitting them to each prescription.",
+   "wage": 38000,
+   "day": [
+    "Read prescriptions",
+    "Cut and polish lenses",
+    "Fit lenses into frames"
+   ],
+   "hs": [
+    "Allied Health & Medicine"
+   ],
+   "tcsg": "Optical / opticianry coursework or on-the-job training",
+   "usg": null,
+   "also": [
+    "optician",
+    "ophtech"
+   ],
+   "soc": "51-9083"
+  },
+  "ophtech": {
+   "title": "Ophthalmic Medical Technician",
+   "inds": [
+    "health"
+   ],
+   "local": false,
+   "edu": "cert",
+   "years": "1 yr",
+   "demand": "High",
+   "gem": true,
+   "summary": "Works alongside eye doctors, testing vision, taking eye images, and preparing patients for exams and surgery.",
+   "wage": 42000,
+   "day": [
+    "Run vision and eye-pressure tests",
+    "Take images of the eye",
+    "Assist during minor procedures"
+   ],
+   "hs": [
+    "Allied Health & Medicine"
+   ],
+   "tcsg": "Ophthalmic technician certificate",
+   "usg": null,
+   "also": [
+    "optician",
+    "ophlab",
+    "medassist"
+   ],
+   "soc": "29-2057"
+  },
+  "optician": {
+   "title": "Dispensing Optician",
+   "inds": [
+    "health"
+   ],
+   "local": false,
+   "edu": "assoc",
+   "years": "1–2 yrs",
+   "demand": "High",
+   "gem": true,
+   "summary": "Helps people choose and fit the right glasses and contact lenses based on their eye doctor's prescription.",
+   "wage": 43000,
+   "day": [
+    "Measure and fit eyewear",
+    "Help customers choose frames",
+    "Adjust and repair glasses"
+   ],
+   "hs": [
+    "Allied Health & Medicine"
+   ],
+   "tcsg": "Opticianry diploma or associate degree",
+   "usg": null,
+   "also": [
+    "ophtech",
+    "ophlab"
+   ],
+   "soc": "29-2081"
+  },
+  "psychtech": {
+   "title": "Psychiatric Technician",
+   "inds": [
+    "health"
+   ],
+   "local": false,
+   "edu": "cert",
+   "years": "Under 1 yr",
+   "demand": "High",
+   "gem": true,
+   "summary": "Cares for patients with mental illness, helping with daily activities, monitoring behavior, and supporting treatment.",
+   "wage": 36000,
+   "day": [
+    "Monitor patients and record behavior",
+    "Lead group activities",
+    "Help patients with daily care"
+   ],
+   "hs": [
+    "Mental Health Professional",
+    "Allied Health & Medicine"
+   ],
+   "tcsg": "Certificate or diploma in mental health / human services",
+   "usg": null,
+   "also": [
+    "mhcounselor",
+    "cna",
+    "rn"
+   ],
+   "soc": "29-2053"
+  },
+  "mhcounselor": {
+   "title": "Mental Health & Substance Abuse Counselor",
+   "inds": [
+    "health"
+   ],
+   "local": false,
+   "edu": "adv",
+   "years": "4–6 yrs",
+   "demand": "High",
+   "gem": false,
+   "summary": "Helps people work through addiction, anxiety, depression, and other challenges, one conversation at a time.",
+   "wage": 50000,
+   "day": [
+    "Lead individual and group counseling",
+    "Build recovery plans",
+    "Work with families and doctors"
+   ],
+   "hs": [
+    "Mental Health Professional",
+    "Psychology"
+   ],
+   "tcsg": null,
+   "usg": "Bachelor's in Psychology or Human Services → Master's in Counseling",
+   "also": [
+    "mhsw",
+    "psychtech",
+    "rehabcounselor"
+   ],
+   "soc": "21-1018"
+  },
+  "chw": {
+   "title": "Community Health Worker",
+   "inds": [
+    "health"
+   ],
+   "local": false,
+   "edu": "cert",
+   "years": "Under 1 yr",
+   "demand": "High",
+   "gem": true,
+   "summary": "A trusted local link between families and healthcare, helping neighbors find care, insurance, and support.",
+   "wage": 45000,
+   "day": [
+    "Visit families and check on needs",
+    "Help people sign up for services",
+    "Share health information in the community"
+   ],
+   "hs": [
+    "Public Health"
+   ],
+   "tcsg": "Community health worker certificate",
+   "usg": null,
+   "also": [
+    "hes",
+    "hcsw",
+    "medassist"
+   ],
+   "soc": "21-1094"
+  },
+  "rehabcounselor": {
+   "title": "Rehabilitation Counselor",
+   "inds": [
+    "health"
+   ],
+   "local": false,
+   "edu": "adv",
+   "years": "6 yrs",
+   "demand": "High",
+   "gem": true,
+   "summary": "Helps people with disabilities or injuries live independently and get back to work.",
+   "wage": 45000,
+   "day": [
+    "Assess each client's goals",
+    "Plan training and job placement",
+    "Coordinate with doctors and employers"
+   ],
+   "hs": [
+    "Mental Health Professional",
+    "Psychology"
+   ],
+   "tcsg": null,
+   "usg": "Bachelor's → Master's in Rehabilitation Counseling",
+   "also": [
+    "mhcounselor",
+    "ot",
+    "pt"
+   ],
+   "soc": "21-1015"
   }
  },
  "industries": [
@@ -3568,7 +4033,22 @@ window.FOCO = {
     "slp",
     "cna",
     "lpn",
-    "medlabtech"
+    "medlabtech",
+    "hes",
+    "hcsw",
+    "massage",
+    "healthmgr",
+    "medsec",
+    "mhsw",
+    "ohsspec",
+    "ohstech",
+    "ophlab",
+    "ophtech",
+    "optician",
+    "psychtech",
+    "mhcounselor",
+    "chw",
+    "rehabcounselor"
    ],
    "programs": {
     "fcs": [
@@ -5575,5 +6055,241 @@ window.FOCO = {
    "time": "6+ years",
    "order": 4
   }
+ },
+ "highDemand": {
+  "name": "Georgia High-Demand Career List",
+  "note": "Partial list: only the Health Science and Human Services rows provided so far. Add the remaining rows to mark more careers.",
+  "occupations": [
+   {
+    "cluster": "Health Science",
+    "title": "Health Education Specialists",
+    "soc": "21-1091"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Health Technologists and Technicians, All Other",
+    "soc": "29-2099"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Healthcare Diagnosing or Treating Practitioners, All Other",
+    "soc": "29-1299"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Healthcare Social Workers",
+    "soc": "21-1022"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Licensed Practical and Licensed Vocational Nurses",
+    "soc": "29-2061"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Massage Therapists",
+    "soc": "31-9011"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Medical and Health Services Managers",
+    "soc": "11-9111"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Medical Assistants",
+    "soc": "31-9092"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Medical Equipment Preparers",
+    "soc": "31-9093"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Medical Records Specialists",
+    "soc": "29-2072"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Medical Secretaries and Administrative Assistants",
+    "soc": "43-6013"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Mental Health and Substance Abuse Social Workers",
+    "soc": "21-1023"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Nurse Practitioners",
+    "soc": "29-1171"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Nursing Assistants",
+    "soc": "31-1131"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Occupational Health and Safety Specialists",
+    "soc": "19-5011"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Occupational Health and Safety Technicians",
+    "soc": "19-5012"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Occupational Therapists",
+    "soc": "29-1122"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Occupational Therapy Assistants",
+    "soc": "31-2011"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Ophthalmic Laboratory Technicians",
+    "soc": "51-9083"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Ophthalmic Medical Technicians",
+    "soc": "29-2057"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Opticians, Dispensing",
+    "soc": "29-2081"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Pharmacists",
+    "soc": "29-1051"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Pharmacy Technicians",
+    "soc": "29-2052"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Phlebotomists",
+    "soc": "31-9097"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Physical Therapist Assistants",
+    "soc": "31-2021"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Physical Therapists",
+    "soc": "29-1123"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Physician Assistants",
+    "soc": "29-1071"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Physicians, All Other",
+    "soc": "29-1229"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Psychiatric Technicians",
+    "soc": "29-2053"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Radiologic Technologists and Technicians",
+    "soc": "29-2034"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Registered Nurses",
+    "soc": "29-1141"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Respiratory Therapists",
+    "soc": "29-1126"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Speech-Language Pathologists",
+    "soc": "29-1127"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Substance Abuse, Behavioral Disorder, and Mental Health Counselors",
+    "soc": "21-1018"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Surgical Technologists",
+    "soc": "29-2055"
+   },
+   {
+    "cluster": "Health Science",
+    "title": "Therapists, All Other",
+    "soc": "29-1129"
+   },
+   {
+    "cluster": "Human Services",
+    "title": "Athletes and Sports Competitors",
+    "soc": "27-2021"
+   },
+   {
+    "cluster": "Human Services",
+    "title": "Clergy",
+    "soc": "21-2011"
+   },
+   {
+    "cluster": "Human Services",
+    "title": "Coaches and Scouts",
+    "soc": "27-2022"
+   },
+   {
+    "cluster": "Human Services",
+    "title": "Community and Social Service Specialists, All Other",
+    "soc": "21-1099"
+   },
+   {
+    "cluster": "Human Services",
+    "title": "Community Health Workers",
+    "soc": "21-1094"
+   },
+   {
+    "cluster": "Human Services",
+    "title": "Counselors, All Other",
+    "soc": "21-1019"
+   },
+   {
+    "cluster": "Human Services",
+    "title": "Interior Designers",
+    "soc": "27-1025"
+   },
+   {
+    "cluster": "Human Services",
+    "title": "Rehabilitation Counselors",
+    "soc": "21-1015"
+   },
+   {
+    "cluster": "Human Services",
+    "title": "Skincare Specialists",
+    "soc": "39-5094"
+   },
+   {
+    "cluster": "Human Services",
+    "title": "Social and Community Service Managers",
+    "soc": "11-9151"
+   }
+  ]
  }
 };
