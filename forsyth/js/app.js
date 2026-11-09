@@ -319,6 +319,7 @@
 
       <h3 class="dlg-h dlg-h--center">Where you can learn it</h3>
       <p class="center-note">Start in high school, keep going after graduation. Select a program to visit the school's page.</p>
+      ${TCSG_PROGRAMS[ind.id] ? `<p class="center-btn"><button class="pill pill--outline pill--lg" type="button" data-tcsg="${ind.id}">See additional education options across the Technical College System of Georgia ›</button></p>` : ""}
       <div class="learn">${learnSection(ind, "fcs")}${learnSection(ind, "lanier")}${learnSection(ind, "ung")}</div>
 
       <h3 class="dlg-h dlg-h--center">Where you could work</h3>
@@ -332,6 +333,79 @@
       </div>`;
     renderIndEmployers();
     const dlg = $("#industryDialog");
+    if (!dlg.open) dlg.showModal();
+    dlg.scrollTop = 0;
+  }
+
+  // ── Technical College System of Georgia programs ────────
+  const TCSG_PROGRAMS = D.tcsgPrograms || {};
+  // Quick filters for the statewide program list: label → words a program name can contain.
+  const TCSG_FILTERS = {
+    health: [
+      ["Nursing", ["nurs"]], ["Dental", ["dental", "coronal"]],
+      ["Imaging", ["radiolog", "radiograph", "tomography", "resonance", "sonograph", "mammograph", "echocardiograph", "vascular", "cardiovascular", "electrocardiograph"]],
+      ["EMS & Paramedic", ["ems", "emergency", "paramedic", "emt", "aemt"]],
+      ["Surgical & Sterile", ["surgical", "sterile", "central processing", "endoscope"]],
+      ["Lab & Phlebotomy", ["phlebotom", "laborator", "bioscience", "hemodialysis"]],
+      ["Pharmacy", ["pharmac"]],
+      ["Therapy", ["therap", "respiratory", "occupational"]],
+      ["Medical office & records", ["health information", "coding", "medical office", "medical information", "patient account", "practice management", "health care management", "healthcare management", "data analytics"]],
+      ["Medical assisting & aides", ["medical assist", "nurse aide", "health care assistant", "healthcare assistant", "geriatric", "cna"]]
+    ]
+  };
+  let tcsgInd = null, tcsgFilter = null, tcsgQuery = "";
+
+  function tcsgMatches(name) {
+    const n = name.toLowerCase();
+    if (tcsgQuery && !tcsgQuery.toLowerCase().split(/\s+/).every((w) => n.includes(w))) return false;
+    if (tcsgFilter) {
+      const terms = (TCSG_FILTERS[tcsgInd] || []).find(([label]) => label === tcsgFilter)[1];
+      if (!terms.some((t) => n.includes(t))) return false;
+    }
+    return true;
+  }
+
+  function renderTcsg() {
+    const data = TCSG_PROGRAMS[tcsgInd];
+    const filtering = !!(tcsgQuery || tcsgFilter);
+    const cols = data.colleges.map((c) => ({ ...c, hits: c.programs.filter((p) => tcsgMatches(p.name)) })).filter((c) => !filtering || c.hits.length);
+    const total = cols.reduce((a, c) => a + c.hits.length, 0);
+    document.querySelectorAll("[data-tcsg-filter]").forEach((b) => b.classList.toggle("is-on", b.dataset.tcsgFilter === (tcsgFilter || "")));
+    $("#tcsgCount").textContent = filtering
+      ? `${total} program${total === 1 ? "" : "s"} at ${cols.length} college${cols.length === 1 ? "" : "s"}`
+      : `${data.colleges.length} colleges · ${data.colleges.reduce((a, c) => a + c.programs.length, 0)} programs · closest first`;
+    $("#tcsgList").innerHTML = cols.map((c, i) => `
+      <details class="tcsg-college"${filtering || i < 3 ? " open" : ""}>
+        <summary>
+          <span class="tcsg-college__name">${esc(c.name)}</span>
+          <span class="tcsg-college__meta">Closest campus: ${esc(c.nearestCampus)} · ${c.miles} mi from Forsyth</span>
+          <span class="tcsg-college__count">${filtering ? `${c.hits.length} match${c.hits.length === 1 ? "" : "es"}` : `${c.programs.length} programs`}</span>
+        </summary>
+        <ul class="tcsg-programs">${c.hits.map((p) => `<li><a href="${esc(p.url || c.site)}" target="_blank" rel="noopener">${esc(p.name)}</a></li>`).join("")}</ul>
+        <a class="link small-link" href="${esc(c.site)}" target="_blank" rel="noopener">Visit ${esc(c.name)} ›</a>
+      </details>`).join("") || `<p class="empty-note">No programs match. Try a different word or clear the filter.</p>`;
+  }
+
+  function openTcsg(indId) {
+    const data = TCSG_PROGRAMS[indId];
+    if (!data) return;
+    tcsgInd = indId; tcsgFilter = null; tcsgQuery = "";
+    const ind = indById[indId];
+    $("#tcsgDialogBody").innerHTML = `
+      <button class="sheet__close" type="button" data-close aria-label="Close">✕</button>
+      <p class="dlg-sector">Technical College System of Georgia</p>
+      <h2 class="dlg-title" id="tcsgTitle">${esc(ind.name)} programs across Georgia</h2>
+      <p class="dlg-summary">Beyond Lanier Tech, every technical college in Georgia offers ${esc(ind.name.toLowerCase())} programs. Colleges are listed closest to Forsyth County first. Select a program to visit its page.</p>
+      <label class="search tcsg-search"><span class="sr-only">Search programs</span><input type="search" id="tcsgSearch" placeholder="Search programs, like “sonography”" autocomplete="off"></label>
+      <div class="filter-row tcsg-filters" role="group" aria-label="Program types">
+        <button class="chip is-on" type="button" data-tcsg-filter="">All programs</button>
+        ${(TCSG_FILTERS[indId] || []).map(([label]) => `<button class="chip" type="button" data-tcsg-filter="${esc(label)}">${esc(label)}</button>`).join("")}
+      </div>
+      <p class="tcsg-count" id="tcsgCount" aria-live="polite"></p>
+      <div id="tcsgList"></div>
+      <p class="fine">Source: ${esc(data.source)}. ${esc(data.note)}</p>`;
+    renderTcsg();
+    const dlg = $("#tcsgDialog");
     if (!dlg.open) dlg.showModal();
     dlg.scrollTop = 0;
   }
@@ -749,6 +823,10 @@
       if (unsave) { toggleSaved(unsave.dataset.unsave); openSaved(); return; }
       const close = t.closest("[data-close]");
       if (close) { close.closest("dialog").close(); return; }
+      const tcsg = t.closest("[data-tcsg]");
+      if (tcsg) { openTcsg(tcsg.dataset.tcsg); return; }
+      const tf = t.closest("[data-tcsg-filter]");
+      if (tf) { tcsgFilter = tf.dataset.tcsgFilter || null; renderTcsg(); return; }
       const emp = t.closest("[data-employer]");
       if (emp) { openEmployer(emp.dataset.employer); return; }
       const tab = t.closest("[data-ind-tab]");
@@ -789,13 +867,14 @@
       }
       const card = t.closest("[data-career]");
       if (card) {
-        ["#savedDialog", "#videoDialog", "#industryDialog", "#employerDialog"].forEach((sel) => { const d = $(sel); if (d.open) d.close(); });
+        ["#savedDialog", "#videoDialog", "#industryDialog", "#employerDialog", "#tcsgDialog"].forEach((sel) => { const d = $(sel); if (d.open) d.close(); });
         openCareer(card.dataset.career);
       }
     });
     document.addEventListener("input", (e) => {
       if (e.target.id === "empSearch") { state.empQuery = e.target.value.trim(); renderLocal({ keepFocus: true }); }
       if (e.target.id === "indEmpSearch") { indQuery = e.target.value.trim(); renderIndEmployers(); }
+      if (e.target.id === "tcsgSearch") { tcsgQuery = e.target.value.trim(); renderTcsg(); }
     });
     document.addEventListener("keydown", (e) => {
       if ((e.key === "Enter" || e.key === " ") && e.target.matches("article[data-career]")) {

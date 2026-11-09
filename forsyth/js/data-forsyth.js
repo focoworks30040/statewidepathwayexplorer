@@ -9,6 +9,9 @@
 // highDemand lists occupations (by SOC code) from Georgia's High-Demand Career
 // List; a career with a matching "soc" is marked "Georgia High-Demand Career".
 //
+// tcsgPrograms lists programs at every Technical College System of Georgia
+// college, by industry, for the "additional education options" view.
+//
 // Edit this file directly to change what the site shows.
 window.FOCO = {
  "careers": {
@@ -6580,5 +6583,1955 @@ window.FOCO = {
     "soc": "11-9151"
    }
   ]
+ },
+ "tcsgPrograms": {
+  "health": {
+   "source": "TCSG Pathway Explorer: Healthcare Programs",
+   "note": "Programs and links from the TCSG healthcare programs list. Distances are straight-line miles from the center of Forsyth County to each college's closest campus.",
+   "colleges": [
+    {
+     "name": "Lanier Technical College",
+     "city": "Gainesville",
+     "site": "https://www.laniertech.edu/",
+     "nearestCampus": "Cumming",
+     "miles": 2,
+     "programs": [
+      {
+       "name": "Associate of Science in Nursing Degree",
+       "url": "https://www.laniertech.edu/programs/"
+      },
+      {
+       "name": "Practical Nursing Certificate",
+       "url": "https://www.laniertech.edu/programs/"
+      },
+      {
+       "name": "AAS in Allied Health Professions Degree Program",
+       "url": "https://www.laniertech.edu/programs/"
+      },
+      {
+       "name": "Nurse Aide Fast Track Certificate",
+       "url": "https://www.laniertech.edu/programs/"
+      },
+      {
+       "name": "Health Care Assistant Certificate",
+       "url": "https://www.laniertech.edu/programs/"
+      },
+      {
+       "name": "Medical Assisting Diploma",
+       "url": "https://www.laniertech.edu/programs/"
+      },
+      {
+       "name": "Dental Assisting Diploma",
+       "url": "https://www.laniertech.edu/programs/"
+      },
+      {
+       "name": "Associate of Science – Dental Hygienist Degree",
+       "url": "https://www.laniertech.edu/programs/"
+      },
+      {
+       "name": "Radiologic Technology Degree",
+       "url": "https://www.laniertech.edu/programs/"
+      },
+      {
+       "name": "Computed Tomography Specialist Certificate",
+       "url": "https://www.laniertech.edu/programs/"
+      },
+      {
+       "name": "Physical Therapist Assistant Degree",
+       "url": "https://www.laniertech.edu/programs/"
+      },
+      {
+       "name": "AAS in Allied Health Professions Degree Program – Paramedicine",
+       "url": "https://www.laniertech.edu/programs/"
+      },
+      {
+       "name": "EMS Professions Diploma",
+       "url": "https://www.laniertech.edu/programs/"
+      },
+      {
+       "name": "Paramedicine Diploma",
+       "url": "https://www.laniertech.edu/programs/"
+      },
+      {
+       "name": "Advanced Emergency Medical Technician Certificate (AEMT)",
+       "url": "https://www.laniertech.edu/programs/"
+      },
+      {
+       "name": "Emergency Medical Technician Certificate",
+       "url": "https://www.laniertech.edu/programs/"
+      },
+      {
+       "name": "Phlebotomy Technician Fast Track Certificate",
+       "url": "https://www.laniertech.edu/programs/"
+      },
+      {
+       "name": "Health Information Coding Diploma",
+       "url": "https://www.laniertech.edu/programs/"
+      },
+      {
+       "name": "Data Analytics Specialist Certificate",
+       "url": "https://www.laniertech.edu/programs/"
+      }
+     ]
+    },
+    {
+     "name": "Gwinnett Technical College",
+     "city": "Lawrenceville",
+     "site": "https://www.gwinnetttech.edu/",
+     "nearestCampus": "Alpharetta",
+     "miles": 14,
+     "programs": [
+      {
+       "name": "Bioscience Technology AAS; Good Laboratory Practices Technician certificate",
+       "url": "https://gwinnetttech.edu/programs/"
+      },
+      {
+       "name": "Cardiovascular Technology AAS",
+       "url": "https://gwinnetttech.edu/programs/"
+      },
+      {
+       "name": "Dental Assisting diploma",
+       "url": "https://gwinnetttech.edu/programs/"
+      },
+      {
+       "name": "Diagnostic Medical Sonography AAS",
+       "url": "https://gwinnetttech.edu/programs/"
+      },
+      {
+       "name": "Echocardiography Technology AAS",
+       "url": "https://gwinnetttech.edu/programs/"
+      },
+      {
+       "name": "Paramedicine AAS and diploma",
+       "url": "https://gwinnetttech.edu/programs/"
+      },
+      {
+       "name": "Paramedicine Accelerated certificate",
+       "url": "https://gwinnetttech.edu/programs/"
+      },
+      {
+       "name": "EMS Professions diploma",
+       "url": "https://gwinnetttech.edu/programs/"
+      },
+      {
+       "name": "Emergency Medical Responder certificate",
+       "url": "https://gwinnetttech.edu/programs/"
+      },
+      {
+       "name": "Radiologic Technology AAS",
+       "url": "https://gwinnetttech.edu/programs/"
+      },
+      {
+       "name": "Computed Tomography Clinical Specialist certificate",
+       "url": "https://gwinnetttech.edu/programs/"
+      },
+      {
+       "name": "MRI Specialist certificate",
+       "url": "https://gwinnetttech.edu/programs/"
+      },
+      {
+       "name": "Respiratory Care AAS",
+       "url": "https://gwinnetttech.edu/programs/"
+      },
+      {
+       "name": "Surgical Technology AAS",
+       "url": "https://gwinnetttech.edu/programs/"
+      },
+      {
+       "name": "Central Processing Technician",
+       "url": "https://gwinnetttech.edu/programs/"
+      },
+      {
+       "name": "Endoscope Reprocessing Technician certificate",
+       "url": "https://gwinnetttech.edu/programs/"
+      },
+      {
+       "name": "Practical Nurse certificate",
+       "url": "https://gwinnetttech.edu/programs/"
+      },
+      {
+       "name": "Nurse Aide Fast Track certificate",
+       "url": "https://gwinnetttech.edu/programs/"
+      },
+      {
+       "name": "Medical Assisting diploma",
+       "url": "https://gwinnetttech.edu/programs/"
+      },
+      {
+       "name": "Healthcare Assistant certificate",
+       "url": "https://gwinnetttech.edu/programs/"
+      }
+     ]
+    },
+    {
+     "name": "Chattahoochee Technical College",
+     "city": "Marietta",
+     "site": "https://www.chattahoocheetech.edu/",
+     "nearestCampus": "Canton",
+     "miles": 21,
+     "programs": [
+      {
+       "name": "Dental Assisting",
+       "url": "https://www.chattahoocheetech.edu/"
+      },
+      {
+       "name": "EMT/AEMT",
+       "url": "https://www.chattahoocheetech.edu/"
+      },
+      {
+       "name": "Health Care Management",
+       "url": "https://www.chattahoocheetech.edu/"
+      },
+      {
+       "name": "Mammography",
+       "url": "https://www.chattahoocheetech.edu/"
+      },
+      {
+       "name": "Medical Assisting",
+       "url": "https://www.chattahoocheetech.edu/"
+      },
+      {
+       "name": "Certified Nurse Assistant (CNA)",
+       "url": "https://www.chattahoocheetech.edu/"
+      },
+      {
+       "name": "Nursing",
+       "url": "https://www.chattahoocheetech.edu/"
+      },
+      {
+       "name": "LPN to RN Bridge – Nursing",
+       "url": "https://www.chattahoocheetech.edu/"
+      },
+      {
+       "name": "Occupational Therapy Assistant",
+       "url": "https://www.chattahoocheetech.edu/"
+      },
+      {
+       "name": "Paramedicine",
+       "url": "https://www.chattahoocheetech.edu/"
+      },
+      {
+       "name": "Phlebotomy Technician",
+       "url": "https://www.chattahoocheetech.edu/"
+      },
+      {
+       "name": "Physical Therapist Assistant",
+       "url": "https://www.chattahoocheetech.edu/"
+      },
+      {
+       "name": "Practical Nursing",
+       "url": "https://www.chattahoocheetech.edu/"
+      },
+      {
+       "name": "Radiography",
+       "url": "https://www.chattahoocheetech.edu/"
+      },
+      {
+       "name": "Social Work Assistant",
+       "url": "https://www.chattahoocheetech.edu/"
+      },
+      {
+       "name": "Surgical Technology",
+       "url": "https://www.chattahoocheetech.edu/"
+      }
+     ]
+    },
+    {
+     "name": "Georgia Piedmont Technical College",
+     "city": "Clarkston",
+     "site": "https://www.gptc.edu/",
+     "nearestCampus": "Clarkston",
+     "miles": 30,
+     "programs": [
+      {
+       "name": "Associate of Applied Science in Allied Health Professions",
+       "url": "https://www.gptc.edu/college-catalog/current/programs/type/all"
+      },
+      {
+       "name": "Contact Lens Technician Technical Certificate",
+       "url": "https://www.gptc.edu/college-catalog/current/programs/type/all"
+      },
+      {
+       "name": "Health Information Management Coding Diploma",
+       "url": "https://www.gptc.edu/college-catalog/current/programs/type/all"
+      },
+      {
+       "name": "Health Information Management Technology Associate of Applied Science Degree",
+       "url": "https://www.gptc.edu/college-catalog/current/programs/type/all"
+      },
+      {
+       "name": "Medical Assisting Diploma",
+       "url": "https://www.gptc.edu/college-catalog/current/programs/type/all"
+      },
+      {
+       "name": "Medical Laboratory Technology Associate of Applied Science Degree",
+       "url": "https://www.gptc.edu/college-catalog/current/programs/type/all"
+      },
+      {
+       "name": "Nurse Aide Accelerated Technical Certificate",
+       "url": null
+      },
+      {
+       "name": "Nurse Aide Fast Track Technical Certificate",
+       "url": "https://www.gptc.edu/college-catalog/current/programs/type/all"
+      },
+      {
+       "name": "Optical Laboratory Technician Technical Certificate",
+       "url": "https://www.gptc.edu/college-catalog/current/programs/type/all"
+      },
+      {
+       "name": "Phlebotomy Technician Technical Certificate",
+       "url": "https://www.gptc.edu/college-catalog/current/programs/type/all"
+      },
+      {
+       "name": "Practical Nursing Certificate,",
+       "url": "https://www.gptc.edu/college-catalog/current/programs/type/all"
+      },
+      {
+       "name": "Revenue Cycle Specialist Technical Certificate",
+       "url": "https://www.gptc.edu/college-catalog/current/programs/type/all"
+      },
+      {
+       "name": "Surgical Technology Associate of Applied Science Degree",
+       "url": "https://www.gptc.edu/college-catalog/current/programs/type/all"
+      }
+     ]
+    },
+    {
+     "name": "Athens Technical College",
+     "city": "Athens",
+     "site": "https://www.athenstech.edu/",
+     "nearestCampus": "Monroe",
+     "miles": 38,
+     "programs": [
+      {
+       "name": "Addictions Specialist TCC",
+       "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
+      },
+      {
+       "name": "Advanced Emergency Medical Technician TCC (AEMT)",
+       "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
+      },
+      {
+       "name": "Allied Health Professions Associate Degree",
+       "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
+      },
+      {
+       "name": "Computed Tomography Specialist TCC",
+       "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
+      },
+      {
+       "name": "Coronal Polishing TCC",
+       "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
+      },
+      {
+       "name": "Dental Assisting Diploma",
+       "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
+      },
+      {
+       "name": "Dental Hygiene Associate Degree",
+       "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
+      },
+      {
+       "name": "EMS Professions Diploma",
+       "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
+      },
+      {
+       "name": "Emergency Medical Technician TCC (EMT)",
+       "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/cataloghttps://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
+      },
+      {
+       "name": "Health Information Coding Diploma",
+       "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
+      },
+      {
+       "name": "Health Information Management Technology Associate Degree",
+       "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
+      },
+      {
+       "name": "Healthcare Assistant TCC",
+       "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
+      },
+      {
+       "name": "Magnetic Resonance Imaging Specialist TCC",
+       "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
+      },
+      {
+       "name": "Medical Assisting Diploma",
+       "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
+      },
+      {
+       "name": "Nursing Associate Degree",
+       "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
+      },
+      {
+       "name": "Nursing Bridge Program Associate Degree",
+       "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
+      },
+      {
+       "name": "Paramedicine Associate Degree",
+       "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
+      },
+      {
+       "name": "Paramedicine Diploma",
+       "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
+      },
+      {
+       "name": "Phlebotomy Technology Specialist TCC",
+       "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
+      },
+      {
+       "name": "Physical Therapist Assistant Associate Degree",
+       "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
+      },
+      {
+       "name": "Practical Nursing Diploma",
+       "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
+      },
+      {
+       "name": "Practical Nursing Evening Program",
+       "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
+      },
+      {
+       "name": "Practical Nursing TCC",
+       "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
+      },
+      {
+       "name": "Pre-Nursing TCC",
+       "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
+      },
+      {
+       "name": "Pre-hospital EMS Operations TCC",
+       "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
+      },
+      {
+       "name": "Radiologic Technology Associate Degree",
+       "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
+      },
+      {
+       "name": "Radiology/EFDA Certificate Dental Assisting TCC",
+       "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
+      },
+      {
+       "name": "Surgical Technology Associate Degree",
+       "url": "https://athenstech.smartcatalogiq.com/2026-2027-catalog-with-current-changes/catalog"
+      }
+     ]
+    },
+    {
+     "name": "Atlanta Technical College",
+     "city": "Atlanta",
+     "site": "https://atlantatech.edu/",
+     "nearestCampus": "Atlanta",
+     "miles": 39,
+     "programs": [
+      {
+       "name": "Central Sterile Supply Processing Technician Advanced TCC",
+       "url": null
+      },
+      {
+       "name": "Advanced Dental Assisting TCC",
+       "url": null
+      },
+      {
+       "name": "Basic Dental Assisting TCC",
+       "url": null
+      },
+      {
+       "name": "Dental Assisting Diploma",
+       "url": null
+      },
+      {
+       "name": "Dental Hygiene AAS",
+       "url": null
+      },
+      {
+       "name": "Health Information Coding Diploma",
+       "url": null
+      },
+      {
+       "name": "Health Information Management Technology AAS",
+       "url": null
+      },
+      {
+       "name": "Health Information Specialist TCC",
+       "url": null
+      },
+      {
+       "name": "Health Information Systems TCC",
+       "url": null
+      },
+      {
+       "name": "Patient Account Specialist TCC",
+       "url": null
+      },
+      {
+       "name": "Medical Assisting Diploma",
+       "url": null
+      },
+      {
+       "name": "Associate of Science Degree in Nursing",
+       "url": null
+      },
+      {
+       "name": "Hemodialysis Patient Care Specialist TCC",
+       "url": null
+      },
+      {
+       "name": "LPN to RN Bridge",
+       "url": null
+      },
+      {
+       "name": "Nurse Aide TCC",
+       "url": null
+      },
+      {
+       "name": "Paramedicine",
+       "url": null
+      },
+      {
+       "name": "Pharmacy Assistant Diploma",
+       "url": null
+      },
+      {
+       "name": "Pharmacy Assistant TCC",
+       "url": null
+      },
+      {
+       "name": "Pharmacy Technology AAS",
+       "url": null
+      },
+      {
+       "name": "Phlebotomy Technician TCC",
+       "url": null
+      },
+      {
+       "name": "Physical Therapist Assistant AAS",
+       "url": null
+      },
+      {
+       "name": "Radiologic Technology",
+       "url": null
+      }
+     ]
+    },
+    {
+     "name": "North Georgia Technical College",
+     "city": "Clarkesville",
+     "site": "https://www.northgatech.edu/",
+     "nearestCampus": "Clarkesville",
+     "miles": 43,
+     "programs": [
+      {
+       "name": "Associate of Science in Nursing (ASN) Degree",
+       "url": "https://northgatech.edu/academic-programs/"
+      },
+      {
+       "name": "Practical Nursing Certificate",
+       "url": "https://northgatech.edu/academic-programs/"
+      },
+      {
+       "name": "Medical Assisting AAS Degree",
+       "url": "https://northgatech.edu/academic-programs/"
+      },
+      {
+       "name": "Pharmacy Technology Diploma",
+       "url": "https://northgatech.edu/academic-programs/"
+      },
+      {
+       "name": "Health Care Science Certificate",
+       "url": "https://northgatech.edu/academic-programs/"
+      }
+     ]
+    },
+    {
+     "name": "West Georgia Technical College",
+     "city": "Waco",
+     "site": "https://www.westgatech.edu/",
+     "nearestCampus": "Douglasville",
+     "miles": 49,
+     "programs": [
+      {
+       "name": "Registered Nursing ADN Degree",
+       "url": "https://www.westgatech.edu/"
+      },
+      {
+       "name": "Nursing LPN to ADN Degree",
+       "url": "https://www.westgatech.edu/"
+      },
+      {
+       "name": "Business Healthcare Technology AAS Degree",
+       "url": "https://www.westgatech.edu/"
+      },
+      {
+       "name": "Business Healthcare Technology Diploma",
+       "url": "https://www.westgatech.edu/"
+      },
+      {
+       "name": "Healthcare Billing and Coding Specialist Certificate",
+       "url": "https://www.westgatech.edu/"
+      },
+      {
+       "name": "Coronal Polishing",
+       "url": "https://www.westgatech.edu/"
+      },
+      {
+       "name": "Dental Assisting - Advanced",
+       "url": "https://www.westgatech.edu/"
+      },
+      {
+       "name": "Dental Hygiene AAS Degree",
+       "url": "https://www.westgatech.edu/"
+      },
+      {
+       "name": "Diagnostic Medical Sonography Degree",
+       "url": "https://www.westgatech.edu/"
+      },
+      {
+       "name": "HIMT Degree",
+       "url": "https://www.westgatech.edu/"
+      },
+      {
+       "name": "Healthcare Information Technology Degree",
+       "url": "https://www.westgatech.edu/"
+      },
+      {
+       "name": "Healthcare Management AAS Degree",
+       "url": "https://www.westgatech.edu/"
+      },
+      {
+       "name": "Healthcare Assistant",
+       "url": "https://www.westgatech.edu/"
+      },
+      {
+       "name": "Healthcare Professional",
+       "url": "https://www.westgatech.edu/"
+      },
+      {
+       "name": "Medical Assisting Diploma",
+       "url": "https://www.westgatech.edu/"
+      },
+      {
+       "name": "Medical Coding/Insurance Data Technical Certificate of Credit MC71",
+       "url": "https://www.westgatech.edu/"
+      },
+      {
+       "name": "Medical Laboratory Technology AAS Degree",
+       "url": "https://www.westgatech.edu/"
+      },
+      {
+       "name": "Phlebotomy Technology Specialist Certificate",
+       "url": "https://www.westgatech.edu/"
+      },
+      {
+       "name": "Nurse Aid Accelerated Certificate",
+       "url": "https://www.westgatech.edu/"
+      },
+      {
+       "name": "Geriatric Care Asst. Certificate",
+       "url": "https://www.westgatech.edu/"
+      },
+      {
+       "name": "Pharmacy Technology AAS Degree",
+       "url": "https://www.westgatech.edu/"
+      },
+      {
+       "name": "Associate of Applied Science in Allied Health Professional Degree",
+       "url": "https://www.westgatech.edu/"
+      },
+      {
+       "name": "Radiologic Technology AAS Degree (RT23)",
+       "url": "https://www.westgatech.edu/"
+      },
+      {
+       "name": "Surgical Technology AAS Degree",
+       "url": "https://www.westgatech.edu/"
+      },
+      {
+       "name": "Paramedicine Degree",
+       "url": "https://www.westgatech.edu/"
+      }
+     ]
+    },
+    {
+     "name": "Georgia Northwestern Technical College",
+     "city": "Rome",
+     "site": "https://www.gntc.edu/",
+     "nearestCampus": "Calhoun",
+     "miles": 51,
+     "programs": [
+      {
+       "name": "CNA (Nurse Aid Accelerated (NAA1) Certificate",
+       "url": "https://www.gntc.edu/programs/"
+      },
+      {
+       "name": "Patient Care Assistant (PC21) Certificate",
+       "url": "https://www.gntc.edu/programs/"
+      },
+      {
+       "name": "Dental Assisting (DA12) Diploma",
+       "url": "https://www.gntc.edu/programs/"
+      },
+      {
+       "name": "Diagnostic Medical Sonography (DMS3) Degree",
+       "url": "https://www.gntc.edu/programs/"
+      },
+      {
+       "name": "Adult Echocardiography (EC33) Degree",
+       "url": "https://www.gntc.edu/programs/"
+      },
+      {
+       "name": "Paramedicine (PT13) Degree",
+       "url": "https://www.gntc.edu/programs/"
+      },
+      {
+       "name": "EMS Professions (EP12) Diploma",
+       "url": "https://www.gntc.edu/programs/"
+      },
+      {
+       "name": "Paramedicine (PT12) Diploma",
+       "url": "https://www.gntc.edu/programs/"
+      },
+      {
+       "name": "Advanced Emergency Medical Technician (AEMT) (EMH1) Certificate",
+       "url": "https://www.gntc.edu/programs/"
+      },
+      {
+       "name": "Emergency Medical Responder (EMR) (EB71) Certificate",
+       "url": "https://www.gntc.edu/programs/"
+      },
+      {
+       "name": "Paramedicine Accelerated (PAF1) Certificate",
+       "url": "https://www.gntc.edu/programs/"
+      },
+      {
+       "name": "Health Information Management Technology (HI13) Degree",
+       "url": "https://www.gntc.edu/programs/"
+      },
+      {
+       "name": "Health Information Coding (HI12) Diploma",
+       "url": "https://www.gntc.edu/programs/"
+      },
+      {
+       "name": "Health Information Technician (HI61) Certificate",
+       "url": "https://www.gntc.edu/programs/"
+      },
+      {
+       "name": "Healthcare Management (HC23) Degree",
+       "url": "https://www.gntc.edu/programs/"
+      },
+      {
+       "name": "Healthcare Assistant (HA21) Certificate",
+       "url": "https://www.gntc.edu/programs/"
+      },
+      {
+       "name": "Healthcare Science (HS21) Certificate",
+       "url": "https://www.gntc.edu/programs/"
+      },
+      {
+       "name": "Allied Health Professions (AFA3) Degree",
+       "url": "https://www.gntc.edu/programs/"
+      },
+      {
+       "name": "Medical Assisting (MA22) Diploma",
+       "url": "https://www.gntc.edu/programs/"
+      },
+      {
+       "name": "Clinical Office Assistant (CA91) Certificate",
+       "url": "https://www.gntc.edu/programs/"
+      },
+      {
+       "name": "Nursing (NU33) Degree",
+       "url": "https://www.gntc.edu/programs/"
+      },
+      {
+       "name": "Phlebotomy Technician (PT21) Certificate",
+       "url": "https://www.gntc.edu/programs/"
+      },
+      {
+       "name": "Practical Nursing (PN21) Certificate",
+       "url": "https://www.gntc.edu/programs/"
+      },
+      {
+       "name": "Radiologic Technology (RT23) Degree",
+       "url": "https://www.gntc.edu/programs/"
+      },
+      {
+       "name": "Mammography (MA11) Certificate",
+       "url": "https://www.gntc.edu/programs/"
+      },
+      {
+       "name": "Respiratory Care (RCT3) Degree",
+       "url": "https://www.gntc.edu/programs/"
+      },
+      {
+       "name": "Central Sterile Supply Processing Tech (Basic) (CJ91) Certificate",
+       "url": "https://www.gntc.edu/programs/"
+      },
+      {
+       "name": "Surgical Technology (ST13) Degree",
+       "url": "https://www.gntc.edu/programs/"
+      },
+      {
+       "name": "Vascular (VA13) Degree",
+       "url": "https://www.gntc.edu/programs/"
+      }
+     ]
+    },
+    {
+     "name": "Southern Crescent Technical College",
+     "city": "Griffin",
+     "site": "https://www.sctech.edu/",
+     "nearestCampus": "McDonough",
+     "miles": 54,
+     "programs": [
+      {
+       "name": "Nursing (ASN)",
+       "url": "https://www.sctech.edu/"
+      },
+      {
+       "name": "Practical Nursing (TCC)",
+       "url": "https://www.sctech.edu/"
+      },
+      {
+       "name": "Nurse Aide (TCC)",
+       "url": "https://www.sctech.edu/"
+      },
+      {
+       "name": "Radiologic Technology (AAS)",
+       "url": "https://www.sctech.edu/"
+      },
+      {
+       "name": "Radiologic Technologist Assistant (TCC)",
+       "url": "https://www.sctech.edu/"
+      },
+      {
+       "name": "Computed Tomography Specialist (TCC)",
+       "url": "https://www.sctech.edu/"
+      },
+      {
+       "name": "Magnetic Resonance Imaging Specialist (TCC)",
+       "url": "https://www.sctech.edu/"
+      },
+      {
+       "name": "Cardiovascular Technology (AAS)",
+       "url": "https://www.sctech.edu/"
+      },
+      {
+       "name": "Electrocardiography Technology (TCC)",
+       "url": "https://www.sctech.edu/"
+      },
+      {
+       "name": "Respiratory Care (AAS)",
+       "url": "https://www.sctech.edu/"
+      },
+      {
+       "name": "Paramedicine (Diploma)",
+       "url": "https://www.sctech.edu/"
+      },
+      {
+       "name": "EMS Professions (Diploma)",
+       "url": "https://www.sctech.edu/"
+      },
+      {
+       "name": "Emergency Medical Technician (TCC)",
+       "url": "https://www.sctech.edu/"
+      },
+      {
+       "name": "Advanced Emergency Medical Technician (TCC)",
+       "url": "https://www.sctech.edu/"
+      },
+      {
+       "name": "Emergency Medical Responder (TCC)",
+       "url": "https://www.sctech.edu/"
+      },
+      {
+       "name": "Surgical Technology (AAS)",
+       "url": "https://www.sctech.edu/"
+      },
+      {
+       "name": "Central Sterile Supply Processing Tech, Advanced (TCC)",
+       "url": "https://www.sctech.edu/"
+      },
+      {
+       "name": "Allied Health Professions (AAS)",
+       "url": "https://www.sctech.edu/"
+      },
+      {
+       "name": "Medical Assisting (Diploma)",
+       "url": "https://www.sctech.edu/"
+      },
+      {
+       "name": "Phlebotomy Technician (TCC)",
+       "url": "https://www.sctech.edu/"
+      },
+      {
+       "name": "Health Care Assistant (TCC)",
+       "url": "https://www.sctech.edu/"
+      },
+      {
+       "name": "Advanced Dental Assisting (TCC)",
+       "url": "https://www.sctech.edu/"
+      },
+      {
+       "name": "Health Care Management (AAS)",
+       "url": "https://www.sctech.edu/"
+      },
+      {
+       "name": "Medical Office Support Specialist (TCC)",
+       "url": "https://www.sctech.edu/"
+      },
+      {
+       "name": "Medical Information Specialist (TCC)",
+       "url": "https://www.sctech.edu/"
+      }
+     ]
+    },
+    {
+     "name": "Central Georgia Technical College",
+     "city": "Warner Robins / Macon",
+     "site": "https://www.centralgatech.edu/",
+     "nearestCampus": "Milledgeville",
+     "miles": 94,
+     "programs": [
+      {
+       "name": "Dental Assisting",
+       "url": "https://www.centralgatech.edu/academics"
+      },
+      {
+       "name": "Dental Hygiene",
+       "url": "https://www.centralgatech.edu/academics"
+      },
+      {
+       "name": "Medical Assisting",
+       "url": "https://www.centralgatech.edu/academics"
+      },
+      {
+       "name": "Nursing",
+       "url": "https://www.centralgatech.edu/academics"
+      },
+      {
+       "name": "Paramedicine",
+       "url": "https://www.centralgatech.edu/academics"
+      },
+      {
+       "name": "Physical Therapist Assistant",
+       "url": "https://www.centralgatech.edu/academics"
+      },
+      {
+       "name": "Surgical Technology",
+       "url": "https://www.centralgatech.edu/academics"
+      },
+      {
+       "name": "Health Sciences Technical Certificates of Credit",
+       "url": "https://www.centralgatech.edu/academics"
+      },
+      {
+       "name": "Biotechnology",
+       "url": "https://www.centralgatech.edu/academics"
+      },
+      {
+       "name": "Cardiovascular Technology, Associate of Applied Science Degree",
+       "url": "https://www.centralgatech.edu/academics"
+      },
+      {
+       "name": "Dental Assisting Diploma",
+       "url": "https://www.centralgatech.edu/academics"
+      },
+      {
+       "name": "Hemodialysis Patient Care Specialist TCC",
+       "url": "https://www.centralgatech.edu/academics"
+      },
+      {
+       "name": "Medical Assisting Diploma",
+       "url": "https://www.centralgatech.edu/academics"
+      },
+      {
+       "name": "Medical Laboratory Technology",
+       "url": "https://www.centralgatech.edu/academics"
+      },
+      {
+       "name": "Orthopedic Technology",
+       "url": "https://www.centralgatech.edu/academics"
+      },
+      {
+       "name": "Pharmacy Technology",
+       "url": "https://www.centralgatech.edu/academics"
+      },
+      {
+       "name": "Polysomnography",
+       "url": "https://www.centralgatech.edu/academics"
+      },
+      {
+       "name": "Radiologic Technology",
+       "url": "https://www.centralgatech.edu/academics"
+      },
+      {
+       "name": "Surgical Technology Associate Degree",
+       "url": "https://www.centralgatech.edu/academics"
+      },
+      {
+       "name": "Health Care Assistant TCCs",
+       "url": "https://www.centralgatech.edu/academics"
+      }
+     ]
+    },
+    {
+     "name": "Augusta Technical College",
+     "city": "Augusta",
+     "site": "https://www.augustatech.edu/",
+     "nearestCampus": "Thomson",
+     "miles": 107,
+     "programs": [
+      {
+       "name": "Associate Degree Nursing",
+       "url": null
+      },
+      {
+       "name": "Allied Health Professions, Associate of Applied Science",
+       "url": null
+      },
+      {
+       "name": "Practical Nursing, Technical Certificate of Credit",
+       "url": null
+      },
+      {
+       "name": "Nurse Aide, Technical Certificate of Credit",
+       "url": null
+      },
+      {
+       "name": "Nurse Aide Accelerated, Technical Certificate of Credit",
+       "url": null
+      },
+      {
+       "name": "Cardiovascular Technology, Associate of Applied Science Degree",
+       "url": null
+      },
+      {
+       "name": "Dental Assisting, Diploma",
+       "url": null
+      },
+      {
+       "name": "Diagnostic Medical Sonography, Associate of Applied Science Degree",
+       "url": null
+      },
+      {
+       "name": "Echocardiography, Associate of Applied Science Degree",
+       "url": null
+      },
+      {
+       "name": "Health Care Assistant, Technical Certificate of Credit",
+       "url": null
+      },
+      {
+       "name": "Health Information Management Technology, Associate of Applied Science Degree",
+       "url": null
+      },
+      {
+       "name": "LPN to RN Transition to Professional Nursing, Associate Degree Nursing",
+       "url": null
+      },
+      {
+       "name": "Medical Assisting, Diploma",
+       "url": null
+      },
+      {
+       "name": "Medical Coding, Technical Certificate of Credit",
+       "url": null
+      },
+      {
+       "name": "Medical Office Support Specialist, Technical Certificate of Credit",
+       "url": null
+      },
+      {
+       "name": "Physicians Practice Management, Technical Certificate of Credit",
+       "url": null
+      },
+      {
+       "name": "Occupational Therapy Assistant, Associate of Applied Science Degree",
+       "url": null
+      },
+      {
+       "name": "Pharmacy Technology, Diploma",
+       "url": null
+      },
+      {
+       "name": "Pharmacy Technology, Technical Certificate of Credit",
+       "url": null
+      },
+      {
+       "name": "Radiologic Technology, Associate of Applied Science Degree",
+       "url": null
+      },
+      {
+       "name": "Computed Tomography Specialist, Technical Certificate of Credit",
+       "url": null
+      },
+      {
+       "name": "Magnetic Resonance Imaging Specialist, Technical Certificate of Credit",
+       "url": null
+      },
+      {
+       "name": "Respiratory Care, Associate of Applied Science Degree",
+       "url": null
+      },
+      {
+       "name": "Surgical Technology, Associate of Applied Science Degree",
+       "url": null
+      },
+      {
+       "name": "Central Sterile Supply Processing Technician Advanced, Technical Certificate of Credit",
+       "url": null
+      },
+      {
+       "name": "Vascular Technology, Associate of Applied Science Degree",
+       "url": null
+      }
+     ]
+    },
+    {
+     "name": "Oconee Fall Line Technical College",
+     "city": "Sandersville / Dublin",
+     "site": "https://www.oftc.edu/",
+     "nearestCampus": "Sandersville",
+     "miles": 114,
+     "programs": [
+      {
+       "name": "Nursing Degree",
+       "url": "https://oftc.edu/departments/"
+      },
+      {
+       "name": "Associate of Applied Science Degree in Allied Health Professions",
+       "url": "https://oftc.edu/departments/"
+      },
+      {
+       "name": "Associate of Science Degree",
+       "url": "https://oftc.edu/departments/"
+      },
+      {
+       "name": "Basic Pharmacy Technology Technical Certificate",
+       "url": "https://oftc.edu/departments/"
+      },
+      {
+       "name": "Interdisciplinary Studies – Allied Health Associate of Applied Science Degree",
+       "url": "https://oftc.edu/departments/"
+      },
+      {
+       "name": "Nurse Aide Technical Certificate",
+       "url": "https://oftc.edu/departments/"
+      },
+      {
+       "name": "Pharmacy Associate of Applied Science Degree",
+       "url": "https://oftc.edu/departments/"
+      },
+      {
+       "name": "Pharmacy Diploma",
+       "url": "https://oftc.edu/departments/"
+      },
+      {
+       "name": "Practical Nursing Technical Certificate",
+       "url": "https://oftc.edu/departments/"
+      }
+     ]
+    },
+    {
+     "name": "Columbus Technical College",
+     "city": "Columbus",
+     "site": "https://www.columbustech.edu/",
+     "nearestCampus": "Columbus",
+     "miles": 129,
+     "programs": [
+      {
+       "name": "Advanced Dental Assisting Certificate",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Allied Health Professions, Associate of Applied Science",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Basic Dental Assisting Certificate",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Central Service Assistant",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Practical Nursing Certificate,",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Surgical Technology, Associate of Applied Science Degree",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Therapeutic Massage Therapy",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Dental Assisting, Diploma",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Coronal Polishing Certification",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Radiology/EFDA Certification Dental Assisting Certificate",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Dental Hygiene, Associate of Applied Science",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Diagnostic Medical Sonography, Associate of Applied Science",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Health Care Assistant Certificate",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Healthcare Professional Certificate",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Healthcare Science Certificate",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Health Science, Associate of Science",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Medical Assisting, Diploma",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Medical Coding Specialist Certificate",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Healthcare Informatics Specialist",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Medical Front Office Assistant Certificate",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Acute Care Nurse Aide",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Nurse Aide Certificate",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Geriatric Care Assistant",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Nurse Aide Accelerated Certificate",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Nurse Aide Fast Track",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Nursing LPN Bridge Option, Associate Degree in Nursing",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Associate Degree in Nursing (RN)",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "PCT Career Launch Certificate",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Paramedicine, Associate of Applied Science",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "EMS Profession",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Paramedicine, Diploma,",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Emergency Medical Responder",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Advanced Emergency Medical Technician Certificate (AEMT)",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Emergency Medical Technician Certificate",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Paramedicine Accelerated Certificate,",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Pharmacy Technology, Associate of Applied Science,",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Pharmacy Technology, Diploma",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Pharmacy Technology Certificate",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Accelerated Phlebotomy Technician",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Phlebotomy Technician Certificate",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Radiologic Technology, Associate of Applied Sciences",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Computed Tomography Specialist Certificate",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Mammography Certificate",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Residential Care Attendant",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      },
+      {
+       "name": "Respiratory Care, Associate of Applied Science Degree,",
+       "url": "https://www.columbustech.edu/programsofstudy/"
+      }
+     ]
+    },
+    {
+     "name": "South Georgia Technical College",
+     "city": "Americus",
+     "site": "https://www.southgatech.edu/",
+     "nearestCampus": "Americus",
+     "miles": 149,
+     "programs": [
+      {
+       "name": "Practical Nursing",
+       "url": "https://www.southgatech.edu/college-catalog/current/departments"
+      },
+      {
+       "name": "Nurse Aide",
+       "url": "https://www.southgatech.edu/college-catalog/current/departments"
+      },
+      {
+       "name": "Patient Care Assistant (PC21) Certificate",
+       "url": "https://www.southgatech.edu/college-catalog/current/departments"
+      },
+      {
+       "name": "Health Care Assistant",
+       "url": "https://www.southgatech.edu/college-catalog/current/departments"
+      },
+      {
+       "name": "Medical Assisting",
+       "url": "https://www.southgatech.edu/college-catalog/current/departments"
+      },
+      {
+       "name": "Phlebotomy Technician",
+       "url": "https://www.southgatech.edu/college-catalog/current/departments"
+      },
+      {
+       "name": "Emergency Medical Technician",
+       "url": "https://www.southgatech.edu/college-catalog/current/departments"
+      },
+      {
+       "name": "Advanced Emergency Medical Technician",
+       "url": "https://www.southgatech.edu/college-catalog/current/departments"
+      }
+     ]
+    },
+    {
+     "name": "Southeastern Technical College",
+     "city": "Vidalia",
+     "site": "https://www.southeasterntech.edu/",
+     "nearestCampus": "Swainsboro",
+     "miles": 153,
+     "programs": [
+      {
+       "name": "ASN Traditional Option Degree",
+       "url": "https://catalog.southeasterntech.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "ASN Bridge Pathway Option Degree",
+       "url": "https://catalog.southeasterntech.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Practical Nursing Certificate",
+       "url": "https://catalog.southeasterntech.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Nurse Aide Accelerated",
+       "url": "https://catalog.southeasterntech.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Allied Health Professions Degree",
+       "url": "https://catalog.southeasterntech.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Medical Laboratory Technology Degree",
+       "url": "https://catalog.southeasterntech.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Radiologic Technology AAS Degree (RT23)",
+       "url": "https://catalog.southeasterntech.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Mammography",
+       "url": "https://catalog.southeasterntech.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Dental Hygiene Degree",
+       "url": "https://catalog.southeasterntech.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Medical Assisting Diploma",
+       "url": "https://catalog.southeasterntech.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Advanced Medical Assisting",
+       "url": "https://catalog.southeasterntech.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Fundamentals of Medical Assisting",
+       "url": "https://catalog.southeasterntech.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Accelerated Phlebotomy Technician",
+       "url": "https://catalog.southeasterntech.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Healthcare Assistant",
+       "url": "https://catalog.southeasterntech.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Healthcare Professional",
+       "url": "https://catalog.southeasterntech.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Paramedicine AAS",
+       "url": "https://catalog.southeasterntech.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Paramedicine Diploma",
+       "url": "https://catalog.southeasterntech.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Paramedicine Accelerated",
+       "url": "https://catalog.southeasterntech.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "EMS Professions Diploma",
+       "url": "https://catalog.southeasterntech.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Emergency Medical Technician",
+       "url": "https://catalog.southeasterntech.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Advanced EMT",
+       "url": "https://catalog.southeasterntech.edu/college-catalog/current/programs"
+      }
+     ]
+    },
+    {
+     "name": "Wiregrass Georgia Technical College",
+     "city": "Valdosta",
+     "site": "https://www.wiregrass.edu/",
+     "nearestCampus": "Fitzgerald",
+     "miles": 181,
+     "programs": [
+      {
+       "name": "Dental Hygiene, AAS Degree",
+       "url": "https://www.wiregrass.edu/course-catalog/current/programs"
+      },
+      {
+       "name": "Dental Assisting, Diploma Diploma",
+       "url": "https://www.wiregrass.edu/course-catalog/current/programs"
+      },
+      {
+       "name": "Medical Assisting, Diploma Diploma",
+       "url": "https://www.wiregrass.edu/course-catalog/current/programs"
+      },
+      {
+       "name": "Medical Laboratory Technology, AAS Degree",
+       "url": "https://www.wiregrass.edu/course-catalog/current/programs"
+      },
+      {
+       "name": "Geriatric Care Assistant, TCC",
+       "url": "https://www.wiregrass.edu/course-catalog/current/programs"
+      },
+      {
+       "name": "Nursing, ASN Degree",
+       "url": "https://www.wiregrass.edu/course-catalog/current/programs"
+      },
+      {
+       "name": "Transitions in Nursing, ASN Bridge Degree",
+       "url": "https://www.wiregrass.edu/course-catalog/current/programs"
+      },
+      {
+       "name": "Paramedicine, AAS Degree",
+       "url": "https://www.wiregrass.edu/course-catalog/current/programs"
+      },
+      {
+       "name": "EMS Professions, Diploma Diploma",
+       "url": "https://www.wiregrass.edu/course-catalog/current/programs"
+      },
+      {
+       "name": "Paramedicine, Diploma Diploma",
+       "url": "https://www.wiregrass.edu/course-catalog/current/programs"
+      },
+      {
+       "name": "Pharmacy Technology, AAS Degree",
+       "url": "https://www.wiregrass.edu/course-catalog/current/programs"
+      },
+      {
+       "name": "Practical Nursing, Certificate",
+       "url": "https://www.wiregrass.edu/course-catalog/current/programs"
+      },
+      {
+       "name": "Radiologic Technology, AAS Degree",
+       "url": "https://www.wiregrass.edu/course-catalog/current/programs"
+      },
+      {
+       "name": "Surgical Technology, AAS Degree",
+       "url": "https://www.wiregrass.edu/course-catalog/current/programs"
+      }
+     ]
+    },
+    {
+     "name": "Albany Technical College",
+     "city": "Albany",
+     "site": "https://www.albanytech.edu/",
+     "nearestCampus": "Albany",
+     "miles": 183,
+     "programs": [
+      {
+       "name": "Dental Assisting",
+       "url": "https://www.albanytech.edu/college-catalog/current/colleges/healthcare/dental-assisting"
+      },
+      {
+       "name": "EMT/Paramedicine",
+       "url": "https://www.albanytech.edu/college-catalog/current/colleges/healthcare/paramedicine-emt"
+      },
+      {
+       "name": "Geriatric Care Assistant",
+       "url": "https://www.albanytech.edu/college-catalog/2025-2026-college-catalog/programs/geriatric-care-assistant"
+      },
+      {
+       "name": "Health Information Management",
+       "url": "https://www.albanytech.edu/college-catalog/current/colleges/healthcare/health-information-techno"
+      },
+      {
+       "name": "Healthcare Assistant",
+       "url": "https://www.albanytech.edu/college-catalog/current/programs/health-care-assistant"
+      },
+      {
+       "name": "Medical Assisting",
+       "url": "https://www.albanytech.edu/college-catalog/current/colleges/healthcare/support-services-healthcare"
+      },
+      {
+       "name": "Nurse Aide Accelerated",
+       "url": "https://www.albanytech.edu/college-catalog/current/programs/nurse-aide"
+      },
+      {
+       "name": "Nursing - Associate Degree",
+       "url": "https://www.albanytech.edu/college-catalog/current/colleges/healthcare/nursing"
+      },
+      {
+       "name": "Pharmacy Technology",
+       "url": "https://www.albanytech.edu/college-catalog/current/colleges/healthcare/pharmacy-technology"
+      },
+      {
+       "name": "Phlebotomy",
+       "url": "https://www.albanytech.edu/college-catalog/current/colleges/healthcare/phlebotomy"
+      },
+      {
+       "name": "Practical Nursing",
+       "url": "https://www.albanytech.edu/college-catalog/current/colleges/healthcare/nursing"
+      },
+      {
+       "name": "Pre-Nursing Certificate",
+       "url": "https://www.albanytech.edu/college-catalog/2025-2026-college-catalog/programs/pre-nursing"
+      },
+      {
+       "name": "Radiologic Technology",
+       "url": "https://www.albanytech.edu/college-catalog/current/colleges/healthcare/advanced-medical-imaging"
+      },
+      {
+       "name": "Surgical Technology",
+       "url": "https://www.albanytech.edu/college-catalog/current/colleges/healthcare/surgical-technology"
+      }
+     ]
+    },
+    {
+     "name": "Ogeechee Technical College",
+     "city": "Statesboro",
+     "site": "https://www.ogeecheetech.edu/",
+     "nearestCampus": "Statesboro",
+     "miles": 183,
+     "programs": [
+      {
+       "name": "Nursing Associate of Science (NU93)",
+       "url": "https://www.ogeecheetech.edu/academics/academic-programs"
+      },
+      {
+       "name": "Nurse Aide Certificate (CN21)",
+       "url": "https://www.ogeecheetech.edu/academics/academic-programs"
+      },
+      {
+       "name": "Health Care Assistant Certificate (Nursing Track) (HA21)",
+       "url": "https://www.ogeecheetech.edu/academics/academic-programs"
+      },
+      {
+       "name": "Nurse Aide Accelerated Certificate (NAA1)",
+       "url": "https://www.ogeecheetech.edu/academics/academic-programs"
+      },
+      {
+       "name": "Geriatric Care Assistant Certificate (GC51)",
+       "url": "https://www.ogeecheetech.edu/academics/academic-programs"
+      },
+      {
+       "name": "Allied Health Professions AAS (AFA3)",
+       "url": "https://www.ogeecheetech.edu/academics/academic-programs"
+      },
+      {
+       "name": "Practical Nursing Certificate (PN21)",
+       "url": "https://www.ogeecheetech.edu/academics/academic-programs"
+      },
+      {
+       "name": "Medical Assisting Diploma (MA22)",
+       "url": "https://www.ogeecheetech.edu/academics/academic-programs"
+      },
+      {
+       "name": "Medical Office Support Specialist Certificate (MF31)",
+       "url": "https://www.ogeecheetech.edu/academics/academic-programs"
+      },
+      {
+       "name": "Dental Assisting Diploma (DA12)",
+       "url": "https://www.ogeecheetech.edu/academics/academic-programs"
+      },
+      {
+       "name": "Radiologic Technology AAS Degree (RT23)",
+       "url": "https://www.ogeecheetech.edu/academics/academic-programs"
+      },
+      {
+       "name": "Diagnostic Medical Sonography AAS Degree (DMS3)",
+       "url": "https://www.ogeecheetech.edu/academics/academic-programs"
+      },
+      {
+       "name": "Echocardiography AAS Degree (EC23)",
+       "url": "https://www.ogeecheetech.edu/academics/academic-programs"
+      },
+      {
+       "name": "Paramedicine Diploma (PT12)",
+       "url": "https://www.ogeecheetech.edu/academics/academic-programs"
+      },
+      {
+       "name": "EMS Professions Diploma (EP12)",
+       "url": "https://www.ogeecheetech.edu/academics/academic-programs"
+      },
+      {
+       "name": "Emergency Medical Responder Certificate (EB71)",
+       "url": "https://www.ogeecheetech.edu/academics/academic-programs"
+      },
+      {
+       "name": "Emergency Medical Technician Certificate (ED91)",
+       "url": "https://www.ogeecheetech.edu/academics/academic-programs"
+      },
+      {
+       "name": "Advanced Emergency Medical Technician Certificate (EMH1)",
+       "url": "https://www.ogeecheetech.edu/academics/academic-programs"
+      },
+      {
+       "name": "Phlebotomy Technician Certificate (PT21)",
+       "url": "https://www.ogeecheetech.edu/academics/academic-programs"
+      },
+      {
+       "name": "Health Information Management Technology AAS Degree (HI13)",
+       "url": "https://www.ogeecheetech.edu/academics/academic-programs"
+      },
+      {
+       "name": "Veterinary Technology AAS Degree (VT23)",
+       "url": "https://www.ogeecheetech.edu/academics/academic-programs"
+      },
+      {
+       "name": "Veterinary Technician Assistant Certificate (VA11)",
+       "url": "https://www.ogeecheetech.edu/academics/academic-programs"
+      },
+      {
+       "name": "Veterinary Technology Sonographer Certificate (VT11)",
+       "url": "https://www.ogeecheetech.edu/academics/academic-programs"
+      },
+      {
+       "name": "Funeral Service Education AAS Degree (FS23)",
+       "url": "https://www.ogeecheetech.edu/academics/academic-programs"
+      }
+     ]
+    },
+    {
+     "name": "Coastal Pines Technical College",
+     "city": "Waycross",
+     "site": "https://www.coastalpines.edu/",
+     "nearestCampus": "Hazlehurst",
+     "miles": 185,
+     "programs": [
+      {
+       "name": "Business Healthcare Technology",
+       "url": "https://catalog.coastalpines.edu/classes"
+      },
+      {
+       "name": "Medical Assisting",
+       "url": "https://catalog.coastalpines.edu/classes"
+      },
+      {
+       "name": "Neuromuscular Massage Therapy",
+       "url": "https://catalog.coastalpines.edu/classes"
+      },
+      {
+       "name": "Nursing (ASN)",
+       "url": "https://catalog.coastalpines.edu/classes"
+      },
+      {
+       "name": "Paramedicine",
+       "url": "https://catalog.coastalpines.edu/classes"
+      },
+      {
+       "name": "Phlebotomy",
+       "url": "https://catalog.coastalpines.edu/classes"
+      },
+      {
+       "name": "Practical Nursing and Related",
+       "url": "https://catalog.coastalpines.edu/classes"
+      },
+      {
+       "name": "Radiologic Technology",
+       "url": "https://catalog.coastalpines.edu/classes"
+      },
+      {
+       "name": "Respiratory Care",
+       "url": "https://catalog.coastalpines.edu/classes"
+      },
+      {
+       "name": "Surgical Technology",
+       "url": "https://catalog.coastalpines.edu/classes"
+      }
+     ]
+    },
+    {
+     "name": "Southern Regional Technical College",
+     "city": "Thomasville",
+     "site": "https://www.southernregional.edu/",
+     "nearestCampus": "Tifton",
+     "miles": 195,
+     "programs": [
+      {
+       "name": "Associate of Science in Nursing",
+       "url": "https://southernregional.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Allied Health Professions",
+       "url": "https://southernregional.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Practical Nursing, TCC",
+       "url": "https://southernregional.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Nurse Aide, TCC",
+       "url": "https://southernregional.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Nurse Aide Accelerated, TCC",
+       "url": "https://southernregional.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Paramedicine, AAS",
+       "url": null
+      },
+      {
+       "name": "EMS Professions, Diploma",
+       "url": "https://southernregional.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Emergency Medical Technician: EMT, TCC",
+       "url": "https://southernregional.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Advanced Emergency Medical Technician, TCC",
+       "url": "https://southernregional.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Emergency Medical Responder, TCC",
+       "url": "https://southernregional.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Radiologic Technology, AAS",
+       "url": "https://southernregional.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Echocardiography, AAS",
+       "url": "https://southernregional.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Medical Laboratory Technology, AAS",
+       "url": "https://southernregional.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Respiratory Care, AAS",
+       "url": "https://southernregional.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Surgical Technology, AAS",
+       "url": "https://southernregional.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Clinic Assistant (Phlebotomy), TCC",
+       "url": "https://southernregional.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Accelerated Phlebotomy Technician, TCC",
+       "url": "https://southernregional.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Central Sterile Supply Processing Tech, TCC",
+       "url": "https://southernregional.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Allied Health Professions, AAS",
+       "url": "https://southernregional.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Medical Assisting, Diploma",
+       "url": "https://southernregional.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Advanced Medical Assisting, TCC",
+       "url": "https://southernregional.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Fundamentals of Medical Assisting, TCC",
+       "url": "https://southernregional.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Health Information Management Technology, AAS",
+       "url": "https://southernregional.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Health Information Coding, Diploma",
+       "url": "https://southernregional.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Business Healthcare Technology, AAS",
+       "url": "https://southernregional.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Business Healthcare Technology, Diploma",
+       "url": "https://southernregional.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Medical Billing Clerk, TCC",
+       "url": "https://southernregional.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Medical Front Office Assistant, TCC",
+       "url": "https://southernregional.edu/college-catalog/current/programs"
+      },
+      {
+       "name": "Interdisciplinary Studies, AAS",
+       "url": "https://southernregional.edu/college-catalog/current/programs"
+      }
+     ]
+    },
+    {
+     "name": "Savannah Technical College",
+     "city": "Savannah",
+     "site": "https://www.savannahtech.edu/",
+     "nearestCampus": "Rincon",
+     "miles": 214,
+     "programs": [
+      {
+       "name": "Associate of Applied Science in Allied Health Professional AFA3",
+       "url": "https://www.savannahtech.edu/academics/all-programs/"
+      },
+      {
+       "name": "Associate of Science Nursing NU83",
+       "url": "https://www.savannahtech.edu/academics/all-programs/"
+      },
+      {
+       "name": "Practical Nursing Certificate PN21",
+       "url": "https://www.savannahtech.edu/academics/all-programs/"
+      },
+      {
+       "name": "Dental Assisting Diploma DA12",
+       "url": "https://www.savannahtech.edu/academics/all-programs/"
+      },
+      {
+       "name": "Dental Hygiene Associate of Science Degree DH23",
+       "url": "https://www.savannahtech.edu/academics/all-programs/"
+      },
+      {
+       "name": "Surgical Technology Associate of Applied Science Degree ST13",
+       "url": "https://www.savannahtech.edu/academics/all-programs/"
+      },
+      {
+       "name": "Medical Assisting Diploma MA22",
+       "url": "https://www.savannahtech.edu/academics/all-programs/"
+      },
+      {
+       "name": "Paramedicine Associate of Applied Science Degree PT13",
+       "url": "https://www.savannahtech.edu/academics/all-programs/"
+      },
+      {
+       "name": "Paramedicine Diploma PT12",
+       "url": "https://www.savannahtech.edu/academics/all-programs/"
+      },
+      {
+       "name": "Phlebotomy Technician Technical Certificate of Credit PT21",
+       "url": "https://www.savannahtech.edu/academics/all-programs/"
+      },
+      {
+       "name": "Geriatric Care Assistant Technical Certificate of Credit GC11",
+       "url": "https://www.savannahtech.edu/academics/all-programs/"
+      },
+      {
+       "name": "Nurse Aid Fast Track Technical Certificate NAF5",
+       "url": "https://www.savannahtech.edu/academics/all-programs/"
+      },
+      {
+       "name": "Health Care Science Technical Certificate of Credit HS21",
+       "url": "https://www.savannahtech.edu/academics/all-programs/"
+      },
+      {
+       "name": "Medical Coding/Insurance Data Technical Certificate of Credit MC71",
+       "url": "https://www.savannahtech.edu/academics/all-programs/"
+      }
+     ]
+    }
+   ]
+  }
  }
 };
