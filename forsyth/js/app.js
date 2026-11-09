@@ -262,7 +262,7 @@
     const S = SCHOOLS[school];
     return `<section class="learn-school" style="--school:${S.color}">
       <header class="learn-school__head">
-        <span class="learn-school__badge" aria-hidden="true">${esc(S.short)}</span>
+        ${S.logo ? `<span class="school-logo${S.logoFill ? " school-logo--fill" : ""}"><img src="${esc(S.logo)}" alt="${esc(S.name)} logo"></span>` : `<span class="learn-school__badge" aria-hidden="true">${esc(S.short)}</span>`}
         <div><p class="learn-school__stage">${esc(S.stage)}</p><h4>${esc(S.name)}</h4></div>
         <a class="link learn-school__all" href="${esc(S.programsUrl || S.site)}" target="_blank" rel="noopener">All programs ›</a>
       </header>
@@ -385,7 +385,8 @@
       : `${data.colleges.length} colleges · ${data.colleges.reduce((a, c) => a + c.programs.length, 0)} programs · closest first`;
     $("#tcsgList").innerHTML = cols.map((c, i) => `
       <details class="tcsg-college"${filtering || i < 3 ? " open" : ""}>
-        <summary>
+        <summary${c.logo ? ' class="has-logo"' : ""}>
+          ${c.logo ? `<span class="school-logo tcsg-logo${c.logoFill ? " school-logo--fill" : ""}"><img src="${esc(c.logo)}" alt="${esc(c.name)} logo"></span>` : ""}
           <span class="tcsg-college__name">${esc(c.name)}</span>
           <span class="tcsg-college__meta">Closest campus: ${esc(c.nearestCampus)} · ${c.miles} mi from Forsyth</span>
           <span class="tcsg-college__count">${filtering ? `${c.hits.length} match${c.hits.length === 1 ? "" : "es"}` : `${c.programs.length} programs`}</span>
@@ -729,8 +730,11 @@
     }).filter(([, l]) => l.length);
     const hits = c ? groups.flatMap(([, l]) => l.filter((p) => matches(school, p.name))) : [];
     return `<div class="panel-card">
-      <p class="sub">${esc(SCHOOLS[school].stage)} · ${esc(SCHOOLS[school].sub)}</p>
-      <h4>${esc(SCHOOLS[school].name)}</h4>
+      <div class="panel-school-head">
+        ${SCHOOLS[school].logo ? `<span class="school-logo${SCHOOLS[school].logoFill ? " school-logo--fill" : ""}"><img src="${esc(SCHOOLS[school].logo)}" alt="${esc(SCHOOLS[school].name)} logo"></span>` : ""}
+        <div><p class="sub">${esc(SCHOOLS[school].stage)} · ${esc(SCHOOLS[school].sub)}</p>
+        <h4>${esc(SCHOOLS[school].name)}</h4></div>
+      </div>
       ${c ? `<p class="match-line">${hits.length ? `For <strong>${esc(c.title)}</strong>: ${hits.map((p) => `<a class="link" href="${esc(schoolUrl(school, p))}" target="_blank" rel="noopener">${esc(p.name)}</a>`).join(", ")}` : `No ${esc(SCHOOLS[school].name)} program is listed for ${esc(c.title)} yet.`}</p>` : ""}
       <details class="prog-groups"${c ? "" : " open"}><summary>All ${groups.reduce((a, [, l]) => a + l.length, 0)} programs</summary>
         ${groups.map(([ind, list]) => `<p class="cat-h"><i class="ind-dot" style="--ind:${ind.color}"></i>${esc(ind.name)}</p>
@@ -760,8 +764,11 @@
         </li>`).join("")}</ul>`;
     }
     return `<div class="panel-card">
-      <p class="sub">${esc(SCHOOLS.fcs.stage)} · Career, technical &amp; agricultural education</p>
-      <h4>Forsyth County Schools</h4>
+      <div class="panel-school-head">
+        ${SCHOOLS.fcs.logo ? `<span class="school-logo"><img src="${esc(SCHOOLS.fcs.logo)}" alt="Forsyth County Schools logo"></span>` : ""}
+        <div><p class="sub">${esc(SCHOOLS.fcs.stage)} · Career, technical &amp; agricultural education</p>
+        <h4>Forsyth County Schools</h4></div>
+      </div>
       <div class="hs-chips" role="group" aria-label="High schools">${chips}</div>
       ${body}
     </div>`;

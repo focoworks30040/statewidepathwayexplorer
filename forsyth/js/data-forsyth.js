@@ -6199,7 +6199,8 @@ window.FOCO = {
    "about": "Forsyth County Schools offer career, technical, and agricultural education (CTAE) pathways that let students explore an industry, earn credentials, and build experience before they graduate.",
    "site": "https://www.forsyth.k12.ga.us/",
    "siteLabel": "forsyth.k12.ga.us",
-   "programsUrl": "https://www.forsyth.k12.ga.us/ctae"
+   "programsUrl": "https://www.forsyth.k12.ga.us/ctae",
+   "logo": "img/logos/fcs.png"
   },
   "lanier": {
    "short": "LT",
@@ -6210,7 +6211,8 @@ window.FOCO = {
    "about": "Lanier Tech provides hands-on, career-focused diplomas and associate degrees, often with direct ties to local employers and short timelines to enter the workforce.",
    "site": "https://www.laniertech.edu/",
    "siteLabel": "laniertech.edu",
-   "programsUrl": "https://www.laniertech.edu/programs/all-programs-of-study/"
+   "programsUrl": "https://www.laniertech.edu/programs/all-programs-of-study/",
+   "logo": "img/logos/lanier.png"
   },
   "ung": {
    "short": "UNG",
@@ -6221,7 +6223,9 @@ window.FOCO = {
    "about": "UNG offers associate and bachelor's degrees for students pursuing professional and advanced roles, including transfer pathways from technical and high-school programs.",
    "site": "https://ung.edu/",
    "siteLabel": "ung.edu",
-   "programsUrl": "https://ung.edu/degrees/"
+   "programsUrl": "https://ung.edu/degrees/",
+   "logo": "img/logos/ung.png",
+   "logoFill": true
   }
  },
  "highSchools": {
@@ -6672,7 +6676,8 @@ window.FOCO = {
        "name": "Data Analytics Specialist Certificate",
        "url": "https://www.laniertech.edu/programs/"
       }
-     ]
+     ],
+     "logo": "img/logos/lanier.png"
     },
     {
      "name": "Gwinnett Technical College",

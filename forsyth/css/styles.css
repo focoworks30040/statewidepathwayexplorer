@@ -685,3 +685,17 @@ a { color: inherit; }
 .tcsg-programs a::after { content: " ›"; color: var(--link); }
 .tcsg-programs a:hover { box-shadow: inset 0 0 0 1.5px var(--blue); }
 .tcsg-college .small-link { margin: 6px 0 16px; }
+
+/* School logos */
+.school-logo { flex: none; display: grid; place-items: center; width: 84px; height: 64px; padding: 6px; border-radius: 14px; background: #fff; box-shadow: inset 0 0 0 1px var(--control); }
+.school-logo img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+.school-logo--fill { padding: 0; overflow: hidden; background: #1f3d7c; }
+.school-logo--fill img { width: 100%; height: 100%; object-fit: cover; }
+.panel-school-head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.panel-school-head h4 { margin: 0; }
+.panel-school-head .sub { margin: 0 0 2px; }
+@media (max-width: 734px) { .school-logo { width: 64px; height: 52px; } }
+.tcsg-college summary.has-logo { grid-template-columns: auto minmax(0, 1fr) auto; }
+.tcsg-college summary.has-logo .tcsg-logo { grid-row: 1 / span 2; width: 72px; height: 48px; }
+.tcsg-college summary.has-logo .tcsg-college__meta { grid-column: 2; }
+.tcsg-college summary.has-logo .tcsg-college__count { grid-column: 3; }

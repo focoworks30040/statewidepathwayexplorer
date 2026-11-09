@@ -32,6 +32,7 @@ It's a static site with no build step. Open `index.html`, or deploy this `forsyt
 | `js/app.js` | Interactivity |
 | `css/styles.css` | Styles |
 | `videos/` | Self-hosted video files |
+| `img/logos/` | School and college logos. To add a technical college logo, save it here and set `"logo": "img/logos/<file>.png"` on that college in `tcsgPrograms`. Add `"logoFill": true` for logos on a solid dark background. |
 
 ## Where the data comes from
 
