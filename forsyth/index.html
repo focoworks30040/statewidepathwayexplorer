@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FOCO Works Pathway Explorer</title>
+  <meta name="description" content="Explore Forsyth County's five top industries, discover careers you never knew existed, and see which Forsyth County schools teach them and which local companies hire for them.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Global navigation -->
+  <header class="global-nav">
+    <div class="wrap global-nav__inner">
+      <a class="brand" href="#top" aria-label="FOCO Works Pathway Explorer home">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 20V9l8-5 8 5v11h-5v-6H9v6z" fill="currentColor"/></svg>
+        <span>FOCO Works</span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="global-nav__links">
+          <li><a href="#dream">Explore</a></li>
+          <li><a href="#grads">Meet Grads</a></li>
+          <li><a href="#industries">Top Industries</a></li>
+          <li><a href="#library">All Careers</a></li>
+          <li><a href="#local">Schools &amp; Employers</a></li>
+          <li><a href="#parents">For Parents</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Local navigation -->
+  <div class="local-nav" id="localNav">
+    <div class="wrap local-nav__inner">
+      <span class="local-nav__title">Pathway Explorer</span>
+      <div class="local-nav__actions">
+        <button class="pill pill--outline" type="button" id="openSaved" aria-haspopup="dialog">
+          My list <span class="count" id="savedCount">0</span>
+        </button>
+        <a class="pill pill--blue" href="#dream">Start exploring</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="wrap hero__text">
+        <p class="kicker">Forsyth County, Georgia</p>
+        <h1 class="display">Your future has more&nbsp;doors than you&nbsp;think.</h1>
+        <p class="lead">Explore Forsyth County's five top industries together. Start with the job you already know, discover the roles right next to it, then see which Forsyth County schools teach it and which local companies hire for it.</p>
+        <p class="hero__links">
+          <a class="link" href="#dream">Find careers near your dream ›</a>
+          <a class="link" href="#local">See local schools &amp; employers ›</a>
+        </p>
+      </div>
+      <div class="hero__stage">
+        <div class="hero__map fmap-wrap" id="heroMap" role="img" aria-label="Map of Forsyth County and its neighboring counties, with the city of Cumming and the Lanier Technical College and University of North Georgia campuses marked."></div>
+        <div class="callout">
+          <div>
+            <strong id="heroCallout">5 top industries.</strong>
+            <span id="heroCalloutSub"></span>
+          </div>
+          <a class="pill pill--blue" href="#industries">See top industries</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Anchor nav -->
+    <nav class="anchor-nav" aria-label="Sections">
+      <div class="wrap anchor-nav__inner">
+        <a href="#dream">Dream bigger</a>
+        <a href="#grads">Meet recent grads</a>
+        <a href="#industries">Top industries</a>
+        <a href="#library">Career library</a>
+        <a href="#local">Schools &amp; employers</a>
+        <a href="#parents">Paying for it</a>
+      </div>
+    </nav>
+
+    <!-- Dream explorer -->
+    <section class="band band--mist" id="dream">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Dream bigger</p>
+            <h2 class="feature-heading">I want to be <span class="dream-word" id="dreamWord">a doctor</span>.</h2>
+          </div>
+          <a class="link" href="#library">See every career ›</a>
+        </div>
+        <p class="body section-intro">Most students can name a handful of jobs. But every one of them sits inside a whole team of careers, many with less schooling, great pay, and real demand in Forsyth County. Pick a starting point and see what's around it.</p>
+
+        <div class="dream-chips" role="tablist" aria-label="Starting points" id="dreamChips"></div>
+
+        <div class="card constellation-card">
+          <div class="constellation" id="constellation" aria-live="polite"></div>
+          <div class="constellation-legend">
+            <span><i class="dot dot--edu-cert"></i>Under 1 year</span>
+            <span><i class="dot dot--edu-assoc"></i>1–2 years</span>
+            <span><i class="dot dot--edu-bach"></i>4 years</span>
+            <span><i class="dot dot--edu-adv"></i>6+ years</span>
+            <span class="gem-key">Hidden gem</span>
+            <span class="local-key">Hiring in Forsyth</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent grad videos -->
+    <section class="band" id="grads">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Meet recent grads</p>
+            <h2 class="feature-heading">Hear it from people who just started.</h2>
+          </div>
+          <div class="carousel-controls">
+            <button class="round-btn" type="button" data-rail="gradRail" data-dir="-1" aria-label="Scroll videos left">‹</button>
+            <button class="round-btn" type="button" data-rail="gradRail" data-dir="1" aria-label="Scroll videos right">›</button>
+          </div>
+        </div>
+        <p class="body section-intro">Short videos from young people a few years out of high school. They talk about where they trained, how they got hired, and what the job is really like.</p>
+        <div class="filter-row" id="gradFilters" role="group" aria-label="Filter videos by industry"></div>
+      </div>
+      <div class="grad-rail" id="gradRail"></div>
+    </section>
+
+    <!-- Top industries -->
+    <section class="band band--mist" id="industries">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Top industries</p>
+            <h2 class="feature-heading">Forsyth County's five top industries.</h2>
+          </div>
+          <div class="carousel-controls">
+            <button class="round-btn" type="button" data-rail="sectorRail" data-dir="-1" aria-label="Scroll industries left">‹</button>
+            <button class="round-btn" type="button" data-rail="sectorRail" data-dir="1" aria-label="Scroll industries right">›</button>
+          </div>
+        </div>
+        <p class="body section-intro">These are the industries Forsyth County is growing. Open one to see the careers in it, the programs that teach it at Forsyth County Schools, Lanier Tech, and UNG, and the local companies that hire for it.</p>
+      </div>
+      <div class="sector-rail" id="sectorRail"></div>
+    </section>
+
+    <!-- Library -->
+    <section class="band" id="library">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Career library</p>
+            <h2 class="feature-heading">Every path, side by side.</h2>
+          </div>
+          <span class="result-count" id="resultCount"></span>
+        </div>
+
+        <div class="filters">
+          <label class="search">
+            <span class="sr-only">Search careers</span>
+            <input type="search" id="search" placeholder="Search careers, like “nurse” or “robots”" autocomplete="off">
+          </label>
+          <div class="filter-row" id="sectorFilters" role="group" aria-label="Industry"></div>
+          <div class="filter-row" role="group" aria-label="Training and sorting">
+            <div class="segmented" id="eduFilters" role="group" aria-label="Training time"></div>
+            <label class="toggle"><input type="checkbox" id="gemsOnly"> Hidden gems only</label>
+            <label class="toggle toggle--local"><input type="checkbox" id="localOnly"> Hiring in Forsyth only</label>
+            <label class="select">
+              <span class="sr-only">Sort</span>
+              <select id="sort">
+                <option value="az">Sort: A–Z</option>
+                <option value="pay">Sort: Highest pay</option>
+                <option value="fast">Sort: Fastest to start</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="career-grid" id="careerGrid"></div>
+      </div>
+    </section>
+
+    <!-- Schools & employers -->
+    <section class="band band--mist" id="local">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Schools &amp; employers</p>
+            <h2 class="feature-heading">See what's close to home.</h2>
+          </div>
+        </div>
+        <p class="body section-intro">Start in high school with a Forsyth County Schools career pathway, keep going at Lanier Technical College or the University of North Georgia, and go to work for a Forsyth County company.</p>
+
+        <div class="county-layout">
+          <div class="county-map-card card">
+            <div class="county-controls">
+              <h3 class="map-title">Forsyth County</h3>
+              <div class="map-legend">
+                <span><i class="mk mk--tcsg"></i>Lanier Tech</span>
+                <span><i class="mk mk--usg"></i>UNG</span>
+                <span><i class="mk mk--city"></i>Cumming</span>
+              </div>
+            </div>
+            <div class="county-map fmap-wrap" id="localMap"></div>
+            <p class="map-note">Campus locations are approximate.</p>
+          </div>
+
+          <div class="county-panel" id="localPanel" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Parents -->
+    <section class="band" id="parents">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">For parents &amp; families</p>
+            <h2 class="feature-heading">A great career doesn't have to mean big debt.</h2>
+          </div>
+        </div>
+        <div class="parent-grid">
+          <article class="card card--mist info-card">
+            <p class="kicker">Start in high school</p>
+            <h3>CTAE pathways</h3>
+            <p>Every Forsyth County high school offers career, technical, and agricultural education (CTAE) pathways. Alliance Academy for Innovation focuses on them, with pathways like mechatronics, cybersecurity, EMS, and drones.</p>
+          </article>
+          <article class="card card--mist info-card">
+            <p class="kicker">College credit early</p>
+            <h3>Dual Enrollment</h3>
+            <p>Juniors and seniors can take college courses at Lanier Technical College or the University of North Georgia and earn credit before graduation, with tuition covered for eligible courses.</p>
+          </article>
+          <article class="card card--mist info-card">
+            <p class="kicker">Technical college</p>
+            <h3>HOPE Grant &amp; HOPE Career Grant</h3>
+            <p>The HOPE Grant helps pay tuition for certificates and diplomas at Lanier Tech. The HOPE Career Grant can cover the rest of tuition for high-demand programs like welding, nursing, and IT.</p>
+          </article>
+          <article class="card card--mist info-card">
+            <p class="kicker">University</p>
+            <h3>HOPE &amp; Zell Miller Scholarships</h3>
+            <p>Students who meet GPA and course requirements can receive the HOPE Scholarship, and top students can earn the Zell Miller Scholarship, at Georgia public colleges like UNG.</p>
+          </article>
+          <article class="card card--mist info-card">
+            <p class="kicker">Apply with confidence</p>
+            <h3>Georgia Match</h3>
+            <p>Georgia Match proactively lets many seniors know they've been admitted to participating public colleges and universities. Check with your school counselor and GAfutures.org.</p>
+          </article>
+          <article class="card card--mist info-card">
+            <p class="kicker">Stack it up</p>
+            <h3>Start short, go far</h3>
+            <p>A high school pathway can lead to a Lanier Tech certificate, then a degree at UNG. Medical assistant can lead to nursing; IT support can lead to cybersecurity. Students can start working sooner and keep climbing.</p>
+          </article>
+        </div>
+
+        <div class="card card--mist talk-card">
+          <div>
+            <p class="kicker">Talk about it tonight</p>
+            <h3 class="talk-title">Five questions to ask each other.</h3>
+          </div>
+          <ol class="talk-list">
+            <li>What subjects or activities make time fly for you?</li>
+            <li>Do you want to work with people, things, data, or ideas?</li>
+            <li>Would you rather start working in 1 year, 2 years, or 4+ years?</li>
+            <li>Which three careers on this site surprised you most?</li>
+            <li>Which Forsyth County company could you visit or shadow?</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p><strong>About this data.</strong> Industries, school programs, high-school pathways, local employers, and Forsyth pay ranges come from the <a class="link" href="https://focoworkspathwayexplorer.com/" target="_blank" rel="noopener">FOCO Works Pathway Explorer</a>, a Forsyth County Chamber of Commerce resource. Industry growth figures: U.S. Bureau of Labor Statistics, Employment Projections &amp; Occupational Outlook Handbook, 2024–34. Careers without a Forsyth pay range are statewide roles shown so students can see the whole team around a familiar job; their pay is an approximate Georgia median wage. Program offerings and openings change, so confirm details with the school or employer.</p>
+      <p>County boundaries: U.S. Census Bureau. Learn more at <a class="link" href="https://www.forsyth.k12.ga.us/ctae" target="_blank" rel="noopener">forsyth.k12.ga.us</a>, <a class="link" href="https://www.laniertech.edu/" target="_blank" rel="noopener">laniertech.edu</a>, <a class="link" href="https://ung.edu/" target="_blank" rel="noopener">ung.edu</a>, and <a class="link" href="https://www.gafutures.org" target="_blank" rel="noopener">gafutures.org</a>.</p>
+      <p class="footer__fine">FOCO Works Pathway Explorer · Built for Forsyth County students and families.</p>
+    </div>
+  </footer>
+
+  <dialog class="sheet" id="careerDialog" aria-labelledby="dlgTitle">
+    <div class="sheet__inner" id="careerDialogBody"></div>
+  </dialog>
+  <dialog class="sheet sheet--wide" id="industryDialog" aria-labelledby="indTitle">
+    <div class="sheet__inner" id="industryDialogBody"></div>
+  </dialog>
+  <dialog class="sheet sheet--video" id="videoDialog" aria-labelledby="vidTitle">
+    <div class="sheet__inner" id="videoDialogBody"></div>
+  </dialog>
+  <dialog class="sheet sheet--narrow" id="savedDialog" aria-labelledby="savedTitle">
+    <div class="sheet__inner" id="savedDialogBody"></div>
+  </dialog>
+
+  <script src="js/forsyth-map.js"></script>
+  <script src="js/data-forsyth.js"></script>
+  <script src="js/data-videos.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
