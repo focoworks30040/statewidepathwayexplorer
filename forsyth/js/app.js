@@ -319,8 +319,17 @@
 
       <h3 class="dlg-h dlg-h--center">Where you can learn it</h3>
       <p class="center-note">Start in high school, keep going after graduation. Select a program to visit the school's page.</p>
-      ${TCSG_PROGRAMS[ind.id] ? `<p class="center-btn"><button class="pill pill--outline pill--lg" type="button" data-tcsg="${ind.id}">See additional education options across the Technical College System of Georgia ›</button></p>` : ""}
+
       <div class="learn">${learnSection(ind, "fcs")}${learnSection(ind, "lanier")}${learnSection(ind, "ung")}</div>
+      ${TCSG_PROGRAMS[ind.id] ? (() => {
+        const t = TCSG_PROGRAMS[ind.id];
+        const n = t.colleges.reduce((a, c) => a + c.programs.length, 0);
+        return `<section class="more-options">
+          <h3 class="dlg-h dlg-h--center">Additional education options across the Technical College System of Georgia</h3>
+          <p class="center-note">${t.colleges.length} technical colleges offer ${n} ${esc(ind.name.toLowerCase())} programs across the state.</p>
+          <p class="center-btn"><button class="pill pill--blue pill--lg" type="button" data-tcsg="${ind.id}">Explore technical college programs ›</button></p>
+        </section>`;
+      })() : ""}
 
       <h3 class="dlg-h dlg-h--center">Where you could work</h3>
       <p class="center-note">${total} Forsyth County companies in ${esc(ind.name)}.</p>
