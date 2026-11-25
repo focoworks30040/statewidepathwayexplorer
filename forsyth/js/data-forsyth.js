@@ -8717,7 +8717,8 @@ window.FOCO = {
      "group": "usg",
      "site": "https://www.gsu.edu",
      "nearestCampus": "Alpharetta",
-     "miles": 14
+     "miles": 14,
+     "short": "GSU"
     },
     {
      "name": "Georgia Gwinnett College",
@@ -8939,7 +8940,8 @@ window.FOCO = {
      "group": "usg",
      "site": "https://www.atlm.edu",
      "nearestCampus": "Atlanta",
-     "miles": 39
+     "miles": 39,
+     "logo": "img/logos/atlanta-metropolitan.png"
     },
     {
      "name": "Clayton State University",
@@ -9008,7 +9010,8 @@ window.FOCO = {
      "group": "usg",
      "site": "https://www.clayton.edu",
      "nearestCampus": "Morrow",
-     "miles": 46
+     "miles": 46,
+     "short": "CLSU"
     },
     {
      "name": "University of Georgia",
@@ -9137,7 +9140,8 @@ window.FOCO = {
      "group": "usg",
      "site": "https://www.uga.edu",
      "nearestCampus": "Athens",
-     "miles": 47
+     "miles": 47,
+     "short": "UGA"
     },
     {
      "name": "Dalton State College",
@@ -9370,7 +9374,8 @@ window.FOCO = {
      "group": "usg",
      "site": "https://www.mga.edu",
      "nearestCampus": "Macon",
-     "miles": 100
+     "miles": 100,
+     "short": "MGA"
     },
     {
      "name": "Fort Valley State University",
@@ -9444,7 +9449,8 @@ window.FOCO = {
      "group": "usg",
      "site": "https://www.columbusstate.edu",
      "nearestCampus": "Columbus",
-     "miles": 128
+     "miles": 128,
+     "short": "CSU"
     },
     {
      "name": "Augusta University",
@@ -9537,7 +9543,8 @@ window.FOCO = {
      "group": "usg",
      "site": "https://www.augusta.edu",
      "nearestCampus": "Augusta",
-     "miles": 133
+     "miles": 133,
+     "logo": "img/logos/augusta-university.png"
     },
     {
      "name": "Georgia Southwestern State University",
@@ -9610,7 +9617,8 @@ window.FOCO = {
      "group": "usg",
      "site": "https://www.gsw.edu",
      "nearestCampus": "Americus",
-     "miles": 150
+     "miles": 150,
+     "short": "GSW"
     },
     {
      "name": "Georgia Southern University",
@@ -9711,7 +9719,8 @@ window.FOCO = {
      "group": "usg",
      "site": "https://www.georgiasouthern.edu",
      "nearestCampus": "Swainsboro",
-     "miles": 152
+     "miles": 152,
+     "short": "GS"
     },
     {
      "name": "Albany State University",
@@ -9812,7 +9821,8 @@ window.FOCO = {
      "group": "usg",
      "site": "https://www.asurams.edu",
      "nearestCampus": "Albany",
-     "miles": 184
+     "miles": 184,
+     "logo": "img/logos/albany-state.png"
     },
     {
      "name": "Abraham Baldwin Agricultural College",
@@ -9825,7 +9835,8 @@ window.FOCO = {
      "group": "usg",
      "site": "https://www.abac.edu",
      "nearestCampus": "Tifton",
-     "miles": 193
+     "miles": 193,
+     "logo": "img/logos/abac.png"
     },
     {
      "name": "South Georgia State College",
@@ -9928,7 +9939,8 @@ window.FOCO = {
      "group": "usg",
      "site": "https://www.ccga.edu",
      "nearestCampus": "Brunswick",
-     "miles": 260
+     "miles": 260,
+     "short": "CCGA"
     },
     {
      "name": "Brenau University",
