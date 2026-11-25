@@ -8718,7 +8718,9 @@ window.FOCO = {
      "site": "https://www.gsu.edu",
      "nearestCampus": "Alpharetta",
      "miles": 14,
-     "short": "GSU"
+     "short": "GSU",
+     "logo": "img/logos/georgia-state-university.png",
+     "logoSource": "https://commons.wikimedia.org/wiki/File:Georgia_State_University_Logo.svg"
     },
     {
      "name": "Georgia Gwinnett College",
@@ -8767,7 +8769,9 @@ window.FOCO = {
      "group": "usg",
      "site": "https://www.ggc.edu",
      "nearestCampus": "Lawrenceville",
-     "miles": 18
+     "miles": 18,
+     "logo": "img/logos/georgia-gwinnett-college.png",
+     "logoSource": "https://en.wikipedia.org/wiki/File:Georgia_Gwinnett_College_logo.png"
     },
     {
      "name": "Kennesaw State University",
@@ -8820,7 +8824,9 @@ window.FOCO = {
      "group": "usg",
      "site": "https://www.kennesaw.edu",
      "nearestCampus": "Kennesaw",
-     "miles": 29
+     "miles": 29,
+     "logo": "img/logos/kennesaw-state-university.png",
+     "logoSource": "https://en.wikipedia.org/wiki/File:Kennesaw_State_University.svg"
     },
     {
      "name": "Georgia Highlands College",
@@ -8865,7 +8871,9 @@ window.FOCO = {
      "group": "usg",
      "site": "https://www.highlands.edu",
      "nearestCampus": "Marietta",
-     "miles": 29
+     "miles": 29,
+     "logo": "img/logos/georgia-highlands-college.png",
+     "logoSource": "https://commons.wikimedia.org/wiki/File:Georgia_Highlands_College_wordmark.png"
     },
     {
      "name": "Georgia Institute of Technology",
@@ -8911,7 +8919,9 @@ window.FOCO = {
      "site": "https://www.gatech.edu",
      "nearestCampus": "Atlanta",
      "miles": 35,
-     "short": "GT"
+     "short": "GT",
+     "logo": "img/logos/georgia-institute-of-technology.png",
+     "logoSource": "https://commons.wikimedia.org/wiki/File:Georgia_Tech_logo_2021.svg"
     },
     {
      "name": "Atlanta Metropolitan State College",
@@ -9011,7 +9021,9 @@ window.FOCO = {
      "site": "https://www.clayton.edu",
      "nearestCampus": "Morrow",
      "miles": 46,
-     "short": "CLSU"
+     "short": "CLSU",
+     "logo": "img/logos/clayton-state-university.png",
+     "logoSource": "https://commons.wikimedia.org/wiki/File:Clayton_state_university_textlogo.png"
     },
     {
      "name": "University of Georgia",
@@ -9141,7 +9153,9 @@ window.FOCO = {
      "site": "https://www.uga.edu",
      "nearestCampus": "Athens",
      "miles": 47,
-     "short": "UGA"
+     "short": "UGA",
+     "logo": "img/logos/university-of-georgia.png",
+     "logoSource": "https://en.wikipedia.org/wiki/File:University_of_Georgia_logo.svg"
     },
     {
      "name": "Dalton State College",
@@ -9210,7 +9224,9 @@ window.FOCO = {
      "group": "usg",
      "site": "https://www.daltonstate.edu",
      "nearestCampus": "Dalton",
-     "miles": 60
+     "miles": 60,
+     "logo": "img/logos/dalton-state-college.png",
+     "logoSource": "https://en.wikipedia.org/wiki/File:Dalton_State_College_logo.png"
     },
     {
      "name": "University of West Georgia",
@@ -9259,7 +9275,9 @@ window.FOCO = {
      "group": "usg",
      "site": "https://www.westga.edu",
      "nearestCampus": "Newnan",
-     "miles": 70
+     "miles": 70,
+     "logo": "img/logos/university-of-west-georgia.png",
+     "logoSource": "https://commons.wikimedia.org/wiki/File:UWG_Shield_Logo.png"
     },
     {
      "name": "Gordon State College",
@@ -9288,7 +9306,9 @@ window.FOCO = {
      "group": "usg",
      "site": "https://www.gordonstate.edu",
      "nearestCampus": "Barnesville",
-     "miles": 81
+     "miles": 81,
+     "logo": "img/logos/gordon-state-college.png",
+     "logoSource": "https://en.wikipedia.org/wiki/File:Gordanstatelogo.svg"
     },
     {
      "name": "Georgia College & State University",
@@ -9317,7 +9337,9 @@ window.FOCO = {
      "group": "usg",
      "site": "https://www.gcsu.edu",
      "nearestCampus": "Milledgeville",
-     "miles": 94
+     "miles": 94,
+     "logo": "img/logos/georgia-college-state-university.png",
+     "logoSource": "https://commons.wikimedia.org/wiki/File:Georgia_College_Seal_(Updated).png"
     },
     {
      "name": "Middle Georgia State University",
@@ -9375,7 +9397,9 @@ window.FOCO = {
      "site": "https://www.mga.edu",
      "nearestCampus": "Macon",
      "miles": 100,
-     "short": "MGA"
+     "short": "MGA",
+     "logo": "img/logos/middle-georgia-state-university.png",
+     "logoSource": "https://en.wikipedia.org/wiki/File:Middle_Georgia_State_University_logo.png"
     },
     {
      "name": "Fort Valley State University",
@@ -9412,7 +9436,9 @@ window.FOCO = {
      "group": "usg",
      "site": "https://www.fvsu.edu",
      "nearestCampus": "Fort Valley",
-     "miles": 117
+     "miles": 117,
+     "logo": "img/logos/fort-valley-state-university.png",
+     "logoSource": "https://commons.wikimedia.org/wiki/File:Fortvalley_state_univ_logo.png"
     },
     {
      "name": "Columbus State University",
@@ -9450,7 +9476,9 @@ window.FOCO = {
      "site": "https://www.columbusstate.edu",
      "nearestCampus": "Columbus",
      "miles": 128,
-     "short": "CSU"
+     "short": "CSU",
+     "logo": "img/logos/columbus-state-university.png",
+     "logoSource": "https://commons.wikimedia.org/wiki/File:Columbus_st_univ_simplelogo.png"
     },
     {
      "name": "Augusta University",
@@ -9618,7 +9646,9 @@ window.FOCO = {
      "site": "https://www.gsw.edu",
      "nearestCampus": "Americus",
      "miles": 150,
-     "short": "GSW"
+     "short": "GSW",
+     "logo": "img/logos/georgia-southwestern-state-university.png",
+     "logoSource": "https://en.wikipedia.org/wiki/File:GASouthwesternU_seal.png"
     },
     {
      "name": "Georgia Southern University",
@@ -9720,7 +9750,9 @@ window.FOCO = {
      "site": "https://www.georgiasouthern.edu",
      "nearestCampus": "Swainsboro",
      "miles": 152,
-     "short": "GS"
+     "short": "GS",
+     "logo": "img/logos/georgia-southern-university.png",
+     "logoSource": "https://en.wikipedia.org/wiki/File:Georgia_Southern_University_logo.svg"
     },
     {
      "name": "Albany State University",
@@ -9861,7 +9893,9 @@ window.FOCO = {
      "group": "usg",
      "site": "https://www.sgsc.edu",
      "nearestCampus": "Douglas",
-     "miles": 202
+     "miles": 202,
+     "logo": "img/logos/south-georgia-state-college.png",
+     "logoSource": "https://en.wikipedia.org/wiki/File:SouthGeorgiaStateCollegeLogo.png"
     },
     {
      "name": "Valdosta State University",
@@ -9902,7 +9936,9 @@ window.FOCO = {
      "group": "usg",
      "site": "https://www.valdosta.edu",
      "nearestCampus": "Valdosta",
-     "miles": 238
+     "miles": 238,
+     "logo": "img/logos/valdosta-state-university.png",
+     "logoSource": "https://commons.wikimedia.org/wiki/File:Valdosta_university_logo.png"
     },
     {
      "name": "College of Coastal Georgia",
@@ -9940,7 +9976,9 @@ window.FOCO = {
      "site": "https://www.ccga.edu",
      "nearestCampus": "Brunswick",
      "miles": 260,
-     "short": "CCGA"
+     "short": "CCGA",
+     "logo": "img/logos/college-of-coastal-georgia.png",
+     "logoSource": "https://en.wikipedia.org/wiki/File:College_of_Coastal_Georgia_(seal).png"
     },
     {
      "name": "Brenau University",
@@ -10069,7 +10107,9 @@ window.FOCO = {
      "group": "private",
      "site": "https://www.brenau.edu/",
      "nearestCampus": "Gainesville",
-     "miles": 18
+     "miles": 18,
+     "logo": "img/logos/brenau-university.png",
+     "logoSource": "https://en.wikipedia.org/wiki/File:Brenau_University_logo.png"
     },
     {
      "name": "Oglethorpe University",
@@ -10098,7 +10138,9 @@ window.FOCO = {
      "group": "private",
      "site": "https://oglethorpe.edu/",
      "nearestCampus": "Brookhaven",
-     "miles": 27
+     "miles": 27,
+     "logo": "img/logos/oglethorpe-university.png",
+     "logoSource": "https://en.wikipedia.org/wiki/File:Oglethorpe_University_logo.png"
     },
     {
      "name": "Emory University",
@@ -10131,7 +10173,9 @@ window.FOCO = {
      "group": "private",
      "site": "https://www.emory.edu/",
      "nearestCampus": "Atlanta",
-     "miles": 32
+     "miles": 32,
+     "logo": "img/logos/emory-university.png",
+     "logoSource": "https://en.wikipedia.org/wiki/File:Emory_U_Logo.svg"
     },
     {
      "name": "Agnes Scott College",
@@ -10160,7 +10204,9 @@ window.FOCO = {
      "group": "private",
      "site": "https://www.agnesscott.edu/",
      "nearestCampus": "Decatur",
-     "miles": 33
+     "miles": 33,
+     "logo": "img/logos/agnes-scott-college.png",
+     "logoSource": "https://commons.wikimedia.org/wiki/File:Agnes_Scott_College_wordmark.svg"
     },
     {
      "name": "Truett McConnell University",
@@ -10177,7 +10223,9 @@ window.FOCO = {
      "group": "private",
      "site": "https://truett.edu/",
      "nearestCampus": "Cleveland",
-     "miles": 33
+     "miles": 33,
+     "logo": "img/logos/truett-mcconnell-university.png",
+     "logoSource": "https://en.wikipedia.org/wiki/File:Truett_McConnell_University_logo.svg"
     },
     {
      "name": "Piedmont University",
@@ -10214,7 +10262,9 @@ window.FOCO = {
      "group": "private",
      "site": "https://www.piedmont.edu/",
      "nearestCampus": "Demorest",
-     "miles": 40
+     "miles": 40,
+     "logo": "img/logos/piedmont-university.png",
+     "logoSource": "https://en.wikipedia.org/wiki/File:Piedmont_University_2021_Logo.png"
     },
     {
      "name": "Toccoa Falls College",
@@ -10272,7 +10322,9 @@ window.FOCO = {
      "group": "private",
      "site": "https://www.yhc.edu/",
      "nearestCampus": "Young Harris",
-     "miles": 51
+     "miles": 51,
+     "logo": "img/logos/young-harris-college.png",
+     "logoSource": "https://commons.wikimedia.org/wiki/File:Young_harris_college_logo.png"
     },
     {
      "name": "Berry College",
@@ -10317,7 +10369,9 @@ window.FOCO = {
      "group": "private",
      "site": "https://www.berry.edu/",
      "nearestCampus": "Mount Berry",
-     "miles": 61
+     "miles": 61,
+     "logo": "img/logos/berry-college.png",
+     "logoSource": "https://commons.wikimedia.org/wiki/File:BerryCollegeLogo.svg"
     },
     {
      "name": "Mercer University",
@@ -10494,7 +10548,9 @@ window.FOCO = {
      "group": "private",
      "site": "https://www.mercer.edu/",
      "nearestCampus": "Macon",
-     "miles": 100
+     "miles": 100,
+     "logo": "img/logos/mercer-university.png",
+     "logoSource": "https://commons.wikimedia.org/wiki/File:Mercer_University_logo.png"
     }
    ]
   }
